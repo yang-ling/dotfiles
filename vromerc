@@ -73,6 +73,7 @@ set useletters=1
 
 " add custom quick marks
 set qm_e=chrome://extensions
+set qm_p=chrome://plugins
 " custom quick marks longer than one key
 set qm_hn=http://news.ycombinator.com
 " custom quick mark triggering JS (view below)
