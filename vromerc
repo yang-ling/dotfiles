@@ -62,7 +62,7 @@ set hintkeys=jlkhfsdagwerui
 
 " Alternative: creates two sets of hint keys separated by a semicolon. First set uses keys close to the home row to create combinations, second set is used as a last resort
 " Note: this trigger the smart sorting in multi mode. Matching elements by level of similarity
-set hintkeys=dsafrewq,tgcx
+set hintkeys=dsafrewq,tgjx
 
 " overwrites the sub actions by your own set of actions
 set hint_actions={"`": "[", ",": "{"}
