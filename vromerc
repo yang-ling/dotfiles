@@ -4,6 +4,7 @@
 " Change key mapping in normal mode, please check Vrome Features for available key mapping
 map  j <C-f>
 map  j 10j
+map  k 10k
 
 " Remove key mapping in normal mode
 unmap <C-f>
