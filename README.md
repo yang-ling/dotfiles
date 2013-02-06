@@ -1,2 +1,2 @@
-My dotfiles in Linux
+My dotfiles in Linux.
 ========
