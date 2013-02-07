@@ -352,50 +352,57 @@ endif
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
+    " Put these in an autocmd group, so that we can delete them easily.
+    augroup vimrcEx
+        au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-  autocmd FileType javascript setlocal textwidth=97
+        " For all text files set 'textwidth' to 78 characters.
+        autocmd FileType text setlocal textwidth=78
+        autocmd FileType javascript setlocal textwidth=97
 
-  autocmd FileType javascript noremap <buffer> <leader>fm :call JsBeautify()<CR>
-  " for html
-  autocmd FileType html,jsp,xml noremap <buffer> <leader>fm :call HtmlBeautify()<CR>
-  " for css or scss
-  autocmd FileType css noremap <buffer> <leader>fm :call CSSBeautify()<CR>
+        autocmd FileType javascript noremap <buffer> <leader>fm :call JsBeautify()<CR>
+        " for html
+        autocmd FileType html,jsp,xml noremap <buffer> <leader>fm :call HtmlBeautify()<CR>
+        " for css or scss
+        autocmd FileType css noremap <buffer> <leader>fm :call CSSBeautify()<CR>
 
-  " Set fold method to marker when open vimrc file
-  autocmd FileType vim set fdm=marker | set nospell
+        " Set fold method to marker when open vimrc file
+        autocmd FileType vim set fdm=marker | set nospell
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+        "{{{ jslint
+        autocmd FileType javascript setlocal makeprg=jslint\ --sloppy\ --indent\ 4\ --nomen\ --devel\ --browser\ --node\ %
+        autocmd FileType javascript set efm=%-P%f,
+                            \%A%>%.%##%*\\d\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,
+                            \%-G%f\ is\ OK.,%-Q
+        "}}}
 
-"  au InsertEnter * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-"  au InsertLeave * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-"  au VimLeave * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it when the position is invalid or when inside an event handler
+        " (happens when dropping a file on gvim).
+        " Also don't do it when the mark is in the first line, that is the default
+        " position when opening a file.
+        autocmd BufReadPost *
+                    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                    \   exe "normal! g`\"" |
+                    \ endif
 
-"  autocmd FileType xml setlocal tabstop=2 | setlocal shiftwidth=2 | colo torte
-"  autocmd FileType jsp setlocal tabstop=2 | setlocal shiftwidth=2 | colo evening
-"  autocmd FileType javascript setlocal tabstop=4 | setlocal shiftwidth=4 | colo evening
+        "  au InsertEnter * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+        "  au InsertLeave * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+        "  au VimLeave * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 
-  " remove white space before saving.
-  "autocmd BufWritePre *.rb :%s/\s\+$//e
-  "autocmd BufWritePre *.cpp :%s/\s\+$//e
+        "  autocmd FileType xml setlocal tabstop=2 | setlocal shiftwidth=2 | colo torte
+        "  autocmd FileType jsp setlocal tabstop=2 | setlocal shiftwidth=2 | colo evening
+        "  autocmd FileType javascript setlocal tabstop=4 | setlocal shiftwidth=4 | colo evening
 
-  augroup END
+        " remove white space before saving.
+        "autocmd BufWritePre *.rb :%s/\s\+$//e
+        "autocmd BufWritePre *.cpp :%s/\s\+$//e
+
+    augroup END
 
 else
 
-  set autoindent        " always set autoindenting on
+    set autoindent        " always set autoindenting on
 
 endif " has("autocmd")"}}}
 
