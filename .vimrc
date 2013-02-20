@@ -219,6 +219,7 @@ set completefunc=Camel_Complete
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")"}}}
 "{{{ Mapping
+let mapleader=","
 "{{{ Navigating mapping
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -226,7 +227,7 @@ map j gj
 map k gk
 map ZZ zz
 " use Ctrl-L instead ESC at insert mode.
-inoremap <C-L> <ESC>
+inoremap jj <ESC>
 " jump to left window
 nnoremap <C-h> <C-w>h
 " jump to down window
@@ -260,7 +261,7 @@ nnoremap <leader>pp :tabe <C-R>*<CR>
 nnoremap <leader>ve :VE<CR><CR>:tabo<CR>
 
 " Open .vimrc file
-nnoremap <F9> :tabe ~/.vimrc<CR>
+nnoremap <F9> :tabe $MYVIMRC<CR>
 " Delete tailing spaces and
 nnoremap <F2> :%s/\s\+$//g<CR>
 " Delete excess blank lines.
@@ -277,6 +278,7 @@ cnoremap :w set diffopt+=iwhite
 cnoremap :o set diffopt+=context:1
 " no highlighting
 cnoremap :n nohl
+" 
 "{{{ Session
 " Write Session
 nnoremap <leader>ws :mks! ~/.yangsession/
@@ -370,7 +372,7 @@ if has("autocmd")
         autocmd FileType vim set fdm=marker | set nospell
 
         "{{{ jslint
-        autocmd FileType javascript setlocal makeprg=jslint\ --sloppy\ --indent\ 4\ --nomen\ --devel\ --browser\ --node\ %
+        autocmd FileType javascript setlocal makeprg=jslint\ --sloppy\ --indent\ 4\ --nomen\ --devel\ --browser\ --node\ --plusplus\ %
         autocmd FileType javascript set efm=%-P%f,
                             \%A%>%.%##%*\\d\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,
                             \%-G%f\ is\ OK.,%-Q
