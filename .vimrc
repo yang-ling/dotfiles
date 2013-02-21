@@ -256,10 +256,8 @@ nnoremap <leader>9 :tabl<CR>"}}}
 nnoremap <leader>cp ggO<ESC>"%p0"*y$:q!<CR>
 " Open file with path.
 nnoremap <leader>pp :tabe <C-R>*<CR>
-
 " Open VimExpore
 nnoremap <leader>ve :VE<CR><CR>:tabo<CR>
-
 " Open .vimrc file
 nnoremap <F9> :tabe $MYVIMRC<CR>
 " Delete tailing spaces and
@@ -271,14 +269,18 @@ nnoremap <leader><F2> :%s/^\n$//g<CR>
 " Open file browser at current folder in current tab.
 "nnoremap <leader><F3> :e %:p:h<CR>
 " Toggle spell check
-nnoremap <F4> :call ToggleSpellCheck()<CR>"}}}
+nnoremap <F4> :call ToggleSpellCheck()<CR>
+" close window
+nnoremap <Leader>q :clo<CR>
+" open new tab
+nnoremap <Leader>te :tabe<CR>
 " Ignore white space in diff
 cnoremap :w set diffopt+=iwhite
 " Only show one line in diff
 cnoremap :o set diffopt+=context:1
 " no highlighting
 cnoremap :n nohl
-" 
+"}}}
 "{{{ Session
 " Write Session
 nnoremap <leader>ws :mks! ~/.yangsession/
@@ -372,7 +374,7 @@ if has("autocmd")
         autocmd FileType vim set fdm=marker | set nospell
 
         "{{{ jslint
-        autocmd FileType javascript setlocal makeprg=jslint\ --sloppy\ --indent\ 4\ --nomen\ --devel\ --browser\ --node\ --plusplus\ %
+        autocmd FileType javascript setlocal makeprg=jslint\ --sloppy\ --indent\ 4\ --nomen\ --devel\ --browser\ --node\ --plusplus\ --stupid\ %
         autocmd FileType javascript set efm=%-P%f,
                             \%A%>%.%##%*\\d\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,
                             \%-G%f\ is\ OK.,%-Q
