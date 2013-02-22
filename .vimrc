@@ -280,6 +280,8 @@ cnoremap :w set diffopt+=iwhite
 cnoremap :o set diffopt+=context:1
 " no highlighting
 cnoremap :n nohl
+" Add sequence number to selected lines.
+vnoremap <Leader>se :<C-H><C-H><C-H><C-H><C-H>let i=1\|'<,'>g/^/s//\=i/\|let i=i+1<CR>:nohl<CR>
 "}}}
 "{{{ Session
 " Write Session
