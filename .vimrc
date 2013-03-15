@@ -161,7 +161,7 @@ if has('conceal')
 endif
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/snipmate-snippets/snippets,~/Documents/MySnip'
+let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip,'
 "}}}
 "{{{ sparkup setting
 "
@@ -212,6 +212,12 @@ set completeopt=longest,menu
 
 " Set camel completion
 set completefunc=Camel_Complete
+
+" show the tab and eol character and set their color
+set list
+set listchars=eol:⇐,tab:⇒⋅ " use special character on eol and tab character
+hi SpecialKey term=bold ctermfg=8 guifg=Blue 
+hi NonText term=bold ctermfg=8 guifg=Blue
 
 "let xml_no_html = 1
 "let xml_no_mustache = 1
