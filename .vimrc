@@ -357,6 +357,7 @@ endif
 "{{{ GUI Setting
 if has("gui_running")
     set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
+    colo evening
 endif
 "}}}
 
