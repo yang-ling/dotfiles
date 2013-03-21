@@ -40,6 +40,7 @@ Bundle 'vim-scripts/camelcasemotion'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'vim-scripts/Mark--Karkat'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -206,6 +207,8 @@ set autoread
 
 " Set scroll off
 set so=5
+" Set wrap
+set wrap
 
 " Set completion option.
 set completeopt=longest,menu
@@ -336,6 +339,7 @@ nnoremap <F3> :NERDTreeToggle<CR>
 
 " Caching buffer.
 nnoremap <Leader>re :NeoComplCacheCachingBuffer<CR>
+
 "}}}
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
