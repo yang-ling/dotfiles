@@ -23,7 +23,7 @@ Bundle 'gmarik/vundle'
 "{{{ Bundles
 " My Bundles here:
 "
-" original repos on github
+" original repos on github"{{{
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -41,7 +41,9 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Mark--Karkat'
-" vim-scripts repos
+Bundle 'edsono/vim-matchit'
+"}}}
+" vim-scripts repos"{{{
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'DrawIt'
@@ -49,8 +51,10 @@ Bundle 'VimExplorer'
 Bundle 'Auto-Pairs'
 Bundle 'cecutil'
 Bundle 'xml.vim'
-" non github repos
+"}}}
+" non github repos"{{{
 Bundle 'git://git.wincent.com/command-t.git'
+"}}}
 "}}}
 
 " Brief help
