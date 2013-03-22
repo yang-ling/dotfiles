@@ -42,6 +42,8 @@ Bundle 'Shougo/neosnippet'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Mark--Karkat'
 Bundle 'edsono/vim-matchit'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'bronson/vim-trailing-whitespace'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -223,14 +225,15 @@ set completefunc=Camel_Complete
 " show the tab and eol character and set their color
 set list
 set listchars=eol:⇐,tab:⇒⋅ " use special character on eol and tab character
-hi SpecialKey term=bold ctermfg=8 guifg=Blue 
+hi SpecialKey term=bold ctermfg=8 guifg=Blue
 hi NonText term=bold ctermfg=8 guifg=Blue
 
 "let xml_no_html = 1
 "let xml_no_mustache = 1
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")"}}}
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+"}}}
 "{{{ Mapping
 let mapleader=","
 "{{{ Navigating mapping
@@ -293,6 +296,8 @@ cnoremap :w set diffopt+=iwhite
 cnoremap :o set diffopt+=context:1
 " no highlighting
 cnoremap :n nohl
+" Set file type to markdown.
+cnoremap :md set ft=markdown
 " Add sequence number to selected lines.
 vnoremap <Leader>se :<C-H><C-H><C-H><C-H><C-H>let i=1\|'<,'>g/^/s//\=i/\|let i=i+1<CR>:nohl<CR>
 "}}}
