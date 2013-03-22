@@ -306,12 +306,6 @@ cnoremap :o set diffopt+=context:1
 cnoremap :n nohl
 " Set file type to markdown.
 cnoremap :md set ft=markdown
-" Set encoding"{{{
-" Set file encoding to Chinese
-cnoremap :cp e ++enc=cp936
-" Set file encoding to Japanese
-cnoremap :jp e ++enc=shift_jis
-"}}}
 " Only delete trailing whitespaces in selected lines
 " Sometimes vim will automatically add '<,'> to command line when type F2, in
 " this case, I only need write like: vnoremap <F2> :s/\s\+$//g<CR>
@@ -327,32 +321,34 @@ vnoremap <Leader>se :<BS><BS><BS><BS><BS>let i=1\|'<,'>g/^/s//\=i/\|let i=i+1<CR
 nnoremap <leader>ws :mks! ~/.yangsession/
 " Source Session
 nnoremap <leader>ss :source ~/.yangsession/"}}}
-
 " set color theme"{{{
 nnoremap <leader>v :colo evening<CR>
 nnoremap <leader>t :colo torte<CR>"}}}
-
 " set tab stop and shift width"{{{
 nnoremap <leader>2 :set tabstop=2<CR>:set shiftwidth=2<CR>
 nnoremap <leader>4 :set tabstop=4<CR>:set shiftwidth=4<CR>"}}}
-
-" set fold method to indent
+" Set encoding"{{{
+" Set file encoding to Chinese
+nnoremap <Leader>cp :e ++enc=cp936<CR>
+" Set file encoding to Japanese
+nnoremap <Leader>jp :e ++enc=shift_jis<CR>
+"}}}
+" set fold method to indent"{{{
 nnoremap <leader>fd :set fdm=indent<CR>
-
+"}}}
 "{{{ FuzzyFinder
 nnoremap <leader>ff :FufFile<CR>
 nnoremap <leader>fb :FufBuffer<CR>
 "}}}
-
+" Tabularize"{{{
 nnoremap <leader><space> :Tabularize /:<CR>
-
+"}}}
 "{{{ Window resize
 " Maximize window
 nnoremap <leader>a <C-W>_<C-W>\|
 " Restore window
 nnoremap <leader>rr <C-W>=
 "}}}
-
 " Enclose selected text with brackets"{{{
 " NOTE: only support normal select,
 " not support line selected and others.
@@ -363,13 +359,17 @@ vnoremap <leader>< di<><ESC>P
 vnoremap <leader>" di""<ESC>P
 vnoremap <leader>' di''<ESC>P
 vnoremap <leader>` di``<ESC>P"}}}
-
-" NerdTree mapping
+" CommandT"{{{
+nnoremap <Leader>ct :CommandT<CR>
+nnoremap <Leader>cd :CommandTBuffer<CR>
+nnoremap <Leader>cf :CommandTFlush<CR>
+"}}}
+" NerdTree mapping"{{{
 nnoremap <F3> :NERDTreeToggle<CR>
-
-" Caching buffer.
+"}}}
+" Caching buffer."{{{
 nnoremap <Leader>re :NeoComplCacheCachingBuffer<CR>
-
+"}}}
 "}}}
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
