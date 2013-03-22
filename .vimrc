@@ -43,7 +43,6 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Mark--Karkat'
 Bundle 'edsono/vim-matchit'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'bronson/vim-trailing-whitespace'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -228,6 +227,15 @@ set listchars=eol:⇐,tab:⇒⋅ " use special character on eol and tab characte
 hi SpecialKey term=bold ctermfg=8 guifg=Blue
 hi NonText term=bold ctermfg=8 guifg=Blue
 
+" Highlight trailing whitespace"{{{
+highlight ExtraWhitespace ctermbg=darkred guibg=#382424
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" the above flashes annoyingly while typing, be calmer in insert mode
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+"}}}
+
 "let xml_no_html = 1
 "let xml_no_mustache = 1
 
@@ -276,8 +284,15 @@ nnoremap <leader>pp :tabe <C-R>*<CR>
 nnoremap <leader>ve :VE<CR><CR>:tabo<CR>
 " Open .vimrc file
 nnoremap <F9> :tabe $MYVIMRC<CR>
-" Delete tailing spaces and
+" Delete trailing whitespaces
 nnoremap <F2> :%s/\s\+$//g<CR>
+" Only delete trailing whitespaces in selected lines
+" Sometimes vim will automatically add '<,'> to command line when type F2, in
+" this case, I only need write like: vnoremap <F2> :s/\s\+$//g<CR>
+" But if I don't want my function depends on others, for instance, in case vim
+" doesn't automatically add '<,'>, my function can still work, so I first
+" remove '<,'> and add my own '<,'>
+vnoremap <F2> :<BS><BS><BS><BS><BS>'<,'>s/\s\+$//g<CR>
 " Delete excess blank lines.
 nnoremap <leader><F2> :%s/^\n$//g<CR>
 " Open file browser at current folder in new tab.
@@ -299,7 +314,7 @@ cnoremap :n nohl
 " Set file type to markdown.
 cnoremap :md set ft=markdown
 " Add sequence number to selected lines.
-vnoremap <Leader>se :<C-H><C-H><C-H><C-H><C-H>let i=1\|'<,'>g/^/s//\=i/\|let i=i+1<CR>:nohl<CR>
+vnoremap <Leader>se :<BS><BS><BS><BS><BS>let i=1\|'<,'>g/^/s//\=i/\|let i=i+1<CR>:nohl<CR>
 "}}}
 "{{{ Session
 " Write Session
