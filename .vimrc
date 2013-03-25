@@ -274,7 +274,8 @@ nnoremap <C-P> gT
 " jump to first tab
 nnoremap <leader>1 :tabr<CR>
 " jump to last tab
-nnoremap <leader>9 :tabl<CR>"}}}
+nnoremap <leader>9 :tabl<CR>
+"}}}
 "{{{ ShortCut mapping
 " Copy path of current file
 nnoremap <leader>cp ggO<ESC>"%p0"*y$:q!<CR>
@@ -298,14 +299,10 @@ nnoremap <F4> :call ToggleSpellCheck()<CR>
 nnoremap <Leader>q :clo<CR>
 " open new tab
 nnoremap <Leader>te :tabe<CR>
-" Ignore white space in diff
-cnoremap :w set diffopt+=iwhite
-" Only show one line in diff
-cnoremap :o set diffopt+=context:1
 " no highlighting
-cnoremap :n nohl
+cnoremap :n nohl<CR>
 " Set file type to markdown.
-cnoremap :md set ft=markdown
+cnoremap :md set ft=markdown<CR>
 " Only delete trailing whitespaces in selected lines
 " Sometimes vim will automatically add '<,'> to command line when type F2, in
 " this case, I only need write like: vnoremap <F2> :s/\s\+$//g<CR>
@@ -315,6 +312,12 @@ cnoremap :md set ft=markdown
 vnoremap <F2> :<BS><BS><BS><BS><BS>'<,'>s/\s\+$//g<CR>
 " Add sequence number to selected lines.
 vnoremap <Leader>se :<BS><BS><BS><BS><BS>let i=1\|'<,'>g/^/s//\=i/\|let i=i+1<CR>:nohl<CR>
+"}}}
+" Diff setting"{{{
+" Ignore white space in diff
+cnoremap :w set diffopt+=iwhite<CR>
+" Only show one line in diff
+cnoremap :o set diffopt+=context:1<CR>
 "}}}
 "{{{ Session
 " Write Session
@@ -329,9 +332,9 @@ nnoremap <leader>2 :set tabstop=2<CR>:set shiftwidth=2<CR>
 nnoremap <leader>4 :set tabstop=4<CR>:set shiftwidth=4<CR>"}}}
 " Set encoding"{{{
 " Set file encoding to Chinese
-nnoremap <Leader>cp :e ++enc=cp936<CR>
+cnoremap :cn e ++enc=cp936<CR>
 " Set file encoding to Japanese
-nnoremap <Leader>jp :e ++enc=shift_jis<CR>
+cnoremap :jp e ++enc=shift_jis<CR>
 "}}}
 " set fold method to indent"{{{
 nnoremap <leader>fd :set fdm=indent<CR>
