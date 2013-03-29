@@ -167,7 +167,11 @@ if has('conceal')
 endif
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip,D:\Work\GitHub\snipmate-snippets\snippets'
+if has("win32")
+    let g:neosnippet#snippets_directory='D:\Work\GitHub\snipmate-snippets\snippets'
+else
+    let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip'
+endif
 "}}}
 "{{{ sparkup setting
 "
