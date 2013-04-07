@@ -306,7 +306,7 @@ nnoremap <Leader>te :tabe<CR>
 " no highlighting
 cnoremap :n nohl<CR>
 " Set file type to markdown.
-cnoremap :md set ft=markdown<CR>
+cnoremap :md set ft=markdown<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 " Only delete trailing whitespaces in selected lines
 " Sometimes vim will automatically add '<,'> to command line when type F2, in
 " this case, I only need write like: vnoremap <F2> :s/\s\+$//g<CR>
