@@ -306,7 +306,7 @@ nnoremap <Leader>te :tabe<CR>
 " no highlighting
 cnoremap :n nohl<CR>
 " Set file type to markdown.
-cnoremap :md set ft=markdown<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
+nnoremap <Leader>md :set ft=markdown<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 " Only delete trailing whitespaces in selected lines
 " Sometimes vim will automatically add '<,'> to command line when type F2, in
 " this case, I only need write like: vnoremap <F2> :s/\s\+$//g<CR>
@@ -333,7 +333,9 @@ nnoremap <leader>v :colo evening<CR>
 nnoremap <leader>t :colo torte<CR>"}}}
 " set tab stop and shift width"{{{
 nnoremap <leader>2 :set tabstop=2<CR>:set shiftwidth=2<CR>
-nnoremap <leader>4 :set tabstop=4<CR>:set shiftwidth=4<CR>"}}}
+nnoremap <leader>4 :set tabstop=4<CR>:set shiftwidth=4<CR>
+nnoremap <Leader>ne :set noexpandtab<CR>
+"}}}
 " Set encoding"{{{
 " Set file encoding to Chinese
 cnoremap :cn e ++enc=cp936<CR>
@@ -398,6 +400,7 @@ endif
 "{{{ GUI Setting
 if has("gui_running")
     set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
+    set go=
     colo evening
 endif
 "}}}
