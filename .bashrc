@@ -106,6 +106,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+[[ -x ~/init.sh ]] && . ~/init.sh
+
+# NVM Setting
+#NVM_DIR=~/MyGitRepo/NVM/nvm
+#[[ -r $NVM_DIR/nvm.sh ]] && . $NVM_DIR/nvm.sh
+#[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+
 #export GTK_IM_MODULE=ibus
 #export QT_IM_MODULE=ibus
 #export XMODIFIERS="@im=ibus"
+
+export PATH=/home/allen/bin/Sencha/Cmd/3.0.2.288:$PATH
+
+export SENCHA_CMD_3_0_0="/home/allen/bin/Sencha/Cmd/3.0.2.288"
