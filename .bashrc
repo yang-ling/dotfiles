@@ -106,7 +106,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-[[ -x ~/init.sh ]] && . ~/Documents/MyScript/init.sh
+[[ -x ~/init.sh ]] && . ~/init.sh
 
 # NVM Setting
 #NVM_DIR=~/MyGitRepo/NVM/nvm
