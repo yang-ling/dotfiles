@@ -39,4 +39,4 @@ alias avd='~/Downloads/Android_SDK/android-sdk-linux/tools/android avd'
 
 alias ..='cd ..'
 alias ~='cd ~'
-alias work='cd ~/EclipseWorkspace/workspace-clm-lms/clm-butterfly'
+alias work='cd ~/EclipseWorkspace/workspace-clm-core/clm-core'
