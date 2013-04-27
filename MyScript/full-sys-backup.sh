@@ -1,0 +1,1 @@
+tar -cvpzf /home/sysbackup/backup$(date +%F-%T).tgz --one-file-system --exclude=/proc --exclude=/lost+found --exclude=/mnt --exclude=/sys --exclude=/home --exclude=/tmp --exclude=/run --exclude=/dev /
