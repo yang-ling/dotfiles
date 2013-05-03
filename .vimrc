@@ -37,6 +37,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/camelcasemotion'
+Bundle 'vim-scripts/fcitx.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'digitaltoad/vim-jade'
@@ -207,7 +208,7 @@ set shiftwidth=4        " set shift width to 4 blanks
 set expandtab           " convert tab to blank
 " set cursorline          " show cursor line
 " set cursorcolumn        " show cursor column line
-colo torte             " set color
+"colo torte             " set color
 set spell               " spell check
 "set cc=97              " set color column
 
