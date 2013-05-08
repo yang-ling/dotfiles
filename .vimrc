@@ -44,6 +44,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Mark--Karkat'
 Bundle 'edsono/vim-matchit'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'juvenn/mustache.vim'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
