@@ -34,6 +34,7 @@ alias mislow='mvn install -P "slow-test,!fast-test"'
 alias miquick='mvn install -P "install-only"'
 alias midquick='mvn install -P "development,install-only"'
 alias mj='mvn jetty:run -pl front/'
+alias mb='mvn exec:java -pl batch-server/'
 
 alias avd='~/Downloads/Android_SDK/android-sdk-linux/tools/android avd'
 
