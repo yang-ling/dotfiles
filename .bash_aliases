@@ -47,8 +47,8 @@ alias pac="sudo /usr/bin/pacman -S"     # default action    - install one or mor
 alias pacn="sudo /usr/bin/pacman -S --needed"     # default action    - install one or more packages, ignore up to date packages.
 alias pacdep="sudo /usr/bin/pacman -S --asdeps"     # default action, as dependency    - install one or more packages, as dependency
 alias yao="/usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
-alias pacu="/usr/bin/pacman -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
-alias pacur="/usr/bin/pacman -Syyu"      # '[u]pdate repos'        - update repos and upgrade all packages to their newest version
+alias pacu="sudo /usr/bin/pacman -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
+alias pacur="sudo /usr/bin/pacman -Syyu"      # '[u]pdate repos'        - update repos and upgrade all packages to their newest version
 alias yaou="/usr/bin/yaourt -Syua"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacr="sudo /usr/bin/yaourt -Rcnsu"       # '[r]emove'        - uninstall one or more packages
 alias pacs="/usr/bin/pacman -Ss"        # '[s]earch'        - search for a package using one or more keywords
@@ -72,6 +72,10 @@ alias yaoimpl="/usr/bin/yaourt -D --asdeps" # 'mark as [impl]icit'  - mark one o
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
+
+# pacnew and pacsave file
+#alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
+alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)"'
 
 # systemctrl
 alias sysen="sudo /usr/bin/systemctl enable"
