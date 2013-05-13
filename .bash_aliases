@@ -41,3 +41,40 @@ alias avd='~/Downloads/Android_SDK/android-sdk-linux/tools/android avd'
 alias ..='cd ..'
 alias ~='cd ~'
 alias work='cd ~/EclipseWorkspace/workspace-clm-core/clm-core'
+
+# pacman/yaourt aliases
+alias pac="sudo /usr/bin/pacman -S"     # default action    - install one or more packages
+alias pacn="sudo /usr/bin/pacman -S --needed"     # default action    - install one or more packages, ignore up to date packages.
+alias pacdep="sudo /usr/bin/pacman -S --asdeps"     # default action, as dependency    - install one or more packages, as dependency
+alias yao="/usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
+alias pacu="/usr/bin/pacman -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
+alias pacur="/usr/bin/pacman -Syyu"      # '[u]pdate repos'        - update repos and upgrade all packages to their newest version
+alias yaou="/usr/bin/yaourt -Syua"      # '[u]pdate'        - upgrade all packages to their newest version
+alias pacr="sudo /usr/bin/yaourt -Rcnsu"       # '[r]emove'        - uninstall one or more packages
+alias pacs="/usr/bin/pacman -Ss"        # '[s]earch'        - search for a package using one or more keywords
+alias yaos="/usr/bin/yaourt -Ss"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
+alias paci="/usr/bin/pacman -Si"        # '[i]nfo'      - show information about a package
+alias yaoi="/usr/bin/yaourt -Si"        # '[i]nfo'      - show information about a package
+alias pacg="/usr/bin/pacman -Sg"        # '[g]roup'      - show information about a group
+alias yaog="/usr/bin/yaourt -Sg"        # '[g]roup'      - show information about a group
+alias pacqs="/usr/bin/pacman -Qs"        # '[s]earch'        - search for a package using one or more keywords
+alias yaoqs="/usr/bin/yaourt -Qs"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
+alias pacqi="/usr/bin/pacman -Qi"        # '[i]nfo'      - show information about a package
+alias yaoqi="/usr/bin/yaourt -Qi"        # '[i]nfo'      - show information about a package
+alias pacqg="/usr/bin/pacman -Qg"        # '[g]roup'      - show information about a group
+alias yaoqg="/usr/bin/yaourt -Qg"        # '[g]roup'      - show information about a group
+alias paclo="/usr/bin/pacman -Qdt"      # '[l]ist [o]rphans'    - list all packages which are orphaned
+alias pacc="sudo /usr/bin/pacman -Sc"      # '[c]lean cache'   - delete all not currently installed package files
+alias pacca="sudo /usr/bin/pacman -Scc"      # '[c]lean [a]ll cache'   - delete all not currently installed package files
+alias paclf="/usr/bin/pacman -Ql"       # '[l]ist [f]iles'  - list all files installed by a given package
+alias yaoexpl="/usr/bin/yaourt -D --asexplicit" # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
+alias yaoimpl="/usr/bin/yaourt -D --asdeps" # 'mark as [impl]icit'  - mark one or more packages as non explicitly installed
+
+# '[r]emove [o]rphans' - recursively remove ALL orphaned packages
+alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
+
+# systemctrl
+alias sysen="sudo /usr/bin/systemctl enable"
+alias sysstart="sudo /usr/bin/systemctl start"
+alias sysstop="sudo /usr/bin/systemctl stop"
+alias sysds="sudo /usr/bin/systemctl disable"
