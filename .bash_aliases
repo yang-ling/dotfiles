@@ -48,7 +48,8 @@ alias pacn="sudo /usr/bin/pacman -S --needed"     # default action    - install 
 alias pacdep="sudo /usr/bin/pacman -S --asdeps"     # default action, as dependency    - install one or more packages, as dependency
 alias yao="/usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
 alias pacu="sudo /usr/bin/pacman -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
-alias pacur="sudo /usr/bin/pacman -Syyu"      # '[u]pdate repos'        - update repos and upgrade all packages to their newest version
+alias pacy="sudo /usr/bin/pacman -Sy"      # '[u]pdate database'        - upgrade all database.
+alias pacur="sudo /usr/bin/pacman -Syyu"      # '[u]pdate [r]epos'        - update repos and upgrade all packages to their newest version
 alias yaou="/usr/bin/yaourt -Syua"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacr="sudo /usr/bin/yaourt -Rcnsu"       # '[r]emove'        - uninstall one or more packages
 alias pacs="/usr/bin/pacman -Ss"        # '[s]earch'        - search for a package using one or more keywords
@@ -72,6 +73,10 @@ alias yaoimpl="/usr/bin/yaourt -D --asdeps" # 'mark as [impl]icit'  - mark one o
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
+
+# aria2
+alias a2="aria2c -j5 -x5 -m5 -k1M -s5"
+alias a2limit="aria2c -j5 -x5 -m5 -k1M -s5 --max-overall-download-limit=200K"
 
 # pacnew and pacsave file
 #alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
