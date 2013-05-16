@@ -101,6 +101,9 @@ export PATH
 CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export CLASSPATH
 
+# Maven setting
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=300m"
+
 # set vi keybinding
 set -o vi
 
