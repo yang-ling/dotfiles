@@ -327,9 +327,10 @@ cnoremap :o set diffopt+=context:1<CR>
 "}}}
 "{{{ Session
 " Write Session
-nnoremap <leader>ws :mks! ~/.yangsession/
+nnoremap <leader>ws :mks! ~/.yangsession/session.vim<CR>
 " Source Session
-nnoremap <leader>ss :source ~/.yangsession/"}}}
+nnoremap <leader>ss :source ~/.yangsession/session.vim<CR>
+"}}}
 " set color theme"{{{
 nnoremap <leader>v :colo evening<CR>
 nnoremap <leader>t :colo torte<CR>"}}}
