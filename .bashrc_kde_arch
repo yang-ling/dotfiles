@@ -105,7 +105,7 @@ export CLASSPATH
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=300m"
 
 # gem install needs this, otherwise warning will happen
-PATH=$PATH:/home/yangling/.gem/ruby/2.0.0/bin
+PATH=$PATH:/home/yangling/.gem/ruby/2.0.0/bin:/root/.gem/ruby/2.0.0/bin
 
 # set vi keybinding
 set -o vi
