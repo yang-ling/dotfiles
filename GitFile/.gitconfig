@@ -1,0 +1,17 @@
+[diff]
+	tool = gvimdiff
+[colo]
+	diff = auto
+	status = auto
+	branch = auto
+[color]
+	branch = auto
+	status = auto
+	diff = auto
+[core]
+	editor = vim
+[merge]
+	tool = gvimdiff
+[alias]
+	co = checkout
+	mer = merge --ff-only
