@@ -309,6 +309,8 @@ nnoremap <Leader>te :tabe<CR>
 cnoremap :n nohl<CR>
 " Set file type to markdown.
 nnoremap <Leader>md :set ft=markdown<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
+" Set file type to mail.
+nnoremap <Leader>ma :set ft=mail<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 " Only delete trailing whitespaces in selected lines
 " Sometimes vim will automatically add '<,'> to command line when type F2, in
 " this case, I only need write like: vnoremap <F2> :s/\s\+$//g<CR>
@@ -381,6 +383,13 @@ nnoremap <F3> :NERDTreeToggle<CR>
 "}}}
 " Caching buffer."{{{
 nnoremap <Leader>re :NeoComplCacheCachingBuffer<CR>
+"}}}
+" Mail Signature{{{
+" The sign.txt file must employ a signature separator like the following: '--
+" '.
+" See http://vim.wikia.com/wiki/Insert_mail_signatures_from_a_rotating_file
+"nnoremap <Leader>ms :e ~/Documents/signature/sign.txt<CR>ggV/^--  $<CR>k"*xG$a<C-R><C-O>*<Esc>:w<CR>:bd<CR>G$a<C-M><Esc>"*P
+nnoremap <Leader>ms mQG:r ~/Dropbox/Documents/signature/sign.txt<CR>`Q
 "}}}
 "}}}
 
