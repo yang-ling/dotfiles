@@ -1,17 +1,18 @@
-[diff]
-	tool = gvimdiff
-[colo]
-	diff = auto
-	status = auto
-	branch = auto
 [color]
-	branch = auto
-	status = auto
 	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
 [core]
 	editor = vim
-[merge]
+	excludesfile = /home/yangling/.gitignore_global
+	autocrlf = input
+[diff]
 	tool = gvimdiff
+[gui]
+	encoding = utf-8
+[svn]
+	pathnameencoding = utf-8
 [alias]
 	co = checkout
 	mer = merge --ff-only
