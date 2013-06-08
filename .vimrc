@@ -168,13 +168,6 @@ if has('conceal')
     set conceallevel=2 concealcursor=i
 endif
 
-" Tell Neosnippet about the other snippets
-if has("win32")
-    "let g:neosnippet#snippets_directory='D:\Work\GitHub\snipmate-snippets\snippets'
-    source C:\win_setting.vim
-else
-    let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip'
-endif
 "}}}
 "{{{ sparkup setting
 "
@@ -392,6 +385,17 @@ nnoremap <Leader>re :NeoComplCacheCachingBuffer<CR>
 "nnoremap <Leader>ms :e ~/Documents/signature/sign.txt<CR>ggV/^--  $<CR>k"*xG$a<C-R><C-O>*<Esc>:w<CR>:bd<CR>G$a<C-M><Esc>"*P
 nnoremap <Leader>ms mQG:r ~/Dropbox/Documents/signature/sign.txt<CR>`Q
 "}}}
+"}}}
+
+"{{{ Win and Linux Setting
+" Tell Neosnippet about the other snippets
+if has("win32")
+    "let g:neosnippet#snippets_directory='D:\Work\GitHub\snipmate-snippets\snippets'
+    source C:\win_setting.vim
+else
+    "let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip'
+    source ~/linux_setting.vim
+endif
 "}}}
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
