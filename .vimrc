@@ -388,7 +388,6 @@ nnoremap <Leader>ms mQG:r ~/Dropbox/Documents/signature/sign.txt<CR>`Q
 "}}}
 
 "{{{ Win and Linux Setting
-" Tell Neosnippet about the other snippets
 if has("win32")
     "let g:neosnippet#snippets_directory='D:\Work\GitHub\snipmate-snippets\snippets'
     source C:\win_setting.vim
