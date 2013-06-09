@@ -221,9 +221,6 @@ set completeopt=longest,menu
 " Set camel completion
 set completefunc=Camel_Complete
 
-" show the tab and eol character and set their color
-set list
-set listchars=eol:⇐,tab:⇒⋅ " use special character on eol and tab character
 hi SpecialKey term=bold ctermfg=8 guifg=Blue
 hi NonText term=bold ctermfg=8 guifg=Blue
 
@@ -394,6 +391,9 @@ if has("win32")
 else
     "let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip'
     source ~/linux_setting.vim
+    " show the tab and eol character and set their color
+    set list
+    set listchars=eol:⇐,tab:⇒⋅ " use special character on eol and tab character
 endif
 "}}}
 
