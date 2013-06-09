@@ -45,6 +45,7 @@ Bundle 'vim-scripts/Mark--Karkat'
 Bundle 'edsono/vim-matchit'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'juvenn/mustache.vim'
+Bundle 'fsouza/cobol.vim'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -441,6 +442,11 @@ if has("autocmd")
 
         " Set fold method to marker when open vimrc file
         autocmd FileType vim set fdm=marker | set nospell
+
+        " Set FileType"{{{
+        " for cobol
+        autocmd BufNewFile,BufRead *.ccb set filetype=cobol
+        "}}}
 
         "{{{ jslint
         autocmd FileType javascript setlocal makeprg=jslint\ --sloppy\ --indent\ 4\ --nomen\ --devel\ --browser\ --node\ --plusplus\ --stupid\ %
