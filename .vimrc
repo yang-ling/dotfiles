@@ -56,7 +56,7 @@ Bundle 'cecutil'
 Bundle 'xml.vim'
 "}}}
 " non github repos"{{{
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'git://git.wincent.com/command-t.git'
 "}}}
 "}}}
 
@@ -170,7 +170,8 @@ endif
 
 " Tell Neosnippet about the other snippets
 if has("win32")
-    let g:neosnippet#snippets_directory='D:\Work\GitHub\snipmate-snippets\snippets'
+    "let g:neosnippet#snippets_directory='D:\Work\GitHub\snipmate-snippets\snippets'
+    source C:\win_setting.vim
 else
     let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip'
 endif
