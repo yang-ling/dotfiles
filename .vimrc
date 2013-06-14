@@ -225,6 +225,9 @@ set completefunc=Camel_Complete
 hi SpecialKey term=bold ctermfg=8 guifg=Blue
 hi NonText term=bold ctermfg=8 guifg=Blue
 
+" File encoding
+set fileencodings=iso-2022-jp,euc-jp,cp932,cp936,utf8,default,latin1
+
 " Highlight trailing whitespace"{{{
 highlight ExtraWhitespace ctermbg=darkred guibg=#382424
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
