@@ -386,6 +386,9 @@ nnoremap <Leader>re :NeoComplCacheCachingBuffer<CR>
 "nnoremap <Leader>ms :e ~/Documents/signature/sign.txt<CR>ggV/^--  $<CR>k"*xG$a<C-R><C-O>*<Esc>:w<CR>:bd<CR>G$a<C-M><Esc>"*P
 nnoremap <Leader>ms mQG:r ~/Dropbox/Documents/signature/sign.txt<CR>`Q
 "}}}
+" Weekly Report Template"{{{
+nnoremap <Leader>wr :%d<CR>:r ~/Dropbox/Documents/signature/weekly_report.txt<CR>G:r ~/Dropbox/Documents/signature/sign.txt<CR>ggdd
+"}}}
 "}}}
 
 "{{{ Win and Linux Setting
