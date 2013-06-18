@@ -60,6 +60,11 @@ Bundle 'xml.vim'
 "Bundle 'git://git.wincent.com/command-t.git'
 "}}}
 "}}}
+" Enable file type detection.
+" Use the default filetype settings, so that mail gets 'tw' set to 72,
+" 'cindent' is on in C files, etc.
+" Also load indent files, to automatically do language-dependent indenting.
+filetype plugin indent on
 
 " Brief help
 " :BundleList          - list configured bundles
@@ -178,12 +183,6 @@ let g:sparkupNextMapping = "<c-m>"
 "call pathogen#infect()
 "{{{ Basic setting
 sy on
-
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets 'tw' set to 72,
-" 'cindent' is on in C files, etc.
-" Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
