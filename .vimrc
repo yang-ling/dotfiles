@@ -179,6 +179,10 @@ endif
 "
 let g:sparkupNextMapping = "<c-m>"
 "}}}
+" VimExplorer Setting"{{{
+let g:VEConf_usingKDE = 1
+let g:VEConf_externalExplorer = "dolphin"
+"}}}
 "}}}
 "call pathogen#infect()
 "{{{ Basic setting
