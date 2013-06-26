@@ -14,3 +14,6 @@ nnoremap <Leader>ms mQG:r ~/Dropbox/Documents/signature/sign.txt<CR>`Q
 " Weekly Report Template"{{{
 nnoremap <Leader>wr :%d<CR>:r ~/Dropbox/Documents/signature/weekly_report.txt<CR>G:r ~/Dropbox/Documents/signature/sign.txt<CR>ggdd
 "}}}
+" Monthly Report Template"{{{
+nnoremap <Leader>mr :%d<CR>:r ~/Dropbox/Documents/signature/monthly_report.txt<CR>G:r ~/Dropbox/Documents/signature/sign.txt<CR>ggdd
+"}}}
