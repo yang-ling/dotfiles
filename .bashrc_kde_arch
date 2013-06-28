@@ -123,4 +123,4 @@ man() {
         man "$@"
 }
 
-[[ "$PS1" ]] && /usr/bin/fortune
+[[ "$PS1" ]] && fortune 30% tang300 30% song100 40% all | cowsay
