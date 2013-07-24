@@ -46,6 +46,7 @@ Bundle 'edsono/vim-matchit'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'juvenn/mustache.vim'
 Bundle 'fsouza/cobol.vim'
+Bundle 'kchmck/vim-coffee-script'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
