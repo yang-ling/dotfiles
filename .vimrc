@@ -497,6 +497,7 @@ if !exists(":DiffOrig")
 endif
 
 "{{{ Functions
+"Use :set spell! can do same job
 function ToggleSpellCheck()
     if &spell
         :set nospell
