@@ -220,6 +220,9 @@ set so=5
 " Set wrap
 set wrap
 
+" Set no wrap search
+set nowrapscan
+
 " Set completion option.
 set completeopt=longest,menu
 
