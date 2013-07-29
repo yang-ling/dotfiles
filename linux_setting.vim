@@ -17,3 +17,6 @@ nnoremap <Leader>wr gg:r ~/Dropbox/Documents/signature/weekly_report.txt<CR>G:r 
 " Monthly Report Template"{{{
 nnoremap <Leader>mr gg:r ~/Dropbox/Documents/signature/monthly_report.txt<CR>G:r ~/Dropbox/Documents/signature/sign.txt<CR>ggdd
 "}}}
+" Feedback Template "{{{
+nnoremap <Leader>fee gg:r ~/Dropbox/Documents/signature/feedback.txt<CR>ggdd
+"}}}
