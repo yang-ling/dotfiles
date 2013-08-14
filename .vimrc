@@ -285,10 +285,6 @@ nnoremap <leader>1 :tabr<CR>
 nnoremap <leader>9 :tabl<CR>
 "}}}
 "{{{ ShortCut mapping
-" Copy path of current file
-nnoremap <leader>cp ggO<ESC>"%p0"*y$:q!<CR>
-" Open file with path.
-nnoremap <leader>pp :tabe <C-R>*<CR>
 " Open VimExpore
 nnoremap <leader>ve :VE<CR><CR>:tabo<CR>
 " Open .vimrc file
@@ -385,6 +381,19 @@ nnoremap <F3> :NERDTreeToggle<CR>
 "}}}
 " Caching buffer."{{{
 nnoremap <Leader>re :NeoComplCacheCachingBuffer<CR>
+"}}}
+" Copy file name"{{{
+if has('win32')
+    " Short File name
+    nnoremap <Leader>sf :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+    " Long File name
+    nnoremap <Leader>lf :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+else
+    " Short File name
+    nnoremap <Leader>sf :let @+=expand("%")<CR>
+    " Long File name
+    nnoremap <Leader>lf :let @+=expand("%:p")<CR>
+endif
 "}}}
 "}}}
 
