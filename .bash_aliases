@@ -19,13 +19,14 @@ alias glg='git log --stat'
 alias glga='git log --graph --all --decorate --pretty=oneline'
 alias glgg='git log --graph'
 alias glp='git log -p'
-alias gr='git rebase'
+alias gr='git remote'
 alias glone="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias glstruct="git log --graph --simplify-by-decoration --pretty=format:'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gsl='git stash list'
 alias gss='git stash save'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
+alias gitoptimize='rm -rf .git/refs/original/ && git reflog expire --all --expire=now && git gc --prune=now && git gc --aggressive --prune=now'
 
 alias mci='mvn clean install'
 alias mciskip='mvn clean install -Dmaven.test.skip=true'
