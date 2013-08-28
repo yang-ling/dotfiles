@@ -233,7 +233,7 @@ hi SpecialKey term=bold ctermfg=8 guifg=Blue
 hi NonText term=bold ctermfg=8 guifg=Blue
 
 " File encoding
-set fileencodings=utf8,cp932,iso-2022-jp,euc-jp,cp936,default,latin1
+set fileencodings=utf8,ms932,cp932,iso-2022-jp,euc-jp,cp936,default,latin1
 
 " Highlight trailing whitespace"{{{
 highlight ExtraWhitespace ctermbg=darkred guibg=#382424
@@ -385,12 +385,12 @@ nnoremap <Leader>re :NeoComplCacheCachingBuffer<CR>
 " Copy file name"{{{
 if has('win32')
     " Short File name
-    nnoremap <Leader>sf :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+    nnoremap <Leader>sf :let @*=substitute(expand("%:p:t"), "/", "\\", "g")<CR>
     " Long File name
     nnoremap <Leader>lf :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
 else
     " Short File name
-    nnoremap <Leader>sf :let @+=expand("%")<CR>
+    nnoremap <Leader>sf :let @+=expand("%:p:t")<CR>
     " Long File name
     nnoremap <Leader>lf :let @+=expand("%:p")<CR>
 endif
