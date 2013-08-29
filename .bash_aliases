@@ -3,6 +3,11 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
+function tarxz()
+{
+    tar -cvf $1.tar $2 && xz -9 -v -T 4 $1.tar
+}
+
 alias g=git
 alias gs='git status'
 alias ga='git add'
