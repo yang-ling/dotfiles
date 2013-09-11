@@ -364,13 +364,14 @@ nnoremap <leader>rr <C-W>=
 " Enclose selected text with brackets"{{{
 " NOTE: only support normal select,
 " not support line selected and others.
-vnoremap <leader>{ di{}<ESC>P
-vnoremap <leader>[ di[]<ESC>P
-vnoremap <leader>( di()<ESC>P
-vnoremap <leader>< di<><ESC>P
-vnoremap <leader>" di""<ESC>P
-vnoremap <leader>' di''<ESC>P
-vnoremap <leader>` di``<ESC>P"}}}
+vnoremap <leader>{ <ESC>a <ESC>gvdi{}<ESC>Pllx
+vnoremap <leader>[ <ESC>a <ESC>gvdi[]<ESC>Pllx
+vnoremap <leader>( <ESC>a <ESC>gvdi()<ESC>Pllx
+vnoremap <leader>< <ESC>a <ESC>gvdi<><ESC>Pllx
+vnoremap <leader>" <ESC>a <ESC>gvdi""<ESC>Pllx
+vnoremap <leader>' <ESC>a <ESC>gvdi''<ESC>Pllx
+vnoremap <leader>` <ESC>a <ESC>gvdi``<ESC>Pllx
+"}}}
 " CommandT"{{{
 nnoremap <Leader>ct :CommandT<CR>
 nnoremap <Leader>cd :CommandTBuffer<CR>
@@ -395,6 +396,11 @@ else
     nnoremap <Leader>lf :let @+=expand("%:p")<CR>
 endif
 "}}}
+"}}}
+" Macro"{{{
+" Macro z: Copy DB column field description to Java SQL part.
+" DB tab must be left of Java tab
+let @z='veygg/\<"\>nvi''yA   // 1 " TYPE: jjggnf"wv$hypj0f.l'
 "}}}
 
 "{{{ Win and Linux Setting
