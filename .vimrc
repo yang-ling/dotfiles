@@ -402,6 +402,26 @@ endif
 " DB tab must be left of Java tab
 let @z='veygg/\<"\>nvi''yA   // 1 " TYPE: jjggnf"wv$hypj0f.l'
 "}}}
+"Temp shortcut"{{{
+" search debug display
+nnoremap <Leader>dis /d\s\+display<CR>
+" Replace display with logger
+cnoremap :logs %s/.*d\s\+display\s\+\(.*\)/logger.Debug(\1);/gc<CR>
+cnoremap :log2 %s/.*d\s\+display\s\+\(".*"\)\(.*\)/logger.Debug(\1,\2);/gc<CR>
+cnoremap :log3 %s/.*d.*display.*\(".*"\)\(.*\)\(".*"\)/logger.Debug(\1,\2,\3);/gc<CR>
+cnoremap :diss .,$s/\s\+\<display\>\s\+\(.*\)/logger.Info(\1);/gc<CR>
+cnoremap :dis2 .,$s/\s\+\<display\>\s\+\(".*"\)\(.*\)/logger.Info(\1,\2);/gc<CR>
+" Clean
+cnoremap :cle :call ClearTemp()<CR>
+" Lower first word
+cnoremap :low .,$s/\(\s\+\)\(\u\+\)-/\1\L\2-/gc<CR>
+" Capitalize last word
+cnoremap :last .,$s/\(\s\+\w\+\)\(-\zs\(\u\)\(\u\+\)\ze\)\+/\u\3\L\4/gc
+" Remove -
+cnoremap :cls %s/\(,\s\+\w\+\)\(\zs-\(\w\+\)\ze\)\+/\3/gc
+" Seq
+cnoremap :seq let i=1\|.,$g/\/\/\s\+\zs\d\+\ze/s/\/\/\s\+\zs\d\+\ze/\=i/\|let i=i+1
+"}}}
 
 "{{{ Win and Linux Setting
 if has("win32")
@@ -513,7 +533,7 @@ endif
 
 "{{{ Functions
 "Use :set spell! can do same job
-function ToggleSpellCheck()
+function! ToggleSpellCheck()
     if &spell
         :set nospell
         echo "spell check off"
@@ -523,6 +543,12 @@ function ToggleSpellCheck()
     endif
 endfunction
 
+function! ClearTemp()
+    :%s/\.)/)/g
+    :%s/,)/)/g
+    :%s/;.$/;/g
+endfunction
+
 "{{{ Not work
 function! Camel_Initials(camel)
     let first_char = matchstr(a:camel,"^.")
@@ -530,7 +556,7 @@ function! Camel_Initials(camel)
     return first_char . other_char
 endfunction
 
-function Expand_Camel_Initials(abbrev)
+function! Expand_Camel_Initials(abbrev)
     let winview=winsaveview()
     let candidate=a:abbrev
     let matches=[]
@@ -553,7 +579,7 @@ function Expand_Camel_Initials(abbrev)
     endtry
 endfunction
 
-function Camel_Complete( findstart, base )
+function! Camel_Complete( findstart, base )
     if a:findstart
         let line = getline('.')
         let start = col('.') - 1
