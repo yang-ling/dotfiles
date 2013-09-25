@@ -5,17 +5,36 @@ function current_branch() {
 
 function tarxz()
 {
+    [[ $# -eq 2 ]] || { echo "Need 2 parameters."; return 1; }
     tar -cvf $1.tar $2 && xz -9 -v -T 4 $1.tar
 }
 
 function tarenc()
 {
+    [[ $# -eq 2 ]] || [[ $# -eq 3 ]] || { echo "Need 2 or 3 parameters."; return 1; }
     tarxz "$1" "$2" && gpg -c -v $3 --cipher-algo AES256 "${1}.tar.xz" && rm "${1}.tar.xz"
 }
 
 function aes256r()
 {
-    gpg -c -v $2 --cipher-algo AES256 $1 && rm $1
+    [[ $# -eq 1 ]] || [[ $# -eq 2 ]] || { echo "Need 1 or 2 parameters."; return 1; }
+    isText=0
+    while [ -n "$1" ] ; do
+        case "$1" in
+            "-a")
+                isText=1
+                ;;
+            *)
+                theFileName="$1"
+                ;;
+        esac
+        shift
+    done
+    if [ $isText -eq 1 ]; then
+        gpg -c -v -a --cipher-algo AES256 $theFileName && rm $theFileName
+    else
+        gpg -c -v --cipher-algo AES256 $theFileName && rm $theFileName
+    fi
 }
 
 function gpgr()
