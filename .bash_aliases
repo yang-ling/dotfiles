@@ -13,6 +13,16 @@ function tarenc()
     tarxz "$1" "$2" && gpg -c -v $3 --cipher-algo AES256 "${1}.tar.xz" && rm "${1}.tar.xz"
 }
 
+function aes256r()
+{
+    gpg -c -v $2 --cipher-algo AES256 $1 && rm $1
+}
+
+function gpgr()
+{
+    gpg $1 && rm $1
+}
+
 alias aes256='gpg -c -v --cipher-algo AES256'
 
 alias g=git
