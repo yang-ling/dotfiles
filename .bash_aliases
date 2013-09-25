@@ -8,6 +8,13 @@ function tarxz()
     tar -cvf $1.tar $2 && xz -9 -v -T 4 $1.tar
 }
 
+function tarenc()
+{
+    tarxz "$1" "$2" && gpg -c -v $3 --cipher-algo AES256 "${1}.tar.xz" && rm "${1}.tar.xz"
+}
+
+alias aes256='gpg -c -v --cipher-algo AES256'
+
 alias g=git
 alias gs='git status'
 alias ga='git add'
