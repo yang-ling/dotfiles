@@ -401,6 +401,7 @@ endif
 " Macro z: Copy DB column field description to Java SQL part.
 " DB tab must be left of Java tab
 let @z='veygg/\<"\>nvi''yA   // 1 " TYPE: jjggnf"wv$hypj0f.l'
+let @y='diBcDate.valueOf(BcDate.toSqlDate(jjp'
 "}}}
 "Temp shortcut"{{{
 " search debug display
