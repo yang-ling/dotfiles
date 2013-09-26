@@ -1,1 +1,7 @@
+# Vim swap file
 *.swp
+# Java class file
+*.class
+# eclipse config file
+.classpath
+.project
