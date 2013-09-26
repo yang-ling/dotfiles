@@ -396,6 +396,9 @@ else
     nnoremap <Leader>lf :let @+=expand("%:p")<CR>
 endif
 "}}}
+" Reverse search"{{{
+nnoremap <leader>rv /^\(\(<C-R>/\)\@!.\)*$<CR>
+"}}}
 "}}}
 " Macro"{{{
 " Macro z: Copy DB column field description to Java SQL part.
