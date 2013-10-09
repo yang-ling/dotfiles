@@ -70,7 +70,9 @@ alias gsa='git stash apply'
 alias gitoptimize='rm -rf .git/refs/original/ && git reflog expire --all --expire=now && git gc --prune=now && git gc --aggressive --prune=now'
 
 alias mci='mvn clean install'
-alias mciskip='mvn clean install -Dmaven.test.skip=true'
+#alias mciskip='mvn clean install -Dmaven.test.skip=true'
+# maven.test.skip will skip compiling test cases, while skipTests only skip running test cases.
+alias mciskip='mvn clean install -DskipTests=true'
 alias mcislow='mvn clean install -P "slow-test,!fast-test"'
 alias mciquick='mvn clean install -P "install-only"'
 alias mcidquick='mvn clean install -P "development,install-only"'
