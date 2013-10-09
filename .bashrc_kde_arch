@@ -102,7 +102,9 @@ CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export CLASSPATH
 
 # Maven setting
-export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=300m"
+#export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=300m"
+export MAVEN_OPTS="-Xmx1024m -Xss10m -XX:MaxPermSize=300m"
+#export MAVEN_OPTS="-Xmx5120m -Xms1024m  -XX:MaxPermSize=4096m"
 
 # gem install needs this, otherwise warning will happen
 PATH=$PATH:/home/yangling/.gem/ruby/2.0.0/bin:/root/.gem/ruby/2.0.0/bin
@@ -126,3 +128,6 @@ man() {
 # Make sure JDK is 1.6
 [[ -x ~/.check_jdk.sh ]] && bash ~/.check_jdk.sh
 [[ "$PS1" ]] && fortune 30% tang300 30% song100 40% all | cowsay
+
+GPG_TTY=`tty`
+export GPG_TTY
