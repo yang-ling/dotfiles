@@ -101,6 +101,7 @@ alias yao="/usr/bin/yaourt -S"         # default yaourt action - install one or 
 alias pacu="sudo /usr/bin/pacman -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacy="sudo /usr/bin/pacman -Syy"      # '[u]pdate database'        - upgrade all database.
 alias pacur="sudo /usr/bin/pacman -Syyu"      # '[u]pdate [r]epos'        - update repos and upgrade all packages to their newest version
+alias pacdl="sudo /usr/bin/pacman -Syuw" # only download, no upgrade.
 alias yaou="/usr/bin/yaourt -Syua"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacr="sudo /usr/bin/pacman -Rcnsu"       # '[r]emove'        - uninstall one or more packages
 alias pacs="/usr/bin/pacman -Ss"        # '[s]earch'        - search for a package using one or more keywords
