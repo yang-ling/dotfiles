@@ -91,7 +91,7 @@ alias avd='~/Downloads/Android_SDK/android-sdk-linux/tools/android avd'
 
 alias ..='cd ..'
 alias ~='cd ~'
-alias work='cd ~/EclipseWorkspace/workspace-cjk-git/cjk-c2j'
+alias work='cd ~/EclipseWorkspace/workspace-cjk-git/cjk-d2b'
 
 # pacman/yaourt aliases
 alias pac="sudo /usr/bin/pacman -S"     # default action    - install one or more packages

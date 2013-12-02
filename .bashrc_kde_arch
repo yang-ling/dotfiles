@@ -104,7 +104,6 @@ export CLASSPATH
 # Maven setting
 #export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=300m"
 export MAVEN_OPTS="-Xmx1024m -Xss10m -XX:MaxPermSize=300m"
-#export MAVEN_OPTS="-Xmx5120m -Xms1024m  -XX:MaxPermSize=4096m"
 
 # gem install needs this, otherwise warning will happen
 PATH=$PATH:/home/yangling/.gem/ruby/2.0.0/bin:/root/.gem/ruby/2.0.0/bin
