@@ -3,12 +3,17 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
+# $1: compress file name
+# $2: actual file name
 function tarxz()
 {
     [[ $# -eq 2 ]] || { echo "Need 2 parameters."; return 1; }
     tar -cvf $1.tar $2 && xz -9 -v -T 4 $1.tar
 }
 
+# $1: compress file name
+# $2: actual file name
+# $3: -a text or not
 function tarenc()
 {
     [[ $# -eq 2 ]] || [[ $# -eq 3 ]] || { echo "Need 2 or 3 parameters."; return 1; }
