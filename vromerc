@@ -34,7 +34,8 @@ set allow_numeric=1
 " Change external editor, default is GVim
 set editor=gvim -f
 
-" Disable Vrome in those sites, Multiple URLs can be separated with ','
+" Disable Vrome in those sites, Multiple URLs can be separated with ', '
+" Note: Must separate URLs with ', ', not ','(no quotes)
 set disablesites=mail.google.com, reader.google.com // don't run Vrome in those sites
 
 " Define search engines. the value should be valid json looks like below.
