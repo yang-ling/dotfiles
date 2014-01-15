@@ -36,7 +36,7 @@ set editor=gvim -f
 
 " Disable Vrome in those sites, Multiple URLs can be separated with ', '
 " Note: Must separate URLs with ', ', not ','(no quotes)
-set disablesites=mail.google.com, reader.google.com // don't run Vrome in those sites
+set disablesites=mail.google.com, reader.google.com, www.rememberthemilk.com, cacoo.com // don't run Vrome in those sites
 
 " Define search engines. the value should be valid json looks like below.
 " Please remember the first searchengine is the default one. in the below one, it is google
