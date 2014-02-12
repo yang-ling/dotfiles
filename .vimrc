@@ -48,6 +48,8 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'fsouza/cobol.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jamessan/vim-gnupg'
+Bundle 'vim-scripts/argtextobj.vim'
+Bundle 'vim-scripts/vim_movement'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -259,7 +261,7 @@ map Q gq
 map j gj
 map k gk
 map ZZ zz
-" use Ctrl-L instead ESC at insert mode.
+" use jj instead ESC at insert mode.
 inoremap jj <ESC>
 " jump to left window
 nnoremap <C-h> <C-w>h
