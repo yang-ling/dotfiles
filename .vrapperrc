@@ -1,0 +1,62 @@
+set showcmd     " display incomplete commands
+set incsearch       " do incremental searching
+set ignorecase          " ignore case
+set tabstop=4           " set tab width to 4 blanks
+set shiftwidth=4        " set shift width to 4 blanks
+set expandtab           " convert tab to blank
+
+set so=5
+set wrap
+
+set nowrapscan
+
+"{{{ Mapping
+"{{{ Navigating mapping
+" Don't use Ex mode, use Q for formatting
+map Q gq
+map ZZ zz
+" use jj instead ESC at insert mode.
+inoremap jj <ESC>
+cnoremap vsp :vsplit
+" jump to left window
+nnoremap ,h <C-W>h
+" jump to down window
+nnoremap ,j <C-W>j
+" jump to up window
+nnoremap ,k <C-W>k
+" jump to right window
+nnoremap ,l <C-W>l
+" scroll down
+nnoremap <SPACE> <C-F>
+" scroll up
+nnoremap <CR> <C-B>
+" jump to next tab
+nnoremap ,n gt
+" jump to previous tab
+nnoremap ,p gT
+" jump to first tab
+nnoremap ,1 :tabr<CR>
+" jump to last tab
+nnoremap ,9 :tabl<CR>
+"}}}
+"{{{ ShortCut mapping
+" close window
+nnoremap ,q :q<CR>
+"}}}
+"}}}
+" Enclose selected text with brackets"{{{
+" NOTE: only support normal select,
+" not support line selected and others.
+vnoremap ,{ <ESC>a <ESC>gvdi{}<ESC>Pllx
+vnoremap ,[ <ESC>a <ESC>gvdi[]<ESC>Pllx
+vnoremap ,( <ESC>a <ESC>gvdi()<ESC>Pllx
+vnoremap ,< <ESC>a <ESC>gvdi<><ESC>Pllx
+vnoremap ," <ESC>a <ESC>gvdi""<ESC>Pllx
+vnoremap ,' <ESC>a <ESC>gvdi''<ESC>Pllx
+vnoremap ,` <ESC>a <ESC>gvdi``<ESC>Pllx
+"}}}
+"}}}
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
