@@ -26,6 +26,14 @@ nnoremap ,j <C-W>j
 nnoremap ,k <C-W>k
 " jump to right window
 nnoremap ,l <C-W>l
+" move to left window
+nnoremap ,H <C-W>H
+" move to down window
+nnoremap ,J <C-W>J
+" move to up window
+nnoremap ,K <C-W>K
+" move to right window
+nnoremap ,L <C-W>L
 " scroll down
 nnoremap <SPACE> <C-F>
 " scroll up
@@ -43,17 +51,6 @@ nnoremap ,9 :tabl<CR>
 " close window
 nnoremap ,q :q<CR>
 "}}}
-"}}}
-" Enclose selected text with brackets"{{{
-" NOTE: only support normal select,
-" not support line selected and others.
-vnoremap ,{ <ESC>a <ESC>gvdi{}<ESC>Pllx
-vnoremap ,[ <ESC>a <ESC>gvdi[]<ESC>Pllx
-vnoremap ,( <ESC>a <ESC>gvdi()<ESC>Pllx
-vnoremap ,< <ESC>a <ESC>gvdi<><ESC>Pllx
-vnoremap ," <ESC>a <ESC>gvdi""<ESC>Pllx
-vnoremap ,' <ESC>a <ESC>gvdi''<ESC>Pllx
-vnoremap ,` <ESC>a <ESC>gvdi``<ESC>Pllx
 "}}}
 "}}}
 
