@@ -63,6 +63,7 @@ alias gm='git merge'
 alias gp='git push origin $(current_branch)'
 alias glg='git log --stat'
 alias glga='git log --graph --all --decorate --pretty=oneline'
+alias gla="git log --graph --all --color --pretty='%x09%h %<(20)%cn %s %Cred%d%Creset'"
 alias glgg='git log --graph'
 alias glp='git log -p'
 alias gr='git remote'
