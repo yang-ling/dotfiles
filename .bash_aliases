@@ -141,6 +141,7 @@ alias a2limit="aria2c -j5 -x5 -m5 -k1M -s5 --max-overall-download-limit=200K"
 # pacnew and pacsave file
 #alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)"'
+alias pacnewnohome='sudo find / -path /home/yangling -prune -o -regextype posix-extended -regex ".+\.pac(new|save|orig)" -print'
 
 # systemctrl
 alias sysen="sudo /usr/bin/systemctl enable"
