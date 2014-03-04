@@ -148,3 +148,5 @@ alias sysen="sudo /usr/bin/systemctl enable"
 alias sysstart="sudo /usr/bin/systemctl start"
 alias sysstop="sudo /usr/bin/systemctl stop"
 alias sysds="sudo /usr/bin/systemctl disable"
+
+alias watchfind="sudo watch readlink -f /proc/$(pidof find)/cwd"
