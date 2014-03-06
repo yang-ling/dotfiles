@@ -20,5 +20,7 @@
 	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 	squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 	st = status
+	skipindex = update-index --skip-worktree
+	noskipindex = update-index --no-skip-worktree
 [merge]
 	tool = gvimdiff
