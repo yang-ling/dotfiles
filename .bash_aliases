@@ -74,6 +74,7 @@ alias gss='git stash save'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
 alias gitoptimize='rm -rf .git/refs/original/ && git reflog expire --all --expire=now && git gc --prune=now && git gc --aggressive --prune=now'
+alias glistskip='git ls-files -v | grep "^S"'
 
 alias mci='mvn clean install'
 #alias mciskip='mvn clean install -Dmaven.test.skip=true'
@@ -150,3 +151,6 @@ alias sysstop="sudo /usr/bin/systemctl stop"
 alias sysds="sudo /usr/bin/systemctl disable"
 
 alias watchfind="sudo watch readlink -f /proc/$(pidof find)/cwd"
+
+# ack
+alias ack="/usr/bin/vendor_perl/ack"
