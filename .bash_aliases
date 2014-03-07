@@ -143,6 +143,8 @@ alias a2limit="aria2c -j5 -x5 -m5 -k1M -s5 --max-overall-download-limit=200K"
 #alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)"'
 alias pacnewnohome='sudo find / -path /home/yangling -prune -o -regextype posix-extended -regex ".+\.pac(new|save|orig)" -print'
+# Grep
+alias grp='grep -rniI --color --exclude-dir=.bzr --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=build --exclude-dir=dist --exclude-dir=target '
 
 # systemctrl
 alias sysen="sudo /usr/bin/systemctl enable"
