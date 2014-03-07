@@ -145,6 +145,7 @@ alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|ori
 alias pacnewnohome='sudo find / -path /home/yangling -prune -o -regextype posix-extended -regex ".+\.pac(new|save|orig)" -print'
 # Grep
 alias grp='grep -rniI --color --exclude-dir=.bzr --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=build --exclude-dir=dist --exclude-dir=target '
+alias findsource='find . -type d \( -path "**/*/target" -o -path "**/*/.git" -o -path "**/*/.svn" -o -path "**/*/build" \) -prune -o -type f '
 
 # systemctrl
 alias sysen="sudo /usr/bin/systemctl enable"
