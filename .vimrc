@@ -11,6 +11,10 @@
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
+"
+" Plugins installed by pacman:
+" 1. vim-jad
+"
 set nocompatible
 filetype off  " required by Vundle
 
@@ -50,6 +54,10 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'jamessan/vim-gnupg'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'vim-scripts/vim_movement'
+" Need tellenc: https://github.com/adah1972/tellenc
+" git clone it and make a link to /usr/bin/ and use g++ to compile it:
+" g++ -o tellenc tellenc.cpp
+Bundle 'mbbill/fencview'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
