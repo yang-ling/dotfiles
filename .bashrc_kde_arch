@@ -96,10 +96,13 @@ fi
 # /usr/lib/jvm/jdk is a symbol link. It links to the real JDK.
 JAVA_HOME=/usr/lib/jvm/jdk
 export JAVA_HOME
+JRE_HOME=$JAVA_HOME/jre
 PATH=$PATH:$JAVA_HOME/bin
 export PATH
 CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export CLASSPATH
+#Tomcat
+export CATALINA_HOME=/home/yangling/Downloads/Tomcat/apache-tomcat-6.0.37
 
 # Maven setting
 #export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=300m"
