@@ -14,7 +14,8 @@
 "
 " Plugins installed by pacman:
 " 1. vim-jad(A Java decompile tool)
-"
+" 2. powerline: AUR https://aur.archlinux.org/packages/python2-powerline-git/,
+" NOTE: if install directly by clone github, noneed install this AUR package
 set nocompatible
 filetype off  " required by Vundle
 
@@ -59,7 +60,8 @@ Bundle 'vim-scripts/vim_movement'
 " g++ -o tellenc tellenc.cpp
 Bundle 'mbbill/fencview'
 Bundle 'majutsushi/tagbar'
-Bundle 'bling/vim-airline'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-easytags'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -196,6 +198,20 @@ let g:sparkupNextMapping = "<c-m>"
 " VimExplorer Setting"{{{
 let g:VEConf_usingKDE = 1
 let g:VEConf_externalExplorer = "dolphin"
+"}}}
+" vim-Airline"{{{
+"let g:airline_powerline_fonts = 1
+"}}}
+"powerline"{{{
+"Need clone powerline github repo
+"https://github.com/Lokaltog/powerline
+"Also needs powerline font on AUR
+"https://aur.archlinux.org/packages/powerline-fonts-git/
+set rtp+=~/MyGitRepo/powerline/powerline/bindings/vim/
+"Because Powerline can be installed directly from AUR, so we needn't config
+"vimrc any more.
+"But AUR Powerline package doesn't work fine on Gvim, so I don't use AUR
+"version, instead I use rtp version and along with AUR powerline font package
 "}}}
 "}}}
 "call pathogen#infect()
