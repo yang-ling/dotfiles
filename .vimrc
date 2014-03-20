@@ -469,6 +469,10 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+if !has('gui_running')
+  set t_Co=256
+endif
+
 "{{{ GUI Setting
 if has("gui_running")
     set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
