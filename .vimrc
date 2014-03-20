@@ -59,6 +59,7 @@ Bundle 'vim-scripts/vim_movement'
 " g++ -o tellenc tellenc.cpp
 Bundle 'mbbill/fencview'
 Bundle 'majutsushi/tagbar'
+Bundle 'bling/vim-airline'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -196,9 +197,6 @@ let g:sparkupNextMapping = "<c-m>"
 let g:VEConf_usingKDE = 1
 let g:VEConf_externalExplorer = "dolphin"
 "}}}
-" Tagbar"{{{
-set statusline +=%{tagbar#currenttag('[%s]\ ','f')}
-"}}}
 "}}}
 "call pathogen#infect()
 "{{{ Basic setting
@@ -226,6 +224,7 @@ set expandtab           " convert tab to blank
 "colo torte             " set color
 set spell               " spell check
 "set cc=97              " set color column
+set laststatus=2        " Enable statusline always
 
 " Auto read when file changed
 set autoread
