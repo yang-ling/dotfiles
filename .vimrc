@@ -13,7 +13,7 @@
 " This must be first, because it changes other options as a side effect.
 "
 " Plugins installed by pacman:
-" 1. vim-jad
+" 1. vim-jad(A Java decompile tool)
 "
 set nocompatible
 filetype off  " required by Vundle
@@ -58,6 +58,7 @@ Bundle 'vim-scripts/vim_movement'
 " git clone it and make a link to /usr/bin/ and use g++ to compile it:
 " g++ -o tellenc tellenc.cpp
 Bundle 'mbbill/fencview'
+Bundle 'majutsushi/tagbar'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -194,6 +195,9 @@ let g:sparkupNextMapping = "<c-m>"
 " VimExplorer Setting"{{{
 let g:VEConf_usingKDE = 1
 let g:VEConf_externalExplorer = "dolphin"
+"}}}
+" Tagbar"{{{
+set statusline +=%{tagbar#currenttag('[%s]\ ','f')}
 "}}}
 "}}}
 "call pathogen#infect()
@@ -437,7 +441,6 @@ cnoremap :cls %s/\(,\s\+\w\+\)\(\zs-\(\w\+\)\ze\)\+/\3/gc
 " Seq
 cnoremap :seq let i=1\|.,$g/\/\/\s\+\zs\d\+\ze/s/\/\/\s\+\zs\d\+\ze/\=i/\|let i=i+1
 "}}}
-
 "{{{ Win and Linux Setting
 if has("win32")
     "let g:neosnippet#snippets_directory='D:\Work\GitHub\snipmate-snippets\snippets'
