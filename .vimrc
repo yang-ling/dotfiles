@@ -15,7 +15,17 @@
 " Plugins installed by pacman:
 " 1. vim-jad(A Java decompile tool)
 " 2. powerline: AUR https://aur.archlinux.org/packages/python2-powerline-git/,
-" NOTE: if install directly by clone github, noneed install this AUR package
+" NOTE: if install directly by clone github, non eed install this AUR package
+"
+" Plugin requirements
+" 1. Bundle 'mbbill/fencview'
+"     Need tellenc: https://github.com/adah1972/tellenc
+"     git clone it and use g++ to compile it:
+"     g++ -o tellenc tellenc.cpp
+"     Then copy tellenc to /usr/bin/
+" 2. Tagbar and easytags
+"     Need install ctags
+
 set nocompatible
 filetype off  " required by Vundle
 
@@ -56,8 +66,9 @@ Bundle 'jamessan/vim-gnupg'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'vim-scripts/vim_movement'
 " Need tellenc: https://github.com/adah1972/tellenc
-" git clone it and make a link to /usr/bin/ and use g++ to compile it:
+" git clone it and use g++ to compile it:
 " g++ -o tellenc tellenc.cpp
+" Then copy tellenc to /usr/bin/
 Bundle 'mbbill/fencview'
 Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-misc'
