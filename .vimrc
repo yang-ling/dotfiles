@@ -199,9 +199,6 @@ let g:sparkupNextMapping = "<c-m>"
 let g:VEConf_usingKDE = 1
 let g:VEConf_externalExplorer = "dolphin"
 "}}}
-" vim-Airline"{{{
-"let g:airline_powerline_fonts = 1
-"}}}
 "powerline"{{{
 "Need clone powerline github repo
 "https://github.com/Lokaltog/powerline
@@ -212,6 +209,9 @@ set rtp+=~/MyGitRepo/powerline/powerline/bindings/vim/
 "vimrc any more.
 "But AUR Powerline package doesn't work fine on Gvim, so I don't use AUR
 "version, instead I use rtp version and along with AUR powerline font package
+"}}}
+" TagBar"{{{
+cnoremap :t TagbarToggle<CR>
 "}}}
 "}}}
 "call pathogen#infect()
@@ -363,7 +363,8 @@ nnoremap <leader>ss :source ~/.yangsession/session.vim<CR>
 "}}}
 " set color theme"{{{
 nnoremap <leader>v :colo evening<CR>
-nnoremap <leader>t :colo torte<CR>"}}}
+nnoremap <leader>t :colo torte<CR>
+"}}}
 " set tab stop and shift width"{{{
 nnoremap <leader>2 :set tabstop=2<CR>:set shiftwidth=2<CR>
 nnoremap <leader>4 :set tabstop=4<CR>:set shiftwidth=4<CR>
