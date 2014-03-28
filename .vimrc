@@ -223,6 +223,8 @@ set rtp+=~/MyGitRepo/powerline/powerline/bindings/vim/
 "}}}
 " TagBar"{{{
 cnoremap :t TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
 "}}}
 "}}}
 "call pathogen#infect()
