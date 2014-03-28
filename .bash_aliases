@@ -138,6 +138,9 @@ alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/u
 # aria2
 alias a2="aria2c -j5 -x5 -m5 -k1M -s5"
 alias a2limit="aria2c -j5 -x5 -m5 -k1M -s5 --max-overall-download-limit=200K"
+# Torrent download: a2t /path/to/torrent
+# Refer to http://sourceforge.net/apps/trac/aria2/wiki/UsageExample#BitTorrentDownload
+alias a2t="aria2c -u40k"
 
 # pacnew and pacsave file
 #alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
