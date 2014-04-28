@@ -60,7 +60,7 @@ man() {
 }
 
 # set vi keybinding
-set -o vi
+#set -o vi
 
 # Make sure JDK is 1.6
 [[ -x ~/.check_jdk.sh ]] && bash ~/.check_jdk.sh
@@ -87,3 +87,7 @@ export M2_HOME=/opt/maven
 # gem install needs this, otherwise warning will happen
 PATH=$PATH:/home/yangling/.gem/ruby/2.0.0/bin:/root/.gem/ruby/2.0.0/bin
 export GEM_HOME=/home/yangling/.gem/ruby/2.0.0
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
