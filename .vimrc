@@ -73,6 +73,10 @@ Bundle 'mbbill/fencview'
 Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
+" This calendar provide calendar view and connect to google calendar
+"Bundle 'itchyny/calendar.vim'
+" This calendar can be used to write diary
+Bundle 'mattn/calendar-vim'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -442,6 +446,10 @@ endif
 "}}}
 " Reverse search"{{{
 nnoremap <leader>rv /^\(\(<C-R>/\)\@!.\)*$<CR>
+"}}}
+" Date and Time"{{{
+cnoremap date r !date<CR>kdd
+cnoremap time r !date +\%T<CR>kdd
 "}}}
 "}}}
 " Macro"{{{
