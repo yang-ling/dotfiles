@@ -20,6 +20,9 @@ function tarenc()
     tarxz "$1" "$2" && gpg -c -v $3 --cipher-algo AES256 "${1}.tar.xz" && rm "${1}.tar.xz"
 }
 
+# Encrypt files and delete original file.
+# $1: -a, isText flag, optional
+# $2: file name
 function aes256r()
 {
     [[ $# -eq 1 ]] || [[ $# -eq 2 ]] || { echo "Need 1 or 2 parameters."; return 1; }
@@ -42,6 +45,7 @@ function aes256r()
     fi
 }
 
+# Decrypt file and delete original file.
 function gpgr()
 {
     gpg $1 && rm $1
