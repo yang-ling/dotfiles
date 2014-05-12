@@ -448,8 +448,8 @@ endif
 nnoremap <leader>rv /^\(\(<C-R>/\)\@!.\)*$<CR>
 "}}}
 " Date and Time"{{{
-cnoremap date r !date<CR>kdd
-cnoremap time r !date +\%T<CR>kdd
+cnoremap date r !date<CR>
+cnoremap time r !date +\%T<CR>
 "}}}
 "}}}
 " Macro"{{{
