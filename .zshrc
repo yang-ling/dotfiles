@@ -85,7 +85,7 @@ export MAVEN_OPTS="-Xmx1024m -Xss10m -XX:MaxPermSize=300m"
 export M2_HOME=/opt/maven
 
 # gem install needs this, otherwise warning will happen
-PATH=$PATH:/home/yangling/.gem/ruby/2.0.0/bin:/root/.gem/ruby/2.0.0/bin
+PATH=$PATH:/home/yangling/.gem/ruby/2.1.0/bin:/root/.gem/ruby/2.1.0/bin
 export GEM_HOME=/home/yangling/.gem/ruby/2.0.0
 
 if [ -f ~/.bash_aliases ]; then
