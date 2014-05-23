@@ -59,6 +59,9 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Mark--Karkat'
 Bundle 'edsono/vim-matchit'
 Bundle 'plasticboy/vim-markdown'
+" Preview markdown
+"Bundle 'suan/vim-instant-markdown'
+Bundle 'timcharper/textile.vim'
 Bundle 'juvenn/mustache.vim'
 Bundle 'fsouza/cobol.vim'
 Bundle 'kchmck/vim-coffee-script'
@@ -356,6 +359,7 @@ cnoremap :n nohl<CR>
 nnoremap <Leader>md :set ft=markdown<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 " Set file type to mail.
 nnoremap <Leader>ma :set ft=mail<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
+nnoremap <Leader>tt :set ft=textile<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 " Only delete trailing whitespaces in selected lines
 " Sometimes vim will automatically add '<,'> to command line when type F2, in
 " this case, I only need write like: vnoremap <F2> :s/\s\+$//g<CR>
