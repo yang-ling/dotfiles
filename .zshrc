@@ -1,51 +1,64 @@
-# Path to your oh-my-zsh configuration.
+# Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="random"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Set to this to use case-sensitive completion
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment this to disable bi-weekly auto-update checks
+# Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
-# Uncomment to change how often before auto-updates occur? (in days)
+# Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment following line if you want to disable colors in ls
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
+# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want to disable command autocorrection
+# Uncomment the following line to disable command auto-correction.
 # DISABLE_CORRECTION="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
 
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="yyyy-mm-dd"
+
+# Would you like to use another custom folder than $ZSH/custom?
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/plugins/
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+# Usage
+# node: node-doc <api-name> will open api document by browser
+plugins=(autoenv git git-extras git-prompt colorize command-not-found common-aliases encode64 extract gem history history-substring-search iwhois mvn node npm python rvm rsync sudo systemd)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# User configuration
 #. /home/yangling/MyGitRepo/powerline/powerline/bindings/zsh/powerline.zsh
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Enable color on man page
 man() {
@@ -63,7 +76,7 @@ man() {
 #set -o vi
 
 # Make sure JDK is 1.6
-[[ -x ~/.check_jdk.sh ]] && bash ~/.check_jdk.sh
+#[[ -x ~/.check_jdk.sh ]] && bash ~/.check_jdk.sh
 
 # fortune
 [[ -n "$PS1" ]] && fortune 30% tang300 30% song100 40% all | cowsay
@@ -85,9 +98,21 @@ export MAVEN_OPTS="-Xmx1024m -Xss10m -XX:MaxPermSize=300m"
 export M2_HOME=/opt/maven
 
 # gem install needs this, otherwise warning will happen
-PATH=$PATH:/home/yangling/.gem/ruby/2.1.0/bin:/root/.gem/ruby/2.1.0/bin
-export GEM_HOME=/home/yangling/.gem/ruby/2.0.0
+# Comment the following 2 lines out because rvm conflicts with GEM_HOME
+#PATH=$PATH:/home/yangling/.gem/ruby/2.1.0/bin:/root/.gem/ruby/2.1.0/bin
+#export GEM_HOME=/home/yangling/.gem/ruby/2.0.0
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# === RVM ===
+
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# RVM bash completion
+[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
