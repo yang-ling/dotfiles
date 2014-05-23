@@ -140,7 +140,7 @@ alias yaoimpl="/usr/bin/yaourt -D --asdeps" # 'mark as [impl]icit'  - mark one o
 alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
 
 # Install AUR package
-alias aur="makepkg -s -i -r -c"
+alias aur="makepkg -s -i -r -c --needed"
 
 # aria2
 alias a2="aria2c -j5 -x5 -m5 -k1M -s5"
