@@ -55,7 +55,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Usage
 # node: node-doc <api-name> will open api document by browser
-plugins=(autoenv git git-extras git-prompt colorize command-not-found common-aliases encode64 extract gem history history-substring-search iwhois mvn node npm python rvm rsync sudo systemd)
+plugins=(autoenv git git-extras git-prompt colorize command-not-found common-aliases encode64 extract gem history history-substring-search iwhois mvn node npm python rvm rsync sudo systemadmin systemd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,6 +110,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+[[ -f "/usr/bin/convertmp4.sh" ]] && source "/usr/bin/convertmp4.sh"
 # === RVM ===
 
 # Add RVM to PATH for scripting
