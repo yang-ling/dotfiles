@@ -141,6 +141,7 @@ alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/u
 
 # Install AUR package
 alias aur="makepkg -s -i -r -c --needed"
+alias aurdep="makepkg -s -i -r -c --needed --asdeps"
 
 # aria2
 alias a2="aria2c -j5 -x5 -m5 -k1M -s5"
