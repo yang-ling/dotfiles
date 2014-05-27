@@ -6,6 +6,10 @@ ZSH=/usr/share/oh-my-zsh/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
+#ZSH_THEME="mortalscumbag" # Left and Right, display branch name, status number
+#ZSH_THEME="eastwood" # Left and Right, git:display branch name, rvm: current ruby version, full path
+#ZSH_THEME="3den" # Left, 2 rows, git:display branch name, rvm: current ruby version, full path, time, user
+#ZSH_THEME="murilasso" # Left, 2 rows, git:display branch name, rvm: current ruby version, full path, user
 ZSH_THEME="random"
 
 # Example aliases
@@ -114,5 +118,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# RVM bash completion
-[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
+# === HUE ===
+[[ -s "$HOME/Work/hue-config.sh" ]] && source "$HOME/Work/hue-config.sh"
