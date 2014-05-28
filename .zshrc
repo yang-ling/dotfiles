@@ -11,6 +11,8 @@ ZSH=/usr/share/oh-my-zsh/
 #ZSH_THEME="3den" # Left, 2 rows, git:display branch name, rvm: current ruby version, full path, time, user
 #ZSH_THEME="murilasso" # Left, 2 rows, git:display branch name, rvm: current ruby version, full path, user
 #ZSH_THEME="juanghurtado" # Left Right, 1 rows, git:display branch name, rev, full path, user
+#ZSH_THEME="gnzh" # Left, 2 rows, git:display branch name, full path, user, rvm ruby version
+#ZSH_THEME="jonathan" # Left Right, 2 rows, git:display branch name, full path, user, rvm ruby version, date. (like)
 ZSH_THEME="random"
 
 # Example aliases
