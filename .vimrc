@@ -80,6 +80,8 @@ Bundle 'xolox/vim-easytags'
 "Bundle 'itchyny/calendar.vim'
 " This calendar can be used to write diary
 Bundle 'mattn/calendar-vim'
+" Theme
+Bundle 'zeis/vim-kolor'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
@@ -257,7 +259,11 @@ set shiftwidth=4        " set shift width to 4 blanks
 set expandtab           " convert tab to blank
 " set cursorline          " show cursor line
 " set cursorcolumn        " show cursor column line
+"
+" color scheme
 "colo torte             " set color
+colo kolor
+
 set spell               " spell check
 "set cc=97              " set color column
 set laststatus=2        " Enable statusline always
@@ -278,6 +284,9 @@ set completeopt=longest,menu
 
 " Set camel completion
 set completefunc=Camel_Complete
+
+set wildmode=full
+set wildmenu
 
 hi SpecialKey term=bold ctermfg=8 guifg=Blue
 hi NonText term=bold ctermfg=8 guifg=Blue
@@ -517,9 +526,10 @@ endif
 
 "{{{ GUI Setting
 if has("gui_running")
-    set guifont=WenQuanYi\ Micro\ Hei\ Mono\ 12
+    set guifont=DejaVu\ Sans\ Mono\ 11
+    set guifontwide=WenQuanYi\ Micro\ Hei\ Mono\ 12
     set go=
-    colo evening
+    "colo evening
 endif
 "}}}
 
