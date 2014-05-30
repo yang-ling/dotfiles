@@ -53,6 +53,8 @@ function gpgr()
 
 alias aes256='gpg -c -v --cipher-algo AES256'
 
+alias xo='xdg-open'
+
 alias g=git
 alias gs='git status'
 alias ga='git add'
