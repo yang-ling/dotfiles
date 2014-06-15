@@ -170,3 +170,6 @@ alias watchfind="sudo watch readlink -f /proc/$(pidof find)/cwd"
 
 # ack
 alias ack="/usr/bin/vendor_perl/ack"
+
+#you-get for youtube
+alias you-get-tube="you-get -x 127.0.0.1:8087"

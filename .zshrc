@@ -125,3 +125,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # === HUE ===
 [[ -s "$HOME/Work/hue-config.sh" ]] && source "$HOME/Work/hue-config.sh"
+
+# To activate zsh-syntax-highlighting, a Fish-shell-like syntax highlighting.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
