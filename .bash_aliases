@@ -173,3 +173,5 @@ alias ack="/usr/bin/vendor_perl/ack"
 
 #you-get for youtube
 alias you-get-tube="you-get -x 127.0.0.1:8087"
+# ping
+alias ping="rainbow --config=ping -- ping -c 3"
