@@ -59,14 +59,14 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Usage
 # node: node-doc <api-name> will open api document by browser
-plugins=(autoenv git git-extras git-prompt colorize command-not-found common-aliases encode64 extract gem history history-substring-search iwhois mvn node npm python rvm rsync sudo systemadmin systemd)
+plugins=(autoenv git git-extras git-prompt colorize command-not-found common-aliases encode64 extract gem history history-substring-search iwhois mvn node npm python rsync sudo systemadmin systemd)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 #. /home/yangling/MyGitRepo/powerline/powerline/bindings/zsh/powerline.zsh
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/bin:/usr/local/bin
 
 # Enable color on man page
 man() {
@@ -115,6 +115,13 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 [[ -f "/usr/bin/convertmp4.sh" ]] && source "/usr/bin/convertmp4.sh"
+
+# === HUE ===
+[[ -s "$HOME/Work/hue-config.sh" ]] && source "$HOME/Work/hue-config.sh"
+
+# To activate zsh-syntax-highlighting, a Fish-shell-like syntax highlighting.
+[[ -s /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#
 # === RVM ===
 
 # Add RVM to PATH for scripting
@@ -122,9 +129,3 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# === HUE ===
-[[ -s "$HOME/Work/hue-config.sh" ]] && source "$HOME/Work/hue-config.sh"
-
-# To activate zsh-syntax-highlighting, a Fish-shell-like syntax highlighting.
-[[ -s /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
