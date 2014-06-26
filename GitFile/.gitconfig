@@ -22,5 +22,6 @@
 	st = status
 	skipindex = update-index --skip-worktree
 	noskipindex = update-index --no-skip-worktree
+	merd = merge origin/develop --ff-only
 [merge]
 	tool = gvimdiff
