@@ -82,7 +82,7 @@ alias gsa='git stash apply'
 alias gitoptimize='rm -rf .git/refs/original/ && git reflog expire --all --expire=now && git gc --prune=now && git gc --aggressive --prune=now'
 alias glistskip='git ls-files -v | grep "^S"'
 
-alias rmvn='rainbow --config=mvn3 --'
+alias rmvn='rainbow --config=mvn3 -- mvn'
 alias mci='rainbow --config=mvn3 -- mvn clean install'
 #alias mciskip='mvn clean install -Dmaven.test.skip=true'
 # maven.test.skip will skip compiling test cases, while skipTests only skip running test cases.
@@ -176,3 +176,5 @@ alias ack="/usr/bin/vendor_perl/ack"
 alias you-get-tube="you-get -x 127.0.0.1:8087"
 # ping
 alias ping="rainbow --config=ping -- ping -c 3"
+
+alias psg="ps -ef | grep -v grep | grep"
