@@ -9,14 +9,14 @@
 " '.
 " See http://vim.wikia.com/wiki/Insert_mail_signatures_from_a_rotating_file
 "nnoremap <Leader>ms :e ~/Documents/signature/sign.txt<CR>ggV/^--  $<CR>k"*xG$a<C-R><C-O>*<Esc>:w<CR>:bd<CR>G$a<C-M><Esc>"*P
-nnoremap <Leader>ms mQG:r ~/Kuaipan/Documents/signature/sign.txt<CR>`Q
+nnoremap <Leader>ms mQG:r ~/KuaiPan/Documents/signature/sign.txt<CR>`Q
 "}}}
 " Weekly Report Template"{{{
-nnoremap <Leader>wr gg:r ~/Kuaipan/Documents/signature/weekly_report.txt<CR>G:r ~/Kuaipan/Documents/signature/sign.txt<CR>ggdd
+nnoremap <Leader>wr gg:r ~/KuaiPan/Documents/signature/weekly_report.txt<CR>G:r ~/KuaiPan/Documents/signature/sign.txt<CR>ggdd
 "}}}
 " Monthly Report Template"{{{
-nnoremap <Leader>mr gg:r ~/Kuaipan/Documents/signature/monthly_report.txt<CR>G:r ~/Kuaipan/Documents/signature/sign.txt<CR>ggdd
+nnoremap <Leader>mr gg:r ~/KuaiPan/Documents/signature/monthly_report.txt<CR>G:r ~/KuaiPan/Documents/signature/sign.txt<CR>ggdd
 "}}}
 " Feedback Template "{{{
-nnoremap <Leader>fee gg:r ~/Kuaipan/Documents/signature/feedback.txt<CR>ggdd
+nnoremap <Leader>fee gg:r ~/KuaiPan/Documents/signature/feedback.txt<CR>ggdd
 "}}}
