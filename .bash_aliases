@@ -101,6 +101,10 @@ alias midquick='rainbow --config=mvn3 -- mvn install -P "development,install-onl
 alias mj='rainbow --config=mvn3 -- mvn jetty:run -pl front/'
 alias mb='rainbow --config=mvn3 -- mvn exec:java -pl batch-server/'
 
+alias mdr="rainbow --config=mvn3 -- mvn dependency:resolve"
+alias mdt="rainbow --config=mvn3 -- mvn dependency:tree"
+alias mda="rainbow --config=mvn3 -- mvn dependency:analyze"
+
 alias avd='~/Downloads/Android_SDK/android-sdk-linux/tools/android avd'
 
 alias ..='cd ..'
