@@ -464,6 +464,11 @@ nnoremap <leader>rv /^\(\(<C-R>/\)\@!.\)*$<CR>
 cnoremap date r !date<CR>
 cnoremap time r !date +\%T<CR>
 "}}}
+" GitHub Flavored Markdown Parser Preview"{{{
+" Use ghmd as command line parser tool
+cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
+"}}}
+
 "}}}
 " Macro"{{{
 " Macro z: Copy DB column field description to Java SQL part.
