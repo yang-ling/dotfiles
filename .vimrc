@@ -67,7 +67,7 @@ Bundle 'fsouza/cobol.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jamessan/vim-gnupg'
 Bundle 'vim-scripts/argtextobj.vim'
-Bundle 'vim-scripts/vim_movement'
+"Bundle 'vim-scripts/vim_movement'
 " Need tellenc: https://github.com/adah1972/tellenc
 " git clone it and use g++ to compile it:
 " g++ -o tellenc tellenc.cpp
