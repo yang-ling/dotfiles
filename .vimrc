@@ -461,8 +461,8 @@ endif
 nnoremap <leader>rv /^\(\(<C-R>/\)\@!.\)*$<CR>
 "}}}
 " Date and Time"{{{
-cnoremap date r !date<CR>
-cnoremap time r !date +\%T<CR>
+cnoremap :date r !date<CR>
+cnoremap :time r !date +\%T<CR>
 "}}}
 " GitHub Flavored Markdown Parser Preview"{{{
 " Use ghmd as command line parser tool
