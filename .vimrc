@@ -550,7 +550,7 @@ if has("autocmd")
 
         " For all text files set 'textwidth' to 78 characters.
         autocmd FileType text setlocal textwidth=78
-        autocmd FileType javascript setlocal textwidth=80
+        autocmd FileType javascript setlocal textwidth=97
 
         autocmd FileType javascript noremap <buffer> <leader>fm :call JsBeautify()<CR>
         " for html
@@ -574,7 +574,7 @@ if has("autocmd")
         "}}}
         "{{{ google closure linter
         "https://github.com/batsuev/google-closure-linter-for-vim/blob/master/ftplugin/javascript.vim
-        autocmd FileType javascript setlocal makeprg=gjslint\ --strict\ %
+        autocmd FileType javascript setlocal makeprg=gjslint\ --strict\ --jslint_error\ all\ --max_line_length\ 97\ %
         autocmd FileType javascript set efm=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
         "}}}
 
