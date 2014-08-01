@@ -468,7 +468,9 @@ cnoremap :time r !date +\%T<CR>
 " Use ghmd as command line parser tool
 cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
 "}}}
-
+"google closure"{{{
+cnoremap :fix :!fixjsstyle --strict %<CR>
+"}}}
 "}}}
 " Macro"{{{
 " Macro z: Copy DB column field description to Java SQL part.
@@ -548,7 +550,7 @@ if has("autocmd")
 
         " For all text files set 'textwidth' to 78 characters.
         autocmd FileType text setlocal textwidth=78
-        autocmd FileType javascript setlocal textwidth=97
+        autocmd FileType javascript setlocal textwidth=80
 
         autocmd FileType javascript noremap <buffer> <leader>fm :call JsBeautify()<CR>
         " for html
@@ -565,10 +567,15 @@ if has("autocmd")
         "}}}
 
         "{{{ jslint
-        autocmd FileType javascript setlocal makeprg=jslint\ --sloppy\ --indent\ 4\ --nomen\ --devel\ --browser\ --node\ --plusplus\ --stupid\ %
-        autocmd FileType javascript set efm=%-P%f,
-                            \%A%>%.%##%*\\d\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,
-                            \%-G%f\ is\ OK.,%-Q
+        "autocmd FileType javascript setlocal makeprg=jslint\ --sloppy\ --indent\ 4\ --nomen\ --devel\ --browser\ --node\ --plusplus\ --stupid\ %
+        "autocmd FileType javascript set efm=%-P%f,
+                            "\%A%>%.%##%*\\d\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,
+                            "\%-G%f\ is\ OK.,%-Q
+        "}}}
+        "{{{ google closure linter
+        "https://github.com/batsuev/google-closure-linter-for-vim/blob/master/ftplugin/javascript.vim
+        autocmd FileType javascript setlocal makeprg=gjslint\ --strict\ %
+        autocmd FileType javascript set efm=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
         "}}}
 
         " When editing a file, always jump to the last known cursor position.
