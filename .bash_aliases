@@ -1,8 +1,3 @@
-function current_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
-}
-
 # $1: compress file name
 # $2: actual file name
 function tarxz()
@@ -81,6 +76,7 @@ alias gsp='git stash pop'
 alias gsa='git stash apply'
 alias gitoptimize='rm -rf .git/refs/original/ && git reflog expire --all --expire=now && git gc --prune=now && git gc --aggressive --prune=now'
 alias glistskip='git ls-files -v | grep "^S"'
+alias gpf='bash ~/MyGitRepo/Little/myfork/git-related/git-push-force.bash'
 
 alias rmvn='rainbow --config=mvn3 -- mvn'
 alias mci='rainbow --config=mvn3 -- mvn clean install'
