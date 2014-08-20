@@ -25,3 +25,5 @@
 	merd = merge origin/develop --ff-only
 [merge]
 	tool = gvimdiff
+[push]
+	default = simple
