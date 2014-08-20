@@ -90,8 +90,9 @@ man() {
 [[ -n "$PS1" ]] && fortune 30% tang300 30% song100 40% all | cowsay
 
 # /usr/lib/jvm/jdk is a symbol link. It links to the real JDK.
-JAVA_HOME=/usr/lib/jvm/jdk
-export JAVA_HOME
+# Note: in /etc/profile.d/jre.sh, there is a link to real JDK, so I needn't make own link.
+# JAVA_HOME=/usr/lib/jvm/jdk
+# export JAVA_HOME
 JRE_HOME=$JAVA_HOME/jre
 PATH=$PATH:$JAVA_HOME/bin
 export PATH
