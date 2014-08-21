@@ -82,6 +82,8 @@ Bundle 'xolox/vim-easytags'
 Bundle 'mattn/calendar-vim'
 " Theme
 Bundle 'zeis/vim-kolor'
+" Less
+Bundle 'groenewege/vim-less'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
