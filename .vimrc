@@ -435,6 +435,13 @@ vnoremap <leader>" <ESC>a <ESC>gvdi""<ESC>Pllx
 vnoremap <leader>' <ESC>a <ESC>gvdi''<ESC>Pllx
 vnoremap <leader>` <ESC>a <ESC>gvdi``<ESC>Pllx
 "}}}
+" Remove enclosed tags.  "{{{
+" Parent tags are in their own lines
+vnoremap <Leader>dt dpkddkdd
+" Parent tags are inline
+vnoremap <Leader>dit dvatp
+"}}}
+
 " CommandT"{{{
 nnoremap <Leader>ct :CommandT<CR>
 nnoremap <Leader>cd :CommandTBuffer<CR>
