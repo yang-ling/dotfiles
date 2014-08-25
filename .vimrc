@@ -80,8 +80,11 @@ Bundle 'xolox/vim-easytags'
 "Bundle 'itchyny/calendar.vim'
 " This calendar can be used to write diary
 Bundle 'mattn/calendar-vim'
-" Theme
+" Theme"{{{
 Bundle 'zeis/vim-kolor'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'flazz/vim-colorschemes'
+"}}}
 " Less
 Bundle 'groenewege/vim-less'
 " Snippets
@@ -266,7 +269,10 @@ set expandtab           " convert tab to blank
 "
 " color scheme
 "colo torte             " set color
-colo kolor
+"colo kolor
+"set background=dark
+"colo solarized
+colo wombat256mod
 
 set spell               " spell check
 "set cc=97              " set color column
