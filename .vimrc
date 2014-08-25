@@ -84,6 +84,8 @@ Bundle 'mattn/calendar-vim'
 Bundle 'zeis/vim-kolor'
 " Less
 Bundle 'groenewege/vim-less'
+" Snippets
+Bundle 'mattn/emmet-vim'
 "}}}
 " vim-scripts repos"{{{
 Bundle 'L9'
