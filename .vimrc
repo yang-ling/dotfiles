@@ -485,8 +485,13 @@ cnoremap :time r !date +\%T<CR>
 " Use ghmd as command line parser tool
 cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
 "}}}
+" Preview html, xml"{{{
+cnoremap :xo !xdg-open %<CR>
+"}}}
 "google closure"{{{
-cnoremap :fix :!fixjsstyle --strict %<CR>
+cnoremap :fj :!fixjsstyle --strict %<CR>
+cnoremap :fc :!fixclosure %<CR>
+cnoremap :mk :!closure --js % --js_output_file /tmp/closure_tmp.js -W VERBOSE<CR>
 "}}}
 "}}}
 " Macro"{{{
