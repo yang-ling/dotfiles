@@ -596,7 +596,7 @@ if has("autocmd")
         "}}}
         "{{{ google closure linter
         "https://github.com/batsuev/google-closure-linter-for-vim/blob/master/ftplugin/javascript.vim
-        autocmd FileType javascript setlocal makeprg=gjslint\ --strict\ --jslint_error\ all\ --max_line_length\ 97\ %
+        autocmd FileType javascript setlocal makeprg=gjslint\ --strict\ --jslint_error\ all\ --max_line_length\ 120\ %
         autocmd FileType javascript set efm=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
         "}}}
 
