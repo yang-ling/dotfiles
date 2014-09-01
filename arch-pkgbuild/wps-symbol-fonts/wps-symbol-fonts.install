@@ -1,0 +1,8 @@
+post_install() {
+    fc-cache -fv
+    exit 0
+}
+post_remove() {
+    fc-cache -fv
+    exit 0
+}

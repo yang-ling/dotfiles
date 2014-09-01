@@ -1,0 +1,163 @@
+post_install() {
+    /opt/brother/Printers/HL5450DN/inf/setupPrintcap HL5450DN -i USB
+    /opt/brother/Printers/HL5450DN/inf/braddprinter -i HL5450DN
+    if [ -e /etc/init.d/lprng ]; then
+        /etc/init.d/lprng restart
+    elif [ -e /etc/init.d/lpd ]; then
+        /etc/init.d/lpd restart
+    fi
+    if [ ! -e /usr/sbin/pstops ];then
+        PSTOPS=/usr/bin/pstops
+        if [ "`echo $PSTOPS | grep -i cups`" != "" ];then
+            PSTOPS=""
+        fi
+        if [ "$PSTOPS" != "" ];then
+            echo \[psconvert2\]   >>/opt/brother/Printers/HL5450DN/inf/brHL5450DNfunc
+            echo pstops=$PSTOPS >>/opt/brother/Printers/HL5450DN/inf/brHL5450DNfunc
+        fi
+    fi
+
+    ln -s /opt/brother/Printers/HL5450DN/inf/brHL5450DNrc       /etc/opt/brother/Printers/HL5450DN/inf/brHL5450DNrc
+
+    if [ ! -e /usr/bin/brprintconflsr3_HL5450DN ];then
+        echo "#! /bin/sh"  > /usr/bin/brprintconflsr3_HL5450DN
+        echo "/opt/brother/Printers/HL5450DN/lpd/brprintconflsr3 -P HL5450DN" '$''*'           >>/usr/bin/brprintconflsr3_HL5450DN
+        chmod 755 /usr/bin/brprintconflsr3_HL5450DN
+    fi
+
+    # Wrapper
+    if [ -e /usr/lib/cups/filter ] &&    [ ! -e /usr/lib/cups/filter/brother_lpdwrapper_HL5450DN ];then
+        ln -s /opt/brother/Printers/HL5450DN/cupswrapper/brother_lpdwrapper_HL5450DN      /usr/lib/cups/filter
+    fi
+    if [ -e /usr/lib32/cups/filter ] &&    [ ! -e /usr/lib32/cups/filter/brother_lpdwrapper_HL5450DN ];then
+        ln -s /opt/brother/Printers/HL5450DN/cupswrapper/brother_lpdwrapper_HL5450DN      /usr/lib32/cups/filter
+    fi
+    if [ -e /usr/lib64/cups/filter ] &&    [ ! -e /usr/lib64/cups/filter/brother_lpdwrapper_HL5450DN ];then
+        ln -s /opt/brother/Printers/HL5450DN/cupswrapper/brother_lpdwrapper_HL5450DN      /usr/lib64/cups/filter
+    fi
+    if [ -e /usr/libexec/cups/filter ] &&    [ ! -e /usr/libexec/cups/filter/brother_lpdwrapper_HL5450DN ];then
+        ln -s /opt/brother/Printers/HL5450DN/cupswrapper/brother_lpdwrapper_HL5450DN      /usr/libexec/cups/filter
+    fi
+
+    if [ -e /usr/share/cups/model ];then
+        ln -s /opt/brother/Printers/HL5450DN/cupswrapper/brother-HL-5450DN-cups-en.ppd      /usr/share/cups/model
+        PPDDIR=/usr/share/cups/model/
+    fi
+    if [ -e /usr/share/ppd ];then
+        if [ ! -e /usr/share/ppd/brother ];then
+            mkdir /usr/share/ppd/brother
+        fi
+        ln -s /opt/brother/Printers/HL5450DN/cupswrapper/brother-HL-5450DN-cups-en.ppd      /usr/share/ppd/brother
+        PPDDIR=/usr/share/ppd/brother/
+    fi
+    uris=$(lpinfo -v)
+
+    for uri in $uris
+    do
+        URI=$(echo $uri | grep HL-5450DN | grep usb)
+        if [ "$URI" != '' ];then
+            break;
+        fi
+    done
+
+    if [ "$URI" = '' ];then
+        for uri in $uris
+        do
+            URI=$(echo $uri | grep HL-5450DN)
+            if [ "$URI" != '' ];then
+                break;
+            fi
+        done
+    fi
+
+    if [ "$URI" = '' ];then
+        for uri in $uris
+        do
+            URI=$(echo $uri | grep -i Brother | grep usb)
+            if [ "$URI" != '' ];then
+                break;
+            fi
+        done
+    fi
+    if [ "$URI" = '' ];then
+        for uri in $uris
+        do
+            URI=$(echo $uri | grep usb)
+            if [ "$URI" != '' ];then
+                break;
+            fi
+        done
+    fi
+
+    if [ "$URI" = '' ];then
+        URI="usb://dev/usb/lp0"
+    fi
+
+    echo lpadmin -p HL5450DN  -E -v $URI -P ${PPDDIR}brother-HL-5450DN-cups-en.ppd
+    lpadmin -p HL5450DN -E -v $URI -P ${PPDDIR}brother-HL-5450DN-cups-en.ppd
+
+    if [ "$(which semanage 2> /dev/null)" != '' ];then
+        semanage fcontext -a -t cupsd_rw_etc_t '/etc/opt/brother/Printers/HL5450DN/inf(/.*)?'
+        semanage fcontext -a -t cupsd_rw_etc_t '/opt/brother/Printers/HL5450DN/inf(/.*)?'
+        semanage fcontext -a -t bin_t          '/opt/brother/Printers/HL5450DN/lpd(/.*)?'
+        semanage fcontext -a -t bin_t          '/opt/brother/Printers/HL5450DN/cupswrapper(/.*)?'
+
+        if [ "$(which restorecon  2> /dev/null)" != '' ];then
+            restorecon -R /opt/brother/Printers/HL5450DN
+            restorecon -R /etc/opt/brother/Printers/HL5450DN
+        fi
+    fi
+}
+post_remove() {
+    if [ -e /etc/init.d/lprng ]; then
+        /etc/init.d/lprng restart
+    elif [ -e /etc/init.d/lpd ]; then
+        /etc/init.d/lpd restart
+    fi
+
+    # Wrapper
+    if [ "$(which semanage 2> /dev/null)" != '' ];then
+        semanage fcontext -d -t cupsd_rw_etc_t '/opt/brother/Printers/HL5450DN/inf(/.*)?'
+        semanage fcontext -d -t cupsd_rw_etc_t '/etc/opt/brother/Printers/HL5450DN/inf(/.*)?'
+        semanage fcontext -d -t bin_t          '/opt/brother/Printers/HL5450DN/lpd(/.*)?'
+        semanage fcontext -d -t bin_t          '/opt/brother/Printers/HL5450DN/cupswrapper(/.*)?'
+
+        if [ "$(which restorecon  2> /dev/null)" != '' ];then
+            restorecon -R /opt/brother/Printers/HL5450DN
+            restorecon -R /etc/opt/brother/Printers/HL5450DN
+        fi
+    fi
+}
+pre_remove() {
+    /opt/brother/Printers/HL5450DN/inf/setupPrintcap HL5450DN -e USB
+    /opt/brother/Printers/HL5450DN/inf/braddprinter -e HL5450DN
+    rm -fR /var/spool/lpd/HL5450DN/* 2>/dev/null
+    rm /etc/opt/brother/Printers/HL5450DN/inf/brHL5450DNrc 2>/dev/null
+
+    if [ -e /usr/bin/brprintconflsr3_HL5450DN ];then
+        rm /usr/bin/brprintconflsr3_HL5450DN
+    fi
+
+    #Wrapper
+    lpadmin -x HL5450DN
+
+    if [ -e /usr/lib/cups/filter/brother_lpdwrapper_HL5450DN  ];then
+        rm   /usr/lib/cups/filter/brother_lpdwrapper_HL5450DN 
+    fi
+    if [ -e /usr/lib32/cups/filter/brother_lpdwrapper_HL5450DN ];then
+        rm   /usr/lib32/cups/filter/brother_lpdwrapper_HL5450DN
+    fi
+    if [ -e /usr/lib64/cups/filter/brother_lpdwrapper_HL5450DN ];then
+        rm   /usr/lib64/cups/filter/brother_lpdwrapper_HL5450DN
+    fi
+    if [ -e /usr/libexec/cups/filter/brother_lpdwrapper_HL5450DN ];then
+        rm   /usr/libexec/cups/filter/brother_lpdwrapper_HL5450DN
+    fi
+    if [ -e /usr/share/ppd/brother/brother-HL-5450DN-cups-en.ppd ];then
+        rm /usr/share/ppd/brother/brother-HL-5450DN-cups-en.ppd
+        rmdir /usr/share/ppd/brother 2> /dev/null
+    fi
+    if [ -e /usr/share/cups/model/brother-HL-5450DN-cups-en.ppd ];then
+        rm /usr/share/cups/model/brother-HL-5450DN-cups-en.ppd
+    fi
+}

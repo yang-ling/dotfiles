@@ -1,0 +1,43 @@
+# Maintainer: Yang Ling <yangling1984@gmail.com>
+# http://bbs.wps.cn/thread-22355435-1-1.html, 9楼有deb链接
+pkgname=wps-symbol-fonts
+pkgver=1.2
+pkgrel=1
+pkgdesc="WPS Symbol Fonts"
+arch=('i686' 'x86_64')
+license=('unknown')
+depends=('fontconfig' 'xorg-font-utils')
+#groups=()
+#makedepends=()
+#checkdepends=('rpmextract')
+#optdepends=()
+#provides=()
+#conflicts=()
+#replaces=()
+#backup=()
+options=('emptydirs')
+install=$pkgname.install
+#changelog=
+source=(symbol-fonts_1.2_all.deb)
+#noextract=(symbol-fonts_1.2_all.deb)
+md5sums=('1ce31b586bff22ecf6a5941c0d7cb7a1')
+
+prepare() {
+    cd "${srcdir}"
+    bsdtar -xf data.tar.gz
+}
+
+#build() {
+#}
+
+#check() {
+    #cd "$srcdir/$pkgname-$pkgver"
+    #make -k check
+#}
+
+package() {
+    cd "${srcdir}/usr/share/fonts/truetype/symbol-fonts/"
+
+    install -d "${pkgdir}/usr/share/fonts/wps-symbol-fonts"
+    install -m644 *.ttf *.TTF "${pkgdir}/usr/share/fonts/wps-symbol-fonts"
+}

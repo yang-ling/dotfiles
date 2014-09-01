@@ -1,0 +1,46 @@
+# Maintainer: Yang Ling <yangling1984@gmail.com>
+pkgname=brother-hl5450dn-driver-deb
+pkgver=3.0.0_1
+pkgrel=1
+pkgdesc="Printer driver for Brother HL5450DN"
+arch=('i686' 'x86_64')
+url="http://welcome.solutions.brother.com/bsc/public/eu/eu_ot/en/dlf/download_index.html?reg=eu&c=eu_ot&lang=en&prod=hl5450dn_all&dlid=&flang=English&os=128&type2=-1"
+license=('unknown')
+#groups=()
+depends=('lib32-glibc' 'bash')
+#makedepends=()
+#checkdepends=('rpmextract')
+#optdepends=()
+#provides=()
+#conflicts=()
+#replaces=()
+#backup=()
+options=('emptydirs')
+install=$pkgname.install
+#changelog=
+source=(hl5450dncupswrapper-3.0.0-1.i386.deb
+        hl5450dnlpr-3.0.0-1.i386.deb)
+noextract=(hl5450dncupswrapper-3.0.0-1.i386.deb
+        hl5450dnlpr-3.0.0-1.i386.deb)
+md5sums=('59ec384db09e7ef5dcbf2b77f63193ee'
+         '4287d525131a63473c965333fbeb1307')
+
+#prepare() {
+    #cd "$srcdir/$pkgname-$pkgver"
+    #patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+#}
+
+#build() {
+#}
+
+#check() {
+    #cd "$srcdir/$pkgname-$pkgver"
+    #make -k check
+#}
+
+package() {
+    echo "package"
+    for i in *.deb; do
+        bsdtar -Oxf $i data.tar.gz | bsdtar -C "$pkgdir" -xf -
+    done
+}
