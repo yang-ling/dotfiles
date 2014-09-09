@@ -489,9 +489,10 @@ cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
 cnoremap :xo !xdg-open %<CR>
 "}}}
 "google closure"{{{
-cnoremap :fj :!fixjsstyle --strict %<CR>
-cnoremap :fc :!fixclosure %<CR>
-cnoremap :mk :!closure --js % --js_output_file /tmp/closure_tmp.js -W VERBOSE<CR>
+cnoremap :fj !fixjsstyle --strict %<CR>
+cnoremap :fc !fixclosure %<CR>
+cnoremap :ff !fixclosure -f %<CR>
+cnoremap :mk !closure --js % --js_output_file /tmp/closure_tmp.js -W VERBOSE<CR>
 "}}}
 "}}}
 " Macro"{{{
