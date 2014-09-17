@@ -146,6 +146,9 @@ alias pacro="/usr/bin/pacmatic -Qtdq > /dev/null && sudo /usr/bin/pacmatic -Rs \
 alias aur="makepkg -s -i -r -c --needed"
 alias aurdep="makepkg -s -i -r -c --needed --asdeps"
 
+# Optimize arch
+alias archoptimize='sudo /usr/bin/pacman -Sc && sudo pacman-optimize && sync'
+
 # aria2
 alias a2="aria2c -j5 -x5 -m5 -k1M -s5"
 alias a2limit="aria2c -j5 -x5 -m5 -k1M -s5 --max-overall-download-limit=200K"
