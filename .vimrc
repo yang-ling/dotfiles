@@ -15,7 +15,7 @@
 " Plugins installed by pacman:
 " 1. vim-jad(A Java decompile tool)
 " 2. powerline: AUR https://aur.archlinux.org/packages/python2-powerline-git/,
-" NOTE: if install directly by clone github, non eed install this AUR package
+" NOTE: if install directly by clone github, no need install this AUR package
 "
 " Plugin requirements
 " 1. Bundle 'mbbill/fencview'
@@ -25,98 +25,117 @@
 "     Then copy tellenc to /usr/bin/
 " 2. Tagbar and easytags
 "     Need install ctags
+"
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
 
-set nocompatible
-filetype off  " required by Vundle
+if has('vim_starting')
+    set nocompatible               " Be iMproved
 
-set rtp+=~/.vim/bundle/vundle/  " required by Vundle
-call vundle#rc()                " required by Vundle
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+"neobundle"{{{
+let g:neobundle#types#git#default_protocol = 'git'
+"}}}
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
 "{{{ Bundles
 " My Bundles here:
 "
 " original repos on github"{{{
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'godlygeek/tabular'
-"Bundle 'SirVer/ultisnips'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/camelcasemotion'
-Bundle 'vim-scripts/fcitx.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'vim-scripts/Mark--Karkat'
-Bundle 'edsono/vim-matchit'
-Bundle 'plasticboy/vim-markdown'
+" Shougo"{{{
+NeoBundle 'Shougo/neobundle-vim-recipes'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \     'windows' : 'tools\\update-dll-mingw',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \    },
+            \ }
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet'
+"}}}
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'tpope/vim-rails.git'
+NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'vim-scripts/camelcasemotion'
+NeoBundle 'vim-scripts/fcitx.vim'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'vim-scripts/Mark--Karkat'
+NeoBundle 'edsono/vim-matchit'
+NeoBundle 'plasticboy/vim-markdown'
 " Preview markdown
-"Bundle 'suan/vim-instant-markdown'
-Bundle 'timcharper/textile.vim'
-Bundle 'juvenn/mustache.vim'
-Bundle 'fsouza/cobol.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'jamessan/vim-gnupg'
-Bundle 'vim-scripts/argtextobj.vim'
-"Bundle 'vim-scripts/vim_movement'
+"NeoBundle 'suan/vim-instant-markdown'
+NeoBundle 'timcharper/textile.vim'
+NeoBundle 'juvenn/mustache.vim'
+NeoBundle 'fsouza/cobol.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'jamessan/vim-gnupg'
+NeoBundle 'vim-scripts/argtextobj.vim'
 " Need tellenc: https://github.com/adah1972/tellenc
 " git clone it and use g++ to compile it:
 " g++ -o tellenc tellenc.cpp
 " Then copy tellenc to /usr/bin/
-Bundle 'mbbill/fencview'
-Bundle 'majutsushi/tagbar'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
+NeoBundle 'mbbill/fencview'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-easytags'
 " This calendar provide calendar view and connect to google calendar
-"Bundle 'itchyny/calendar.vim'
+"NeoBundle 'itchyny/calendar.vim'
 " This calendar can be used to write diary
-Bundle 'mattn/calendar-vim'
+NeoBundle 'mattn/calendar-vim'
 " Theme"{{{
-Bundle 'zeis/vim-kolor'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'flazz/vim-colorschemes'
+NeoBundle 'zeis/vim-kolor'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'flazz/vim-colorschemes'
 "}}}
 " Less
-Bundle 'groenewege/vim-less'
+NeoBundle 'groenewege/vim-less'
 " Snippets
-Bundle 'mattn/emmet-vim'
+NeoBundle 'mattn/emmet-vim'
 "}}}
 " vim-scripts repos"{{{
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'DrawIt'
-Bundle 'VimExplorer'
-Bundle 'Auto-Pairs'
-Bundle 'cecutil'
-Bundle 'xml.vim'
+NeoBundle 'L9'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'DrawIt'
+NeoBundle 'VimExplorer'
+NeoBundle 'Auto-Pairs'
+NeoBundle 'cecutil'
+NeoBundle 'xml.vim'
 "}}}
 " non github repos"{{{
-"Bundle 'git://git.wincent.com/command-t.git'
+"NeoBundle 'git://git.wincent.com/command-t.git'
 "}}}
 "}}}
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets 'tw' set to 72,
-" 'cindent' is on in C files, etc.
-" Also load indent files, to automatically do language-dependent indenting.
+
+call neobundle#end()
+
+" Required:
 filetype plugin indent on
 
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -125,83 +144,83 @@ endif
 
 "{{{ Bundules setting
 "{{{ neocomplcache setting
-"Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
-"let g:acp_enableAtStartup = 0
-" Launches neocomplcache automatically on vim startup.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underscore completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Sets minimum char length of syntax keyword.
-let g:neocomplcache_min_syntax_length = 3
-" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+""Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
+""let g:acp_enableAtStartup = 0
+"" Launches neocomplcache automatically on vim startup.
+"let g:neocomplcache_enable_at_startup = 1
+"" Use smartcase.
+"let g:neocomplcache_enable_smart_case = 1
+"" Use camel case completion.
+"let g:neocomplcache_enable_camel_case_completion = 1
+"" Use underscore completion.
+"let g:neocomplcache_enable_underbar_completion = 1
+"" Sets minimum char length of syntax keyword.
+"let g:neocomplcache_min_syntax_length = 3
+"" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
+"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-" Define file-type dependent dictionaries.
-let g:neocomplcache_dictionary_filetype_lists = {
-            \ 'default' : '',
-            \ 'vimshell' : $HOME.'/.vimshell_hist',
-            \ 'scheme' : $HOME.'/.gosh_completions'
-            \ }
+"" Define file-type dependent dictionaries.
+"let g:neocomplcache_dictionary_filetype_lists = {
+            "\ 'default' : '',
+            "\ 'vimshell' : $HOME.'/.vimshell_hist',
+            "\ 'scheme' : $HOME.'/.gosh_completions'
+            "\ }
 
-" Define keyword, for minor languages
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+"" Define keyword, for minor languages
+"if !exists('g:neocomplcache_keyword_patterns')
+    "let g:neocomplcache_keyword_patterns = {}
+"endif
+"let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l> neocomplcache#complete_common_string()
+"" Plugin key-mappings.
+"imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+"smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+"inoremap <expr><C-g>     neocomplcache#undo_completion()
+"inoremap <expr><C-l> neocomplcache#complete_common_string()
 
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-"\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ?
-"\<C-n>" : \"\<TAB>"
+"" SuperTab like snippets behavior.
+""imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
+""\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ?
+""\<C-n>" : \"\<TAB>"
 
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-"inoremap <expr><CR> neocomplcache#smart_close_popup()."\<CR>"
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+"" Recommended key-mappings.
+"" <CR>: close popup and save indent.
+""inoremap <expr><CR> neocomplcache#smart_close_popup()."\<CR>"
+"" <TAB>: completion.
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"" <C-h>, <BS>: close popup and delete backword char.
+""inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+""inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-y>  neocomplcache#close_popup()
+"inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
+"" AutoComplPop like behavior.
+""let g:neocomplcache_enable_auto_select = 1
 
-" Shell like behavior(not recommended).
-set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? \"\<Down>" : \"\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() .
-"\<CR>"
+"" Shell like behavior(not recommended).
+"set completeopt+=longest
+""let g:neocomplcache_enable_auto_select = 1
+""let g:neocomplcache_disable_auto_complete = 1
+""inoremap <expr><TAB>  pumvisible() ? \"\<Down>" : \"\<TAB>"
+""inoremap <expr><CR>  neocomplcache#smart_close_popup() .
+""\<CR>"
 
-" Enable omni completion. Not required if they are already set elsewhere in .vimrc
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"" Enable omni completion. Not required if they are already set elsewhere in .vimrc
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" Enable heavy omni completion, which require computational power and may stall the vim.
-if !exists('g:neocomplcache_omni_patterns')
-    let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^.  *\t]\.\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-let g:neocomplcache_omni_patterns.php = '[^.  \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+"" Enable heavy omni completion, which require computational power and may stall the vim.
+"if !exists('g:neocomplcache_omni_patterns')
+    "let g:neocomplcache_omni_patterns = {}
+"endif
+"let g:neocomplcache_omni_patterns.ruby = '[^.  *\t]\.\w*\|\h\w*::'
+""autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+"let g:neocomplcache_omni_patterns.php = '[^.  \t]->\h\w*\|\h\w*::'
+"let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+"let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 "}}}
 "{{{ neosnippet setting
 " Plugin key-mappings.
@@ -217,10 +236,6 @@ if has('conceal')
     set conceallevel=2 concealcursor=i
 endif
 
-"}}}
-"{{{ sparkup setting
-"
-let g:sparkupNextMapping = "<c-m>"
 "}}}
 " VimExplorer Setting"{{{
 let g:VEConf_usingKDE = 1
@@ -243,7 +258,6 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 "}}}
 "}}}
-"call pathogen#infect()
 "{{{ Basic setting
 sy on
 
