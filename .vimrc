@@ -73,6 +73,7 @@ NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'Shougo/neossh.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-sudo'
+NeoBundle 'Shougo/context_filetype.vim'
 "}}}
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'tpope/vim-fugitive'
