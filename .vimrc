@@ -557,7 +557,7 @@ nnoremap <Leader>cf :CommandTFlush<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 "}}}
 " Caching buffer."{{{
-nnoremap <Leader>re :NeoComplCacheCachingBuffer<CR>
+nnoremap <Leader>re :NeoCompleteBufferMakeCache<CR>
 "}}}
 " Copy file name"{{{
 if has('win32')
