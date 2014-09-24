@@ -1,6 +1,6 @@
 term konsole-256color
 #hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
-#termcapinfo xterm* ti@:te@
+termcapinfo xterm* ti@:te@
 # 日本語を使えるようにする
 defutf8 on
 defencoding utf-8
