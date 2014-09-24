@@ -68,6 +68,7 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 "}}}
+NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
 "NeoBundle 'tpope/vim-rails.git'
