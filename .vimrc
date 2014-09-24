@@ -70,6 +70,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 " TODO Need learn vimfiler
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimshell.vim'
+NeoBundle 'Shougo/neossh.vim'
 "}}}
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'tpope/vim-fugitive'
