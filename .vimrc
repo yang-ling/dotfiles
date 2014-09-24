@@ -67,7 +67,9 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+" TODO Need learn vimfiler
 NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/vimshell.vim'
 "}}}
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'tpope/vim-fugitive'
