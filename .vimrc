@@ -69,7 +69,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 " TODO Need learn vimfiler
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimshell.vim'
+"NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'Shougo/neossh.vim'
 NeoBundle 'Shougo/unite-outline'
 "NeoBundle 'Shougo/unite-sudo'
@@ -82,6 +82,7 @@ call neobundle#config('echodoc', {
       \ }})
 "}}}
 NeoBundle 'vim-scripts/sudo.vim'
+NeoBundle 'sgerrand/Conque-Shell', 'update_to_version_2.3'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
