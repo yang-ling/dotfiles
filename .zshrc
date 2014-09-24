@@ -91,6 +91,7 @@ man() {
 
 # /usr/lib/jvm/jdk is a symbol link. It links to the real JDK.
 # Note: in /etc/profile.d/jre.sh, there is a link to real JDK, so I needn't make own link.
+# Now archlinux uses archlinux-java to manage java
 # JAVA_HOME=/usr/lib/jvm/jdk
 # export JAVA_HOME
 JRE_HOME=$JAVA_HOME/jre
