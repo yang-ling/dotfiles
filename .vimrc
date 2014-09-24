@@ -72,7 +72,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'Shougo/neossh.vim'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/unite-sudo'
+"NeoBundle 'Shougo/unite-sudo'
 NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'Shougo/echodoc', '', 'default'
 call neobundle#config('echodoc', {
@@ -81,6 +81,7 @@ call neobundle#config('echodoc', {
       \ 'insert' : 1,
       \ }})
 "}}}
+NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
