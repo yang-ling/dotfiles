@@ -69,7 +69,7 @@ NeoBundle 'Shougo/neosnippet'
 "}}}
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'tpope/vim-rails.git'
+"NeoBundle 'tpope/vim-rails.git'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'tpope/vim-surround'
