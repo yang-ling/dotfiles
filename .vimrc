@@ -99,6 +99,7 @@ NeoBundle 'mbbill/fencview'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
+NeoBundle 'xolox/vim-shell'
 " This calendar provide calendar view and connect to google calendar
 "NeoBundle 'itchyny/calendar.vim'
 " This calendar can be used to write diary
@@ -394,7 +395,7 @@ set nowrapscan
 set completeopt=longest,menu
 
 " Set camel completion
-set completefunc=Camel_Complete
+"set completefunc=Camel_Complete
 
 set wildmode=full
 set wildmenu
