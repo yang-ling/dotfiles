@@ -136,6 +136,7 @@ alias paclo="/usr/bin/pacmatic -Qdt"      # '[l]ist [o]rphans'    - list all pac
 alias pacc="sudo /usr/bin/pacmatic -Sc"      # '[c]lean cache'   - delete all not currently installed package files
 alias pacca="sudo /usr/bin/pacmatic -Scc"      # '[c]lean [a]ll cache'   - delete all not currently installed package files
 alias paclf="/usr/bin/pacmatic -Ql"       # '[l]ist [f]iles'  - list all files installed by a given package
+alias pacqo="/usr/bin/pacmatic -Qo"       # '[o]wn file'  - list the package which owns target file
 alias yaoexpl="/usr/bin/yaourt -D --asexplicit" # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
 alias yaoimpl="/usr/bin/yaourt -D --asdeps" # 'mark as [impl]icit'  - mark one or more packages as non explicitly installed
 
