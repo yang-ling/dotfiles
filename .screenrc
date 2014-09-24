@@ -102,6 +102,6 @@ bind -c prev ^n eval "next" "command -c next"
 bind -c prev ^l command
 
 # suspend用のウインドウを作成する
-screen -t another 0
+screen -t vim 0
 screen -t main
 bind ^a screen -t another 0
