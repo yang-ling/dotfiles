@@ -74,6 +74,12 @@ NeoBundle 'Shougo/neossh.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-sudo'
 NeoBundle 'Shougo/context_filetype.vim'
+NeoBundle 'Shougo/echodoc', '', 'default'
+call neobundle#config('echodoc', {
+      \ 'lazy' : 1,
+      \ 'autoload' : {
+      \ 'insert' : 1,
+      \ }})
 "}}}
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'tpope/vim-fugitive'
@@ -358,6 +364,9 @@ let g:tagbar_autoclose = 1
 " EasyTag Setting"{{{
 let g:easytags_async = 1
 "}}}
+" echodoc setting
+set cmdheight=2
+let g:echodoc_enable_at_startup = 1
 "}}}
 "{{{ Basic setting
 sy on
