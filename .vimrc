@@ -130,6 +130,8 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'groenewege/vim-less'
 " Snippets
 NeoBundle 'mattn/emmet-vim'
+" Made by me
+NeoBundle 'yang-ling/vim-tmux-syntax'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -713,6 +715,10 @@ if has("autocmd")
         " Set FileType"{{{
         " for cobol
         autocmd BufNewFile,BufRead *.ccb set filetype=cobol
+
+        " for markdown
+        au FileType markdown call MyAddToFileType('mkd')
+        au FileType mkd      call MyAddToFileType('markdown')
         "}}}
 
         "{{{ jslint
@@ -781,6 +787,12 @@ function! ClearTemp()
     :%s/\.)/)/g
     :%s/,)/)/g
     :%s/;.$/;/g
+endfunction
+" Copyied from  https://github.com/plasticboy/vim-markdown/issues/64#issuecomment-33560271
+function! MyAddToFileType(ft)
+  if index(split(&ft, '\.'), a:ft) == -1
+    let &ft .= '.'.a:ft
+  endif
 endfunction
 
 "{{{ Not work
