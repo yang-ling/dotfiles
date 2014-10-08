@@ -120,8 +120,8 @@ fi
 
 export EDITOR="/usr/bin/vim"
 
-# === HUE ===
-[[ -s "$HOME/Work/hue-config.sh" ]] && source "$HOME/Work/hue-config.sh"
+# === Work Config ===
+[[ -s "$HOME/Work/work-config.sh" ]] && source "$HOME/Work/work-config.sh"
 
 # To activate zsh-syntax-highlighting, a Fish-shell-like syntax highlighting.
 [[ -s /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
