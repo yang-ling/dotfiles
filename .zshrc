@@ -92,8 +92,8 @@ man() {
 # /usr/lib/jvm/jdk is a symbol link. It links to the real JDK.
 # Note: in /etc/profile.d/jre.sh, there is a link to real JDK, so I needn't make own link.
 # Now archlinux uses archlinux-java to manage java
-# JAVA_HOME=/usr/lib/jvm/jdk
-# export JAVA_HOME
+JAVA_HOME=/usr/lib/jvm/default
+export JAVA_HOME
 JRE_HOME=$JAVA_HOME/jre
 PATH=$PATH:$JAVA_HOME/bin
 export PATH
@@ -106,6 +106,11 @@ export CATALINA_HOME=/home/yangling/Downloads/Tomcat/apache-tomcat-6.0.37
 #export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=300m"
 export MAVEN_OPTS="-Xmx1024m -Xss10m -XX:MaxPermSize=300m"
 export M2_HOME=/opt/maven
+
+# GO Settings
+GOPATH=~/go
+export GOPATH
+export PATH="$PATH:$GOPATH/bin"
 
 # gem install needs this, otherwise warning will happen
 # Comment the following 2 lines out because rvm conflicts with GEM_HOME
