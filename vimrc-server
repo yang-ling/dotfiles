@@ -53,7 +53,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 "
 " original repos on github"{{{
+NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-scripts/sudo.vim'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'scrooloose/nerdcommenter'
@@ -66,8 +68,8 @@ NeoBundle 'juvenn/mustache.vim'
 NeoBundle 'fsouza/cobol.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 " Theme"{{{
-NeoBundle 'zeis/vim-kolor'
-NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'zeis/vim-kolor'
+"NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'flazz/vim-colorschemes'
 "}}}
 "}}}
@@ -99,6 +101,27 @@ endif
 " VimExplorer Setting"{{{
 let g:VEConf_usingKDE = 1
 let g:VEConf_externalExplorer = "dolphin"
+"}}}
+" vim-airline"{{{
+" Smarter tab line
+" Display buffers when there is only one tab
+let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 "}}}
 "}}}
 "{{{ Basic setting
