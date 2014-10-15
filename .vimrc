@@ -16,6 +16,11 @@
 " 1. vim-jad(A Java decompile tool)
 " 2. powerline: AUR https://aur.archlinux.org/packages/python2-powerline-git/,
 " NOTE: if install directly by clone github, no need install this AUR package
+"   In this approach, I don't use powerline AUR package, instead, I clone
+"   powerline repo and install powerline font package from AUR.
+"   See Bundles setting's powerline part
+" Update:2014-10-16
+"   I use airline instead of powerline
 "
 " Plugin requirements
 " 1. Bundle 'mbbill/fencview'
@@ -130,6 +135,9 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'groenewege/vim-less'
 " Snippets
 NeoBundle 'mattn/emmet-vim'
+" Powerline
+"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+NeoBundle 'bling/vim-airline'
 " Made by me
 NeoBundle 'yang-ling/vim-tmux-syntax'
 "}}}
@@ -354,11 +362,26 @@ let g:VEConf_externalExplorer = "dolphin"
 "https://github.com/Lokaltog/powerline
 "Also needs powerline font on AUR
 "https://aur.archlinux.org/packages/powerline-fonts-git/
-set rtp+=~/MyGitRepo/powerline/powerline/bindings/vim/
+"set rtp+=~/MyGitRepo/powerline/powerline/bindings/vim
 "Because Powerline can be installed directly from AUR, so we needn't config
 "vimrc any more.
 "But AUR Powerline package doesn't work fine on Gvim, so I don't use AUR
 "version, instead I use rtp version and along with AUR powerline font package
+"}}}
+" vim-airline"{{{
+" Use powerline font
+" Need install https://aur.archlinux.org/packages/powerline-fonts-git/
+let g:airline_powerline_fonts = 1
+" Smarter tab line
+" Display buffers when there is only one tab
+let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 "}}}
 " TagBar"{{{
 cnoremap :t TagbarToggle<CR>
