@@ -1,30 +1,5 @@
-" An example for a vimrc file.
+" An example for a vimrc file for Linux server.
 "
-" Maintainer:   Bram Moolenaar <Bram@vim.org>
-" Last change:  2011 Apr 15
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"         for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"       for OpenVMS:  sys$login:.vimrc
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-"
-" Plugins installed by pacman:
-" 1. vim-jad(A Java decompile tool)
-" 2. powerline: AUR https://aur.archlinux.org/packages/python2-powerline-git/,
-" NOTE: if install directly by clone github, no need install this AUR package
-"
-" Plugin requirements
-" 1. Bundle 'mbbill/fencview'
-"     Need tellenc: https://github.com/adah1972/tellenc
-"     git clone it and use g++ to compile it:
-"     g++ -o tellenc tellenc.cpp
-"     Then copy tellenc to /usr/bin/
-" 2. Tagbar and easytags
-"     Need install ctags
 "
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
