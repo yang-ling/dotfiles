@@ -1,64 +1,25 @@
 
 root = true
 
-[**.vim]
+[*]
 indent_style = space
 indent_size = 4
-insert_final_newline = true
+tab_width = 4
+#end_of_line = lf|crlf|cr
 trim_trailing_whitespace = true
 charset = utf-8
+insert_final_newline = true
 
-[**.js]
-indent_style = space
-indent_size = 4
-trim_trailing_whitespace = true
-
-[**.xml]
-indent_style = space
+[*.{xml,html,jsp,css,mustache,yml,rb}]
 indent_size = 2
-trim_trailing_whitespace = true
+tab_width = 2
 
-[**.html]
-indent_style = space
+[*.{md,mkd,markdown}]
 indent_size = 2
-trim_trailing_whitespace = true
-
-[**.jsp]
-indent_style = space
-indent_size = 2
-trim_trailing_whitespace = true
-
-[**.css]
-indent_style = space
-indent_size = 2
-trim_trailing_whitespace = true
-
-[**.mustache]
-indent_style = space
-indent_size = 2
-trim_trailing_whitespace = true
-
-[**.yml]
-indent_style = space
-indent_size = 2
-trim_trailing_whitespace = true
-
-[**.md]
-indent_style = space
-indent_size = 2
-trim_trailing_whitespace = true
-
-[**.mkd]
-indent_style = space
-indent_size = 2
-trim_trailing_whitespace = true
-
-[**.markdown]
-indent_style = space
-indent_size = 2
-trim_trailing_whitespace = true
+tab_width = 2
+trim_trailing_whitespace = false
 
 [config]
-indent_style = space
 indent_size = 2
+tab_width = 2
 trim_trailing_whitespace = false
