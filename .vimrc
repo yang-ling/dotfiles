@@ -634,7 +634,8 @@ cnoremap :time r !date +\%T<CR>
 "}}}
 " GitHub Flavored Markdown Parser Preview"{{{
 " Use ghmd as command line parser tool
-cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
+"cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
+cnoremap :mdp !ghmd -r %<CR>
 "}}}
 " Preview html, xml"{{{
 cnoremap :xo !xdg-open %<CR>
