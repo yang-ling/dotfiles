@@ -140,6 +140,16 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'bling/vim-airline'
 " Made by me
 NeoBundle 'yang-ling/vim-tmux-syntax'
+NeoBundle 'yang-ling/rst'
+" reStruected text
+"NeoBundle 'Rykka/riv.vim'
+"NeoBundle 'Rykka/clickable.vim'
+NeoBundle 'nvie/vim-rst-tables'
+NeoBundle 'vim-scripts/VST'
+" xml
+NeoBundle 'othree/xml.vim'
+" csv
+" NeoBundle 'chrisbra/csv.vim'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -148,7 +158,7 @@ NeoBundle 'DrawIt'
 NeoBundle 'VimExplorer'
 NeoBundle 'Auto-Pairs'
 NeoBundle 'cecutil'
-NeoBundle 'xml.vim'
+"NeoBundle 'xml.vim'
 "}}}
 " non github repos"{{{
 "NeoBundle 'git://git.wincent.com/command-t.git'
@@ -391,9 +401,20 @@ let g:tagbar_autoclose = 1
 " EasyTag Setting"{{{
 let g:easytags_async = 1
 "}}}
-" echodoc setting
+" echodoc setting"{{{
 set cmdheight=2
 let g:echodoc_enable_at_startup = 1
+"}}}
+"reStructed text plugin"{{{
+" Need clone git@github.com:Rykka/rhythm.css.git
+cnoremap :rp :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/rst.html && xdg-open /tmp/rst.html<CR>
+cnoremap :r :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/rst.html<CR>
+"let g:riv_web_browser = "/usr/bin/google-chrome-stable"
+"}}}
+" csv"{{{
+let b:csv_arrange_leftalign = 1
+"let g:csv_nomap_cr = 1
+"}}}
 "}}}
 "{{{ Basic setting
 sy on
@@ -600,7 +621,6 @@ vnoremap <Leader>dt dpkddkdd
 " Parent tags are inline
 vnoremap <Leader>dit dvatp
 "}}}
-
 " CommandT"{{{
 nnoremap <Leader>ct :CommandT<CR>
 nnoremap <Leader>cd :CommandTBuffer<CR>
