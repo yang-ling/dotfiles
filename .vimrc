@@ -142,10 +142,11 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'yang-ling/vim-tmux-syntax'
 NeoBundle 'yang-ling/rst'
 " reStruected text
-"NeoBundle 'Rykka/riv.vim'
-"NeoBundle 'Rykka/clickable.vim'
-NeoBundle 'nvie/vim-rst-tables'
-NeoBundle 'vim-scripts/VST'
+NeoBundleLazy 'Rykka/riv.vim'
+NeoBundleLazy 'Rykka/clickable.vim'
+NeoBundleLazy 'nvie/vim-rst-tables'
+autocmd FileType rst NeoBundleSource riv.vim clickable.vim vim-rst-tables
+"NeoBundle 'vim-scripts/VST'
 " xml
 NeoBundle 'othree/xml.vim'
 " csv
