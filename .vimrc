@@ -411,6 +411,9 @@ let g:echodoc_enable_at_startup = 1
 let b:csv_arrange_leftalign = 1
 "let g:csv_nomap_cr = 1
 "}}}
+"reStruected text plugin"{{{
+let g:riv_web_browser = "/usr/bin/google-chrome-stable"
+"}}}
 "}}}
 "{{{ Basic setting
 sy on
@@ -755,7 +758,6 @@ if has("autocmd")
         " Need clone git@github.com:Rykka/rhythm.css.git
         autocmd FileType rst cnoremap :p :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/rst.html && xdg-open /tmp/rst.html<CR>
         autocmd FileType rst cnoremap :m :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/rst.html<CR>
-        "let g:riv_web_browser = "/usr/bin/google-chrome-stable"
         "}}}
 
         " Set FileType"{{{
@@ -836,7 +838,7 @@ function! ClearTemp()
     :%s/,)/)/g
     :%s/;.$/;/g
 endfunction
-" Copyied from  https://github.com/plasticboy/vim-markdown/issues/64#issuecomment-33560271
+" Copied from  https://github.com/plasticboy/vim-markdown/issues/64#issuecomment-33560271
 function! MyAddToFileType(ft)
   if index(split(&ft, '\.'), a:ft) == -1
     let &ft .= '.'.a:ft
