@@ -748,7 +748,7 @@ if has("autocmd")
         autocmd FileType css noremap <buffer> <leader>fm :call CSSBeautify()<CR>
 
         " Set fold method to marker when open vimrc file
-        autocmd FileType vim set fdm=marker | set nospell
+        autocmd FileType vim set fdm=marker | set spell
         " GitHub Flavored Markdown Parser Preview"{{{
         " Use ghmd as command line parser tool
         "cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
