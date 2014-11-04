@@ -407,12 +407,6 @@ let g:easytags_async = 1
 set cmdheight=2
 let g:echodoc_enable_at_startup = 1
 "}}}
-"reStructed text plugin"{{{
-" Need clone git@github.com:Rykka/rhythm.css.git
-cnoremap :rp :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/rst.html && xdg-open /tmp/rst.html<CR>
-cnoremap :r :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/rst.html<CR>
-"let g:riv_web_browser = "/usr/bin/google-chrome-stable"
-"}}}
 " csv"{{{
 let b:csv_arrange_leftalign = 1
 "let g:csv_nomap_cr = 1
@@ -654,11 +648,6 @@ nnoremap <leader>rv /^\(\(<C-R>/\)\@!.\)*$<CR>
 cnoremap :date r !date<CR>
 cnoremap :time r !date +\%T<CR>
 "}}}
-" GitHub Flavored Markdown Parser Preview"{{{
-" Use ghmd as command line parser tool
-"cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
-cnoremap :mdp !ghmd -r %<CR>
-"}}}
 " Preview html, xml"{{{
 cnoremap :xo !xdg-open %<CR>
 "}}}
@@ -757,6 +746,17 @@ if has("autocmd")
 
         " Set fold method to marker when open vimrc file
         autocmd FileType vim set fdm=marker | set nospell
+        " GitHub Flavored Markdown Parser Preview"{{{
+        " Use ghmd as command line parser tool
+        "cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
+        autocmd FileType markdown cnoremap :p !ghmd -r %<CR>
+        "}}}
+        "reStructed text plugin"{{{
+        " Need clone git@github.com:Rykka/rhythm.css.git
+        autocmd FileType rst cnoremap :p :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/rst.html && xdg-open /tmp/rst.html<CR>
+        autocmd FileType rst cnoremap :m :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/rst.html<CR>
+        "let g:riv_web_browser = "/usr/bin/google-chrome-stable"
+        "}}}
 
         " Set FileType"{{{
         " for cobol
