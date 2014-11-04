@@ -152,6 +152,8 @@ NeoBundle 'othree/xml.vim'
 " csv
 NeoBundleLazy 'chrisbra/csv.vim'
 autocmd FileType csv NeoBundleSource csv.vim
+" Syntax checking
+NeoBundle 'scrooloose/syntastic'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
