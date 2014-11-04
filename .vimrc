@@ -149,7 +149,8 @@ NeoBundle 'vim-scripts/VST'
 " xml
 NeoBundle 'othree/xml.vim'
 " csv
-" NeoBundle 'chrisbra/csv.vim'
+NeoBundleLazy 'chrisbra/csv.vim'
+autocmd FileType csv NeoBundleSource csv.vim
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -759,6 +760,8 @@ if has("autocmd")
         " Set FileType"{{{
         " for cobol
         autocmd BufNewFile,BufRead *.ccb set filetype=cobol
+        " for csv
+        autocmd BufNewFile,BufRead *.csv set filetype=csv
 
         " for markdown
         au FileType markdown call MyAddToFileType('mkd')
