@@ -154,6 +154,9 @@ NeoBundleLazy 'chrisbra/csv.vim'
 autocmd FileType csv NeoBundleSource csv.vim
 " Syntax checking
 NeoBundle 'scrooloose/syntastic'
+" Complete
+" Need run git submodule update --init --recursive
+"NeoBundle 'Valloric/YouCompleteMe'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -783,6 +786,16 @@ if has("autocmd")
         "https://github.com/batsuev/google-closure-linter-for-vim/blob/master/ftplugin/javascript.vim
         autocmd FileType javascript setlocal makeprg=gjslint\ --strict\ --jslint_error\ all\ --max_line_length\ 120\ %
         autocmd FileType javascript set efm=%-P%>-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ %t:%n:\ %m,%-Q
+        "}}}
+        " Syntastic for python"{{{
+        autocmd FileType python
+                    \ if getline(1) == "#!/usr/bin/python2" |
+                    \   let b:syntastic_flake8_exec = '/usr/bin/flake8-python2' |
+                    \   let b:syntastic_checkers = ["flake8"] |
+                    \ else |
+                    \   let b:syntastic_flake8_exec = '/usr/bin/flake8' |
+                    \   let b:syntastic_checkers = ["flake8"] |
+                    \ endif
         "}}}
 
         " When editing a file, always jump to the last known cursor position.
