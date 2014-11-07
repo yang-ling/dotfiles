@@ -334,7 +334,7 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html,mkd.markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -419,6 +419,9 @@ let b:csv_arrange_leftalign = 1
 "reStruected text plugin"{{{
 let g:riv_web_browser = "/usr/bin/google-chrome-stable"
 "}}}
+" Syntastic Setting
+let g:syntastic_markdown_checkers = ["mdl"]
+let g:syntastic_markdown_mdl_exec = '/home/yangling/.rvm/gems/ruby-2.1.2/bin/mdl'
 "}}}
 "{{{ Basic setting
 sy on
@@ -551,7 +554,7 @@ nnoremap <Leader>te :tabe<CR>
 " no highlighting
 cnoremap :n nohl<CR>
 " Set file type to markdown.
-nnoremap <Leader>md :set ft=markdown<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
+nnoremap <Leader>md :set ft=mkd.markdown<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 " Set file type to mail.
 nnoremap <Leader>ma :set ft=mail<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 nnoremap <Leader>tt :set ft=textile<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
@@ -757,7 +760,7 @@ if has("autocmd")
         " GitHub Flavored Markdown Parser Preview"{{{
         " Use ghmd as command line parser tool
         "cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
-        autocmd FileType markdown cnoremap :p !ghmd -r %<CR>
+        autocmd FileType mkd.markdown cnoremap :p !ghmd -r %<CR>
         "}}}
         "reStructed text plugin"{{{
         " Need clone git@github.com:Rykka/rhythm.css.git
@@ -772,8 +775,7 @@ if has("autocmd")
         autocmd BufNewFile,BufRead *.csv set filetype=csv
 
         " for markdown
-        au FileType markdown call MyAddToFileType('mkd')
-        au FileType mkd      call MyAddToFileType('markdown')
+        au FileType mkd,markdown set ft=mkd.markdown
         "}}}
 
         "{{{ jslint

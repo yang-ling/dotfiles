@@ -272,3 +272,8 @@ syntastic
 init
 snippet
 flake8
+jenkins
+CWS
+CJK
+CWS's
+CJK's
