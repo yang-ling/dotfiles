@@ -419,9 +419,13 @@ let b:csv_arrange_leftalign = 1
 "reStruected text plugin"{{{
 let g:riv_web_browser = "/usr/bin/google-chrome-stable"
 "}}}
-" Syntastic Setting
+" Syntastic Setting"{{{
+" Checkers
 let g:syntastic_markdown_checkers = ["mdl"]
 let g:syntastic_markdown_mdl_exec = '/home/yangling/.rvm/gems/ruby-2.1.2/bin/mdl'
+" Filter error messages
+let g:syntastic_markdown_mdl_quiet_messages = {"regex": 'MD013'}
+"}}}
 "}}}
 "{{{ Basic setting
 sy on
