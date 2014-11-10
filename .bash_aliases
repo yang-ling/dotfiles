@@ -50,6 +50,7 @@ alias aes256='gpg -c -v --cipher-algo AES256'
 
 alias xo='xdg-open'
 
+# git
 alias g=git
 alias gs='git status'
 alias ga='git add'
@@ -77,6 +78,7 @@ alias gsa='git stash apply'
 alias gitoptimize='rm -rf .git/refs/original/ && git reflog expire --all --expire=now && git gc --prune=now && git gc --aggressive --prune=now'
 alias glistskip='git ls-files -v | grep "^S"'
 alias gpf='bash ~/MyGitRepo/Little/myfork/git-related/git-push-force.bash'
+alias gsu='git submodule sync --recursive && git submodule update --init --recursive'
 
 alias rmvn='rainbow --config=mvn3 -- mvn'
 alias mci='rainbow --config=mvn3 -- mvn clean install'
