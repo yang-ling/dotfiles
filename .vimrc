@@ -97,6 +97,8 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'godlygeek/tabular'
+" Refer to https://github.com/junegunn/vim-easy-align
+NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/camelcasemotion'
@@ -425,6 +427,13 @@ let g:syntastic_markdown_checkers = ["mdl"]
 let g:syntastic_markdown_mdl_exec = '/home/yangling/.rvm/gems/ruby-2.1.2/bin/mdl'
 " Filter error messages
 let g:syntastic_markdown_mdl_quiet_messages = {"regex": 'MD013'}
+"}}}
+" vim-easy-align"{{{
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+"nmap <Leader>a <Plug>(EasyAlign)
 "}}}
 "}}}
 "{{{ Basic setting
@@ -780,6 +789,8 @@ if has("autocmd")
 
         " for markdown
         au FileType mkd,markdown set ft=mkd.markdown
+        " For bash_aliases
+        autocmd BufNewFile,BufRead .bash_aliases set filetype=sh
         "}}}
 
         "{{{ jslint
