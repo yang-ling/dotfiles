@@ -414,10 +414,6 @@ let g:easytags_async = 1
 set cmdheight=2
 let g:echodoc_enable_at_startup = 1
 "}}}
-" csv"{{{
-let b:csv_arrange_leftalign = 1
-"let g:csv_nomap_cr = 1
-"}}}
 "reStruected text plugin"{{{
 let g:riv_web_browser = "/usr/bin/google-chrome-stable"
 "}}}
@@ -495,6 +491,8 @@ hi NonText term=bold ctermfg=8 guifg=Blue
 
 " File encoding
 set fileencodings=utf8,ms932,cp932,iso-2022-jp,euc-jp,cp936,default,latin1
+" netrw style: tree
+let g:netrw_liststyle=3
 
 " Highlight trailing whitespace"{{{
 highlight ExtraWhitespace ctermbg=darkred guibg=#382424
@@ -580,6 +578,11 @@ nnoremap <Leader>tt :set ft=textile<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 vnoremap <F2> :<BS><BS><BS><BS><BS>'<,'>s/\s\+$//g<CR>
 " Add sequence number to selected lines.
 vnoremap <Leader>se :<BS><BS><BS><BS><BS>let i=1\|'<,'>g/^/s//\=i/\|let i=i+1<CR>:nohl<CR>
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+"Maps "K" to open vim help for the word under cursor when editing vim files. This already is the system default on Windows, but it needs to be added explicitly on Linux / OS X.
+autocmd FileType vim setlocal keywordprg=:help
 "}}}
 " Diff setting"{{{
 " Ignore white space in diff
@@ -780,6 +783,10 @@ if has("autocmd")
         autocmd FileType rst cnoremap :p :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/%.html && xdg-open /tmp/%.html<CR>
         autocmd FileType rst cnoremap :m :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/%.html<CR>
         "}}}
+        " csv"{{{
+        autocmd FileType csv let b:csv_arrange_leftalign = 1
+        "let g:csv_nomap_cr = 1
+        "}}}
 
         " Set FileType"{{{
         " for cobol
@@ -921,3 +928,4 @@ function! Camel_Complete( findstart, base )
 endfunction
 "}}}
 "}}}
+"
