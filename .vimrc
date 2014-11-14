@@ -87,6 +87,7 @@ call neobundle#config('echodoc', {
       \ }})
 "}}}
 NeoBundle 'vim-scripts/sudo.vim'
+NeoBundle 'vim-scripts/IndexedSearch'
 NeoBundle 'sgerrand/Conque-Shell', 'update_to_version_2.3'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'tpope/vim-fugitive'
@@ -104,7 +105,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/camelcasemotion'
 NeoBundle 'vim-scripts/fcitx.vim'
 NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'vim-scripts/Mark--Karkat'
+"NeoBundle 'vim-scripts/Mark--Karkat'
 NeoBundle 'edsono/vim-matchit'
 NeoBundle 'plasticboy/vim-markdown'
 " Preview markdown
@@ -503,6 +504,11 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 "}}}
 
+" switch from block cursor to vertical line-cursor when going in and out of"{{{
+" insert mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"}}}
 "let xml_no_html = 1
 "let xml_no_mustache = 1
 
@@ -675,14 +681,35 @@ nnoremap <leader>rv /^\(\(<C-R>/\)\@!.\)*$<CR>
 cnoremap :date r !date<CR>
 cnoremap :time r !date +\%T<CR>
 "}}}
-" Preview html, xml"{{{
-cnoremap :xo !xdg-open %<CR>
+" Preview"{{{
+cnoremap :p call MyPreview()<CR>
 "}}}
+" Make
+cnoremap :m call MyMake("","")<CR>
 "google closure"{{{
-cnoremap :fj !fixjsstyle --strict %<CR>
-cnoremap :fc !fixclosure %<CR>
-cnoremap :ff !fixclosure -f %<CR>
-cnoremap :mk !closure --js % --js_output_file /tmp/closure_tmp.js -W VERBOSE<CR>
+"cnoremap :fj !fixjsstyle --strict %<CR>
+"cnoremap :fc !fixclosure %<CR>
+"cnoremap :ff !fixclosure -f %<CR>
+"cnoremap :mk !closure --js % --js_output_file /tmp/closure_tmp.js -W VERBOSE<CR>
+"}}}
+" correct previous misspelling"{{{
+nnoremap <Leader>s [s1z=<c-o>
+inoremap <Leader>s <c-g>u<Esc>[s1z=`]A<c-g>u
+"}}}
+" Javascript"{{{
+" Extract variable"{{{
+vnoremap <Leader>var :call ExtractLocalVariable()<CR>
+"}}}
+"}}}
+"Write Read-only file"{{{
+cnoremap w!! w !sudo tee % >/dev/null
+"}}}
+"Easy copy/paste from system clipboard"{{{
+vmap <Leader>y "+y
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 "}}}
 "}}}
 " Macro"{{{
@@ -776,12 +803,12 @@ if has("autocmd")
         " GitHub Flavored Markdown Parser Preview"{{{
         " Use ghmd as command line parser tool
         "cnoremap :mdp !ghmd % > /tmp/tmp.html && xdg-open /tmp/tmp.html<CR>
-        autocmd FileType mkd.markdown cnoremap :p !ghmd -r %<CR>
+        "autocmd FileType mkd.markdown cnoremap :p !ghmd -r %<CR>
         "}}}
         "reStructed text plugin"{{{
         " Need clone git@github.com:Rykka/rhythm.css.git
-        autocmd FileType rst cnoremap :p :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/%.html && xdg-open /tmp/%.html<CR>
-        autocmd FileType rst cnoremap :m :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/%.html<CR>
+        "autocmd FileType rst cnoremap :p :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/%.html && xdg-open /tmp/%.html<CR>
+        "autocmd FileType rst cnoremap :m :!rst2html2 --stylesheet-dirs="~/MyGitRepo/rhythm.css" --stylesheet-path="dist/css/rhythm.min.css,math/math.css,syntax/molokai.css" --syntax-highlight=short % > /tmp/%.html<CR>
         "}}}
         " csv"{{{
         autocmd FileType csv let b:csv_arrange_leftalign = 1
@@ -798,6 +825,8 @@ if has("autocmd")
         au FileType mkd,markdown set ft=mkd.markdown
         " For bash_aliases
         autocmd BufNewFile,BufRead .bash_aliases set filetype=sh
+        " json to javascript
+        autocmd BufNewFile,BufRead *.json set ft=javascript
         "}}}
 
         "{{{ jslint
@@ -821,6 +850,10 @@ if has("autocmd")
                     \   let b:syntastic_checkers = ["flake8"] |
                     \ endif
         "}}}
+        " Save session"{{{
+        "au VimLeavePre * call SaveSession()
+        "au VimEnter * call LoadSession()
+        "}}}
 
         " When editing a file, always jump to the last known cursor position.
         " Don't do it when the position is invalid or when inside an event handler
@@ -832,18 +865,6 @@ if has("autocmd")
                     \   exe "normal! g`\"" |
                     \ endif
 
-        "  au InsertEnter * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-        "  au InsertLeave * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-        "  au VimLeave * silent execute \"!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-
-        "  autocmd FileType xml setlocal tabstop=2 | setlocal shiftwidth=2 | colo torte
-        "  autocmd FileType jsp setlocal tabstop=2 | setlocal shiftwidth=2 | colo evening
-        "  autocmd FileType javascript setlocal tabstop=4 | setlocal shiftwidth=4 | colo evening
-
-        " remove white space before saving.
-        "autocmd BufWritePre *.rb :%s/\s\+$//e
-        "autocmd BufWritePre *.cpp :%s/\s\+$//e
-
     augroup END
 
 else
@@ -851,6 +872,13 @@ else
     set autoindent        " always set autoindenting on
 
 endif " has("autocmd")"}}}
+
+" Self-defined command"{{{
+" Write multiple copies at different paths, when you write to a buffer."{{{
+" See http://vimrcfu.com/snippet/107
+command -nargs=1 -complete=file DuplicateAt autocmd BufWritePost <buffer> w! <args>
+"}}}
+"}}}
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -861,7 +889,7 @@ if !exists(":DiffOrig")
 endif
 
 "{{{ Functions
-"Use :set spell! can do same job
+"Use :set spell! can do same job"{{{
 function! ToggleSpellCheck()
     if &spell
         :set nospell
@@ -871,18 +899,156 @@ function! ToggleSpellCheck()
         echo "spell check on"
     endif
 endfunction
+"}}}
 
-function! ClearTemp()
+function! ClearTemp()"{{{
     :%s/\.)/)/g
     :%s/,)/)/g
     :%s/;.$/;/g
 endfunction
-" Copied from  https://github.com/plasticboy/vim-markdown/issues/64#issuecomment-33560271
+"}}}
+" Copied from  https://github.com/plasticboy/vim-markdown/issues/64#issuecomment-33560271"{{{
 function! MyAddToFileType(ft)
   if index(split(&ft, '\.'), a:ft) == -1
     let &ft .= '.'.a:ft
   endif
 endfunction
+"}}}
+
+" ExtractLocalVariable"{{{
+" See http://vimrcfu.com/snippet/112
+function! ExtractLocalVariable()
+    let name = input("Variable name: ")
+
+    if (visualmode() == "")
+        normal! viw
+    else
+        normal! gv
+    endif
+
+    exec "normal! c" . name
+    exec "normal! Ovar " . name . " = "
+    exec "normal! pa;"
+endfunction
+"}}}
+
+" Session Management"{{{
+function SaveSession()
+    if winnr('$') > 1 || tabpagenr('$') > 1
+        " we have more than one windows or tabs open, ask whether we want
+        " to save the session.
+        let save_sesssion = confirm("Save session ? ", "&yes\n&No", 0)
+        if save_sesssion == 1
+            call inputsave()
+            let session_fl = input("save as: ", getcwd()."/.session.vim", "file")
+            call inputrestore()
+            execute 'mksession!' session_fl
+        endif
+    endif
+endfunction
+
+function LoadSession()
+    if argc() != 0
+        return
+    endif
+    let session_fl = getcwd()."/.session.vim"
+    if filereadable(session_fl)
+        let load_sesssion = confirm("Load session from '".session_fl."'?", "&Yes\n&no\nload and delete\ndelete", 1)
+        if load_sesssion == 1 || load_sesssion == 3
+            execute 'source' session_fl
+        endif
+        if load_sesssion == 3 || load_sesssion == 4
+            call system('unlink '.session_fl)
+        endif
+    endif
+endfunction
+"}}}
+" MakeMenu"{{{
+function! MakeMenu()
+   let l:myMakeTargets = ["quit", "", "html", "cln", "bld", "tst", "rel", "all", "doc"]
+   let l:c=0
+   let l:c = confirm("Make Menu","&make\n&Html\n&cln\n&bld\n&tst\n&rel\n&all\n&doc", 2)
+   if l:c != 0
+         exe "make " . l:myMakeTargets[l:c]
+   endif
+endfunction
+"}}}
+" Preview"{{{
+function! MyPreview()
+    let l:filename = expand("%:p")
+    let l:shortFileName = expand("%:p:t")
+    if has('win32')
+        let l:filename = substitute(expand("%:p"), "/", "\\", "g")
+        let l:shortFileName = substitute(expand("%:p:t"), "/", "\\", "g")
+    endif
+    if &ft ==? 'mkd.markdown'
+        exe "!ghmd -r " . l:filename
+    elseif index(["xml","html"], &ft) >= 0
+        exe "!xdg-open " . l:filename
+    elseif &ft ==? "rst"
+        let l:previewTypeOfRst = ["","rst2html2","make"]
+        let l:c = confirm("Preview Type", "&rst2html2\n&make")
+        let l:previewType = l:previewTypeOfRst[l:c]
+        if l:previewType ==? l:previewTypeOfRst[1]
+            call MyMake("rst",l:previewTypeOfRst[1])
+            exe "!xdg-open /tmp/" . l:shortFileName . ".html"
+        elseif l:previewType ==? l:previewTypeOfRst[2]
+            echohl WarningMsg | echomsg "Preview sphinx is not supported!" | echohl None
+        endif
+    else
+        echohl WarningMsg | echomsg "No Preview method found for " . &ft | echohl None
+    endif
+endfunction
+"}}}
+
+" Make"{{{
+function! MyMake(filetype, maketype)
+    let l:filename = expand("%:p")
+    let l:shortFileName = expand("%:p:t")
+    if has('win32')
+        let l:filename = substitute(expand("%:p"), "/", "\\", "g")
+        let l:shortFileName = substitute(expand("%:p:t"), "/", "\\", "g")
+    endif
+    let l:filetype = a:filetype
+    if l:filetype == ""
+        let l:filetype = &ft
+    endif
+    let l:maketype = a:maketype
+    if l:filetype ==? "rst"
+        let l:maketypeOfRst = ["","rst2html2","make"]
+        if l:maketype == ""
+            let l:c = confirm("Make Type", "&rst2html2\n&make")
+            let l:maketype = l:maketypeOfRst[l:c]
+        endif
+        if l:maketype ==? l:maketypeOfRst[1]
+            exe "!rst2html2 --stylesheet-dirs='~/MyGitRepo/rhythm.css' --stylesheet-path='dist/css/rhythm.min.css,math/math.css,syntax/molokai.css' --syntax-highlight=short " . l:filename . " > /tmp/". l:shortFileName . ".html"
+        elseif l:maketype ==? l:maketypeOfRst[2]
+            exe "!make html"
+        endif
+    elseif l:filetype ==? "javascript"
+        let l:maketypeOfJs = ["", "fixjsstyle","fixclosure","fixclosuref","closure","gjslint"]
+        if l:maketype == ""
+            let l:c = confirm("Make Type", "fix&jsstyle\nf&ixclosure\n&fixclosuref\n&closure\n&gjslint")
+            let l:maketype = l:maketypeOfJs[l:c]
+        endif
+        if l:maketype ==? l:maketypeOfJs[1]
+            exe "!fixjsstyle --strict " . l:filename
+        elseif l:maketype ==? l:maketypeOfJs[2]
+            exe "!fixclosure " . l:filename
+        elseif l:maketype ==? l:maketypeOfJs[3]
+            exe "!fixclosure -f " . l:filename
+        elseif l:maketype ==? l:maketypeOfJs[4]
+            exe "!closure --js " . l:filename . " --js_output_file /tmp/closure_tmp.js -W VERBOSE"
+        elseif l:maketype ==? l:maketypeOfJs[5]
+            exe "make"
+        else
+            echoerr "Wrong maketype " . l:maketype
+        endif
+    else
+        echohl WarningMsg | echomsg "No Make method found for " . l:filetype | echohl None
+    endif
+endfunction
+"}}}
 
 "{{{ Not work
 function! Camel_Initials(camel)
@@ -928,4 +1094,3 @@ function! Camel_Complete( findstart, base )
 endfunction
 "}}}
 "}}}
-"
