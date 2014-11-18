@@ -977,23 +977,26 @@ endfunction
 function! MyPreview()
     let l:filename = expand("%:p")
     let l:shortFileName = expand("%:p:t")
+    let l:onlyName = expand("%:t:r")
     if has('win32')
         let l:filename = substitute(expand("%:p"), "/", "\\", "g")
         let l:shortFileName = substitute(expand("%:p:t"), "/", "\\", "g")
+        let l:onlyName = substitute(expand("%:t:r"), "/", "\\", "g")
     endif
     if &ft ==? 'mkd.markdown'
         exe "!ghmd -r " . l:filename
     elseif index(["xml","html"], &ft) >= 0
         exe "!xdg-open " . l:filename
     elseif &ft ==? "rst"
-        let l:previewTypeOfRst = ["","rst2html2","make"]
-        let l:c = confirm("Preview Type", "&rst2html2\n&make")
+        let l:previewTypeOfRst = ["","rst2html2","sphinx"]
+        let l:c = confirm("Preview Type", "&rst2html2\n&sphinx")
         let l:previewType = l:previewTypeOfRst[l:c]
         if l:previewType ==? l:previewTypeOfRst[1]
             call MyMake("rst",l:previewTypeOfRst[1])
             exe "!xdg-open /tmp/" . l:shortFileName . ".html"
         elseif l:previewType ==? l:previewTypeOfRst[2]
-            echohl WarningMsg | echomsg "Preview sphinx is not supported!" | echohl None
+            call MyMake("rst",l:previewTypeOfRst[2])
+            exe "!xdg-open _build/html/" . l:onlyName . ".html"
         endif
     else
         echohl WarningMsg | echomsg "No Preview method found for " . &ft | echohl None
@@ -1015,9 +1018,9 @@ function! MyMake(filetype, maketype)
     endif
     let l:maketype = a:maketype
     if l:filetype ==? "rst"
-        let l:maketypeOfRst = ["","rst2html2","make"]
+        let l:maketypeOfRst = ["","rst2html2","sphinx"]
         if l:maketype == ""
-            let l:c = confirm("Make Type", "&rst2html2\n&make")
+            let l:c = confirm("Make Type", "&rst2html2\n&sphinx")
             let l:maketype = l:maketypeOfRst[l:c]
         endif
         if l:maketype ==? l:maketypeOfRst[1]
