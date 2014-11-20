@@ -448,6 +448,11 @@ nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>'
 nnoremap <silent> J :<C-u>call <SID>try('SplitjoinJoin',  'J')<CR>
 nnoremap <silent> S :<C-u>call <SID>try('SplitjoinSplit', "r\015")<CR>
 "}}}
+" golden ratio "{{{
+let g:golden_ratio_autocommand = 0
+let s:my_disable_golden_ratio = 0
+cnoremap <silent> :go :call <SID>ToggleGoldenRatio()<CR>
+"}}}
 "}}}
 "{{{ Basic setting
 sy on
@@ -542,13 +547,13 @@ map ZZ zz
 " use jj instead ESC at insert mode.
 inoremap jj <ESC>
 " jump to left window
-nnoremap <C-h> <C-w>h
+nnoremap <silent> <C-h> <C-w>h:call <SID>ExecuteResize()<CR>
 " jump to down window
-nnoremap <C-j> <C-w>j
+nnoremap <silent> <C-j> <C-w>j:call <SID>ExecuteResize()<CR>
 " jump to up window
-nnoremap <C-k> <C-w>k
+nnoremap <silent> <C-k> <C-w>k:call <SID>ExecuteResize()<CR>
 " jump to right window
-nnoremap <C-l> <C-w>l
+nnoremap <silent> <C-l> <C-w>l:call <SID>ExecuteResize()<CR>
 " close window
 nnoremap <C-c> <C-w>c
 " scroll down
@@ -870,7 +875,6 @@ if has("autocmd")
         "au VimLeavePre * call SaveSession()
         "au VimEnter * call LoadSession()
         "}}}
-
         " When editing a file, always jump to the last known cursor position.
         " Don't do it when the position is invalid or when inside an event handler
         " (happens when dropping a file on gvim).
@@ -1091,6 +1095,24 @@ function! s:try(cmd, default)
   endif
 endfunction
 "}}}
+" GoldenRatioResize
+function! s:ToggleGoldenRatio()
+    if s:my_disable_golden_ratio
+        let s:my_disable_golden_ratio = 0
+    else
+        let s:my_disable_golden_ratio = 1
+    endif
+    call <SID>ExecuteResize()
+endfunction
+function! s:ExecuteResize()
+    if s:my_disable_golden_ratio
+        return
+    endif
+    if index(["","tagbar","nerdtree","unite"], &ft) >= 0
+        return
+    endif
+    exe "GoldenRatioResize"
+endfunction
 
 "{{{ Not work
 function! Camel_Initials(camel)
