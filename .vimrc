@@ -164,6 +164,7 @@ NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'wellle/targets.vim'
 NeoBundle 'talek/obvious-resize'
+NeoBundle 'AndrewRadev/splitjoin.vim'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -441,6 +442,10 @@ nnoremap <silent> <C-Up>    :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+'
 nnoremap <silent> <C-Down>  :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
 nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
 nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
+"}}}
+" SplitJoin"{{{
+nnoremap <silent> J :<C-u>call <SID>try('SplitjoinJoin',  'J')<CR>
+nnoremap <silent> S :<C-u>call <SID>try('SplitjoinSplit', "r\015")<CR>
 "}}}
 "}}}
 "{{{ Basic setting
@@ -1069,6 +1074,19 @@ function! s:try_wincmd(cmd, default)
     execute cmd
   else
     execute join([v:count, 'wincmd', a:default])
+  endif
+endfunction
+"}}}
+" SplitJoin"{{{
+function! s:try(cmd, default)
+  if exists(':' . a:cmd) && !v:count
+    let tick = b:changedtick
+    execute a:cmd
+    if tick == b:changedtick
+      execute join(['normal!', a:default])
+    endif
+  else
+    execute join(['normal! ', v:count, a:default], '')
   endif
 endfunction
 "}}}
