@@ -161,6 +161,7 @@ NeoBundle 'scrooloose/syntastic'
 " Need run git submodule update --init --recursive
 "NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-endwise'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
