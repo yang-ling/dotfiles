@@ -162,6 +162,7 @@ NeoBundle 'scrooloose/syntastic'
 "NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'wellle/targets.vim'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
