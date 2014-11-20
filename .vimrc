@@ -163,6 +163,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'wellle/targets.vim'
+NeoBundle 'talek/obvious-resize'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -434,6 +435,12 @@ vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 "nmap <Leader>a <Plug>(EasyAlign)
+"}}}
+" ObviousResize"{{{
+nnoremap <silent> <C-Up>    :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
+nnoremap <silent> <C-Down>  :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
+nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
+nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
 "}}}
 "}}}
 "{{{ Basic setting
@@ -1053,6 +1060,16 @@ function! MyMake(filetype, maketype)
     else
         echohl WarningMsg | echomsg "No Make method found for " . l:filetype | echohl None
     endif
+endfunction
+"}}}
+" ObviousResize"{{{
+function! s:try_wincmd(cmd, default)
+  if exists(':' . a:cmd)
+    let cmd = v:count ? join([a:cmd, v:count]) : a:cmd
+    execute cmd
+  else
+    execute join([v:count, 'wincmd', a:default])
+  endif
 endfunction
 "}}}
 
