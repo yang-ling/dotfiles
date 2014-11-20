@@ -165,6 +165,7 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'wellle/targets.vim'
 NeoBundle 'talek/obvious-resize'
 NeoBundle 'AndrewRadev/splitjoin.vim'
+NeoBundle 'roman/golden-ratio'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
