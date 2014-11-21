@@ -1095,7 +1095,7 @@ function! s:try(cmd, default)
   endif
 endfunction
 "}}}
-" GoldenRatioResize
+" GoldenRatioResize"{{{
 function! s:ToggleGoldenRatio()
     if s:my_disable_golden_ratio
         let s:my_disable_golden_ratio = 0
@@ -1108,11 +1108,18 @@ function! s:ExecuteResize()
     if s:my_disable_golden_ratio
         return
     endif
-    if index(["","tagbar","nerdtree","unite"], &ft) >= 0
-        return
+    let l:allBuftypes = map(range(1, winnr('$')), 'getbufvar(winbufnr(v:val),"&buftype")')
+    let l:canResize = 1
+    for l:oneBufType in l:allBuftypes
+        if index(["nofile","nowrite"], l:oneBufType) >= 0
+            let l:canResize = 0
+        endif
+    endfor
+    if l:canResize
+        exe "GoldenRatioResize"
     endif
-    exe "GoldenRatioResize"
 endfunction
+"}}}
 
 "{{{ Not work
 function! Camel_Initials(camel)
