@@ -87,7 +87,7 @@ man() {
 #[[ -x ~/.check_jdk.sh ]] && bash ~/.check_jdk.sh
 
 # fortune
-[[ -n "$PS1" ]] && fortune 30% tang300 30% song100 40% all | cowsay
+[[ -n "$PS1" ]] && [[ "$TERM" == "xterm" ]] && fortune 30% tang300 30% song100 40% all | cowsay
 
 # /usr/lib/jvm/jdk is a symbol link. It links to the real JDK.
 # Note: in /etc/profile.d/jre.sh, there is a link to real JDK, so I needn't make own link.
