@@ -1111,7 +1111,7 @@ function! s:ExecuteResize()
     let l:allBuftypes = map(range(1, winnr('$')), 'getbufvar(winbufnr(v:val),"&buftype")')
     let l:canResize = 1
     for l:oneBufType in l:allBuftypes
-        if index(["nofile","nowrite"], l:oneBufType) >= 0
+        if index(["nofile","nowrite","quickfix"], l:oneBufType) >= 0
             let l:canResize = 0
         endif
     endfor
