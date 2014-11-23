@@ -3,7 +3,7 @@
 " This is just a template, because Path in each PC may be different.
 
 " Tell Neosnippet about the other snippets
-    let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip'
+    let g:neosnippet#snippets_directory='~/MyGitRepo/Snippets/MyFork/snippets,~/Documents/MySnip,~/KuaiPan/Documents/MySnip'
 " Mail Signature{{{
 " The sign.txt file must employ a signature separator like the following: '--
 " '.

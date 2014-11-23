@@ -731,6 +731,7 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+vmap <leader>d "+d
 "}}}
 "}}}
 " Macro"{{{
