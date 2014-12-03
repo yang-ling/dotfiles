@@ -688,11 +688,15 @@ if has('win32')
     nnoremap <Leader>sf :let @*=substitute(expand("%:p:t"), "/", "\\", "g")<CR>
     " Long File name
     nnoremap <Leader>lf :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+    " Long dir name
+    nnoremap <Leader>ld :let @+=substitute(expand("%:p:h"), "/", "\\", "g")<CR>
 else
     " Short File name
     nnoremap <Leader>sf :let @+=expand("%:p:t")<CR>
     " Long File name
     nnoremap <Leader>lf :let @+=expand("%:p")<CR>
+    " Long dir name
+    nnoremap <Leader>ld :let @+=expand("%:p:h")<CR>
 endif
 "}}}
 " Reverse search"{{{

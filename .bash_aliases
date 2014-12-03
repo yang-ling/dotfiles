@@ -46,6 +46,8 @@ function gpgr()
     gpg $1 && rm $1
 }
 
+alias mypwd='pwd | xclip -i -selection c'
+
 alias aes256='gpg -c -v --cipher-algo AES256'
 
 alias xo='xdg-open'
