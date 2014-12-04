@@ -574,17 +574,17 @@ nnoremap <leader>9 :tabl<CR>
 " Open VimExpore
 nnoremap <leader>ve :VE<CR><CR>:tabo<CR>
 " Open .vimrc file
-nnoremap <F9> :tabe $MYVIMRC<CR>
+nnoremap <leader>vr :tabe $MYVIMRC<CR>
 " Delete trailing whitespaces
-nnoremap <F2> :%s/\s\+$//g<CR>
+nnoremap <leader>dw :%s/\s\+$//g<CR>
 " Delete excess blank lines.
-nnoremap <leader><F2> :%s/^\n$//g<CR>
+nnoremap <leader>db :%s/^\n$//g<CR>
 " Open file browser at current folder in new tab.
 "nnoremap <F3> :tabe %:p:h<CR>
 " Open file browser at current folder in current tab.
 "nnoremap <leader><F3> :e %:p:h<CR>
 " Toggle spell check
-nnoremap <F4> :call ToggleSpellCheck()<CR>
+nnoremap <Leader>sc :call ToggleSpellCheck()<CR>
 " close window
 nnoremap <Leader>q :clo<CR>
 " open new tab
@@ -602,7 +602,7 @@ nnoremap <Leader>tt :set ft=textile<CR>:set tabstop=2<CR>:set shiftwidth=2<CR>
 " But if I don't want my function depends on others, for instance, in case vim
 " doesn't automatically add '<,'>, my function can still work, so I first
 " remove '<,'> and add my own '<,'>
-vnoremap <F2> :<BS><BS><BS><BS><BS>'<,'>s/\s\+$//g<CR>
+"vnoremap <F2> :<BS><BS><BS><BS><BS>'<,'>s/\s\+$//g<CR>
 " Add sequence number to selected lines.
 vnoremap <Leader>se :<BS><BS><BS><BS><BS>let i=1\|'<,'>g/^/s//\=i/\|let i=i+1<CR>:nohl<CR>
 " Move visual block
@@ -677,7 +677,7 @@ nnoremap <Leader>cd :CommandTBuffer<CR>
 nnoremap <Leader>cf :CommandTFlush<CR>
 "}}}
 " NerdTree mapping"{{{
-nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <leader>er :NERDTreeToggle<CR>
 "}}}
 " Caching buffer."{{{
 nnoremap <Leader>re :NeoCompleteBufferMakeCache<CR>
