@@ -52,6 +52,8 @@ alias aes256='gpg -c -v --cipher-algo AES256'
 
 alias xo='xdg-open'
 
+alias tjoinp='tmux join-pane -h -s :. -t :-1'
+
 # git
 alias g=git
 alias gs='git status'
