@@ -194,6 +194,7 @@ NeoBundleCheck
 if v:progname =~? "evim"
   finish
 endif
+let mapleader=","
 
 "{{{ Bundules setting
 "{{{ neocomplcache setting
@@ -439,10 +440,17 @@ vmap <Enter> <Plug>(EasyAlign)
 "nmap <Leader>a <Plug>(EasyAlign)
 "}}}
 " ObviousResize"{{{
-nnoremap <silent> <C-Up>    :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
-nnoremap <silent> <C-Down>  :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
-nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
-nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
+if exists('$TMUX')
+    nnoremap <silent> <Leader>jj :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
+    nnoremap <silent> <Leader>kk :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
+    nnoremap <silent> <Leader>hh :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
+    nnoremap <silent> <Leader>ll :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
+else
+    nnoremap <silent> <C-Up>    :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
+    nnoremap <silent> <C-Down>  :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
+    nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
+    nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
+endif
 "}}}
 " SplitJoin"{{{
 nnoremap <silent> J :<C-u>call <SID>try('SplitjoinJoin',  'J')<CR>
@@ -525,7 +533,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 "}}}
 
-" Use a blinking upright bar cursor in Insert mode, a blinking block in normal
+" Use a blinking upright bar cursor in Insert mode, a blinking block in normal"{{{
 if &term == 'xterm-256color' || &term == 'screen-256color' || &term == 'xterm'
     "let &t_SI = "\<Esc>[5 q"
     "let &t_EI = "\<Esc>[1 q"
@@ -537,8 +545,6 @@ if exists('$TMUX')
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 endif
-" switch from block cursor to vertical line-cursor when going in and out of"{{{
-" insert mode
 "}}}
 "let xml_no_html = 1
 "let xml_no_mustache = 1
@@ -547,7 +553,6 @@ endif
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 "}}}
 "{{{ Mapping
-let mapleader=","
 "{{{ Navigating mapping
 " Don't use Ex mode, use Q for formatting
 map Q gq
