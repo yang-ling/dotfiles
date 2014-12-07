@@ -525,10 +525,20 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 "}}}
 
+" Use a blinking upright bar cursor in Insert mode, a blinking block in normal
+if &term == 'xterm-256color' || &term == 'screen-256color' || &term == 'xterm'
+    "let &t_SI = "\<Esc>[5 q"
+    "let &t_EI = "\<Esc>[1 q"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+if exists('$TMUX')
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+endif
 " switch from block cursor to vertical line-cursor when going in and out of"{{{
 " insert mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "}}}
 "let xml_no_html = 1
 "let xml_no_mustache = 1
