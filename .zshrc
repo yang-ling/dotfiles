@@ -127,6 +127,8 @@ fi
 [[ -f "/usr/bin/convertmp4.sh" ]] && source "/usr/bin/convertmp4.sh"
 
 export EDITOR="/usr/bin/vim"
+# https://github.com/tmuxinator/tmuxinator
+export DISABLE_AUTO_TITLE=true
 
 # === Work Config ===
 [[ -s "$HOME/Work/work-config.sh" ]] && source "$HOME/Work/work-config.sh"
