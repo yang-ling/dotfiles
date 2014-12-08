@@ -166,10 +166,11 @@ NeoBundle 'wellle/targets.vim'
 NeoBundle 'talek/obvious-resize'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'roman/golden-ratio'
+NeoBundle 'kien/ctrlp.vim'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
-NeoBundle 'FuzzyFinder'
+"NeoBundle 'FuzzyFinder'
 NeoBundle 'DrawIt'
 NeoBundle 'VimExplorer'
 NeoBundle 'Auto-Pairs'
@@ -658,9 +659,15 @@ cnoremap :jp e ++enc=shift_jis<CR>
 nnoremap <leader>fd :set fdm=indent<CR>
 "}}}
 "{{{ FuzzyFinder
-nnoremap <leader>ff :FufFile<CR>
-nnoremap <leader>fb :FufBuffer<CR>
+"nnoremap <leader>ff :FufFile<CR>
+"nnoremap <leader>fb :FufBuffer<CR>
 "}}}
+" CtrlP
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$|target$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+nnoremap <leader>ff :CtrlP<CR>
 " Tabularize"{{{
 nnoremap <leader><space> :Tabularize /:<CR>
 "}}}
