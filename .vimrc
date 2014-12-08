@@ -1032,7 +1032,7 @@ function! MyPreview()
         let l:onlyName = substitute(expand("%:t:r"), "/", "\\", "g")
     endif
     if &ft ==? 'mkd.markdown'
-        exe "!ghmd -r " . l:filename
+        exe "!ghmd -r -w=false " . l:filename
     elseif index(["xml","html"], &ft) >= 0
         exe "!xdg-open " . l:filename
     elseif &ft ==? "rst"
