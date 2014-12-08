@@ -167,6 +167,7 @@ NeoBundle 'talek/obvious-resize'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'roman/golden-ratio'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'christoomey/vim-tmux-navigator'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -449,10 +450,10 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
-nnoremap <silent> <C-Up>    :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
-nnoremap <silent> <C-Down>  :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
-nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
-nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
+"nnoremap <silent> <C-Up>    :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
+"nnoremap <silent> <C-Down>  :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
+"nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
+"nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
 "}}}
 " SplitJoin"{{{
 nnoremap <silent> J :<C-u>call <SID>try('SplitjoinJoin',  'J')<CR>
@@ -468,8 +469,9 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$|target$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-nnoremap <leader>ff :CtrlP<CR>
+"nnoremap <leader>ff :CtrlP<CR>
 nnoremap <leader>fb :CtrlPBuffer<CR>
+let g:ctrlp_map = '<leader>ff'
 "}}}
 "}}}
 "{{{ Basic setting
