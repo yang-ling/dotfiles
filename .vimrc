@@ -473,6 +473,14 @@ let g:ctrlp_custom_ignore = {
 nnoremap <leader>fb :CtrlPBuffer<CR>
 let g:ctrlp_map = '<leader>ff'
 "}}}
+" Tmux navigator
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>:call <SID>ExecuteResize()<CR>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>:call <SID>ExecuteResize()<CR>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>:call <SID>ExecuteResize()<CR>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>:call <SID>ExecuteResize()<CR>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>:call <SID>ExecuteResize()<CR>
 "}}}
 "{{{ Basic setting
 sy on
@@ -574,13 +582,13 @@ map ZZ zz
 " use jj instead ESC at insert mode.
 inoremap jj <ESC>
 " jump to left window
-nnoremap <silent> <C-h> <C-w>h:call <SID>ExecuteResize()<CR>
+"nnoremap <silent> <C-h> <C-w>h:call <SID>ExecuteResize()<CR>
 " jump to down window
-nnoremap <silent> <C-j> <C-w>j:call <SID>ExecuteResize()<CR>
+"nnoremap <silent> <C-j> <C-w>j:call <SID>ExecuteResize()<CR>
 " jump to up window
-nnoremap <silent> <C-k> <C-w>k:call <SID>ExecuteResize()<CR>
+"nnoremap <silent> <C-k> <C-w>k:call <SID>ExecuteResize()<CR>
 " jump to right window
-nnoremap <silent> <C-l> <C-w>l:call <SID>ExecuteResize()<CR>
+"nnoremap <silent> <C-l> <C-w>l:call <SID>ExecuteResize()<CR>
 " close window
 nnoremap <C-c> <C-w>c
 " scroll down
@@ -1032,7 +1040,7 @@ function! MyPreview()
         let l:onlyName = substitute(expand("%:t:r"), "/", "\\", "g")
     endif
     if &ft ==? 'mkd.markdown'
-        exe "!ghmd -r -w=false " . l:filename
+        exe "!ghmd -r=true -w=false -o=\"/tmp/ghmd.html\" " . l:filename
     elseif index(["xml","html"], &ft) >= 0
         exe "!xdg-open " . l:filename
     elseif &ft ==? "rst"
@@ -1095,6 +1103,8 @@ function! MyMake(filetype, maketype)
         else
             echoerr "Wrong maketype " . l:maketype
         endif
+    elseif &ft ==? 'mkd.markdown'
+        exe "!ghmd -r=false -w=false -o=\"/tmp/ghmd.html\" " . l:filename
     else
         echohl WarningMsg | echomsg "No Make method found for " . l:filetype | echohl None
     endif
