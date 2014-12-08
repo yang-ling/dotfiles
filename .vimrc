@@ -688,9 +688,9 @@ vnoremap <Leader>dt dpkddkdd
 vnoremap <Leader>dit dvatp
 "}}}
 " CommandT"{{{
-nnoremap <Leader>ct :CommandT<CR>
-nnoremap <Leader>cd :CommandTBuffer<CR>
-nnoremap <Leader>cf :CommandTFlush<CR>
+"nnoremap <Leader>ct :CommandT<CR>
+"nnoremap <Leader>cd :CommandTBuffer<CR>
+"nnoremap <Leader>cf :CommandTFlush<CR>
 "}}}
 " NerdTree mapping"{{{
 nnoremap <leader>er :NERDTreeToggle<CR>
