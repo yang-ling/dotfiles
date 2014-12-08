@@ -463,6 +463,14 @@ let g:golden_ratio_autocommand = 0
 let s:my_disable_golden_ratio = 0
 cnoremap <silent> :go :call <SID>ToggleGoldenRatio()<CR>
 "}}}
+" CtrlP"{{{
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$|target$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+nnoremap <leader>ff :CtrlP<CR>
+nnoremap <leader>fb :CtrlPBuffer<CR>
+"}}}
 "}}}
 "{{{ Basic setting
 sy on
@@ -658,16 +666,6 @@ cnoremap :jp e ++enc=shift_jis<CR>
 " set fold method to indent"{{{
 nnoremap <leader>fd :set fdm=indent<CR>
 "}}}
-"{{{ FuzzyFinder
-"nnoremap <leader>ff :FufFile<CR>
-"nnoremap <leader>fb :FufBuffer<CR>
-"}}}
-" CtrlP
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$|target$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
-nnoremap <leader>ff :CtrlP<CR>
 " Tabularize"{{{
 nnoremap <leader><space> :Tabularize /:<CR>
 "}}}
