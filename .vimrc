@@ -440,17 +440,18 @@ vmap <Enter> <Plug>(EasyAlign)
 "nmap <Leader>a <Plug>(EasyAlign)
 "}}}
 " ObviousResize"{{{
-if exists('$TMUX')
-    nnoremap <silent> <Leader>jj :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
-    nnoremap <silent> <Leader>kk :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
-    nnoremap <silent> <Leader>hh :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
-    nnoremap <silent> <Leader>ll :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
-else
-    nnoremap <silent> <C-Up>    :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
-    nnoremap <silent> <C-Down>  :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
-    nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
-    nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
+" http://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
 endif
+nnoremap <silent> <C-Up>    :<C-u>call <SID>try_wincmd('ObviousResizeUp',    '+')<CR>
+nnoremap <silent> <C-Down>  :<C-u>call <SID>try_wincmd('ObviousResizeDown',  '-')<CR>
+nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<')<CR>
+nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
 "}}}
 " SplitJoin"{{{
 nnoremap <silent> J :<C-u>call <SID>try('SplitjoinJoin',  'J')<CR>
