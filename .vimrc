@@ -1204,3 +1204,5 @@ function! Camel_Complete( findstart, base )
 endfunction
 "}}}
 "}}}
+
+" vim: foldmethod=marker nospell
