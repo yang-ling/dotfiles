@@ -147,8 +147,9 @@ NeoBundle 'yang-ling/rst'
 " reStruected text
 NeoBundleLazy 'Rykka/riv.vim'
 NeoBundleLazy 'Rykka/clickable.vim'
+NeoBundleLazy 'rykka/os.vim'
 NeoBundleLazy 'nvie/vim-rst-tables'
-autocmd FileType rst NeoBundleSource riv.vim clickable.vim vim-rst-tables
+autocmd FileType rst NeoBundleSource os.vim clickable.vim vim-rst-tables riv.vim
 "NeoBundle 'vim-scripts/VST'
 " xml
 NeoBundle 'othree/xml.vim'
