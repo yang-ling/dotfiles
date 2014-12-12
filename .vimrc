@@ -167,7 +167,7 @@ NeoBundle 'wellle/targets.vim'
 NeoBundle 'talek/obvious-resize'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'roman/golden-ratio'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 "}}}
 " vim-scripts repos"{{{
@@ -474,7 +474,7 @@ let g:ctrlp_custom_ignore = {
 nnoremap <leader>fb :CtrlPBuffer<CR>
 let g:ctrlp_map = '<leader>ff'
 "}}}
-" Tmux navigator
+" Tmux navigator"{{{
 let g:tmux_navigator_no_mappings = 1
 
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>:call <SID>ExecuteResize()<CR>
@@ -482,6 +482,7 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>:call <SID>ExecuteResize()<CR>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>:call <SID>ExecuteResize()<CR>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>:call <SID>ExecuteResize()<CR>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>:call <SID>ExecuteResize()<CR>
+"}}}
 "}}}
 "{{{ Basic setting
 sy on
