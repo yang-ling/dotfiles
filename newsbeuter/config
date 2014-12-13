@@ -1,0 +1,59 @@
+# vim: ft=conf nospell
+browser /usr/bin/w3m
+external-url-viewer /usr/bin/urlview
+
+auto-reload yes
+cleanup-on-quit yes
+download-path "~/Downloads/podcasts"
+feed-sort-order title-dec
+max-downloads 4
+#notify-always yes
+#notify-format "newsbeuter: %n unread articles within %f unread feeds"
+#notify-program notify-send
+#notify-xterm yes
+#notify-screen yes
+player mplayer
+refresh-on-startup yes
+reload-time 20
+reload-threads 2
+show-read-articles no
+show-read-feeds no
+
+# key binding --------------------
+
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
+
+# formatting and colorization ------------------------------------------
+
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+
+highlight feedlist    "^  *[0-9]+  *N  "                    color156 default
+highlight articlelist "^  *[0-9]+  *N  "                    color156 default
+
+highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     color75  default
+highlight article     "(^Link:.*|^Date:.*)"                 color75  default
+highlight article     "^Podcast Download URL:.*"            color71  default
+highlight article     "^Links:"                             white    color240 underline
+highlight article     "\\[[0-9][0-9]*\\]"                   color72  default  bold
+highlight article     "\\[image [0-9][0-9]*\\]"             color72  default  bold
+highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  default  bold
+highlight article     ":.*\\(link\\)$"                      color74  default
+highlight article     ":.*\\(image\\)$"                     color74  default
+highlight article     ":.*\\(embedded flash\\)$"            color74  default
+
+color listnormal                                            white    default
+color listfocus                                             default  color240
+color info                                                  default  color240
+
+#color listnormal white black
+#color listfocus  yellow red bold
+#color info       cyan blue
+#color background white black
+#color article    white black
