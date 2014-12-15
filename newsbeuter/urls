@@ -1,8 +1,15 @@
-http://www.reddit.com/r/vim/.rss tech
+http://www.reddit.com/r/vim/.rss tech vim
 http://onehd.herokuapp.com/ fun
 http://www.zhihu.com/rss fun
 http://www.javaeye.com/rss/news tech
 http://feeds.feedburner.com/newsyc50 tech
 http://www.comicsyndicate.org/Feed/Dilbert fun
-http://www.archlinux.org/feeds/news/ tech
+http://www.archlinux.org/feeds/news/ tech news
+http://www.reddit.com/r/archlinux/.rss tech
+http://feed.williamlong.info/ tech
+https://www.gitlab.com/atom.xml tech news
+http://lilydjwg.is-programmer.com/posts.rss tech
+http://eller86.hatenablog.jp/feed tech
+http://feeds.feedburner.com/ruanyifeng tech
+http://feeds.feedburner.com/usevim tech vim
 "query:Starred Articles:flags # \"S\""
