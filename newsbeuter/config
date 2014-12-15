@@ -1,6 +1,10 @@
 # vim: ft=conf nospell
 browser /usr/bin/w3m
 external-url-viewer /usr/bin/urlview
+always-display-description true
+goto-next-feed no
+save-path ~/KuaiPan/Downloads/rss/
+text-width 120
 
 auto-reload yes
 cleanup-on-quit yes
@@ -29,6 +33,16 @@ bind-key j next
 bind-key k prev
 bind-key J next-feed
 bind-key K prev-feed
+
+unbind-key j article
+unbind-key k article
+bind-key j down article
+bind-key k up article
+
+unbind-key j tagselection
+unbind-key k tagselection
+bind-key j down tagselection
+bind-key k up tagselection
 
 # formatting and colorization ------------------------------------------
 
