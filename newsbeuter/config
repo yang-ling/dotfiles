@@ -40,6 +40,11 @@ bind-key k up all
 bind-key J next-feed
 bind-key K prev-feed
 
+unbind-key g all
+bind-key g home all
+unbind-key G all
+bind-key G end all
+
 # formatting and colorization ------------------------------------------
 
 articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
