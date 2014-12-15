@@ -5,6 +5,10 @@ always-display-description true
 goto-next-feed no
 save-path ~/KuaiPan/Downloads/rss/
 text-width 120
+cache-file ~/KuaiPan/Downloads/rss/config/cache.db
+
+# Filters
+define-filter "Starred" "flags # \"S\""
 
 auto-reload yes
 cleanup-on-quit yes
@@ -43,6 +47,11 @@ unbind-key j tagselection
 unbind-key k tagselection
 bind-key j down tagselection
 bind-key k up tagselection
+
+unbind-key j filterselection
+unbind-key k filterselection
+bind-key j down filterselection
+bind-key k up filterselection
 
 # formatting and colorization ------------------------------------------
 

@@ -5,3 +5,4 @@ http://www.javaeye.com/rss/news tech
 http://feeds.feedburner.com/newsyc50 tech
 http://www.comicsyndicate.org/Feed/Dilbert fun
 http://www.archlinux.org/feeds/news/ tech
+"query:Starred Articles:flags # \"S\""
