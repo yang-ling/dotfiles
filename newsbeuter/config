@@ -63,12 +63,28 @@ highlight article     ":.*\\(link\\)$"                      color74  default
 highlight article     ":.*\\(image\\)$"                     color74  default
 highlight article     ":.*\\(embedded flash\\)$"            color74  default
 
-color listnormal                                            white    default
-color listfocus                                             default  color240
-color info                                                  default  color240
+#color listnormal                                            white    default
+##color listnormal                                            black    color230
+#color listfocus                                             default  color240
+#color info                                                  default  color240
+
+#color article                                               black    color230
+#color listnormal_unread                                     black    color230 bold
 
 #color listnormal white black
 #color listfocus  yellow red bold
 #color info       cyan blue
 #color background white black
 #color article    white black
+#
+
+# solarized color scheme for newsbeuter <http://www.newsbeuter.org/>
+# more on solarized: http://ethanschoonover.com/solarized
+
+color listnormal color244 color234
+color listnormal_unread color244 color234 bold
+color listfocus  color166 color235
+color info       color136 color235
+color background color244 color234
+color article    color244 color234
+
