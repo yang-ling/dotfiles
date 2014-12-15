@@ -33,25 +33,12 @@ unbind-key j
 unbind-key k
 unbind-key J
 unbind-key K
-bind-key j next
-bind-key k prev
+#bind-key j next
+#bind-key k prev
+bind-key j down all
+bind-key k up all
 bind-key J next-feed
 bind-key K prev-feed
-
-unbind-key j article
-unbind-key k article
-bind-key j down article
-bind-key k up article
-
-unbind-key j tagselection
-unbind-key k tagselection
-bind-key j down tagselection
-bind-key k up tagselection
-
-unbind-key j filterselection
-unbind-key k filterselection
-bind-key j down filterselection
-bind-key k up filterselection
 
 # formatting and colorization ------------------------------------------
 
