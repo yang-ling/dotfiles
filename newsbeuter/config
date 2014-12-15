@@ -45,6 +45,9 @@ bind-key g home all
 unbind-key G all
 bind-key G end all
 
+bind-key b pageup all
+bind-key SPACE pagedown all
+
 # formatting and colorization ------------------------------------------
 
 articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
