@@ -4,7 +4,7 @@ external-url-viewer /usr/bin/urlview
 always-display-description true
 goto-next-feed no
 save-path ~/KuaiPan/Downloads/rss/
-text-width 120
+text-width 78
 cache-file ~/KuaiPan/Downloads/rss/config/cache.db
 max-items 500
 
