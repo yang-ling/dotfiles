@@ -6,6 +6,7 @@ goto-next-feed no
 save-path ~/KuaiPan/Downloads/rss/
 text-width 120
 cache-file ~/KuaiPan/Downloads/rss/config/cache.db
+max-items 500
 
 # Filters
 define-filter "Starred" "flags # \"S\""
