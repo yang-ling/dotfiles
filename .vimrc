@@ -1046,8 +1046,8 @@ function! MyPreview()
     elseif index(["xml","html"], &ft) >= 0
         exe "!xdg-open " . l:filename
     elseif &ft ==? "rst"
-        let l:previewTypeOfRst = ["","rst2html2","sphinx"]
-        let l:c = confirm("Preview Type", "&rst2html2\n&sphinx")
+        let l:previewTypeOfRst = ["","rst2html5","sphinx"]
+        let l:c = confirm("Preview Type", "&rst2html5\n&sphinx")
         let l:previewType = l:previewTypeOfRst[l:c]
         if l:previewType ==? l:previewTypeOfRst[1]
             call MyMake("rst",l:previewTypeOfRst[1])
@@ -1076,13 +1076,13 @@ function! MyMake(filetype, maketype)
     endif
     let l:maketype = a:maketype
     if l:filetype ==? "rst"
-        let l:maketypeOfRst = ["","rst2html2","sphinx"]
+        let l:maketypeOfRst = ["","rst2html5","sphinx"]
         if l:maketype == ""
-            let l:c = confirm("Make Type", "&rst2html2\n&sphinx")
+            let l:c = confirm("Make Type", "&rst2html5\n&sphinx")
             let l:maketype = l:maketypeOfRst[l:c]
         endif
         if l:maketype ==? l:maketypeOfRst[1]
-            exe "!rst2html2 --stylesheet-dirs='~/MyGitRepo/rhythm.css' --stylesheet-path='dist/css/rhythm.min.css,math/math.css,syntax/molokai.css' --syntax-highlight=short " . l:filename . " > /tmp/". l:shortFileName . ".html"
+            exe "!rst2html5 --bootstrap-css --pretty-print-code --jquery --embed-content " . l:filename . " > /tmp/". l:shortFileName . ".html"
         elseif l:maketype ==? l:maketypeOfRst[2]
             exe "!make html"
         endif
