@@ -46,6 +46,11 @@ function gpgr()
     gpg $1 && rm $1
 }
 
+function toc()
+{
+    md-toc-filter $1 > /tmp/tocmd && mv -f /tmp/tocmd $1
+}
+
 alias mypwd='pwd | xclip -i -selection c'
 
 alias aes256='gpg -c -v --cipher-algo AES256'
