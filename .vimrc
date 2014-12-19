@@ -386,6 +386,13 @@ endif
 " VimExplorer Setting"{{{
 let g:VEConf_usingKDE = 1
 let g:VEConf_externalExplorer = "dolphin"
+let g:VEConf_singleFileActions = {}
+let g:VEConf_singleFileHotKeys = {}
+let g:VEConf_singleFileHotKeys['copypath'] = 'cp'
+function! VEConf_singleFileActions['copypath'](path)
+    let @+=fnamemodify(expand(a:path), ":p:h")
+    echo @+
+endfunction
 "}}}
 "powerline"{{{
 "Need clone powerline github repo
@@ -722,7 +729,7 @@ if has('win32')
     " Long File name
     nnoremap <Leader>lf :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
     " Long dir name
-    nnoremap <Leader>ld :let @+=substitute(expand("%:p:h"), "/", "\\", "g")<CR>
+    nnoremap <Leader>ld :let @*=substitute(expand("%:p:h"), "/", "\\", "g")<CR>
 else
     " Short File name
     nnoremap <Leader>sf :let @+=expand("%:p:t")<CR>
