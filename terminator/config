@@ -1,0 +1,24 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
+  always_split_with_profile = True
+  inactive_color_offset = 0.96
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    font = DejaVu Sans Mono for Powerline 12
+    background_image = None
+  [[yangling]]
+    use_system_font = False
+    font = DejaVu Sans Mono for Powerline 11
+    background_image = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = yangling
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

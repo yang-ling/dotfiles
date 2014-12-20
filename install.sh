@@ -61,7 +61,7 @@ check()
     # .newsbeuter's config and url
     [[ -d ~/.newsbeuter ]] || { echoError "You may not install newsbeuter"; }
     [[ -h ~/.newsbeuter/config ]] || { echoError "No config found in ~/.newsbeuter"; }
-    [[ -h ~/.newsbeuter/url ]] || { echoError "No url found in ~/.newsbeuter"; }
+    [[ -h ~/.newsbeuter/urls ]] || { echoError "No urls found in ~/.newsbeuter"; }
     # common-aliases.plugin.zsh
     [[ -d ~/.oh-my-zsh ]] || { echoError "You may not install oh-my-zsh"; }
     [[ -h ~/.oh-my-zsh/custom/plugins/common-aliases.plugin.zsh ]] || { echoError " No common-aliases.plugin.zsh found in ~/.oh-my-zsh/custom/plugins"; }
@@ -72,6 +72,8 @@ check()
     [[ -h ~/.kde4/shutdown/shutdown.sh ]] || { echoError "No shutdown.sh found in ~/.kde4/shutdown";}
     # vim spell
     [[ -h ~/.vim/spell/en.utf-8.add ]] || { echoError "No en.utf-8.add found in ~/.vim/spell"; }
+    # terminator config
+    [[ -h ~/.config/terminator/config ]] || { echoError "No config found in ~/.config/terminator"; }
 }
 
 doln()
@@ -122,6 +124,7 @@ install()
     # .newsbeuter's config and url
     if [[ -d ~/.newsbeuter ]]; then
         doln ${_BASE_DIR}/newsbeuter/config ~/.newsbeuter/config
+        doln ${_BASE_DIR}/newsbeuter/urls ~/.newsbeuter/urls
     else
         echoError "You may not install newsbeuter at first";
     fi
@@ -143,6 +146,13 @@ install()
 
     # pacman.conf
     [[ -h /etc/pacman.conf ]] || { echoError "No pacman.conf found in /etc. You'd better manually install it"; }
+
+    # terminator config
+    if [[ -d ~/.config/terminator ]]; then
+        doln ${_BASE_DIR}/terminator/config ~/.config/terminator/config
+    else
+        echoError "You may not install terminator at first"
+    fi
 
     echoHeader "Install dot files finished"
 }
