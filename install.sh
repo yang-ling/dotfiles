@@ -65,7 +65,8 @@ check()
     # common-aliases.plugin.zsh
     [[ -d ~/.oh-my-zsh ]] || { echoError "You may not install oh-my-zsh"; }
     [[ -h ~/.oh-my-zsh/custom/plugins/common-aliases.plugin.zsh ]] || { echoError " No common-aliases.plugin.zsh found in ~/.oh-my-zsh/custom/plugins"; }
-    # TODO rainbow
+    # rainbow
+    [[ -h ~/.rainbow/mvn3.cfg ]] || { echoError "No mvn3.cfg found in ~/.rainbow";}
     # SSH Key on KDE
     [[ -h ~/.kde4/Autostart/autostart.sh ]] || { echoError "No autostart.sh found in ~/.kde4/Autostart";}
     [[ -h ~/.kde4/env/env-pre-autostart.sh ]] || { echoError "No env-pre-autostart.sh found in ~/.kde4/env";}
@@ -152,6 +153,13 @@ install()
         doln ${_BASE_DIR}/terminator/config ~/.config/terminator/config
     else
         echoError "You may not install terminator at first"
+    fi
+
+    # rainbow
+    if [[ -d ~/.rainbow ]]; then
+        doln ${_BASE_DIR}/rainbow/mvn3.cfg ~/.rainbow/mvn3.cfg
+    else
+        echoError "You may not install rainbow at first"
     fi
 
     echoHeader "Install dot files finished"
