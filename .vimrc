@@ -767,7 +767,7 @@ vnoremap <Leader>var :call ExtractLocalVariable()<CR>
 "}}}
 "}}}
 "Write Read-only file"{{{
-cnoremap w!! w !sudo tee % >/dev/null
+cnoremap w!! w !sudo tee % >/dev/null<CR>
 "}}}
 "Easy copy/paste from system clipboard"{{{
 vmap <Leader>y "+y
@@ -776,6 +776,8 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 vmap <leader>d "+d
+nnoremap <Leader>dd "+dd
+inoremap <Leader>p <C-R>+
 "}}}
 "}}}
 " Macro"{{{
