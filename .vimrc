@@ -393,6 +393,16 @@ function! VEConf_singleFileActions['copypath'](path)
     let @+=fnamemodify(expand(a:path), ":p:h")
     echo @+
 endfunction
+let g:VEConf_singleFileHotKeys['copyfullpath'] = 'cf'
+function! VEConf_singleFileActions['copyfullpath'](path)
+    let @+=fnamemodify(expand(a:path), ":p")
+    echo @+
+endfunction
+let g:VEConf_singleFileHotKeys['copyshortfilename'] = 'cs'
+function! VEConf_singleFileActions['copyshortfilename'](path)
+    let @+=fnamemodify(expand(a:path), ":p:t")
+    echo @+
+endfunction
 "}}}
 "powerline"{{{
 "Need clone powerline github repo
