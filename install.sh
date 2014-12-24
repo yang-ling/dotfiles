@@ -43,9 +43,11 @@ check()
     [[ -h ~/linux_setting.vim ]] || { echoError "No .linux_setting.vim found in ~/";  }
     # pacman.conf
     [[ -h /etc/pacman.conf ]] || { echoError "No pacman.conf found in /etc"; }
-    # .tmux.conf
+    # .tmux.conf color.tmux status
     [[ -d ~/.byobu ]] || { echoError "You may not install byobu"; }
     [[ -h ~/.byobu/.tmux.conf ]] || { echoError "No .tmux.conf found in ~/.byobu"; }
+    [[ -h ~/.byobu/color.tmux ]] || { echoError "No color.tmux found in ~/.byobu"; }
+    [[ -h ~/.byobu/status ]] || { echoError "No status found in ~/.byobu"; }
     # .vimrc
     [[ -h ~/.vimrc ]] || { echoError "No .vimrc found in ~/"; }
     # .vrapperrc
@@ -118,7 +120,9 @@ install()
 
     # .tmux.conf
     if [[ -d ~/.byobu ]]; then
-        doln ${_BASE_DIR}/.tmux.conf ~/.byobu/.tmux.conf
+        doln ${_BASE_DIR}/byobu/.tmux.conf ~/.byobu/.tmux.conf
+        doln ${_BASE_DIR}/byobu/color.tmux ~/.byobu/color.tmux
+        doln ${_BASE_DIR}/byobu/status ~/.byobu/status
     else
         echoError "You may not install byobu at first";
     fi
