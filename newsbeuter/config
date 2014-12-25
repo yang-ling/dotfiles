@@ -23,7 +23,8 @@ max-downloads 4
 #notify-xterm yes
 #notify-screen yes
 player mplayer
-refresh-on-startup yes
+refresh-on-startup no
+suppress-first-reload yes
 reload-time 20
 reload-threads 2
 show-read-articles no
