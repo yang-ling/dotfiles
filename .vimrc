@@ -864,7 +864,8 @@ if has("autocmd")
 
     " Put these in an autocmd group, so that we can delete them easily.
     augroup vimrcEx
-        au!
+        " Clear this group first to avoid loading duplicated auto commands.
+        autocmd!
 
         " For all text files set 'textwidth' to 78 characters.
         autocmd FileType text setlocal textwidth=78
