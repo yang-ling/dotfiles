@@ -169,6 +169,7 @@ NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'roman/golden-ratio'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'tfnico/vim-gradle'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
