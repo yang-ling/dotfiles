@@ -58,8 +58,7 @@ articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
 highlight feedlist    "^  *[0-9]+  *N  "                    color156 default
 highlight articlelist "^  *[0-9]+  *N  "                    color156 default
 
-highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     color75  default
-highlight article     "(^Link:.*|^Date:.*)"                 color75  default
+highlight article     "^(Feed|Title|Author|Link|Date):.*"   color75  default
 highlight article     "^Podcast Download URL:.*"            color71  default
 highlight article     "^Links:"                             white    color240 underline
 highlight article     "\\[[0-9][0-9]*\\]"                   color72  default  bold
