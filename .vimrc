@@ -121,9 +121,9 @@ NeoBundle 'vim-scripts/argtextobj.vim'
 " g++ -o tellenc tellenc.cpp
 " Then copy tellenc to /usr/bin/
 NeoBundle 'mbbill/fencview'
-NeoBundle 'majutsushi/tagbar'
+"NeoBundle 'majutsushi/tagbar'
 NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-easytags'
+"NeoBundle 'xolox/vim-easytags'
 NeoBundle 'xolox/vim-shell'
 " This calendar provide calendar view and connect to google calendar
 "NeoBundle 'itchyny/calendar.vim'

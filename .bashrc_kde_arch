@@ -129,7 +129,7 @@ man() {
 }
 
 # Make sure JDK is 1.6
-[[ -x ~/.check_jdk.sh ]] && bash ~/.check_jdk.sh
+#[[ -x ~/.check_jdk.sh ]] && bash ~/.check_jdk.sh
 [[ "$PS1" ]] && fortune 30% tang300 30% song100 40% all | cowsay
 
 GPG_TTY=`tty`
