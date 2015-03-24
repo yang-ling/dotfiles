@@ -475,8 +475,8 @@ nnoremap <silent> <C-Left>  :<C-u>call <SID>try_wincmd('ObviousResizeLeft',  '<'
 nnoremap <silent> <C-Right> :<C-u>call <SID>try_wincmd('ObviousResizeRight', '>')<CR>
 "}}}
 " SplitJoin"{{{
-nnoremap <silent> J :<C-u>call <SID>try('SplitjoinJoin',  'J')<CR>
-nnoremap <silent> S :<C-u>call <SID>try('SplitjoinSplit', "r\015")<CR>
+"nnoremap <silent> J :<C-u>call <SID>try('SplitjoinJoin',  'J')<CR>
+"nnoremap <silent> S :<C-u>call <SID>try('SplitjoinSplit', "r\015")<CR>
 "}}}
 " golden ratio "{{{
 let g:golden_ratio_autocommand = 0
