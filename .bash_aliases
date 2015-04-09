@@ -59,6 +59,8 @@ alias xo='xdg-open'
 
 alias tjoinp='tmux join-pane -h -s :. -t :-1'
 
+alias mtr-report='mtr -w -b -c 10 --tcp '
+
 # git
 alias g=git
 alias gs='git status'
