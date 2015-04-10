@@ -60,6 +60,7 @@ alias xo='xdg-open'
 alias tjoinp='tmux join-pane -h -s :. -t :-1'
 
 alias mtr-report='mtr -w -b -c 10 --tcp '
+alias mtr-common='mtr -b --tcp '
 
 # git
 alias g=git
