@@ -152,7 +152,7 @@ alias pacca="sudo /usr/bin/pacmatic -Scc"      # '[c]lean [a]ll cache'   - delet
 alias paclf="/usr/bin/pacmatic -Ql"       # '[l]ist [f]iles'  - list all files installed by a given package
 alias pacqo="/usr/bin/pacmatic -Qo"       # '[o]wn file'  - list the package which owns target file
 alias yaoexpl="/usr/bin/yaourt -D --asexplicit" # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
-alias yaoimpl="/usr/bin/yaourt -D --asdeps" # 'mark as [impl]icit'  - mark one or more packages as non explicitly installed
+alias yaodep="/usr/bin/yaourt -D --asdeps" # 'mark as dependency'  - mark one or more packages as non explicitly installed
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacmatic -Qtdq > /dev/null && sudo /usr/bin/pacmatic -Rs \$(/usr/bin/pacmatic -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
