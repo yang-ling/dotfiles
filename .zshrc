@@ -117,6 +117,9 @@ GOPATH=~/go
 export GOPATH
 export PATH="$PATH:$GOPATH/bin"
 
+# Ranger
+RANGER_LOAD_DEFAULT_RC=false
+
 # gem install needs this, otherwise warning will happen
 # Comment the following 2 lines out because rvm conflicts with GEM_HOME
 #PATH=$PATH:/home/yangling/.gem/ruby/2.1.0/bin:/root/.gem/ruby/2.1.0/bin
