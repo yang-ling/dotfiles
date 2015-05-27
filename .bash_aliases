@@ -199,3 +199,5 @@ alias you-get-tube="you-get -x 127.0.0.1:8087"
 alias ping="rainbow --config=ping -- ping -c 3"
 
 alias psg="ps -ef | grep -v grep | grep"
+
+alias rl="echo $RANGER_LEVEL"
