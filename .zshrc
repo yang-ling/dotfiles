@@ -94,6 +94,8 @@ _SHOW_FORTUNE=0
 [[ -n "$PS1" ]] && [[ "$TERM" == "screen" ]] && { _SHOW_FORTUNE=1; }
 [[ $_SHOW_FORTUNE -eq 1 ]] && fortune 30% tang300 30% song100 40% all | cowsay
 
+export TERM="xterm-256color"
+
 # /usr/lib/jvm/jdk is a symbol link. It links to the real JDK.
 # Note: in /etc/profile.d/jre.sh, there is a link to real JDK, so I needn't make own link.
 # Now archlinux uses archlinux-java to manage java
