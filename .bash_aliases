@@ -200,4 +200,12 @@ alias ping="rainbow --config=ping -- ping -c 3"
 
 alias psg="ps -ef | grep -v grep | grep"
 
-alias rl="echo $RANGER_LEVEL"
+# Start new ranger instance only if it's not running in current shell
+rg() {
+    if [ -z "$RANGER_LEVEL" ]
+    then
+        ranger
+    else
+        exit
+    fi
+}
