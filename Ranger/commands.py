@@ -75,6 +75,10 @@ class extracthere(Command):
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
 
+class lsy(Command):
+    def execute(self):
+        self.fm.execute_console("shell -p echo %c")
+
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
 class my_edit(Command):
