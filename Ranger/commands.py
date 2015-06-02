@@ -90,7 +90,6 @@ class tmsu_tag(Command):
 
         if not marked_files:
             return
-            # tmsu tag -r --tags="tag tag tag" dir file file
         self.fm.execute_console("shell -w tmsu tag -r --tags=\""+ ' '.join(tags) +"\" " + ' '.join([f.path for f in marked_files]))
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
