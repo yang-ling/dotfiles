@@ -14,6 +14,15 @@ from ranger.api.commands import *
 import os
 from ranger.core.loader import CommandLoader
 
+class empty(Command):
+    """:empty
+
+    Empties the trash directory ~/.Trash
+    """
+
+    def execute(self):
+        self.fm.execute_console("shell -w find ~/.Trash/ -mindepth 1 -delete")
+
 class compress(Command):
     def execute(self):
         """ Compress marked files to current directory """
