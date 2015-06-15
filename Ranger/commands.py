@@ -21,7 +21,7 @@ class empty(Command):
     """
 
     def execute(self):
-        self.fm.execute_console("shell -w find ~/.Trash/ -mindepth 1 -delete")
+        self.fm.execute_console("shell -w find ~/.Trash/ -mindepth 1 -depth -mtime +7 -delete")
 
 class compress(Command):
     def execute(self):
