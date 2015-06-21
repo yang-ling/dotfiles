@@ -158,8 +158,8 @@ alias yaodep="/usr/bin/yaourt -D --asdeps" # 'mark as dependency'  - mark one or
 alias pacro="/usr/bin/pacmatic -Qtdq > /dev/null && sudo /usr/bin/pacmatic -Rs \$(/usr/bin/pacmatic -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
 
 # Install AUR package
-alias aur="makepkg -s -i -r -c --needed"
-alias aurdep="makepkg -s -i -r -c --needed --asdeps"
+alias aur="makepkg -s -i -r -c -C --needed"
+alias aurdep="makepkg -s -i -r -c -C --needed --asdeps"
 
 # Optimize arch
 alias archoptimize='sudo /usr/bin/pacman -Sc && sudo pacman-optimize && sync'
