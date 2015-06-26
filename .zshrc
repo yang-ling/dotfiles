@@ -65,6 +65,8 @@ source $ZSH/oh-my-zsh.sh
 
 zstyle ':completion::complete:*' cache-path $HOME/.oh-my-zsh/cache/
 
+compctl -g "*.pdf" print.sh
+
 # User configuration
 #. /home/yangling/MyGitRepo/powerline/powerline/bindings/zsh/powerline.zsh
 
