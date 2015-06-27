@@ -139,6 +139,8 @@ export EDITOR="/usr/bin/vim"
 # https://github.com/tmuxinator/tmuxinator
 export DISABLE_AUTO_TITLE=true
 
+export TERMINAL=/usr/bin/terminator
+
 # === Work Config ===
 [[ -s "$HOME/Work/work-config.sh" ]] && source "$HOME/Work/work-config.sh"
 
