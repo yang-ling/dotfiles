@@ -146,6 +146,8 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+bindsym $mod+grave workspace next
+
 # Window Rules
 for_window [class="(?i)Keepassx"] move scratchpad
 
