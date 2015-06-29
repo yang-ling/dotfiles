@@ -33,7 +33,12 @@ ethernet _first_ {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining"
+        format         = "%status %percentage %remaining (%emptytime %consumption)"
+        format_down    = "No battery"
+        status_bat     = "⚡ BAT"
+        status_full    = "☻ FULL"
+        low_threshold  = "30"
+        threshold_type = "time"
 }
 
 run_watch DHCP {
