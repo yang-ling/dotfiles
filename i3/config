@@ -150,6 +150,8 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+grave workspace next
 bindsym $alt+grave focus right
 
+bindsym $mod+Print exec --no-startup-id /usr/bin/ksnapshot
+
 # Window Rules
 for_window [class="(?i)Keepassx"] move scratchpad
 
