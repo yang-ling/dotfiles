@@ -41,7 +41,10 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 nohup vrome >/dev/null 2>&1 &
 
-eval "$(ssh-agent -s)"
+#eval "$(ssh-agent -s)"
+
+SINGLE_SSH_AGENT=/usr/local/bin/single-ssh-agent.sh
+[[ -x "$SINGLE_SSH_AGENT" ]] && { . "$SINGLE_SSH_AGENT"; }
 
 session=${1:-i3}
 
