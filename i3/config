@@ -140,7 +140,6 @@ exec --no-startup-id /usr/bin/kuaipan4uk_script
 exec --no-startup-id /usr/bin/dropbox
 exec --no-startup-id /usr/bin/fcitx-autostart
 exec --no-startup-id /usr/bin/keepassx
-exec --no-startup-id eval "$(ssh-agent -s)"
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -154,6 +153,7 @@ bindsym $mod+Print exec --no-startup-id /usr/bin/ksnapshot
 
 # Window Rules
 for_window [class="(?i)Keepassx"] move scratchpad
+for_window [window_role="(?i)bubble"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -217,11 +217,11 @@ set $Locker i3lock && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym e exec --no-startup-id ssh-agent -k && i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym Shift+s exec --no-startup-id  systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

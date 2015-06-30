@@ -41,6 +41,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 nohup vrome >/dev/null 2>&1 &
 
+eval "$(ssh-agent -s)"
+
 session=${1:-i3}
 
 case $session in
