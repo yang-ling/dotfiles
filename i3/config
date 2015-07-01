@@ -224,7 +224,7 @@ bindsym $mod+n mode "focused"
 
 mode "scratchpads" {
 
-                # hardcoded focus keybindings
+                q scratchpad show, mode "default"
                 bindsym k [class="(?i)keepassx"] scratchpad show, mode "default"
                 bindsym s [class="(?i)skype" title="老婆"] scratchpad show, mode "default"
 
@@ -233,7 +233,7 @@ mode "scratchpads" {
                 bindsym Escape mode "default"
 }
 
-bindsym $alt+minus mode "scratchpads"
+bindsym $mod+q mode "scratchpads"
 
 set $Locker i3lock && sleep 1
 
