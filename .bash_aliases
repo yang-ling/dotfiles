@@ -209,3 +209,5 @@ rg() {
         exit
     fi
 }
+
+alias uul="udevil umount -l"
