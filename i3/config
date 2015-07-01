@@ -152,6 +152,7 @@ bindsym $alt+grave focus right
 
 bindsym $mod+Print exec --no-startup-id /usr/bin/ksnapshot
 
+# Scratchpads
 bindsym Control+$mod+k [class="(?i)keepassx"] scratchpad show
 bindsym Control+$mod+p [class="(?i)skype" title="老婆"] scratchpad show
 
@@ -224,19 +225,6 @@ mode "focused" {
 }
 
 bindsym $mod+n mode "focused"
-
-mode "scratchpads" {
-
-                q scratchpad show, mode "default"
-                bindsym k [class="(?i)keepassx"] scratchpad show, mode "default"
-                bindsym p [class="(?i)skype" title="老婆"] scratchpad show, mode "default"
-
-                # Exit to the default mode
-                bindsym Return mode "default"
-                bindsym Escape mode "default"
-}
-
-bindsym $mod+q mode "scratchpads"
 
 set $Locker i3lock && sleep 1
 
