@@ -152,6 +152,9 @@ bindsym $alt+grave focus right
 
 bindsym $mod+Print exec --no-startup-id /usr/bin/ksnapshot
 
+bindsym Control+$mod+k [class="(?i)keepassx"] scratchpad show
+bindsym Control+$mod+p [class="(?i)skype" title="老婆"] scratchpad show
+
 # Window Rules
 for_window [class="(?i)Keepassx"] move scratchpad
 for_window [class="(?i)skype" title="老婆"] move scratchpad
@@ -195,7 +198,7 @@ mode "focused" {
 
                 # hardcoded focus keybindings
                 bindsym k [class="(?i)keepassx"] focus, mode "default"
-                bindsym s [class="(?i)skype"] focus
+                bindsym p [class="(?i)skype"] focus
 
                 # keybindings for marking and jumping to clients
                 bindsym a exec i3-input -F 'mark %s' -P 'Mark name: '
@@ -226,7 +229,7 @@ mode "scratchpads" {
 
                 q scratchpad show, mode "default"
                 bindsym k [class="(?i)keepassx"] scratchpad show, mode "default"
-                bindsym s [class="(?i)skype" title="老婆"] scratchpad show, mode "default"
+                bindsym p [class="(?i)skype" title="老婆"] scratchpad show, mode "default"
 
                 # Exit to the default mode
                 bindsym Return mode "default"
