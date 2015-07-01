@@ -41,7 +41,9 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 nohup vrome >/dev/null 2>&1 &
 
-#eval "$(ssh-agent -s)"
+/usr/bin/udevil clean
+#/usr/bin/devmon -s --info-on-mount >> ~/.devmon-log/devmonlog-$(date +'%F-%k-%M-%S') 2>&1
+#devmon -s --info-on-mount --exec-on-drive   "notify-send -t 3000 \"Device %f %l has been automounted\"" --exec-on-unmount "notify-send -t 3000 \"Device %f %l has been UNmounted\"" --exec-on-remove  "notify-send -t 3000 \"Device %f has been REMOVED\""
 
 SINGLE_SSH_AGENT=/usr/local/bin/single-ssh-agent.sh
 [[ -x "$SINGLE_SSH_AGENT" ]] && { . "$SINGLE_SSH_AGENT"; }
