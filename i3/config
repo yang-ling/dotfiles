@@ -157,6 +157,13 @@ for_window [class="(?i)skype" title="老婆"] move scratchpad
 
 for_window [window_role="(?i)bubble"] floating enable
 
+# Assign
+# WorkFlowy
+assign [instance="crx_koegeopamaoljbmhnfjbclbocehhgmkm"] 3
+assign [instance="(?i)wx.qq.com"] 4
+assign [instance="(?i)w.qq.com"] 4
+assign [instance="(?i)wapgeek.slack.com"] 4
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
