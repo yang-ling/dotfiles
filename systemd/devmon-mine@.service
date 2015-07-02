@@ -8,7 +8,7 @@ PIDFile=/run/devmon-mine.pid
 # Set DISPLAY for popup dialogs
 Environment=DISPLAY=:0
 ExecStartPre=-/usr/local/bin/clean-umounted
-ExecStart=/usr/bin/devmon -s --info-on-mount --exec-on-drive "notify-send -t 3000 \"Device %f %l has been automounted\"" --exec-on-unmount "notify-send -t 3000 \"Device %f %l has been UNmounted\"" --exec-on-remove "notify-send -t 3000 \"Device %f has been REMOVED\""
+ExecStart=/usr/bin/devmon -s --info-on-mount --exec-on-drive "notify-send -t 3000 \"Device %f %l has been automounted\"" --exec-on-unmount "notify-send -t 3000 \"Device %f %l has been UNmounted\"" --exec-on-unmount "/usr/bin/udevil clean" --exec-on-remove "notify-send -t 3000 \"Device %f has been REMOVED\"" --exec-on-remove "/usr/bin/udevil clean"
 ExecStop=-/usr/bin/devmon -u
 ExecStopPost=/usr/local/bin/clean-umounted
 
