@@ -126,6 +126,7 @@ alias pac="sudo /usr/bin/pacmatic -S"     # default action    - install one or m
 alias pacn="sudo /usr/bin/pacmatic -S --needed"     # default action    - install one or more packages, ignore up to date packages.
 alias pacdep="sudo /usr/bin/pacmatic -S --asdeps"     # default action, as dependency    - install one or more packages, as dependency
 alias yao="/usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
+alias pyao="/usr/bin/proxychains4 /usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
 alias pacu="sudo /usr/bin/pacmatic -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacy="sudo /usr/bin/pacmatic -Syy"      # '[u]pdate database'        - upgrade all database.
 alias pacyu="sudo /usr/bin/pacmatic -Syyu"      # '[u]pdate [r]epos'        - update repos and upgrade all packages to their newest version
