@@ -148,7 +148,9 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 bindsym $mod+grave workspace next
+bindsym $mod+Shift+grave workspace prev
 bindsym $alt+grave focus right
+bindsym $alt+Shift+grave focus left
 
 bindsym $mod+Print exec --no-startup-id /usr/bin/ksnapshot
 
