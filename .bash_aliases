@@ -132,7 +132,8 @@ alias pacy="sudo /usr/bin/pacmatic -Syy"      # '[u]pdate database'        - upg
 alias pacyu="sudo /usr/bin/pacmatic -Syyu"      # '[u]pdate [r]epos'        - update repos and upgrade all packages to their newest version
 alias pacdl="sudo /usr/bin/pacmatic -Syuw" # only download, no upgrade.
 alias yaou="/usr/bin/yaourt -Syua --devel"      # '[u]pdate'        - upgrade all packages to their newest version
-alias pacr="sudo /usr/bin/pacmatic -Rcnsu"       # '[r]emove'        - uninstall one or more packages
+alias pacr="sudo /usr/bin/pacmatic -Rcnsu"       # '[r]emove'        - uninstall one or more packages, include packages which depend on target package.
+alias pacrsafe="sudo /usr/bin/pacmatic -Rnsu"       # '[r]emove'        - Safe uninstall one or more packages
 alias pacs="/usr/bin/pacmatic -Ss"        # '[s]earch'        - search for a package using one or more keywords
 alias yaos="/usr/bin/yaourt -Ss"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
 alias paci="/usr/bin/pacmatic -Si"        # '[i]nfo'      - show information about a package
@@ -157,13 +158,28 @@ alias yaodep="/usr/bin/yaourt -D --asdeps" # 'mark as dependency'  - mark one or
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacmatic -Qtdq > /dev/null && sudo /usr/bin/pacmatic -Rs \$(/usr/bin/pacmatic -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
+orphans() {
+    if [[ ! -n $(pacman -Qdt) ]]; then
+        echo "No orphans to remove."
+    else
+        sudo pacman -Runs $(pacman -Qdtq)
+    fi
+}
+
+# 显示所有自己安装的包，除了初始包(base, base-devel)
+whatihave() {
+    pacman -Qei | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
+}
+whatihave-official() {
+    pacman -Qeni | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
+}
 
 # Install AUR package
 alias aur="makepkg -s -i -r -c -C --needed"
 alias aurdep="makepkg -s -i -r -c -C --needed --asdeps"
 
 # Optimize arch
-alias archoptimize='sudo /usr/bin/pacman -Sc && sudo pacman-optimize && sync'
+alias archoptimize='sudo /usr/bin/paccache -r && /usr/bin/paccache -ruk0 && sudo pacman-optimize && sync'
 
 # aria2
 alias a2="aria2c -j5 -x5 -m5 -k1M -s5"
@@ -188,6 +204,10 @@ alias sysen="sudo /usr/bin/systemctl enable"
 alias sysstart="sudo /usr/bin/systemctl start"
 alias sysstop="sudo /usr/bin/systemctl stop"
 alias sysds="sudo /usr/bin/systemctl disable"
+
+# Show journalctl errors
+alias jerr="journalctl -p 0..3 -xen"
+alias jxe="journalctl -xe"
 
 alias watchfind="sudo watch readlink -f /proc/$(pidof find)/cwd"
 
