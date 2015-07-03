@@ -173,6 +173,7 @@ whatihave() {
 whatihave-official() {
     pacman -Qeni | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
 }
+alias whatihave-aur="/usr/bin/pacman -Qemq"
 
 # Install AUR package
 alias aur="makepkg -s -i -r -c -C --needed"
