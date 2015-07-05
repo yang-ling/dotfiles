@@ -184,6 +184,7 @@ alias archoptimize='sudo /usr/bin/paccache -r && /usr/bin/paccache -ruk0 && sudo
 
 # aria2
 alias a2="aria2c -j5 -x5 -m5 -k1M -s5"
+alias pa2="/usr/bin/proxychains4 aria2c -j5 -x5 -m5 -k1M -s5"
 alias a2limit="aria2c -j5 -x5 -m5 -k1M -s5 --max-overall-download-limit=200K"
 # Torrent download: a2t /path/to/torrent
 # Refer to http://sourceforge.net/apps/trac/aria2/wiki/UsageExample#BitTorrentDownload
