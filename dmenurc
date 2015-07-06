@@ -1,0 +1,1 @@
+DMENU='dmenu -nb #000000 -nf #ECDDA6 -sb #000000 -sf #b23308 -fn Ubuntu-16:bold -i'
