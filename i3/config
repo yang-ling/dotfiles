@@ -154,6 +154,7 @@ bindsym $alt+grave focus right
 bindsym $alt+Shift+grave focus left
 
 bindsym $mod+Print exec --no-startup-id /usr/bin/ksnapshot
+bindsym $mod+r exec --no-startup-id /usr/local/bin/dmenu-search-engine
 
 # Scratchpads
 bindsym Control+$mod+k [class="(?i)keepassx"] scratchpad show
@@ -196,7 +197,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+$alt+r mode "resize"
 
 mode "focused" {
 
