@@ -92,6 +92,7 @@ MusicDir = "/home/yangling/KuaiPan/Music/"
 #Shuffle = no
 Shuffle = yes
 AutoNext = yes
+Repeat = yes
 
 # Default FormatString:
 #
