@@ -1,5 +1,6 @@
 [Unit]
 Description=devmon Service
+AssertFileIsExecutable=/usr/local/bin/clean-umounted
 
 [Service]
 Type=simple
