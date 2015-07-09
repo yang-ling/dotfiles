@@ -5,7 +5,7 @@ AssertFileIsExecutable=/usr/local/bin/clean-umounted
 [Service]
 Type=simple
 User=%i
-PIDFile=/run/devmon-mine.pid
+PIDFile=/run/devmon.pid
 # Set DISPLAY for popup dialogs
 Environment=DISPLAY=:0
 ExecStartPre=-/usr/local/bin/clean-umounted
