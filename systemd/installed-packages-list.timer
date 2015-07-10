@@ -1,0 +1,9 @@
+[Unit]
+Description=List installed packages Timer
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1d
+
+[Install]
+WantedBy=multi-user.target
