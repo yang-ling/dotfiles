@@ -1,0 +1,9 @@
+[Unit]
+Description=Empty Given Folders Timer. Daily
+
+[Timer]
+OnCalendar=*-*-* 14:10:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

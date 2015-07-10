@@ -1,0 +1,10 @@
+[Unit]
+Description=Empty Given Folders Service
+AssertFileIsExecutable=/usr/local/bin/empty-folders
+AssertFileNotEmpty=%h/.empty-foldersrc
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/empty-folders %h/.empty-foldersrc
+IOSchedulingClass=idle
+IOSchedulingPriority=7
