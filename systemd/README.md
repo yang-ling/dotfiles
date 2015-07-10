@@ -20,10 +20,8 @@ Put the following services to /etc/systemd/system/
 
 Put the following units to $HOME/.config/systemd/user/
 
-1. check-failed.timer and check-failed.service
-    1. Require `/usr/local/bin/check-failed-units`
-    2. Enable it by `systemctl --user enable empty-trash@yangling.timer`
-    3. Start it by `systemctl --user start empty-trash@yangling.timer`
-2. installed-packages-list.timer and installed-packages-list.service
+1. installed-packages-list.timer and installed-packages-list.service
     1. Require `/usr/local/bin/list-installed-packages`
     2. You need modify the service unit to specify output folder
+    3. Enable it by `systemctl --user enable empty-trash@yangling.timer`
+    4. Start it by `systemctl --user start empty-trash@yangling.timer`
