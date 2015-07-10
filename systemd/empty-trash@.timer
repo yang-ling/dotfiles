@@ -1,5 +1,5 @@
 [Unit]
-Description=Daily Timer
+Description=Empty Trash Timer
 
 [Timer]
 OnBootSec=10min

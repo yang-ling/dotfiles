@@ -1,9 +1,9 @@
 [Unit]
 Description=Empty Trash Service
+AssertFileIsExecutable=/usr/local/bin/empty-trash
 
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/empty-trash %i
-
-[Install]
-WantedBy=daily-timer.target
+IOSchedulingClass=idle
+IOSchedulingPriority=7
