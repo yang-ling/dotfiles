@@ -1,9 +1,9 @@
 [Unit]
-Description=Arch Optimize Timer
+Description=Arch Optimize Timer. Monthly
 
 [Timer]
-OnBootSec=2min
-OnUnitActiveSec=1month
+OnCalendar=*-*-02 13:00:00
+Persistent=true
 
 [Install]
 WantedBy=multi-user.target

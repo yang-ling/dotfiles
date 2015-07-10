@@ -1,9 +1,9 @@
 [Unit]
-Description=Check Failed Units Timer
+Description=Check Failed Units Timer. Daily
 
 [Timer]
-OnBootSec=1min
-OnUnitActiveSec=1d
+OnCalendar=*-*-* 02:00:00
+Persistent=true
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=timers.target

@@ -1,9 +1,9 @@
 [Unit]
-Description=List installed packages Timer
+Description=List installed packages Timer. Daily
 
 [Timer]
-OnBootSec=2min
-OnUnitActiveSec=1d
+OnCalendar=*-*-* 21:30:00
+Persistent=true
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=timers.target

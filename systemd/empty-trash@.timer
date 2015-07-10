@@ -1,9 +1,9 @@
 [Unit]
-Description=Empty Trash Timer
+Description=Empty Trash Timer. Daily
 
 [Timer]
-OnBootSec=10min
-OnUnitActiveSec=1d
+OnCalendar=*-*-* 14:00:00
+Persistent=true
 
 [Install]
 WantedBy=multi-user.target
