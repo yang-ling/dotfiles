@@ -142,6 +142,7 @@ exec --no-startup-id /usr/bin/dropbox
 exec --no-startup-id /usr/bin/fcitx-autostart
 exec --no-startup-id /usr/bin/keepassx
 exec --no-startup-id /usr/bin/workrave
+exec --no-startup-id /usr/local/bin/check-failed-units
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
