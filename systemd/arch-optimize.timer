@@ -1,0 +1,9 @@
+[Unit]
+Description=Arch Optimize Timer
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1month
+
+[Install]
+WantedBy=multi-user.target
