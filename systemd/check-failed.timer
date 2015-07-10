@@ -1,0 +1,9 @@
+[Unit]
+Description=Check Failed Units Timer
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1d
+
+[Install]
+WantedBy=multi-user.target
