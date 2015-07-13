@@ -113,8 +113,9 @@ markup=pango
 interval=30
 
 [sshd]
-command=[[ $(pidof sshd > /dev/null) ]] && echo SSH-UP
-interval=300
+command=[[ $(pidof sshd) ]] && echo SSH-UP
+#interval=300
+interval=30
 
 # Date Time
 #
