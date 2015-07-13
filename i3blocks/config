@@ -100,11 +100,18 @@ interval=5
 # Battery indicator
 #
 # The battery instance defaults to 0.
+#[battery]
+##label=BAT
+#label=⚡
+##instance=1
+#interval=30
+
+# See https://github.com/kb100/i3blocks-battery
 [battery]
-#label=BAT
-label=⚡
-#instance=1
+command=~/.config/i3blocks/blocks/i3blocks-battery/battery.py
+markup=pango
 interval=30
+
 
 # Date Time
 #
