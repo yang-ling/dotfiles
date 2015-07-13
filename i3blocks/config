@@ -124,12 +124,6 @@ command=[[ $(pidof vsftpd) ]] && echo FTP-UP || echo ""
 #interval=300
 interval=30
 
-# Date Time
-#
-[time]
-command=date '+%a %Y-%m-%d %H:%M'
-interval=5
-
 # Generic media player support
 #
 # This displays "ARTIST - SONG" if a music is playing.
@@ -182,3 +176,9 @@ signal=11
 instance=NUM
 interval=once
 signal=11
+
+# Date Time
+#
+[time]
+command=date '+%a %Y-%m-%d %H:%M'
+interval=5
