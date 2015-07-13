@@ -112,6 +112,9 @@ command=~/.config/i3blocks/blocks/i3blocks-battery/battery.py
 markup=pango
 interval=30
 
+[sshd]
+command=[[ $(pidof sshd > /dev/null) ]] && echo SSH-UP
+interval=300
 
 # Date Time
 #
