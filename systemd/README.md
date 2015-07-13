@@ -2,13 +2,6 @@
 
 These are my systemd files
 
-### System-wide Units
-
-Put the following services to /etc/systemd/system/
-
-1. arch-optimize.timer and arch-optimize.service
-    1. Require `/usr/local/bin/arch-optimizer`
-
 ### User Units
 
 Put the following units to $HOME/.config/systemd/user/
