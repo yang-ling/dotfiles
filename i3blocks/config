@@ -108,17 +108,19 @@ interval=5
 
 # See https://github.com/kb100/i3blocks-battery
 [battery]
-command=~/.config/i3blocks/blocks/i3blocks-battery/battery.py
+command=/usr/lib/i3blocks/blocks/i3blocks-battery/battery.py
 markup=pango
 interval=30
 
 [sshd]
-command=[[ $(pidof sshd) ]] && echo SSH-UP
+color=#FF9900
+command=[[ $(pidof sshd) ]] && echo SSH-UP || echo ""
 #interval=300
 interval=30
 
 [vsftpd]
-command=[[ $(pidof vsftpd) ]] && echo FTP-UP
+color=#FF9900
+command=[[ $(pidof vsftpd) ]] && echo FTP-UP || echo ""
 #interval=300
 interval=30
 
@@ -158,6 +160,12 @@ command=~/.config/i3blocks/blocks/i3blocks-usb/usb.py
 markup=pango
 signal=1
 interval=10
+
+[keyboard]
+label=
+command=/usr/lib/i3blocks/blocks/i3blocks-keyboard/keyboard.sh
+interval=once
+signal=1
 
 # Key indicators
 #
