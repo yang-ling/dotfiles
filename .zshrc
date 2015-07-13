@@ -59,7 +59,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Usage
 # node: node-doc <api-name> will open api document by browser
-plugins=(colorize command-not-found common-aliases encode64 extract gem git git-extras git-prompt gradle history history-substring-search iwhois mvn meteor node npm python rsync rvm sudo systemadmin systemd tmux tmuxinator)
+plugins=(colorize command-not-found common-aliases encode64 extract gem git git-extras git-prompt gradle history history-substring-search iwhois mvn meteor node npm python rsync sudo systemadmin systemd tmux tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,11 +124,6 @@ export PATH="$PATH:$GOPATH/bin"
 # Ranger
 RANGER_LOAD_DEFAULT_RC=false
 
-# gem install needs this, otherwise warning will happen
-# Comment the following 2 lines out because rvm conflicts with GEM_HOME
-#PATH=$PATH:/home/yangling/.gem/ruby/2.1.0/bin:/root/.gem/ruby/2.1.0/bin
-#export GEM_HOME=/home/yangling/.gem/ruby/2.0.0
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -146,14 +141,6 @@ export TERMINAL=/usr/bin/terminator
 
 # To activate zsh-syntax-highlighting, a Fish-shell-like syntax highlighting.
 [[ -s /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#
-# === RVM ===
-
-# Add RVM to PATH for scripting
-#export PATH="$PATH:$HOME/.rvm/bin"
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
