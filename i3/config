@@ -237,7 +237,7 @@ mode "focused" {
 
 bindsym $mod+n mode "focused"
 
-set $Locker i3lock && sleep 1
+set $Locker i3lock-wrapper -l && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
