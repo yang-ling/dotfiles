@@ -136,6 +136,8 @@ export DISABLE_AUTO_TITLE=true
 
 export TERMINAL=/usr/bin/terminator
 
+export XDG_CONFIG_HOME=$HOME/.config
+
 # === Work Config ===
 [[ -s "$HOME/Work/work-config.sh" ]] && source "$HOME/Work/work-config.sh"
 
