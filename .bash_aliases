@@ -127,6 +127,8 @@ alias pacn="sudo /usr/bin/pacman -S --needed"     # default action    - install 
 alias pacdep="sudo /usr/bin/pacman -S --asdeps"     # default action, as dependency    - install one or more packages, as dependency
 alias yao="/usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
 alias pyao="/usr/bin/proxychains4 /usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
+alias yaodep="/usr/bin/yaourt -S --asdeps"         # default yaourt action - install one or more packages including AUR
+alias pyaodeps="/usr/bin/proxychains4 /usr/bin/yaourt -S --asdeps"         # default yaourt action - install one or more packages including AUR
 alias pacu="sudo /usr/bin/pacman -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacy="sudo /usr/bin/pacman -Syy"      # '[u]pdate database'        - upgrade all database.
 alias pacyu="sudo /usr/bin/pacman -Syyu"      # '[u]pdate [r]epos'        - update repos and upgrade all packages to their newest version
@@ -154,7 +156,6 @@ alias pacca="sudo /usr/bin/pacman -Scc"      # '[c]lean [a]ll cache'   - delete 
 alias paclf="/usr/bin/pacman -Ql"       # '[l]ist [f]iles'  - list all files installed by a given package
 alias pacqo="/usr/bin/pacman -Qo"       # '[o]wn file'  - list the package which owns target file
 alias yaoexpl="/usr/bin/yaourt -D --asexplicit" # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
-alias yaodep="/usr/bin/yaourt -D --asdeps" # 'mark as dependency'  - mark one or more packages as non explicitly installed
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
@@ -177,7 +178,9 @@ alias whatihave-aur="/usr/bin/pacman -Qemq"
 
 # Install AUR package
 alias aur="makepkg -s -i -r -c -C --needed"
+alias paur="/usr/bin/proxychains4 makepkg -s -i -r -c -C --needed"
 alias aurdep="makepkg -s -i -r -c -C --needed --asdeps"
+alias paurdep="/usr/bin/proxychains4 makepkg -s -i -r -c -C --needed --asdeps"
 
 # Optimize arch
 alias archoptimize='sudo /usr/bin/paccache -r && /usr/bin/paccache -ruk0 && sudo pacman-optimize && sync'
