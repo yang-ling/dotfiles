@@ -1,12 +1,10 @@
 [Unit]
 Description=List installed packages Service
 AssertFileIsExecutable=/usr/local/bin/list-installed-packages
-AssertPathExists=/path/to/offcial-list
-AssertPathExists=/path/to/aur-list
-
+AssertPathExists=/path/to/list
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/list-installed-packages /path/to/offcial-list /path/to/aur-list
+ExecStart=/usr/local/bin/list-installed-packages /path/to/list/official-list-name /path/to/list/aur-list-name
 IOSchedulingClass=idle
 IOSchedulingPriority=7
