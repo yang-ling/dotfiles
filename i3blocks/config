@@ -19,6 +19,8 @@
 # short_text
 # signal
 # urgent
+#
+# Icons: https://fortawesome.github.io/Font-Awesome/cheatsheet/
 
 # Global properties
 #
@@ -35,7 +37,9 @@ markup=none
 # See the script for details.
 [volume]
 #label=VOL
-label=♪
+#label=♪
+# fa-volume-up [&#xf028;]
+label=
 instance=Master
 instance=PCM
 interval=once
@@ -45,12 +49,16 @@ signal=10
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+#label=MEM
+# fa-flash
+label=
 separator=false
 interval=30
 
 [memory]
 label=SWAP
+#  fa-file-o
+label=
 instance=swap
 separator=false
 interval=30
@@ -60,7 +68,9 @@ interval=30
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU
+#label=CPU
+# fa-laptop
+label=
 interval=10
 min_width=CPU: 100.00%
 ##separator=false
@@ -147,7 +157,9 @@ interval=30
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label=TEMP
+#label=TEMP
+# fa-sun-o [&#xf185;]
+label=
 interval=10
 
 # See https://github.com/kb100/i3blocks-usb
@@ -169,15 +181,15 @@ signal=1
 #
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-[keyindicator]
-instance=CAPS
-interval=once
-signal=11
-
-[keyindicator]
-instance=NUM
-interval=once
-signal=11
+#[keyindicator]
+#instance=CAPS
+#interval=once
+#signal=11
+#
+#[keyindicator]
+#instance=NUM
+#interval=once
+#signal=11
 
 # Date Time
 #
