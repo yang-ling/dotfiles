@@ -44,10 +44,10 @@ signal=10
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
-#[memory]
-#label=MEM
-#separator=false
-#interval=30
+[memory]
+label=MEM
+separator=false
+interval=30
 
 #[memory]
 #label=SWAP
@@ -88,10 +88,10 @@ interval=5
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-#[cpu_usage]
-#label=CPU
-#interval=10
-#min_width=CPU: 100.00%
+[cpu_usage]
+label=CPU
+interval=10
+min_width=CPU: 100.00%
 ##separator=false
 
 #[load_average]
