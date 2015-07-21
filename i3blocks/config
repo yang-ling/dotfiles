@@ -106,8 +106,8 @@ separator=false
 interval=5
 
 
-#[load_average]
-#interval=10
+[load_average]
+interval=10
 
 # Battery indicator
 #

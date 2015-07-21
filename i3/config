@@ -265,7 +265,8 @@ bindsym $mod+Delete mode "$mode_system"
 # finds out, if available)
 bar {
     #output            LVDS1
-    status_command    i3blocks
+    status_command    python ~/.config/i3/file.py
+    #status_command    i3blocks
     position          top
     mode              dock
     workspace_buttons yes
