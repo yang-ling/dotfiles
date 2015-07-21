@@ -134,6 +134,7 @@ alias pacy="sudo /usr/bin/pacman -Syy"      # '[u]pdate database'        - upgra
 alias pacyu="sudo /usr/bin/pacman -Syyu"      # '[u]pdate [r]epos'        - update repos and upgrade all packages to their newest version
 alias pacdl="sudo /usr/bin/pacman -Syuw" # only download, no upgrade.
 alias yaou="/usr/bin/yaourt -Syua --devel"      # '[u]pdate'        - upgrade all packages to their newest version
+alias pyaou="/usr/bin/proxychains4 /usr/bin/yaourt -Syua --devel"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacr="sudo /usr/bin/pacman -Rcnsu"       # '[r]emove'        - uninstall one or more packages, include packages which depend on target package.
 alias pacrsafe="sudo /usr/bin/pacman -Rnsu"       # '[r]emove'        - Safe uninstall one or more packages
 alias pacs="/usr/bin/pacman -Ss"        # '[s]earch'        - search for a package using one or more keywords
