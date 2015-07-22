@@ -134,8 +134,8 @@ bindsym $mod+z exec --no-startup-id /usr/local/bin/goto-urgent.sh
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+x [urgent=latest] focus
 
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # Set keyboard latency
 exec --no-startup-id xset r rate 400 25
