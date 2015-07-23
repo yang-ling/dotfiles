@@ -11,6 +11,12 @@ status = Status(standalone=True)
 status.register("clock",
     format="%a %F %R",)
 
+status.register("pomodoro",)
+
+status.register("usb",
+    hints = {"markup": "pango"},
+    )
+
 # The battery monitor has many formatting options, see README for details
 
 # This would look like this, when discharging (or charging)
@@ -48,6 +54,12 @@ status.register("battery",
     not_present_text = "",
     )
 
+status.register("pidof_watch",
+    name="vsftpd",
+    color_up = "#FF0000",
+    format_down = "",
+    label = "VSFTPD",
+    )
 status.register("runwatch",
     name="SSHD",
     color_up = "#FF0000",
@@ -73,6 +85,7 @@ status.register("network",
     interface="eno1",
     hints = {"markup": "pango"},
     format_up = "<span color=\"#00FF00\">{v4}</span> {bytes_recv:6.1f}KiB {bytes_sent:5.1f}KiB",
+    format_short_up = "{bytes_recv:6.1f}KiB {bytes_sent:5.1f}KiB",
     format_down = "",
     dynamic_color = True,
     start_color = "#00FF00",
@@ -93,27 +106,31 @@ status.register("load")
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
     format="{temp:.0f}°C",)
-status.register("cpu_usage_graph",)
+status.register("cpu_usage_graph",
+    optional = True,
+    )
 status.register("cpu_usage",
     # fa-laptop [&#xf109;]
-    format = "{usage:02}%",
+    format = "\uf109{usage:02}%",
     hints = {"separator": False},
     )
 status.register("mem_swap",
     # fa-file-o [&#xf016;]
-    format="{used_swap}GB",
+    format="\uf016{used_swap}GB",
     divisor=1073741824,
     )
-status.register("mem_bar",)
+status.register("mem_bar",
+    optional = True,
+    )
 status.register("mem",
     # fa-flash (alias) [&#xf0e7;]
-    format="{avail_mem}GB",
+    format="\uf0e7{avail_mem}GB",
     hints = {"separator": False},
     divisor=1073741824,
     )
 status.register("alsa",
     # fa-volume-up [&#xf028;]
-    format="{volume}",
+    format="\uf028{volume}",
     mixer="PCM",
     card=1,
     )
