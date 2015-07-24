@@ -13,10 +13,6 @@ status.register("clock",
 
 status.register("pomodoro",)
 
-status.register("usb",
-    hints = {"markup": "pango"},
-    )
-
 # The battery monitor has many formatting options, see README for details
 
 # This would look like this, when discharging (or charging)
