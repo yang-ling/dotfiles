@@ -11,8 +11,6 @@ status = Status(standalone=True)
 status.register("clock",
     format="%a %F %R",)
 
-status.register("pomodoro",)
-
 # The battery monitor has many formatting options, see README for details
 
 # This would look like this, when discharging (or charging)

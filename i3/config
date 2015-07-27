@@ -153,6 +153,7 @@ exec --no-startup-id /usr/local/bin/check-failed-units
 #exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id xautolock -time 4 -locker "i3lock-wrapper -l"
 exec --no-startup-id variety --fast-forward
+exec --no-startup-id /usr/bin/volumeicon
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
