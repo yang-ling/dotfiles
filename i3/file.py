@@ -122,11 +122,5 @@ status.register("mem",
     hints = {"separator": False},
     divisor=1073741824,
     )
-status.register("alsa",
-    # fa-volume-up [&#xf028;]
-    format="\uf028{volume}",
-    mixer="PCM",
-    card=1,
-    )
 
 status.run()
