@@ -24,8 +24,13 @@ windows:
     - ranger
   - RSS:
     - export TERM=screen-256color
+  #- Music:
+    #- mocp -S
+    #- mocp -c
+    #- mocp -a /home/yangling/KuaiPan/Music/喜欢/
+    #- mocp -m
   - Music:
-    - mocp -S
-    - mocp -c
-    - mocp -a /home/yangling/KuaiPan/Music/喜欢/
-    - mocp -m
+      layout: even-vertical
+      panes:
+        - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s playlist
+        - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s visualizer

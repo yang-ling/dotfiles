@@ -27,5 +27,6 @@ status.register("disk",
 status.register("usb",
     hints = {"markup": "pango"},
     )
+status.register("mpd",)
 
 status.run()
