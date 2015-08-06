@@ -27,6 +27,8 @@ status.register("disk",
 status.register("usb",
     hints = {"markup": "pango"},
     )
-status.register("mpd",)
+status.register("mpd",
+    format = "{album} - {artist} - {title} {status}",
+    )
 
 status.run()
