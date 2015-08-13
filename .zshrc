@@ -128,6 +128,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
 [[ -f "/usr/bin/convertmp4.sh" ]] && source "/usr/bin/convertmp4.sh"
 
 export EDITOR="/usr/bin/vim"
