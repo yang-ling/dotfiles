@@ -10,7 +10,7 @@ trim_trailing_whitespace = true
 charset = utf-8
 insert_final_newline = true
 
-[*.{xml,html,jsp,css,mustache,yml,rb,py}]
+[*.{xml,html,jsp,css,mustache,yml,rb}]
 indent_size = 2
 tab_width = 2
 
