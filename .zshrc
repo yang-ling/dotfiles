@@ -117,7 +117,7 @@ export MAVEN_OPTS="-Xmx1024m -Xss10m -XX:MaxPermSize=300m"
 export M2_HOME=/opt/maven
 
 # GO Settings
-GOPATH=~/go
+GOPATH="$HOME/go"
 export GOPATH
 export PATH="$PATH:$GOPATH/bin"
 

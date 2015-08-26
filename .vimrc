@@ -121,7 +121,8 @@ NeoBundle 'vim-scripts/argtextobj.vim'
 " g++ -o tellenc tellenc.cpp
 " Then copy tellenc to /usr/bin/
 NeoBundle 'mbbill/fencview'
-"NeoBundle 'majutsushi/tagbar'
+NeoBundleLazy 'majutsushi/tagbar'
+autocmd FileType go NeoBundleSource tagbar
 NeoBundle 'xolox/vim-misc'
 "NeoBundle 'xolox/vim-easytags'
 NeoBundle 'xolox/vim-shell'
@@ -153,6 +154,7 @@ autocmd FileType rst NeoBundleSource os.vim clickable.vim vim-rst-tables riv.vim
 "NeoBundle 'vim-scripts/VST'
 " xml
 NeoBundle 'othree/xml.vim'
+NeoBundle 'fatih/vim-go'
 " csv
 NeoBundleLazy 'chrisbra/csv.vim'
 autocmd FileType csv NeoBundleSource csv.vim
