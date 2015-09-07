@@ -59,7 +59,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Usage
 # node: node-doc <api-name> will open api document by browser
-plugins=(colorize command-not-found common-aliases encode64 extract gem git git-extras git-prompt gradle history history-substring-search iwhois mvn meteor node npm python rsync sudo systemadmin systemd tmux tmuxinator)
+plugins=(colorize command-not-found common-aliases encode64 extract gem git git-extras git-prompt golang gradle history history-substring-search iwhois mvn meteor node npm python rsync sudo systemadmin systemd tmux tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
