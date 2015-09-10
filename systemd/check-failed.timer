@@ -1,0 +1,8 @@
+[Unit]
+Description=Check failed services
+
+[Timer]
+OnStartupSec=7m
+
+[Install]
+WantedBy=timers.target
