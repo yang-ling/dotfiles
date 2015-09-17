@@ -3,6 +3,7 @@ Description=Check failed services
 
 [Timer]
 OnStartupSec=7m
+OnUnitActiveSec=1h
 
 [Install]
 WantedBy=timers.target
