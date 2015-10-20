@@ -52,6 +52,7 @@ function toc()
 }
 
 alias mypwd='pwd | xclip -i -selection c'
+alias cdp='cd `xclip -o`'
 
 alias aes256='gpg -c -v --cipher-algo AES256'
 
@@ -59,8 +60,8 @@ alias xo='xdg-open'
 
 alias tjoinp='tmux join-pane -h -s :. -t :-1'
 
-alias mtr-report='mtr -w -b -c 10 --tcp '
-alias mtr-common='mtr -b --tcp '
+alias mtr-report='mtr -w -b -c 10 '
+alias mtr-common='mtr -b '
 
 # git
 alias g=git
