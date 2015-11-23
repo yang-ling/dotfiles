@@ -31,14 +31,14 @@ status.register("usb",
 status.register("mpd",
     format = "{album} - {artist} - {title} {status}",
     )
-client_gmail=thunderbird.Thunderbird(account="yangling1984@gmail.com")
-client_163_1=thunderbird.Thunderbird(account="yuloo911@163.com")
-client_163_2=thunderbird.Thunderbird(account="yanglingit@163.com")
-client_outlook=thunderbird.Thunderbird(account="yanglingit@outlook.com")
-status.register("mail",
-        backends=[client_gmail, client_163_1, client_163_2, client_outlook],
-        hide_if_null=True,
-        email_client="thunderbird",
-    )
+#client_gmail=thunderbird.Thunderbird(account="yangling1984@gmail.com")
+#client_163_1=thunderbird.Thunderbird(account="yuloo911@163.com")
+#client_163_2=thunderbird.Thunderbird(account="yanglingit@163.com")
+#client_outlook=thunderbird.Thunderbird(account="yanglingit@outlook.com")
+#status.register("mail",
+        #backends=[client_gmail, client_163_1, client_163_2, client_outlook],
+        #hide_if_null=True,
+        #email_client="thunderbird",
+    #)
 
 status.run()
