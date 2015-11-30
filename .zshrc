@@ -94,7 +94,9 @@ man() {
 _SHOW_FORTUNE=0
 [[ -n "$PS1" ]] && [[ "$TERM" == "xterm" ]] && { _SHOW_FORTUNE=1; }
 [[ -n "$PS1" ]] && [[ "$TERM" == "screen" ]] && { _SHOW_FORTUNE=1; }
-[[ $_SHOW_FORTUNE -eq 1 ]] && fortune 30% tang300 30% song100 40% all | cowsay
+_SHOW_DOGE=`echo $RANDOM % 2 | bc`
+[[ $_SHOW_FORTUNE -eq 1 ]] && [[ $_SHOW_DOGE -ne 1 ]] && fortune 30% tang300 30% song100 40% all | cowsay
+[[ $_SHOW_DOGE -eq 1 ]] && doge
 
 #export TERM="xterm-256color"
 
