@@ -56,17 +56,17 @@ bind-key SPACE pagedown all
 articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
 
 highlight feedlist    "^  *[0-9]+  *N  "                    color156 default
-highlight articlelist "^  *[0-9]+  *N  "                    color156 default
+highlight articlelist "^  *[0-9]+  *N  "                    color156 color230
 
-highlight article     "^(Feed|Title|Author|Link|Date):.*"   color75  default
-highlight article     "^Podcast Download URL:.*"            color71  default
+highlight article     "^(Feed|Title|Author|Link|Date):.*"   color75  color230
+highlight article     "^Podcast Download URL:.*"            color71  color230
 highlight article     "^Links:"                             white    color240 underline
-highlight article     "\\[[0-9][0-9]*\\]"                   color72  default  bold
-highlight article     "\\[image [0-9][0-9]*\\]"             color72  default  bold
-highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  default  bold
-highlight article     ":.*\\(link\\)$"                      color74  default
-highlight article     ":.*\\(image\\)$"                     color74  default
-highlight article     ":.*\\(embedded flash\\)$"            color74  default
+highlight article     "\\[[0-9][0-9]*\\]"                   color72  color230  bold
+highlight article     "\\[image [0-9][0-9]*\\]"             color72  color230  bold
+highlight article     "\\[embedded flash: [0-9][0-9]*\\]"   color72  color230  bold
+highlight article     ":.*\\(link\\)$"                      color74  color230
+highlight article     ":.*\\(image\\)$"                     color74  color230
+highlight article     ":.*\\(embedded flash\\)$"            color74  color230
 
 #color listnormal                                            white    default
 ##color listnormal                                            black    color230
@@ -93,3 +93,5 @@ color info       color136 color230
 color background color244 color230
 color article    color244 color230
 
+macro i set browser /usr/bin/feh
+macro r set browser /usr/bin/google-chrome-stable
