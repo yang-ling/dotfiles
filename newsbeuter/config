@@ -86,10 +86,10 @@ highlight article     ":.*\\(embedded flash\\)$"            color74  default
 # solarized color scheme for newsbeuter <http://www.newsbeuter.org/>
 # more on solarized: http://ethanschoonover.com/solarized
 
-color listnormal color244 color234
-color listnormal_unread color244 color234 bold
-color listfocus  color166 color235
-color info       color136 color235
-color background color244 color234
-color article    color244 color234
+color listnormal color244 color230
+color listnormal_unread color244 color230 bold
+color listfocus  color166 color230
+color info       color136 color230
+color background color244 color230
+color article    color244 color230
 
