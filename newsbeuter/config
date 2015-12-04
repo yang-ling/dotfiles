@@ -15,7 +15,8 @@ define-filter "Starred" "flags # \"S\""
 auto-reload yes
 cleanup-on-quit yes
 download-path "~/Downloads/podcasts"
-feed-sort-order title-dec
+feed-sort-order title-desc
+article-sort-order date-desc
 max-downloads 4
 #notify-always yes
 #notify-format "newsbeuter: %n unread articles within %f unread feeds"
