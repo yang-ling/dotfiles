@@ -53,6 +53,7 @@ bind-key b pageup all
 bind-key SPACE pagedown all
 
 # formatting and colorization ------------------------------------------
+# color http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 
 articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
 
@@ -92,7 +93,7 @@ color listnormal_unread color244 color230 bold
 color listfocus  color166 color230
 color info       color136 color230
 color background color244 color230
-color article    color244 color230
+color article    color17 color230
 
 macro i set browser /usr/bin/feh
 macro r set browser /usr/bin/google-chrome-stable
