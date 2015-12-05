@@ -172,6 +172,7 @@ NeoBundle 'roman/golden-ratio'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'tfnico/vim-gradle'
+NeoBundle 'Chiel92/vim-autoformat'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -879,6 +880,8 @@ if has("autocmd")
         autocmd FileType html,jsp,xml noremap <buffer> <leader>fm :call HtmlBeautify()<CR>
         " for css or scss
         autocmd FileType css noremap <buffer> <leader>fm :call CSSBeautify()<CR>
+        " format python
+        autocmd FileType python noremap <buffer> <leader>fm :Autoformat<CR>
 
         " Set fold method to marker when open vimrc file
         autocmd FileType vim set fdm=marker | set spell
