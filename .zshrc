@@ -145,6 +145,11 @@ export TERMINAL=/usr/bin/terminator
 
 export XDG_CONFIG_HOME=$HOME/.config
 
+export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
 # === Work Config ===
 [[ -s "$HOME/Work/work-config.sh" ]] && source "$HOME/Work/work-config.sh"
 
