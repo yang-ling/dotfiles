@@ -94,7 +94,9 @@ man() {
 _SHOW_FORTUNE=0
 [[ -n "$PS1" ]] && [[ "$TERM" == "xterm" ]] && { _SHOW_FORTUNE=1; }
 [[ -n "$PS1" ]] && [[ "$TERM" == "screen" ]] && { _SHOW_FORTUNE=1; }
-_SHOW_DOGE=`echo $RANDOM % 2 | bc`
+#_SHOW_DOGE=`echo $RANDOM % 2 | bc`
+# Don't want doge now.
+_SHOW_DOGE=0
 [[ $_SHOW_FORTUNE -eq 1 ]] && [[ $_SHOW_DOGE -ne 1 ]] && fortune 30% tang300 30% song100 40% all | cowsay
 [[ $_SHOW_DOGE -eq 1 ]] && doge
 
@@ -149,6 +151,8 @@ export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuch-config
 
 # === Work Config ===
 [[ -s "$HOME/Work/work-config.sh" ]] && source "$HOME/Work/work-config.sh"
