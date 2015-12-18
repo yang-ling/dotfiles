@@ -1,0 +1,62 @@
+Sync All
+Create Both
+Remove Both
+Expunge Both
+CopyArrivalDate yes
+SyncState *
+FSync yes
+
+MaildirStore yangling1984gmail-local
+    Path ~/Mails/yangling1984gmail/
+    Flatten .
+    Inbox ~/Mails/yangling1984gmail/INBOX/
+
+IMAPAccount yangling1984gmail
+    Host imap.gmail.com
+    User yangling1984@gmail.com
+    PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.config/isync/yangling1984gmail.asc"
+    SSLType IMAPS
+    CertificateFile /etc/ssl/certs/ca-certificates.crt
+    SSLVersions TLSv1.2
+    #PipelineDepth 1
+
+IMAPStore yangling1984gmail-remote
+    Account yangling1984gmail
+
+Channel yangling1984gmail-others
+    Master :yangling1984gmail-remote:
+    Slave :yangling1984gmail-local:
+    Patterns INBOX CCTV Work personal personal/* workmails workmails/*
+
+Channel yangling1984gmail-starred
+    Master :yangling1984gmail-remote:"[Gmail]/&XfJSoGYfaAc-"
+    Slave :yangling1984gmail-local:"已加星标"
+
+Channel yangling1984gmail-sent
+    Master :yangling1984gmail-remote:"[Gmail]/&XfJT0ZCuTvY-"
+    Slave :yangling1984gmail-local:"已发邮件"
+
+Channel yangling1984gmail-draft
+    Master :yangling1984gmail-remote:"[Gmail]/&g0l6Pw-"
+    Slave :yangling1984gmail-local:"草稿"
+
+Channel yangling1984gmail-all
+    Master :yangling1984gmail-remote:"[Gmail]/&YkBnCZCuTvY-"
+    Slave :yangling1984gmail-local:"所有邮件"
+
+Channel yangling1984gmail-deleted
+    Master :yangling1984gmail-remote:"[Gmail]/&XfJSIJZkkK5O9g-"
+    Slave :yangling1984gmail-local:"已删除邮件"
+
+Channel yangling1984gmail-Important
+    Master :yangling1984gmail-remote:"[Gmail]/&kc2JgQ-"
+    Slave :yangling1984gmail-local:"Important"
+
+Group gmail
+    Channel yangling1984gmail-others
+    Channel yangling1984gmail-starred
+    Channel yangling1984gmail-sent
+    Channel yangling1984gmail-draft
+    Channel yangling1984gmail-all
+    Channel yangling1984gmail-deleted
+    Channel yangling1984gmail-Important
