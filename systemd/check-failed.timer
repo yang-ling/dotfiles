@@ -1,5 +1,5 @@
 [Unit]
-Description=Check failed services
+Description=Check failed timer
 
 [Timer]
 OnStartupSec=7m
