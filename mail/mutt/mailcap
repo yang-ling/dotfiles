@@ -1,0 +1,58 @@
+#MS office documents
+application/ms-exc;  mutt_bgrun libreoffice %s; test=RunningX
+application/msword;  mutt_bgrun libreoffice %s;test=RunningX
+application/vnd.ms-exc;  libreoffice %s
+
+application/msword;     word2text %s; copiousoutput
+application/vnd.msword;     mutt_bgrun libreoffice %s; test=RunningX
+application/vnd.msword;     word2text %s; copiousoutput
+#
+application/excel;      mutt_bgrun libreoffice %s; test=RunningX
+application/excel;      excel2text %s; copiousoutput
+application/msexcel;        mutt_bgrun libreoffice %s; test=RunningX
+application/msexcel;        excel2text %s; copiousoutput
+application/vnd.ms-excel;   mutt_bgrun libreoffice %s; test=RunningX
+application/vnd.ms-excel;   excel2text %s; copiousoutput
+application/x-excel;        mutt_bgrun libreoffice %s; test=RunningX
+application/x-excel;        excel2text %s; copiousoutput
+application/x-msexcel;      mutt_bgrun libreoffice %s; test=RunningX
+application/x-msexcel;      excel2text %s; copiousoutput
+application/ms-Excel;       mutt_bgrun libreoffice %s; test=RunningX
+application/ms-Excel;       excel2text %s; copiousoutput
+#
+application/vnd.ms-powerpoint;  mutt_bgrun libreoffice %s; test=RunningX
+application/vnd.ms-powerpoint;  ppt2text %s; copiousoutput
+application/x-mspowerpoint; mutt_bgrun libreoffice %s; test=RunningX
+application/x-mspowerpoint; ppt2text %s; copiousoutput
+application/ppt;        mutt_bgrun libreoffice %s; test=RunningX
+application/ppt;        ppt2text %s; copiousoutput
+
+application/pdf;        mutt_bgrun acroread +useFrontEndProgram %s; test=RunningX
+application/pdf;        pdftotext %s -; copiousoutput
+
+application/postscript;     mutt_bgrun ghostview %s; test=RunningX
+
+application/rtf;        mutt_bgrun libreoffice %s; test=RunningX
+application/rtf;        rtf2text %s; copiousoutput
+
+application/ms-tnef;        tnef -w %s
+
+# Images
+image/jpeg; mutt_bgrun feh %s; test=RunningX
+image/*; mutt_bgrun gwenview %s; test=RunningX
+
+# PDFs
+application/pdf; mutt_bgrun /usr/bin/okular %s; test=RunningX
+
+# HTML
+text/html; /usr/bin/google-chrome-stable %s; nametemplate=%s.html; needsterminal
+#text/html; w3m -I %{charset} -T text/html %s; nametemplate=%s.html; copiousoutput
+text/html; w3m -dump -I $(echo %{charset} | sed s/gb2312/gbk/I) -F %s; nametemplate=%s.html; copiousoutput
+
+text/plain; iconv -f gbk -t utf-8 %s; test=echo "%{charset}" | grep -ic "gb2312"; copiousoutput;
+text/*; vim %s
+
+# Unidentified files
+application/octet-stream;  xdg-open %s; needsterminal
+
+multipart/alternative; less %s

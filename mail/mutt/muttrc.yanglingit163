@@ -1,0 +1,9 @@
+set mbox="+yanglingit163/Archives"
+mbox-hook +yanglingit163/订阅邮件 >
+set spoolfile="+yanglingit163/INBOX"
+set postponed="+yanglingit163/草稿箱"
+set record="+yanglingit163/已发送"
+set trash="+yanglingit163/已删除"
+set from="yanglingit@163.com"
+macro index,pager s "<save-message>=yanglingit163/Archives"
+macro index,pager F "<save-message>=yanglingit163/Important"
