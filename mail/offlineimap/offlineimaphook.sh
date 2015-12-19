@@ -12,6 +12,12 @@ do
         account="${mailbox%/*}"
         mailbox="${mailbox##*/}"
         account="${account##*/}"
+        [[ -d "/tmp/mail_count" ]] || { mkdir /tmp/mail_count; }
+        count_file="/tmp/mail_count/$account-$mailbox"
+        [[ -f "/tmp/mail_count/$account-$mailbox" ]] || { touch "$count_file"; }
+        old_count=$(cat "/tmp/mail_count/$account-$mailbox");
+        echo "$newmail_count" > "/tmp/mail_count/$account-$mailbox";
+        newmail_count=$(( newmail_count - old_count ));
         [[ $newmail_count -gt 0 ]] && \
             notify-send "$newmail_count New Mail(s) in $account/$mailbox " "$message" -t 5000 &
     fi
