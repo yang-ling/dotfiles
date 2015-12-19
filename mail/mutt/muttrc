@@ -214,15 +214,8 @@ hdr_order date from to cc subject
 
 # imitate the old search-body function
 macro index \eb "<search>~b " "search in message bodies"
-
-# simulate the old url menu
-#macro index,pager,attach,compose \cb "\
-#<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
-#<pipe-message> urlview<Enter>\
-#<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
-#"call urlview to extract URLs out of a message"
-
-macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+bind pager u noop
+macro pager u "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 
 # Show documentation when pressing F1
