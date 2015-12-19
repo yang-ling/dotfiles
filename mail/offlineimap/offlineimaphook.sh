@@ -3,7 +3,7 @@
 MAIL_ROOT="$HOME/Mails"
 message=""
 
-find "$MAIL_ROOT" -type d -path "$MAIL_ROOT/.notmuch" -prune -o -type d -print0 | while read -r -d $'\0' oneFolder
+while read -r -d $'\0' oneFolder
 do
     NEW="new"
     if  test "x${oneFolder##*/}" = "x$NEW" ; then
@@ -15,6 +15,6 @@ do
         [[ $newmail_count -gt 0 ]] && \
             notify-send "$newmail_count New Mail(s) in $account/$mailbox " "$message" -t 5000 &
     fi
-done
+done < <(find "$MAIL_ROOT" -type d -path "$MAIL_ROOT/.notmuch" -prune -o -type d -print0)
 
 notmuch new &
