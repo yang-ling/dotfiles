@@ -9,6 +9,8 @@ set folder="~/Mails"
 set spoolfile="+yangling1984gmail/INBOX"
 
 folder-hook +yanglingit163/.* "source ~/.config/mutt/muttrc.yanglingit163"
+folder-hook +yuloo911163/.* "source ~/.config/mutt/muttrc.yuloo911163"
+folder-hook +17542135qq/.* "source ~/.config/mutt/muttrc.17542135qq"
 folder-hook +yangling1984gmail/.* "source ~/.config/mutt/muttrc.yangling1984gmail"
 folder-hook +yanglingitoutlook/.* "source ~/.config/mutt/muttrc.yanglingitoutlook"
 
