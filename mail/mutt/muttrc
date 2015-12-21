@@ -10,6 +10,7 @@ set spoolfile="+yangling1984gmail/INBOX"
 
 folder-hook +yanglingit163/.* "source ~/.config/mutt/muttrc.yanglingit163"
 folder-hook +yangling1984gmail/.* "source ~/.config/mutt/muttrc.yangling1984gmail"
+folder-hook +yanglingitoutlook/.* "source ~/.config/mutt/muttrc.yanglingitoutlook"
 
 # http://dev.mutt.org/trac/wiki/ConfigTricks#Buildingalistofmailboxesonthefly
 mailboxes `find ~/Mails/ -type d -name cur -printf '%h '`
@@ -153,6 +154,7 @@ bind index,pager = next-unread-mailbox
 macro index q '<change-folder>?<toggle-mailboxes>' "show incoming mailboxes list"
 macro browser q <exit><quit>
 macro index A "<limit>~A<enter>" "Show all messages."
+macro index \e= "<limit>~=<enter>" "Show all duplicated messages."
 
 bind pager g top
 bind pager G bottom
@@ -5190,3 +5192,4 @@ attachments   -I message/external-body
 # ``tuning'' section of the manual for performance considerations.
 #
 #
+# vim: foldmethod=marker filetype=muttrc

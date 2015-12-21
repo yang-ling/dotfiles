@@ -6,6 +6,7 @@ CopyArrivalDate yes
 SyncState *
 FSync yes
 
+# {{{ yangling1984gmail
 MaildirStore yangling1984gmail-local
     Path ~/Mails/yangling1984gmail/
     Flatten .
@@ -18,7 +19,6 @@ IMAPAccount yangling1984gmail
     SSLType IMAPS
     CertificateFile /etc/ssl/certs/ca-certificates.crt
     SSLVersions TLSv1.2
-    #PipelineDepth 1
 
 IMAPStore yangling1984gmail-remote
     Account yangling1984gmail
@@ -60,3 +60,6 @@ Group gmail
     Channel yangling1984gmail-all
     Channel yangling1984gmail-deleted
     Channel yangling1984gmail-Important
+# }}}
+
+# vim: foldmethod=marker filetype=conf

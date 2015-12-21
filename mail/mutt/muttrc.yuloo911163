@@ -1,0 +1,8 @@
+set mbox="+yuloo911163/Archives"
+mbox-hook +yuloo911163/订阅邮件 >
+set spoolfile="+yuloo911163/INBOX"
+set postponed="+yuloo911163/草稿箱"
+set record="+yuloo911163/已发送"
+set trash="+yuloo911163/已删除"
+set from="yuloo911@163.com"
+macro index,pager s "<save-message>=yuloo911163/Archives"

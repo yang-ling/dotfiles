@@ -25,9 +25,17 @@ gmail_names = {
     "&ZTZjbg-": "收据",
 }
 
+qq_names = {"&UXZO1mWHTvZZOQ-/&kK5O9l9SaGM-": "其他文件夹.邮件归档",
+            "&UXZO1mWHTvZZOQ-/QQ&kK5O9ouilgU-": "其他文件夹.QQ邮件订阅",
+            "Deleted Messages": "Deleted",
+            "Sent Messages": "Sent",
+            }
+
 
 def get_pass(filename):
-    command_content = "gpg -dq ~/.config/offlineimap/{0}.asc".format(filename)
+    theCommand = "gpg -q --for-your-eyes-only --no-tty -d"
+    command_content = "{0} ~/.config/offlineimap/{1}.asc".format(
+        theCommand, filename)
     return check_output(command_content, shell=True).strip("\n")
 
 
@@ -48,6 +56,17 @@ def trans_yangling1984gmail_remote(foldername):
 
 def trans_yangling1984gmail_local(foldername):
     for k, v in gmail_names.iteritems():
+        if v == foldername:
+            return k
+    return foldername
+
+
+def trans_17542135qq_remote(foldername):
+    return qq_names.get(foldername, foldername)
+
+
+def trans_17542135qq_local(foldername):
+    for k, v in qq_names.iteritems():
         if v == foldername:
             return k
     return foldername
