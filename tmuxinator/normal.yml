@@ -34,3 +34,5 @@ windows:
       panes:
         - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s playlist
         - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s visualizer
+  - Sync-Mails:
+    - /usr/local/bin/sync-mails.sh

@@ -34,7 +34,7 @@ qq_names = {"&UXZO1mWHTvZZOQ-/&kK5O9l9SaGM-": "其他文件夹.邮件归档",
 
 def get_pass(filename):
     theCommand = "gpg -q --for-your-eyes-only --no-tty -d"
-    command_content = "{0} ~/.config/offlineimap/{1}.asc".format(
+    command_content = "{0} ~/.config/passwords/{1}.asc".format(
         theCommand, filename)
     return check_output(command_content, shell=True).strip("\n")
 
@@ -61,11 +61,11 @@ def trans_yangling1984gmail_local(foldername):
     return foldername
 
 
-def trans_17542135qq_remote(foldername):
+def trans_yanglingitqq_remote(foldername):
     return qq_names.get(foldername, foldername)
 
 
-def trans_17542135qq_local(foldername):
+def trans_yanglingitqq_local(foldername):
     for k, v in qq_names.iteritems():
         if v == foldername:
             return k

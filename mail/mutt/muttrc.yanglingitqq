@@ -1,0 +1,8 @@
+set mbox="+yanglingitqq/其他文件夹.邮件归档"
+mbox-hook +yanglingitqq/其他文件夹.QQ邮件订阅 >
+set spoolfile="+yanglingitqq/INBOX"
+set postponed="+yanglingitqq/Drafts"
+set record="+yanglingitqq/Sent"
+set trash="+yanglingitqq/Deleted"
+set from="yanglingit@qq.com"
+macro index,pager s "<save-message>=yanglingitqq/其他文件夹.邮件归档"

@@ -15,7 +15,7 @@ MaildirStore yangling1984gmail-local
 IMAPAccount yangling1984gmail
     Host imap.gmail.com
     User yangling1984@gmail.com
-    PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.config/isync/yangling1984gmail.asc"
+    PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.config/passwords/yangling1984gmail.asc"
     SSLType IMAPS
     CertificateFile /etc/ssl/certs/ca-certificates.crt
     SSLVersions TLSv1.2

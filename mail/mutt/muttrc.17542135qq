@@ -1,8 +1,0 @@
-set mbox="+17542135qq/其他文件夹.邮件归档"
-mbox-hook +17542135qq/其他文件夹.QQ邮件订阅 >
-set spoolfile="+17542135qq/INBOX"
-set postponed="+17542135qq/Drafts"
-set record="+17542135qq/Sent"
-set trash="+17542135qq/Deleted"
-set from="17542135@qq.com"
-macro index,pager s "<save-message>=17542135qq/其他文件夹.邮件归档"
