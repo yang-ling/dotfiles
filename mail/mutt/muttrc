@@ -54,6 +54,11 @@ set use_from=yes
 set realname="YANG Ling"
 set use_envelope_from=yes
 
+## msmtp
+set use_from=yes
+set realname="YANG Ling"
+set use_envelope_from=yes
+
 ## Default
 set query_command=""
 set status_chars="-*%A"
