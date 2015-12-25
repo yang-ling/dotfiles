@@ -4,17 +4,17 @@ http://feed.williamlong.info/ tech
 http://lilydjwg.is-programmer.com/posts.rss tech
 http://eller86.hatenablog.jp/feed tech
 http://feeds.feedburner.com/ruanyifeng tech
-https://faq.i3wm.org/feeds/rss/ tech i3wm
+#https://faq.i3wm.org/feeds/rss/ tech i3wm
 
 http://www.reddit.com/r/vim/.rss tech vim
 http://feeds.feedburner.com/usevim tech vim
 
-http://emacsredux.com/atom.xml tech emacs
-http://endlessparentheses.com/atom.xml tech emacs
-http://www.reddit.com/r/emacs/.rss tech emacs
-http://planet.emacsen.org/atom.xml tech emacs
-http://feeds.feedburner.com/sachac tech emacs
-http://feeds.feedburner.com/XahsEmacsBlog tech emacs
+#http://emacsredux.com/atom.xml tech emacs
+#http://endlessparentheses.com/atom.xml tech emacs
+#http://www.reddit.com/r/emacs/.rss tech emacs
+#http://planet.emacsen.org/atom.xml tech emacs
+#http://feeds.feedburner.com/sachac tech emacs
+#http://feeds.feedburner.com/XahsEmacsBlog tech emacs
 
 http://www.archlinux.org/feeds/news/ tech news
 https://www.gitlab.com/atom.xml tech news
