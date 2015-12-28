@@ -55,10 +55,6 @@ set use_envelope_from=yes
 
 ## Default
 set query_command=""
-set score=yes
-set score_threshold_delete=-1
-set score_threshold_flag=9999
-set score_threshold_read=-1
 set status_chars="-*%A"
 set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-(Limit: %?V?%V&all?)%>-(%P)---"
 set status_on_top=no
@@ -71,7 +67,7 @@ set sleep_time=0
 #
 # Note: It should only be set in case Mutt isn't able to determine the
 # character set used correctly.
-set index_format="%4C %X %Z %d %-15.15L (%?l?%4l&%4c?) %s"
+set index_format="%4C %X %Z %N %d %-15.15L (%?l?%4l&%4c?) %s"
 set pager_format="-%Z- %C/%m: %-20.20n   %s%*  -- (%P)"
 set tilde=yes
 set wait_key = yes
@@ -115,6 +111,35 @@ set certificate_file ="~/.mutt/certificates"
 ## System
 set history = '10'
 set history_file="~/.config/mutt/mutthistory"
+
+## Score
+set score=yes
+set sort=reverse-score
+set score_threshold_delete=-1
+set score_threshold_flag=9999
+set score_threshold_read=50
+
+# Base score
+score ~A 100
+# mails sent to me
+score ~p +5
+
+score "~f ccsvc@message.cmbchina.com ~s 信用管家消费提醒" +10
+score "~f PersonalService@bank-of-china.com ~s 中国银行银行卡电子账单" +10
+score "~f estmtservice@eb.spdbccc.com.cn ~s 信用卡电子账单" +10
+
+# AD
+score "~s <AD>" -60
+score '~s \\(AD\\)' -60
+score '~f subscribe@study.163.com' -60
+
+score '~f support@instapaper.com' -10
+score '~f mail-noreply@google.com' -10
+score '~f messages-noreply@linkedin.com' -10
+score "~f facebookmail.com" -10
+score "~f account@mail.zhihu.com ~s 新私信" -10
+score "~f customer_service@jd.com" -10
+
 
 ## Sidebar
 #change width accordingly
