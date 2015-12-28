@@ -2,8 +2,8 @@
 Description=List installed packages Timer. Daily
 
 [Timer]
-OnCalendar=*-*-* 21:30:00
-Persistent=true
+OnStartupSec=10m
+OnUnitActiveSec=24h
 
 [Install]
 WantedBy=timers.target
