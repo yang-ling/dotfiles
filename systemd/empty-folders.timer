@@ -2,8 +2,8 @@
 Description=Empty Given Folders Timer. Daily
 
 [Timer]
-OnCalendar=*-*-* 14:10:00
-Persistent=true
+OnStartupSec=3m
+OnUnitActiveSec=24h
 
 [Install]
 WantedBy=timers.target
