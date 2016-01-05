@@ -872,7 +872,7 @@ if has("autocmd")
         autocmd!
 
         " For all text files set 'textwidth' to 78 characters.
-        autocmd FileType text setlocal textwidth=78
+        autocmd FileType text,mail setlocal textwidth=78
         autocmd FileType javascript setlocal textwidth=97
 
         autocmd FileType javascript noremap <buffer> <leader>fm :call JsBeautify()<CR>
