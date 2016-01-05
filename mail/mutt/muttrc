@@ -79,7 +79,7 @@ set search_context=0
 set pager_stop = yes
 
 set assumed_charset="utf-8:gb2312:gb18030:gbk:iso-2022-jp:euc-jp:shift_jis"
-set send_charset = "gb2312:utf-8:us-ascii:iso-8859-1"
+set send_charset = "utf-8:gb2312:us-ascii:iso-8859-1"
 set locale="zh_CN.UTF-8"
 
 set mail_check_recent=no
