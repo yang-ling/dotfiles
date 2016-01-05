@@ -67,7 +67,7 @@ set sleep_time=0
 #
 # Note: It should only be set in case Mutt isn't able to determine the
 # character set used correctly.
-set index_format="%4C %X %Z %N %d %-15.15L (%?l?%4l&%4c?) %s"
+set index_format="%4C %X %Z %3.3N %d %-15.15L (%?l?%4l&%4c?) %s"
 set pager_format="-%Z- %C/%m: %-20.20n   %s%*  -- (%P)"
 set tilde=yes
 set wait_key = yes
@@ -114,7 +114,8 @@ set history_file="~/.config/mutt/mutthistory"
 
 ## Score
 set score=yes
-set sort=reverse-score
+set sort=threads
+set sort_aux=date
 set score_threshold_delete=-1
 set score_threshold_flag=9999
 set score_threshold_read=50
@@ -128,6 +129,8 @@ score "~f ccsvc@message.cmbchina.com ~s 信用管家消费提醒" +10
 score "~f PersonalService@bank-of-china.com ~s 中国银行银行卡电子账单" +10
 score "~f estmtservice@eb.spdbccc.com.cn ~s 信用卡电子账单" +10
 score "~f arch-general-request@archlinux.org" +10
+score "~f digest-noreply@quora.com" +10
+score "~f notifications@github.com" +20
 
 # AD
 score "~s <AD>" -60
@@ -141,7 +144,17 @@ score "~f facebookmail.com" -10
 score "~f account@mail.zhihu.com ~s 新私信" -10
 score "~f customer_service@jd.com" -10
 score "~f support@italki.com" -10
-
+score "~f groups-noreply@linkedin.com" -10
+score "~f jobs@theladders.com" -10
+score "~f pinbot@explore.pinterest.com" -10
+score "~f noreply@usepanda.com" -10
+score "~f @plus.google.com" -10
+score "~f info@twitter.com" -10
+score "~f no-reply@mail.coding.net" -10
+score "~f docker@info.docker.com" -10
+score "~f abhinav@getpostman.com" -10
+score "~f hello@getpocket.com" -10
+score "~f do-not-reply@amazon.com" -10
 
 ## Sidebar
 #change width accordingly

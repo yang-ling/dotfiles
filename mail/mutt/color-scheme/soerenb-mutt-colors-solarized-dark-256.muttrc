@@ -52,6 +52,13 @@ color index         color37         color235        "~v~(~p)"                   
 color index         color136        color160        "~v~(~D)"                   # thread with deleted (doesn't differentiate between all or partial)
 color index         color122        color0          "~T"                        # Tagged messages
 
+# Score
+color index         color242        color0        "~n 0-49~R!~D!~F!~v"          # AD like mails
+color index         color245        color0        "~n 50-99~R!~D!~F!~v"         # AD like mails
+color index         color7          color0        "~n 105-109~R!~D!~F!~v"       # Kind of important
+color index         color255        color0        "~n 110-119~R!~D!~F!~v"       # Important mail
+color index         color255        color4        "~n 120-~R!~D!~F!~v"          # Important mail
+
 # message headers ------------------------------------------------------
 
 color hdrdefault    color249        color0

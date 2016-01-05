@@ -27,9 +27,6 @@ application/x-mspowerpoint; ppt2text %s; copiousoutput
 application/ppt;        mutt_bgrun libreoffice %s; test=RunningX
 application/ppt;        ppt2text %s; copiousoutput
 
-application/pdf;        mutt_bgrun acroread +useFrontEndProgram %s; test=RunningX
-application/pdf;        pdftotext %s -; copiousoutput
-
 application/postscript;     mutt_bgrun ghostview %s; test=RunningX
 
 application/rtf;        mutt_bgrun libreoffice %s; test=RunningX
@@ -43,6 +40,7 @@ image/*; mutt_bgrun gwenview %s; test=RunningX
 
 # PDFs
 application/pdf; mutt_bgrun /usr/bin/okular %s; test=RunningX
+application/pdf;        pdftotext %s -; copiousoutput
 
 # HTML
 text/html; /usr/bin/google-chrome-stable %s; nametemplate=%s.html; needsterminal
