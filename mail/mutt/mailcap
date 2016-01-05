@@ -36,6 +36,7 @@ application/ms-tnef;        tnef -w %s
 
 # Images
 image/jpeg; mutt_bgrun feh %s; test=RunningX
+image/png; mutt_bgrun feh %s; test=RunningX
 image/*; mutt_bgrun gwenview %s; test=RunningX
 
 # PDFs
