@@ -136,6 +136,9 @@ score "~f notifications@github.com" +20
 score "~s <AD>" -60
 score '~s \\(AD\\)' -60
 score '~f subscribe@study.163.com' -60
+score "~f lmlc@service.netease.com" -60
+score "~f fa163@service.netease.com" -60
+score "~f yanxuan@service.netease.com" -60
 
 score '~f support@instapaper.com' -10
 score '~f mail-noreply@google.com' -10
