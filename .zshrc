@@ -151,6 +151,10 @@ export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuch-config
 # To activate zsh-syntax-highlighting, a Fish-shell-like syntax highlighting.
 [[ -s /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 #pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
