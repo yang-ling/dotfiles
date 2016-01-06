@@ -130,15 +130,28 @@ score "~f PersonalService@bank-of-china.com ~s 中国银行银行卡电子账单
 score "~f estmtservice@eb.spdbccc.com.cn ~s 信用卡电子账单" +10
 score "~f arch-general-request@archlinux.org" +10
 score "~f digest-noreply@quora.com" +10
+score "~f arch-announce-request@archlinux.org" +10
+
 score "~f notifications@github.com" +20
 
+source ~/.config/mutt/score_contacts
+score "~f 178702965@qq.com" +20
+score "~f 990559@qq.com" +20
+
 # AD
-score "~s <AD>" -60
-score '~s \\(AD\\)' -60
+score "~s <[Aa][Dd]>" -60
+score '~s \\([Aa][Dd]\\)' -60
+score '~s （[Aa][Dd]\\)' -60
+score '~s （[Aa][Dd]）' -60
+score '~s ^[Aa][Dd]:' -60
 score '~f subscribe@study.163.com' -60
 score "~f lmlc@service.netease.com" -60
 score "~f fa163@service.netease.com" -60
 score "~f yanxuan@service.netease.com" -60
+score "~f news@linkedin.com" -60
+score "~f @center.suanbanshi.com" -60
+score "~f hnbym@hnbym.net" -60
+score "~f pccc@bocomcc.com" -60
 
 score '~f support@instapaper.com' -10
 score '~f mail-noreply@google.com' -10
@@ -158,6 +171,8 @@ score "~f docker@info.docker.com" -10
 score "~f abhinav@getpostman.com" -10
 score "~f hello@getpocket.com" -10
 score "~f do-not-reply@amazon.com" -10
+score "~f @codeschool.com" -10
+score "~f do-not-reply-cn-autoresponse@amazon.cn" -10
 
 ## Sidebar
 #change width accordingly
