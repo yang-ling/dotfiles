@@ -1,12 +1,12 @@
 http://www.javaeye.com/rss/news tech
-http://www.reddit.com/r/archlinux/.rss tech
+#http://www.reddit.com/r/archlinux/.rss tech
 http://feed.williamlong.info/ tech
 http://lilydjwg.is-programmer.com/posts.rss tech
 http://eller86.hatenablog.jp/feed tech
 http://feeds.feedburner.com/ruanyifeng tech
 #https://faq.i3wm.org/feeds/rss/ tech i3wm
 
-http://www.reddit.com/r/vim/.rss tech vim
+#http://www.reddit.com/r/vim/.rss tech vim
 http://feeds.feedburner.com/usevim tech vim
 
 #http://emacsredux.com/atom.xml tech emacs
@@ -16,24 +16,24 @@ http://feeds.feedburner.com/usevim tech vim
 #http://feeds.feedburner.com/sachac tech emacs
 #http://feeds.feedburner.com/XahsEmacsBlog tech emacs
 
-http://www.archlinux.org/feeds/news/ tech news
+#http://www.archlinux.org/feeds/news/ tech news
 https://www.gitlab.com/atom.xml tech news
-http://feeds.feedburner.com/ContinuousBlog?format=xml tech news
-http://feeds.feedburner.com/JenkinsPluginReleases?format=xml tech news
+#http://feeds.feedburner.com/ContinuousBlog?format=xml tech news
+#http://feeds.feedburner.com/JenkinsPluginReleases?format=xml tech news
 http://www.chinagfw.org/feeds/posts/default tech news
 http://www.daemonology.net/hn-daily/index.rss tech news
-http://us.v2ex.com/feed/shadowsocks.xml tech news
+#http://us.v2ex.com/feed/shadowsocks.xml tech news
 http://www.v2ex.com/index.xml tech news
 http://vdaily.sinaapp.com/weekly.xml tech news
 http://slackhq.com/rss tech news slack
 
 http://onehd.herokuapp.com/ fun
-http://www.zhihu.com/rss fun
-http://www.quora.com/rss fun
+#http://www.zhihu.com/rss fun
+#http://www.quora.com/rss fun
 http://www.comicsyndicate.org/Feed/Dilbert fun
 http://elblogdejoancornella.blogspot.com/feeds/posts/default fun
-http://www.reddit.com/r/funny/.rss fun
+#http://www.reddit.com/r/funny/.rss fun
 
-http://www.lifehack.org/feed/ life
+#http://www.lifehack.org/feed/ life
 
 "query:Starred Articles:flags # \"S\""
