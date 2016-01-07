@@ -116,9 +116,9 @@ set history_file="~/.config/mutt/mutthistory"
 set score=yes
 set sort=threads
 set sort_aux=date
-set score_threshold_delete=-1
+set score_threshold_delete=0
 set score_threshold_flag=9999
-set score_threshold_read=50
+set score_threshold_read=99
 
 # Base score
 score ~A 100
@@ -139,19 +139,19 @@ score "~f 178702965@qq.com" +20
 score "~f 990559@qq.com" +20
 
 # AD
-score "~s <[Aa][Dd]>" -60
-score '~s \\([Aa][Dd]\\)' -60
-score '~s （[Aa][Dd]\\)' -60
-score '~s （[Aa][Dd]）' -60
-score '~s ^[Aa][Dd]:' -60
-score '~f subscribe@study.163.com' -60
-score "~f lmlc@service.netease.com" -60
-score "~f fa163@service.netease.com" -60
-score "~f yanxuan@service.netease.com" -60
-score "~f news@linkedin.com" -60
-score "~f @center.suanbanshi.com" -60
-score "~f hnbym@hnbym.net" -60
-score "~f pccc@bocomcc.com" -60
+score "~s <[Aa][Dd]>" -9999
+score '~s \\([Aa][Dd]\\)' -9999
+score '~s （[Aa][Dd]\\)' -9999
+score '~s （[Aa][Dd]）' -9999
+score '~s ^[Aa][Dd]:' -9999
+score '~f subscribe@study.163.com' -9999
+score "~f lmlc@service.netease.com" -9999
+score "~f fa163@service.netease.com" -9999
+score "~f yanxuan@service.netease.com" -9999
+score "~f news@linkedin.com" -9999
+score "~f @center.suanbanshi.com" -9999
+score "~f hnbym@hnbym.net" -9999
+score "~f pccc@bocomcc.com" -9999
 
 score '~f support@instapaper.com' -10
 score '~f mail-noreply@google.com' -10
