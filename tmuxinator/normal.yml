@@ -35,4 +35,10 @@ windows:
         - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s playlist
         - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s visualizer
   - Sync-Mails:
-    - /usr/local/bin/sync-mails.sh 1m 9999
+      layout: even-horizontal
+      panes:
+        - left:
+          - /usr/local/bin/sync-mails.sh 1m 9999
+        - right:
+          - cd ~/.sync-mail-log/
+          - tail -f $(ls -t | head -1)
