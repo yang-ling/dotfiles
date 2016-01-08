@@ -65,6 +65,7 @@ color hdrdefault    color249        color0
 color header        color74         color0          "^(Date)"
 color header        color74         color0          "^(From)"
 color header        color74         color0          "^(To)"
+color header        color74         color0          "^(Cc)"
 color header        color154         color0          "^(Subject)"
 
 # body -----------------------------------------------------------------
@@ -83,6 +84,7 @@ color normal        color249        color0
 color body        color74         color0          "^Date: .+"
 color body        color74         color0          "^From: .+"
 color body        color74         color0          "^To: .+"
+color body        color74         color0          "^Cc: .+"
 color body        color154         color0          "^Subject: .+"
 
 color body          color123        color0          "[;:][-o][)/(|]"    # emoticons
