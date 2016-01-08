@@ -152,6 +152,7 @@ score "~f news@linkedin.com" -9999
 score "~f @center.suanbanshi.com" -9999
 score "~f hnbym@hnbym.net" -9999
 score "~f pccc@bocomcc.com" -9999
+score "~f newsletter@newsletter.aliyun.com" -9999
 
 score '~f support@instapaper.com' -10
 score '~f mail-noreply@google.com' -10
@@ -215,6 +216,7 @@ bind index <ESC>i what-key
 bind generic n noop
 macro index,pager n "<next-new-then-unread><redraw-screen>"
 bind index,pager = next-unread-mailbox
+bind pager R group-reply
 
 macro index q '<change-folder>?<toggle-mailboxes>' "show incoming mailboxes list"
 macro browser q <exit><quit>
