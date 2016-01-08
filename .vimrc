@@ -173,6 +173,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'tfnico/vim-gradle'
 NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'ianva/vim-youdao-translater'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'
@@ -503,6 +504,11 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>:call <SID>ExecuteResize()<CR>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>:call <SID>ExecuteResize()<CR>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>:call <SID>ExecuteResize()<CR>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>:call <SID>ExecuteResize()<CR>
+"}}}
+" Youdao Translator"{{{
+vnoremap <silent> <C-T> <Esc>:Ydv<CR>
+nnoremap <silent> <C-T> <Esc>:Ydc<CR>
+noremap <leader>yd :Yde<CR>
 "}}}
 "}}}
 "{{{ Basic setting
