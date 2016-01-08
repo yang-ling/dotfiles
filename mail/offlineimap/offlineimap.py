@@ -27,6 +27,7 @@ gmail_names = {
 
 qq_names = {"&UXZO1mWHTvZZOQ-/&kK5O9l9SaGM-": "其他文件夹.邮件归档",
             "&UXZO1mWHTvZZOQ-/QQ&kK5O9ouilgU-": "其他文件夹.QQ邮件订阅",
+            "&UXZO1mWHTvZZOQ-/Important": "其他文件夹.Important",
             "Deleted Messages": "Deleted",
             "Sent Messages": "Sent",
             }
