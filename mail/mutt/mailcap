@@ -19,6 +19,8 @@ application/x-msexcel;      mutt_bgrun libreoffice %s; test=RunningX
 application/x-msexcel;      excel2text %s; copiousoutput
 application/ms-Excel;       mutt_bgrun libreoffice %s; test=RunningX
 application/ms-Excel;       excel2text %s; copiousoutput
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; mutt_bgrun libreoffice %s; test=RunningX
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; excel2text %s; copiousoutput
 #
 application/vnd.ms-powerpoint;  mutt_bgrun libreoffice %s; test=RunningX
 application/vnd.ms-powerpoint;  ppt2text %s; copiousoutput
