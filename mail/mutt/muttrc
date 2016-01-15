@@ -18,7 +18,7 @@ folder-hook +yanglingitoutlook/.* "source ~/.config/mutt/muttrc.yanglingitoutloo
 mailboxes `find ~/Mails/ -type d -name cur -printf '%h '`
 set mbox_type=Maildir
 
-source ~/.config/mutt/mutt_alias
+source $alias_file
 source /etc/Muttrc.gpg.dist
 
 # Mutt will mark emails from these addresses as having been sent by you
@@ -153,6 +153,7 @@ score "~f @center.suanbanshi.com" -9999
 score "~f hnbym@hnbym.net" -9999
 score "~f pccc@bocomcc.com" -9999
 score "~f newsletter@newsletter.aliyun.com" -9999
+score "~f club@service.netease.com" -9999
 
 score '~f support@instapaper.com' -10
 score '~f mail-noreply@google.com' -10
