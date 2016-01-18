@@ -67,7 +67,7 @@ set sleep_time=0
 #
 # Note: It should only be set in case Mutt isn't able to determine the
 # character set used correctly.
-set index_format="%4C %X %Z %3.3N %d %-15.15L (%?l?%4l&%4c?) %s"
+set index_format="%4C %X %Z %3.3N %D %-15.15L (%?l?%4l&%4c?) %s"
 set pager_format="-%Z- %C/%m: %-20.20n   %s%*  -- (%P)"
 set tilde=yes
 set wait_key = yes
@@ -126,11 +126,13 @@ score ~A 100
 score ~p +5
 
 score "~f ccsvc@message.cmbchina.com ~s 信用管家消费提醒" +10
+score "~f ccsvc@message.cmbchina.com ~s 信用卡电子账单" +10
 score "~f PersonalService@bank-of-china.com ~s 中国银行银行卡电子账单" +10
 score "~f estmtservice@eb.spdbccc.com.cn ~s 信用卡电子账单" +10
 score "~f arch-general-request@archlinux.org" +10
 score "~f digest-noreply@quora.com" +10
 score "~f arch-announce-request@archlinux.org" +10
+score "~f Service@smtp.kjt.com" +10  # 跨境通
 
 score "~f notifications@github.com" +20
 
