@@ -41,4 +41,5 @@ windows:
           - /usr/local/bin/sync-mails.sh 1m 9999
         - right:
           - cd ~/.sync-mail-log/
+          - sleep 5
           - tail -f $(ls -t | head -1)
