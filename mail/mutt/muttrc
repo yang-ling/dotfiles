@@ -146,6 +146,7 @@ score '~s \\([Aa][Dd]\\)' -9999
 score '~s （[Aa][Dd]\\)' -9999
 score '~s （[Aa][Dd]）' -9999
 score '~s ^[Aa][Dd]:' -9999
+score '~s <广告>' -9999
 score '~f subscribe@study.163.com' -9999
 score "~f lmlc@service.netease.com" -9999
 score "~f fa163@service.netease.com" -9999
