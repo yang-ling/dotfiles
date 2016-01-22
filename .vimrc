@@ -174,6 +174,7 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'tfnico/vim-gradle'
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'ianva/vim-youdao-translater'
+NeoBundle 'chrisbra/unicode.vim'
 "}}}
 " vim-scripts repos"{{{
 NeoBundle 'L9'

@@ -104,7 +104,7 @@ export PATH
 CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export CLASSPATH
 #Tomcat
-export CATALINA_HOME=/home/yangling/Downloads/Tomcat/apache-tomcat-6.0.37
+export CATALINA_HOME=/home/yangling/Downloads/Tomcat/apache-tomcat-7.0.67
 
 # Maven setting
 #export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=300m"

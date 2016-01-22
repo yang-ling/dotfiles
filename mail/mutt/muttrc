@@ -180,6 +180,7 @@ score "~f @codeschool.com" -10
 score "~f do-not-reply-cn-autoresponse@amazon.cn" -10
 score "~f info@meteor.com" -10
 score "~f email@et.uber.com" -10
+score "~f info@fortycloud.com" -10
 
 ## Sidebar
 #change width accordingly
