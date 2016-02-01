@@ -1,6 +1,6 @@
 # ~/.tmuxinator/normal.yml
 
-name: normal
+name: startup
 root: ~/
 
 # Optional tmux socket
@@ -19,18 +19,15 @@ root: ~/
 tmux_command: byobu
 
 windows:
-  - Main:
-    - compton --config ~/.config/compton.conf -b
-    - ranger
-  - RSS:
-    - export TERM=screen-256color
-  #- Music:
-    #- mocp -S
-    #- mocp -c
-    #- mocp -a /home/yangling/KuaiPan/Music/喜欢/
-    #- mocp -m
-  - Music:
-      layout: even-vertical
+  - Sync-Mails:
+      layout: even-horizontal
       panes:
-        - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s playlist
-        - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s visualizer
+        - left:
+          - /usr/local/bin/sync-mails.sh 1m 9999
+        - right:
+          - cd ~/.sync-mail-log/
+          - sleep 5
+          - tail -f $(ls -t | head -1)
+  - sogou:
+    - sleep 30
+    - /usr/bin/sogou-autostart
