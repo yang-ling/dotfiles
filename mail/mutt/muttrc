@@ -137,8 +137,6 @@ score "~f Service@smtp.kjt.com" +10  # 跨境通
 score "~f notifications@github.com" +20
 
 source ~/.config/mutt/score_contacts
-score "~f 178702965@qq.com" +20
-score "~f 990559@qq.com" +20
 
 # AD
 score "~s <[Aa][Dd]>" -9999
@@ -157,6 +155,7 @@ score "~f hnbym@hnbym.net" -9999
 score "~f pccc@bocomcc.com" -9999
 score "~f newsletter@newsletter.aliyun.com" -9999
 score "~f club@service.netease.com" -9999
+score "~f 1@service.netease.com" -9999
 
 score '~f support@instapaper.com' -10
 score '~f mail-noreply@google.com' -10
@@ -181,6 +180,7 @@ score "~f do-not-reply-cn-autoresponse@amazon.cn" -10
 score "~f info@meteor.com" -10
 score "~f email@et.uber.com" -10
 score "~f info@fortycloud.com" -10
+score "~f noreply@taiga.io" -10
 
 ## Sidebar
 #change width accordingly
