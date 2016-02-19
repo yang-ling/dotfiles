@@ -4,4 +4,4 @@ export XMODIFIERS="@im=fcitx"
 #export OOO_FORCE_DESKTOP=gnome
 nohup vrome >/dev/null 2>&1 &
 
-nohup wmsystemtray --fill-rows --non-wmaker --bgcolor white --arrows horizontal > /dev/null 2>&1 &
+#nohup wmsystemtray --fill-rows --non-wmaker --bgcolor white --arrows horizontal > /dev/null 2>&1 &
