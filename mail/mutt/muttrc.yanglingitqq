@@ -5,5 +5,7 @@ set postponed="+yanglingitqq/Drafts"
 set record="+yanglingitqq/Sent"
 set trash="+yanglingitqq/Deleted"
 set from="yanglingit@qq.com"
-macro index,pager s "<save-message>=yanglingitqq/其他文件夹.邮件归档"
+
+unhook save-hook
+save-hook . >
 macro index,pager F "<save-message>=yanglingitqq/其他文件夹.Important"

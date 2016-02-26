@@ -5,5 +5,11 @@ set postponed="+yanglingit163/草稿箱"
 set record="+yanglingit163/已发送"
 set trash="+yanglingit163/已删除"
 set from="yanglingit@163.com"
-macro index,pager s "<save-message>=yanglingit163/Archives"
 macro index,pager F "<save-message>=yanglingit163/Important"
+macro index,pager i "<change-folder>=yanglingit163/Important\n"
+
+unhook save-hook
+save-hook "~f PersonalService@bank-of-china.com ~s 中国银行银行卡电子账单" +yanglingit163/bank-boc
+save-hook "~f ccsvc@message.cmbchina.com ~s 信用卡电子账单" +yanglingit163/bank-cmb
+save-hook "~f estmtservice@eb.spdbccc.com.cn ~s 信用卡电子账单" +yanglingit163/bank-spdb
+save-hook . >

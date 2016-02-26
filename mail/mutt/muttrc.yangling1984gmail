@@ -5,5 +5,8 @@ set record="+yangling1984gmail/已发邮件"
 set trash="+yangling1984gmail/已删除邮件"
 set from="yangling1984@gmail.com"
 macro index,pager i "<change-folder>=yangling1984gmail/Important\n"
-macro index,pager s "<save-message>=yangling1984gmail/所有邮件"
 bind index,pager F flag-message
+
+unhook save-hook
+save-hook . >
+

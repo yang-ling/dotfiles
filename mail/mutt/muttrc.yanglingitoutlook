@@ -4,4 +4,6 @@ set postponed="+yanglingitoutlook/Drafts"
 set record="+yanglingitoutlook/Sent"
 set trash="+yanglingitoutlook/Deleted"
 set from="yanglingit@outlook.com"
-macro index,pager s "<save-message>=yanglingitoutlook/Archive"
+
+unhook save-hook
+save-hook . >

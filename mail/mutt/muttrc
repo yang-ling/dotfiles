@@ -30,7 +30,7 @@ set message_cachedir =~/.mutt/cache/bodies
 set timeout = 3          # idle time before scanning
 set mail_check = 0       # minimum time between scans
 set delete=ask-yes
-set confirmappend=yes
+set confirmappend=no
 set quit=yes
 set smart_wrap=yes
 
@@ -229,6 +229,8 @@ macro index q '<change-folder>?<toggle-mailboxes>' "show incoming mailboxes list
 macro browser q <exit><quit>
 macro index A "<limit>~A<enter>" "Show all messages."
 macro index \e= "<limit>~=<enter>" "Show all duplicated messages."
+
+bind index,pager s save-message
 
 bind pager g top
 bind pager G bottom
