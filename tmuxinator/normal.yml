@@ -32,5 +32,5 @@ windows:
   - Music:
       layout: even-vertical
       panes:
-        - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s playlist
-        - ncmpcpp -c /home/yangling/.config/ncmpcpp/config -s visualizer
+        - ncmpcpp -c ~/.config/ncmpcpp/config -s playlist
+        - ncmpcpp -c ~/.config/ncmpcpp/config -s visualizer
