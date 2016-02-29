@@ -98,6 +98,7 @@ alias mci='rainbow --config=mvn3 -- mvn clean install -e'
 #alias mciskip='mvn clean install -Dmaven.test.skip=true'
 # maven.test.skip will skip compiling test cases, while skipTests only skip running test cases.
 alias mciskip='rainbow --config=mvn3 -- mvn clean install -DskipTests=true -e'
+alias mciskipnossl='rainbow --config=mvn3 -- mvn clean install -DskipTests=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true -e'
 alias mcislow='rainbow --config=mvn3 -- mvn clean install -P "slow-test,!fast-test"'
 alias mciquick='rainbow --config=mvn3 -- mvn clean install -P "install-only"'
 alias mcidquick='rainbow --config=mvn3 -- mvn clean install -P "development,install-only"'
