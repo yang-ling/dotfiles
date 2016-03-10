@@ -7,12 +7,13 @@
 	editor = vim
 	excludesfile = /home/yangling/.gitignore_global
 	autocrlf = input
+	quotepath = false
 [diff]
 	tool = gvimdiff
 [gui]
 	encoding = utf-8
 [svn]
-	pathnameencoding = utf-8
+    pathnameencoding = utf-8
 [alias]
 	co = checkout
 	mer = merge --ff-only

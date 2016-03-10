@@ -88,7 +88,6 @@ Plug 'fatih/vim-go'
 " csv
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 "}}}
-
 Plug 'mbbill/VimExplorer'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'sgerrand/Conque-Shell', 'update_to_version_2.3'
@@ -99,6 +98,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
+Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
 " Refer to https://github.com/junegunn/vim-easy-align
@@ -478,6 +478,9 @@ noremap <leader>yd :Yde<CR>
 let g:ags_agexe = 'ag'
 let g:ags_agmaxcount = 2000
 let g:ags_agcontext = 3
+"}}}
+" rainbow"{{{
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "}}}
 "}}}
 "{{{ Basic setting
