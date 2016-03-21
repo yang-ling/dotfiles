@@ -478,6 +478,16 @@ noremap <leader>yd :Yde<CR>
 let g:ags_agexe = 'ag'
 let g:ags_agmaxcount = 2000
 let g:ags_agcontext = 3
+let g:ags_agargs = {
+            \ '--break'             : [ '', '' ],
+            \ '--column'            : [ '', '' ],
+            \ '--context'           : [ 'g:ags_agcontext', '-C' ],
+            \ '--filename'          : [ '', '' ],
+            \ '--group'             : [ '', '' ],
+            \ '--heading'           : [ '', '-H' ],
+            \ '--max-count'         : [ 'g:ags_agmaxcount', '-m' ],
+            \ '--numbers'           : [ '', '' ]
+            \ }
 "}}}
 " rainbow"{{{
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
