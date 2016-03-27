@@ -266,7 +266,7 @@ bindsym $mod+Delete mode "$mode_system"
 # finds out, if available)
 bar {
     id bar-1
-    status_command    python ~/.config/i3/file-bottom.py
+    status_command    python ~/.config/i3/file-bottom-home.py
     #status_command    i3blocks
     position          bottom
     mode              hide
