@@ -154,6 +154,7 @@ exec --no-startup-id /usr/local/bin/check-failed-units
 exec --no-startup-id xautolock -time 4 -locker "i3lock-wrapper -l"
 exec --no-startup-id variety
 exec --no-startup-id /usr/bin/volumeicon
+exec --no-startup-id /usr/bin/chinese-calendar-autostart
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad

@@ -47,6 +47,7 @@ set editor="/usr/bin/vim %s"
 # Set signature in every account
 unset signature
 set edit_headers=yes
+set mime_forward=ask-no
 
 ## msmtp
 set use_from=yes

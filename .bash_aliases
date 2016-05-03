@@ -63,6 +63,10 @@ alias tjoinp='tmux join-pane -h -s :. -t :-1'
 alias mtr-report='mtr -w -b -c 10 '
 alias mtr-common='mtr -b '
 
+alias wether='curl http://wttr.in/shanghai'
+
+alias my7z='7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on'
+
 # git
 alias g=git
 alias gs='git status'
@@ -190,6 +194,7 @@ alias archoptimize='sudo /usr/bin/paccache -r && /usr/bin/paccache -ruk0 && sudo
 
 # aria2
 alias a2="aria2c -j5 -x5 -m5 -k1M -s5"
+alias a2nossl="aria2c -j5 -x5 -m5 -k1M -s5 --check-certificate=false"
 alias pa2="/usr/bin/proxychains4 aria2c -j5 -x5 -m5 -k1M -s5"
 alias a2limit="aria2c -j5 -x5 -m5 -k1M -s5 --max-overall-download-limit=200K"
 # Torrent download: a2t /path/to/torrent
