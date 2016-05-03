@@ -269,8 +269,9 @@ source ~/.config/mutt/color-scheme/soerenb-mutt-colors-solarized-dark-256.muttrc
 
 # View html automatically
 auto_view text/html
-# Save html for last
-alternative_order text/plain text/enriched text/html
+# Previously text/html is at last, but mutt crashed when opening some mail.
+# Putting text/html at the beginning solve this problem.
+alternative_order text/html text/plain text/enriched
 
 # Upgrade the progress counter every 250ms, good for mutt over SSH
 # # see http://bugs.debian.org/537746
