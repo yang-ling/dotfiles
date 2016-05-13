@@ -89,6 +89,7 @@ Plug 'fatih/vim-go'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 "}}}
 Plug 'mbbill/VimExplorer'
+Plug 'Konfekt/FastFold'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'sgerrand/Conque-Shell', 'update_to_version_2.3'
 Plug 'c9s/perlomni.vim'
