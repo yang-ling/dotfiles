@@ -1,9 +1,0 @@
-[Unit]
-Description=Empty Given Folders Timer. Daily
-
-[Timer]
-OnStartupSec=3m
-OnUnitActiveSec=24h
-
-[Install]
-WantedBy=timers.target

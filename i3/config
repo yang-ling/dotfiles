@@ -145,7 +145,7 @@ exec --no-startup-id /usr/bin/dropbox
 exec --no-startup-id /usr/bin/fcitx-autostart
 exec --no-startup-id /usr/bin/keepassx
 exec --no-startup-id /usr/bin/workrave
-exec --no-startup-id /usr/local/bin/check-failed-units
+exec --no-startup-id /usr/bin/check-failed-units
 #If start compton before byobu, ranger's image preview will be broken.
 #A workaround is start compton after byobu, that is put the compton execution
 #into a tmuxinator config

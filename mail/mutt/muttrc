@@ -157,6 +157,7 @@ score "~f pccc@bocomcc.com" -9999
 score "~f newsletter@newsletter.aliyun.com" -9999
 score "~f club@service.netease.com" -9999
 score "~f 1@service.netease.com" -9999
+score "~f zhangruiqing-1991@163.com" -9999
 
 score '~f support@instapaper.com' -10
 score '~f mail-noreply@google.com' -10

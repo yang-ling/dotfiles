@@ -1,9 +1,0 @@
-[Unit]
-Description=Check failed service
-AssertFileIsExecutable=/usr/local/bin/check-failed-units
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/check-failed-units
-IOSchedulingClass=idle
-IOSchedulingPriority=7
