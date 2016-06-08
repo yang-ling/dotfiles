@@ -9,6 +9,8 @@ http://feeds.feedburner.com/ruanyifeng tech
 #http://www.reddit.com/r/vim/.rss tech vim
 http://feeds.feedburner.com/usevim tech vim
 
+https://gitlab.com/RagefireChasm/sc.atom?private_token=GsTyRR2QbgbgmkMtwQeC tech project
+
 #http://emacsredux.com/atom.xml tech emacs
 #http://endlessparentheses.com/atom.xml tech emacs
 #http://www.reddit.com/r/emacs/.rss tech emacs
@@ -34,6 +36,7 @@ http://onehd.herokuapp.com/ fun
 http://www.comicsyndicate.org/Feed/Dilbert fun
 http://elblogdejoancornella.blogspot.com/feeds/posts/default fun
 http://feeds.feedburner.com/uclick/garfield fun
+http://www.reddit.com/r/WritingPrompts/.rss fun
 #http://www.reddit.com/r/funny/.rss fun
 
 #http://www.lifehack.org/feed/ life
