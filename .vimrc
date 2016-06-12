@@ -155,6 +155,9 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'ianva/vim-youdao-translater'
 Plug 'chrisbra/unicode.vim'
 Plug 'gabesoft/vim-ags'
+Plug 'unblevable/quick-scope'
+" Python
+Plug 'davidhalter/jedi-vim'
 "}}}
 "}}}
 
@@ -917,9 +920,11 @@ if has("autocmd")
                     \ if getline(1) == "#!/usr/bin/python2" |
                     \   let b:syntastic_flake8_exec = '/usr/bin/flake8-python2' |
                     \   let b:syntastic_checkers = ["flake8"] |
+                    \   let b:syntastic_python_flake8_args = ["--max-line-length=120"] |
                     \ else |
                     \   let b:syntastic_flake8_exec = '/usr/bin/flake8' |
                     \   let b:syntastic_checkers = ["flake8"] |
+                    \   let b:syntastic_python_flake8_args = ["--max-line-length=120"] |
                     \ endif
         "}}}
         " Save session"{{{
@@ -948,6 +953,9 @@ endif " has("autocmd")"}}}
 " Write multiple copies at different paths, when you write to a buffer."{{{
 " See http://vimrcfu.com/snippet/107
 command -nargs=1 -complete=file DuplicateAt autocmd BufWritePost <buffer> w! <args>
+if !exists(":Isort")
+    command Isort ! isort %
+endif
 "}}}
 "}}}
 
