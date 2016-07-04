@@ -25,6 +25,7 @@
 	noskipindex = update-index --no-skip-worktree
 	merd = merge origin/develop --ff-only
 	merm = merge origin/master --ff-only
+	sp = submodule foreach git pull
 [merge]
 	tool = gvimdiff
 [push]
