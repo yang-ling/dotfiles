@@ -31,3 +31,5 @@ windows:
   - sogou:
     - sleep 30
     - /usr/bin/sogou-autostart
+  - status:
+    - glances
