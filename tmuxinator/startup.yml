@@ -33,3 +33,5 @@ windows:
     - /usr/bin/sogou-autostart
   - status:
     - glances
+  - wallpaper:
+    - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 10m -rpl
