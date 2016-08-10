@@ -36,7 +36,6 @@ call plug#begin('~/.vim/plugged')
 
 "{{{ Plugins
 "
-" original repos on github"{{{
 " Shougo"{{{
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
@@ -46,28 +45,17 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 " TODO Need learn vimfiler
 Plug 'Shougo/vimfiler.vim'
-"Plug 'Shougo/vimshell.vim'
 Plug 'Shougo/neossh.vim'
 Plug 'Shougo/unite-outline'
-"Plug 'Shougo/unite-sudo'
 Plug 'Shougo/context_filetype.vim'
-"Plug 'Shougo/echodoc', '', 'default'
-"call neobundle#config('echodoc', {
-      "\ 'lazy' : 1,
-      "\ 'autoload' : {
-      "\ 'insert' : 1,
-      "\ }})
 "}}}
 "vim-scripts on GitHub"{{{
 Plug 'vim-scripts/sudo.vim'
-Plug 'vim-scripts/IndexedSearch'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/fcitx.vim'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/DrawIt'
-"Plug 'vim-scripts/Mark--Karkat'
-"Plug 'vim-scripts/VST'
 "}}}
 "For different files"{{{
 Plug 'plasticboy/vim-markdown'
@@ -91,11 +79,8 @@ Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'mbbill/VimExplorer'
 Plug 'Konfekt/FastFold'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'sgerrand/Conque-Shell', 'update_to_version_2.3'
 Plug 'c9s/perlomni.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-easymotion'
-"NeoBundle 'tpope/vim-rails.git'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
@@ -109,7 +94,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'digitaltoad/vim-jade'
 Plug 'edsono/vim-matchit'
 " Preview markdown
-"NeoBundle 'suan/vim-instant-markdown'
 Plug 'jamessan/vim-gnupg'
 " Need tellenc: https://github.com/adah1972/tellenc
 " git clone it and use g++ to compile it:
@@ -118,18 +102,13 @@ Plug 'jamessan/vim-gnupg'
 Plug 'mbbill/fencview'
 Plug 'majutsushi/tagbar', { 'for': 'go' }
 Plug 'xolox/vim-misc'
-"NeoBundle 'xolox/vim-easytags'
 Plug 'xolox/vim-shell'
-" This calendar provide calendar view and connect to google calendar
-"NeoBundle 'itchyny/calendar.vim'
 " This calendar can be used to write diary
 Plug 'mattn/calendar-vim'
 " Theme"{{{
 Plug 'zeis/vim-kolor'
-Plug 'altercation/vim-colors-solarized'
 Plug 'flazz/vim-colorschemes'
 " Powerline
-"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plug 'bling/vim-airline'
 "}}}
 " Snippets
@@ -140,8 +119,6 @@ Plug 'yang-ling/rst'
 " Syntax checking
 Plug 'scrooloose/syntastic'
 " Complete
-" Need run git submodule update --init --recursive
-"NeoBundle 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-endwise'
 Plug 'wellle/targets.vim'
@@ -158,7 +135,6 @@ Plug 'gabesoft/vim-ags'
 Plug 'unblevable/quick-scope'
 " Python
 Plug 'davidhalter/jedi-vim'
-"}}}
 "}}}
 
 call plug#end()
