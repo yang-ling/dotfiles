@@ -34,4 +34,4 @@ windows:
   - status:
     - glances
   - wallpaper:
-    - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 10m -rpl
+    - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
