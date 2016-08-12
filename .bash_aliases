@@ -127,34 +127,34 @@ alias ..='cd ..'
 alias ~='cd ~'
 alias work='cd ~/EclipseWorkspace/workspace-globalpayroll/global-payroll/'
 
-# pacman/yaourt aliases
+# pacman/pacaur aliases
 alias pac="sudo /usr/bin/pacman -S"     # default action    - install one or more packages
 alias pacn="sudo /usr/bin/pacman -S --needed"     # default action    - install one or more packages, ignore up to date packages.
 alias pacdep="sudo /usr/bin/pacman -S --asdeps"     # default action, as dependency    - install one or more packages, as dependency
-alias yao="/usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
-alias pyao="/usr/bin/proxychains4 /usr/bin/yaourt -S"         # default yaourt action - install one or more packages including AUR
-alias yaodep="/usr/bin/yaourt -S --asdeps"         # default yaourt action - install one or more packages including AUR
-alias pyaodeps="/usr/bin/proxychains4 /usr/bin/yaourt -S --asdeps"         # default yaourt action - install one or more packages including AUR
+alias yao="/usr/bin/pacaur -S"         # default pacaur action - install one or more packages including AUR
+alias pyao="/usr/bin/proxychains4 /usr/bin/pacaur -S"         # default pacaur action - install one or more packages including AUR
+alias yaodep="/usr/bin/pacaur -S --asdeps"         # default pacaur action - install one or more packages including AUR
+alias pyaodeps="/usr/bin/proxychains4 /usr/bin/pacaur -S --asdeps"         # default pacaur action - install one or more packages including AUR
 alias pacu="sudo /usr/bin/pacman -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacy="sudo /usr/bin/pacman -Syy"      # '[u]pdate database'        - upgrade all database.
 alias pacyu="sudo /usr/bin/pacman -Syyu"      # '[u]pdate [r]epos'        - update repos and upgrade all packages to their newest version
 alias pacdl="sudo /usr/bin/pacman -Syuw" # only download, no upgrade.
-alias yaou="/usr/bin/yaourt -Syua --devel"      # '[u]pdate'        - upgrade all packages to their newest version
-alias pyaou="/usr/bin/proxychains4 /usr/bin/yaourt -Syua --devel"      # '[u]pdate'        - upgrade all packages to their newest version
+alias yaou="/usr/bin/pacaur -Syua --devel --needed"      # '[u]pdate'        - upgrade all packages to their newest version
+alias pyaou="/usr/bin/proxychains4 /usr/bin/pacaur -Syua --devel --needed"      # '[u]pdate'        - upgrade all packages to their newest version
 alias pacr="sudo /usr/bin/pacman -Rcnsu"       # '[r]emove'        - uninstall one or more packages, include packages which depend on target package.
 alias pacrsafe="sudo /usr/bin/pacman -Rnsu"       # '[r]emove'        - Safe uninstall one or more packages
 alias pacs="/usr/bin/pacman -Ss"        # '[s]earch'        - search for a package using one or more keywords
-alias yaos="/usr/bin/yaourt -Ss"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
+alias yaos="/usr/bin/pacaur -Ss"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
 alias paci="/usr/bin/pacman -Si"        # '[i]nfo'      - show information about a package
-alias yaoi="/usr/bin/yaourt -Si"        # '[i]nfo'      - show information about a package
+alias yaoi="/usr/bin/pacaur -Si"        # '[i]nfo'      - show information about a package
 alias pacg="/usr/bin/pacman -Sg"        # '[g]roup'      - show information about a group
-alias yaog="/usr/bin/yaourt -Sg"        # '[g]roup'      - show information about a group
+alias yaog="/usr/bin/pacaur -Sg"        # '[g]roup'      - show information about a group
 alias pacqs="/usr/bin/pacman -Qs"        # '[s]earch'        - search for a package using one or more keywords
-alias yaoqs="/usr/bin/yaourt -Qs"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
+alias yaoqs="/usr/bin/pacaur -Qs"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
 alias pacqi="/usr/bin/pacman -Qi"        # '[i]nfo'      - show information about a package
-alias yaoqi="/usr/bin/yaourt -Qi"        # '[i]nfo'      - show information about a package
+alias yaoqi="/usr/bin/pacaur -Qi"        # '[i]nfo'      - show information about a package
 alias pacqg="/usr/bin/pacman -Qg"        # '[g]roup'      - show information about a group
-alias yaoqg="/usr/bin/yaourt -Qg"        # '[g]roup'      - show information about a group
+alias yaoqg="/usr/bin/pacaur -Qg"        # '[g]roup'      - show information about a group
 alias pacqn="/usr/bin/pacman -Qn"        # '[n]ative'      - show information about native packages
 alias pacqm="/usr/bin/pacman -Qm"        # 'foreign'      - show information about foreign packages
 alias paclo="/usr/bin/pacman -Qdt"      # '[l]ist [o]rphans'    - list all packages which are orphaned
@@ -162,7 +162,7 @@ alias pacc="sudo /usr/bin/pacman -Sc"      # '[c]lean cache'   - delete all not 
 alias pacca="sudo /usr/bin/pacman -Scc"      # '[c]lean [a]ll cache'   - delete all not currently installed package files
 alias paclf="/usr/bin/pacman -Ql"       # '[l]ist [f]iles'  - list all files installed by a given package
 alias pacqo="/usr/bin/pacman -Qo"       # '[o]wn file'  - list the package which owns target file
-alias yaoexpl="/usr/bin/yaourt -D --asexplicit" # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
+alias yaoexpl="/usr/bin/pacaur -D --asexplicit" # 'mark as [expl]icit'  - mark one or more packages as explicitly installed
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
