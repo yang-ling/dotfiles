@@ -52,7 +52,6 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/plugins/
 # node: node-doc <api-name> will open api document by browser
 plugins=(colorize command-not-found common-aliases encode64 extract gem git git-extras git-prompt golang gradle history history-substring-search iwhois mvn meteor node npm python rsync sudo systemadmin systemd tmux tmuxinator aws)
 
-source $ZSH/oh-my-zsh.sh
 
 zstyle ':completion::complete:*' cache-path $HOME/.oh-my-zsh/cache/
 
@@ -150,6 +149,8 @@ export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuch-config
 
 # To activate zsh-syntax-highlighting, a Fish-shell-like syntax highlighting.
 [[ -s /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $ZSH/oh-my-zsh.sh
 
 #rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
