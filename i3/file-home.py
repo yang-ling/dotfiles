@@ -81,11 +81,11 @@ status.register("network",
     format_up = "<span color=\"#00FF00\">{v4}</span> {bytes_recv_str} {bytes_sent_str}",
     format_short_up = "{bytes_recv_str} {bytes_sent_str}",
     format_down = "",
+    separate_color = True,
     dynamic_color = True,
     start_color = "#00FF00",
     end_color = "#FF0000",
     color_down = "#FF0000",
-    upper_limit = 800.0,
     )
 
 # Note: requires both netifaces and basiciw (for essid and quality)
