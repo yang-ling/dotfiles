@@ -3,6 +3,7 @@
 #
 
 alias ll='ls -lh'      #long list
+alias gdt='git difftool'
 
 # zsh is able to auto-do some kungfoo
 # depends on the SUFFIX :)
