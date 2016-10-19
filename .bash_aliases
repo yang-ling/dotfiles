@@ -97,7 +97,6 @@ alias gsa='git stash apply'
 alias gitoptimize='rm -rf .git/refs/original/ && git reflog expire --all --expire=now && git gc --prune=now && git gc --aggressive --prune=now'
 alias glistskip='git ls-files -v | grep "^S"'
 alias gpf='bash ~/MyGitRepo/Little/myfork/git-related/git-push-force.bash'
-alias gsu='git submodule sync --recursive && git submodule update --init --recursive --remote'
 
 alias rmvn='rainbow --config=mvn3 -- mvn -e'
 alias mci='rainbow --config=mvn3 -- mvn clean install -e'
