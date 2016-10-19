@@ -1,0 +1,11 @@
+# File created by KDE Gtk Config
+# Configs for GTK2 programs
+
+gtk-font-name="Sans Serif  11"
+gtk-theme-name="Zukitre"
+gtk-icon-theme-name="menta"
+gtk-cursor-theme-name="mate"
+gtk-fallback-icon-theme="gnome"
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-menu-images=1
+gtk-button-images=1
