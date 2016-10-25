@@ -4,16 +4,18 @@
 	branch = auto
 	ui = auto
 [core]
-	editor = vim
+	editor = emacsclient
 	excludesfile = /home/yangling/.gitignore_global
 	autocrlf = input
 	quotepath = false
+[difftool "ediff"]
+	cmd = emacsclient --eval \"(ediff \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 [diff]
-	tool = gvimdiff
+	tool = ediff
 [gui]
 	encoding = utf-8
 [svn]
-    pathnameencoding = utf-8
+	pathnameencoding = utf-8
 [alias]
 	co = checkout
 	mer = merge --ff-only
