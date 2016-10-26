@@ -248,4 +248,4 @@ rg() {
 alias uul="udevil umount -l"
 
 # Emacs
-alias es="/usr/bin/emacsclient"
+alias es="/usr/bin/emacsclient -c"
