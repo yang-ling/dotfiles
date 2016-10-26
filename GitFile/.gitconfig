@@ -9,7 +9,7 @@
 	autocrlf = input
 	quotepath = false
 [difftool "ediff"]
-	cmd = emacsclient --eval \"(ediff \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
+	cmd = emacsclient -c --eval \"(ediff \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 [diff]
 	tool = ediff
 [gui]
@@ -28,7 +28,9 @@
 	merd = merge origin/develop --ff-only
 	merm = merge origin/master --ff-only
 	sp = submodule foreach git pull
+[mergetool "emerge"]
+	cmd = emacsclient -c --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
 [merge]
-	tool = gvimdiff
+	tool = emerge
 [push]
 	default = simple
