@@ -272,6 +272,7 @@ you should place your code here."
                                         ("^[ \t]*>[ \t]*>.*$"
                                          (0 'info-quoted-name))))))
   (global-company-mode)
+  (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
