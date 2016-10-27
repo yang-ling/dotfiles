@@ -278,6 +278,11 @@ you should place your code here."
                                          (0 'info-quoted-name))))))
   (global-company-mode)
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
+
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (define-key evil-normal-state-map (kbd "$") (lambda () (interactive) (evil-end-of-visual-line) (evil-backward-char)))
+  (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
