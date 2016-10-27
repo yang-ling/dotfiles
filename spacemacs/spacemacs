@@ -265,6 +265,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq browse-url-browser-function 'browse-url-chrome)
+  (setq company-dabbrev-ignore-case t)
+  (setq company-dabbrev-code-ignore-case t)
   (add-hook 'message-mode-hook
             (lambda ()
               (font-lock-add-keywords nil
