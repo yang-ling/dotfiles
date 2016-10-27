@@ -129,7 +129,7 @@ fi
 
 [[ -f "/usr/bin/convertmp4.sh" ]] && source "/usr/bin/convertmp4.sh"
 
-export EDITOR="es"
+export EDITOR="/usr/bin/emacsclient -c"
 # https://github.com/tmuxinator/tmuxinator
 export DISABLE_AUTO_TITLE=true
 
