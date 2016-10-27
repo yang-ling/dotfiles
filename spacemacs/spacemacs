@@ -269,7 +269,9 @@ you should place your code here."
   (setq company-dabbrev-code-ignore-case t)
   (setq evil-escape-delay 0.5)
   (setq evil-escape-key-sequence "fd")
+  (setq evil-search-wrap nil)
 
+  ;; Hooks
   (add-hook 'message-mode-hook
             (lambda ()
               (font-lock-add-keywords nil
@@ -279,17 +281,21 @@ you should place your code here."
                                          (0 'info-double-quoted-name))
                                         ("^[ \t]*>[ \t]*>.*$"
                                          (0 'info-quoted-name))))))
-  (global-company-mode)
 
+  ;; Mode
+  (global-company-mode)
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
 
+  ;; Macro
+  (fset 'done
+        "\C-x#")
+
+  ;; Keybindings
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
   (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
   (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
-  (spacemacs/declare-prefix "o" "custom")
-  (evil-leader/set-key "op" 'server-edit)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
