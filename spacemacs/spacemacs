@@ -34,7 +34,9 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
      better-defaults
-     (chinese :variables chinese-enable-fcitx t)
+     (chinese :variables
+              chinese-enable-fcitx t
+              chinese-enable-youdao-dict t)
      chrome
      csv
      emacs-lisp
