@@ -55,7 +55,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(key-chord)
+   dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -267,7 +267,8 @@ you should place your code here."
   (setq browse-url-browser-function 'browse-url-chrome)
   (setq company-dabbrev-ignore-case t)
   (setq company-dabbrev-code-ignore-case t)
-  (setq key-chord-two-keys-delay 0.5)
+  (setq evil-escape-delay 0.5)
+  (setq evil-escape-key-sequence "fd")
 
   (add-hook 'message-mode-hook
             (lambda ()
@@ -279,19 +280,16 @@ you should place your code here."
                                         ("^[ \t]*>[ \t]*>.*$"
                                          (0 'info-quoted-name))))))
   (global-company-mode)
-  (key-chord-mode 1)
 
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
 
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "$") (lambda () (interactive) (evil-end-of-visual-line) (evil-backward-char)))
   (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
   (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
   (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
-  (key-chord-define evil-insert-state-map "jj" 'evil-force-normal-state)
   (spacemacs/declare-prefix "o" "custom")
-  (evil-leader/set-key "op" 'edit-server-done)
+  (evil-leader/set-key "op" 'server-edit)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
