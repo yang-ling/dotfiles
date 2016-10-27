@@ -290,6 +290,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
   (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
   (key-chord-define evil-insert-state-map "jj" 'evil-force-normal-state)
+  (spacemacs/declare-prefix "o" "custom")
+  (evil-leader/set-key "op" 'edit-server-done)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
