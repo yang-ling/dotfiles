@@ -287,6 +287,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "$") (lambda () (interactive) (evil-end-of-visual-line) (evil-backward-char)))
   (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
+  (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
+  (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
   (key-chord-define evil-insert-state-map "jj" 'evil-force-normal-state)
 )
 
