@@ -310,6 +310,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
   (spacemacs/declare-prefix "o" "custom")
   (evil-leader/set-key "od" 'clean)
+  (evil-leader/set-key "oo" 'done)
+  (evil-leader/set-key "ow" 'work)
 
   ;; chinese-fonts-setup
   ;; Put chinese-fonts-setup into startup
