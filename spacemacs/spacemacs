@@ -269,6 +269,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; Settings
   (setq browse-url-browser-function 'browse-url-chrome)
   (setq company-dabbrev-ignore-case t)
   (setq company-dabbrev-code-ignore-case t)
@@ -297,6 +298,9 @@ you should place your code here."
         "\C-x#")
   (fset 'work
         " lw")
+  ;; Remove all trailing whitespaces and duplicated lines.
+  (fset 'clean
+        " xdw xlu")
 
   ;; Keybindings
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
@@ -304,6 +308,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
   (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
   (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
+  (spacemacs/declare-prefix "o" "custom")
+  (evil-leader/set-key "od" 'clean)
 
   ;; chinese-fonts-setup
   ;; Put chinese-fonts-setup into startup
