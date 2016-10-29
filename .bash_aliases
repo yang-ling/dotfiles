@@ -146,6 +146,7 @@ alias pacr="sudo /usr/bin/pacman -Rcnsu"       # '[r]emove'        - uninstall o
 alias pacrsafe="sudo /usr/bin/pacman -Rnsu"       # '[r]emove'        - Safe uninstall one or more packages
 alias pacs="/usr/bin/pacman -Ss"        # '[s]earch'        - search for a package using one or more keywords
 alias yaos="/usr/bin/pacaur -Ss"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
+alias pyaos="/usr/bin/proxychains4 /usr/bin/pacaur -Ss"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
 alias paci="/usr/bin/pacman -Si"        # '[i]nfo'      - show information about a package
 alias yaoi="/usr/bin/pacaur -Si"        # '[i]nfo'      - show information about a package
 alias pacg="/usr/bin/pacman -Sg"        # '[g]roup'      - show information about a group
