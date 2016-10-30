@@ -293,6 +293,11 @@ you should place your code here."
   (global-company-mode)
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
 
+  ;; Easy Templates
+  ;; http://orgmode.org/manual/Easy-Templates.html
+  (add-to-list 'org-structure-template-alist '("n" "#+NAME: ?"))
+  (add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?"))
+
   ;; Macro
   (fset 'done
         "\C-x#")
