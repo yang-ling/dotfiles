@@ -37,4 +37,3 @@ windows:
     - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
   - Emacs:
     - export LC_CTYPE=zh_CN.UTF-8
-    - emacs

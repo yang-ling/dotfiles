@@ -1,3 +1,5 @@
+# !/usr/bin/env bash
+
 # $1: compress file name
 # $2: actual file name
 function tarxz()
