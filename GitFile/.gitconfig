@@ -4,12 +4,12 @@
 	branch = auto
 	ui = auto
 [core]
-	editor = emacsclient
+	editor = emacs
 	excludesfile = /home/yangling/.gitignore_global
 	autocrlf = input
 	quotepath = false
 [difftool "ediff"]
-	cmd = emacsclient -c --eval \"(ediff \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
+	cmd = emacs --eval \"(ediff \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 [diff]
 	tool = ediff
 [gui]
@@ -29,7 +29,7 @@
 	merm = merge origin/master --ff-only
 	sp = submodule foreach git pull
 [mergetool "emerge"]
-	cmd = emacsclient -c --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+	cmd = emacs --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
 [merge]
 	tool = emerge
 [push]
