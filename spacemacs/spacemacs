@@ -295,6 +295,27 @@ you should place your code here."
 
   ;; Easy Templates
   ;; http://orgmode.org/manual/Easy-Templates.html
+  ;; s	#+BEGIN_SRC ... #+END_SRC
+  ;; e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
+  ;; q	#+BEGIN_QUOTE ... #+END_QUOTE
+  ;; v	#+BEGIN_VERSE ... #+END_VERSE
+  ;; c	#+BEGIN_CENTER ... #+END_CENTER
+  ;; l	#+BEGIN_LaTeX ... #+END_LaTeX
+  ;; L	#+LaTeX:
+  ;; h	#+BEGIN_HTML ... #+END_HTML
+  ;; H	#+HTML:
+  ;; a	#+BEGIN_ASCII ... #+END_ASCII
+  ;; A	#+ASCII:
+  ;; i	#+INDEX: line
+  ;; I	#+INCLUDE: line
+  ;;
+  ;; When Emacs first visits an Org file, the global state is set to OVERVIEW, i.e., only the
+  ;; top level headlines are visible . This can be configured through the variable org-startup-
+  ;; folded, or on a per-file basis by adding one of the following lines anywhere in the buffer:
+  ;; #+STARTUP: overview
+  ;; #+STARTUP: content
+  ;; #+STARTUP: showall
+  ;; #+STARTUP: showeverything
   (add-to-list 'org-structure-template-alist '("n" "#+NAME: ?"))
   (add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?"))
 
@@ -317,6 +338,7 @@ you should place your code here."
   (evil-leader/set-key "od" 'clean)
   (evil-leader/set-key "oo" 'done)
   (evil-leader/set-key "ow" 'work)
+  (evil-leader/set-key "om" 'imenu)
 
   ;; chinese-fonts-setup
   ;; Put chinese-fonts-setup into startup
