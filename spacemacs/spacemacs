@@ -278,6 +278,7 @@ you should place your code here."
   (setq evil-escape-delay 0.5)
   (setq evil-escape-key-sequence "fd")
   (setq evil-search-wrap nil)
+  (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
 
   ;; Hooks
   (add-hook 'message-mode-hook
@@ -294,6 +295,7 @@ you should place your code here."
   ;; Mode
   (global-company-mode)
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
+  (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
 
   ;; Easy Templates
   ;; http://orgmode.org/manual/Easy-Templates.html
@@ -344,9 +346,24 @@ you should place your code here."
 
   ;; chinese-fonts-setup
   ;; Put chinese-fonts-setup into startup
-   (chinese-fonts-setup-enable)
+  (chinese-fonts-setup-enable)
   ;; Show Unicode icon in spacemacs mode-line correctly.
-   (cfs-set-spacemacs-fallback-fonts)
+  (cfs-set-spacemacs-fallback-fonts)
+
+  ;; epa settings for asc file
+  (epa-file-name-regexp-update)
+  ;; Minor mode for ASCII-armored gpg-encrypted files
+  (define-minor-mode auto-encryption-armored-mode
+    "Save files in encrypted, ASCII-armored format"
+    ;; The initial value.
+    nil
+    ;; The indicator for the mode line.
+    " Encrypted,Armored"
+    ;; The minor mode bindings.
+    nil
+    (if (symbol-value auto-encryption-armored-mode)
+        (set (make-local-variable 'epa-armor) t)
+      (kill-local-variable 'epa-armor)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
