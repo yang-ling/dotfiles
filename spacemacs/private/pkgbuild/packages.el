@@ -58,6 +58,6 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun pkgbuild/init-pkgbuild-mode ()
-  (use-package pkgbuild-mode)
-  :mode "/PKGBUILD$")
+  (use-package pkgbuild-mode
+    :mode "/PKGBUILD$"))
 ;;; packages.el ends here
