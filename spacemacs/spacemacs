@@ -349,12 +349,6 @@ you should place your code here."
   (evil-leader/set-key "ow" 'work)
   (evil-leader/set-key "om" 'imenu)
 
-  ;; chinese-fonts-setup
-  ;; Put chinese-fonts-setup into startup
-  (chinese-fonts-setup-enable)
-  ;; Show Unicode icon in spacemacs mode-line correctly.
-  (cfs-set-spacemacs-fallback-fonts)
-  ;;
   ;; epa settings for asc file
   (epa-file-name-regexp-update)
   ;; Minor mode for ASCII-armored gpg-encrypted files
