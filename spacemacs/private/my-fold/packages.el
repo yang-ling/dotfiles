@@ -31,7 +31,8 @@
 (defconst my-fold-packages
   '(
     vimish-fold
-    evil-vimish-fold)
+    evil-vimish-fold
+    folding)
   "The list of Lisp packages required by the my-fold layer.
 
 Each entry is either:
@@ -63,5 +64,7 @@ Each entry is either:
   (use-package vimish-fold))
 (defun my-fold/init-evil-vimish-fold ()
   (use-package evil-vimish-fold))
+(defun my-fold/init-folding ()
+  (use-package folding))
 
 ;;; packages.el ends here
