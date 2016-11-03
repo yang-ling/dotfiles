@@ -151,6 +151,7 @@ alias yaos="/usr/bin/pacaur -Ss"       # '[y]aourt [s]earch'   - search for a pa
 alias pyaos="/usr/bin/proxychains4 /usr/bin/pacaur -Ss"       # '[y]aourt [s]earch'   - search for a package or a PKGBUILD using one or more keywords
 alias paci="/usr/bin/pacman -Si"        # '[i]nfo'      - show information about a package
 alias yaoi="/usr/bin/pacaur -Si"        # '[i]nfo'      - show information about a package
+alias pyaoi="/usr/bin/proxychains4 /usr/bin/pacaur -Si"        # '[i]nfo'      - show information about a package
 alias pacg="/usr/bin/pacman -Sg"        # '[g]roup'      - show information about a group
 alias yaog="/usr/bin/pacaur -Sg"        # '[g]roup'      - show information about a group
 alias pacqs="/usr/bin/pacman -Qs"        # '[s]earch'        - search for a package using one or more keywords
