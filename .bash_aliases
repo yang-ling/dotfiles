@@ -252,3 +252,7 @@ alias uul="udevil umount -l"
 
 # Emacs
 alias es="/usr/bin/emacsclient -c"
+
+# Local Variables:
+# mode: shell-script
+# End:
