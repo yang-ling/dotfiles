@@ -299,8 +299,6 @@ you should place your code here."
 
   ;; Mode
   (global-company-mode)
-  (vimish-fold-global-mode 1)
-  (evil-vimish-fold-mode 1)
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
   (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
 
