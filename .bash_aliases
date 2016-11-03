@@ -1,4 +1,4 @@
-# !/usr/bin/env bash
+#!/usr/bin/env bash
 
 # $1: compress file name
 # $2: actual file name
@@ -253,7 +253,3 @@ alias uul="udevil umount -l"
 
 # Emacs
 alias es="/usr/bin/emacsclient -c"
-
-# Local Variables:
-# mode: shell-script
-# End:

@@ -301,6 +301,7 @@ you should place your code here."
   (global-company-mode)
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
   (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
+  (add-to-list 'interpreter-mode-alist '("bash" . shell-script-mode))
 
   ;; Easy Templates
   ;; http://orgmode.org/manual/Easy-Templates.html
