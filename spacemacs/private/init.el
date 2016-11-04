@@ -1,7 +1,8 @@
-;; -*- mode: emacs-lisp -*-
+;; -*- mode: emacs-lisp; origami-fold-style: triple-braces; -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+;; defun dotspacemacs/layers  {{{
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -64,7 +65,7 @@ values."
      markdown
      my-fold
      (my-fonts :variables
-      cfs-use-system-type t)
+               cfs-use-system-type t)
      my-image
      pkgbuild
      (org :variables
@@ -96,7 +97,9 @@ values."
    ;; them if they become unused. `all' installs *all* packages supported by
    ;; Spacemacs and never uninstall them. (default is `used-only')
    dotspacemacs-install-packages 'used-only))
+;; }}}
 
+;; defun dotspacemacs/init {{{
 (defun dotspacemacs/init ()
   "Initialization function.
 This function is called at the very startup of Spacemacs initialization
@@ -311,7 +314,9 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'changed
    ))
+;; }}}
 
+;; (defun dotspacemacs/user-init () {{{
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
@@ -322,7 +327,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
   )
+;; }}}
 
+;; (defun dotspacemacs/user-config () {{{
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -330,7 +337,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;; Settings
+  ;; Settings {{{
   (setq browse-url-browser-function 'browse-url-chrome)
   (setq company-dabbrev-ignore-case t)
   (setq company-dabbrev-code-ignore-case t)
@@ -338,8 +345,9 @@ you should place your code here."
   (setq evil-escape-key-sequence "fd")
   (setq evil-search-wrap nil)
   (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
+  ;; }}}
 
-  ;; Hooks
+  ;; Hooks {{{
   (add-hook 'message-mode-hook
             (lambda ()
               (font-lock-add-keywords nil
@@ -350,14 +358,16 @@ you should place your code here."
                                         ("^[ \t]*>[ \t]*>.*$"
                                          (0 'info-quoted-name))))))
   (add-hook 'dos-mode-hook 'smartparens-mode)
+  ;; }}}
 
-  ;; Mode
+  ;; Mode {{{
   (global-company-mode)
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
   (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
   (add-to-list 'interpreter-mode-alist '("bash" . shell-script-mode))
+  ;; }}}
 
-  ;; Easy Templates
+  ;; Easy Templates {{{
   ;; http://orgmode.org/manual/Easy-Templates.html
   ;; s	#+BEGIN_SRC ... #+END_SRC
   ;; e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
@@ -382,8 +392,9 @@ you should place your code here."
   ;; #+STARTUP: showeverything
   (add-to-list 'org-structure-template-alist '("n" "#+NAME: ?"))
   (add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?"))
+  ;; }}}
 
-  ;; Macro
+  ;; Macro {{{
   (fset 'done
         "\C-x#")
   (fset 'work
@@ -391,8 +402,9 @@ you should place your code here."
   ;; Remove all trailing whitespaces and duplicated lines.
   (fset 'clean
         " xdw xlu")
+  ;; }}}
 
-  ;; Keybindings
+  ;; Keybindings {{{
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
@@ -403,8 +415,9 @@ you should place your code here."
   (evil-leader/set-key "oo" 'done)
   (evil-leader/set-key "ow" 'work)
   (evil-leader/set-key "om" 'imenu)
+  ;; }}}
 
-  ;; epa settings for asc file
+  ;; epa settings for asc file {{{
   (epa-file-name-regexp-update)
   ;; Minor mode for ASCII-armored gpg-encrypted files
   (define-minor-mode auto-encryption-armored-mode
@@ -418,8 +431,9 @@ you should place your code here."
     (if (symbol-value auto-encryption-armored-mode)
         (set (make-local-variable 'epa-armor) t)
       (kill-local-variable 'epa-armor)))
-
+  ;; }}}
 )
+;; }}}
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
