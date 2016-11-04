@@ -1,0 +1,13 @@
+* Blogs                                                              :elfeed:
+** Fun                                                               :funny:
+*** [[http://www.comicsyndicate.org/Feed/Dilbert][Dilbert]]
+*** [[http://www.lifehack.org/feed/][Lifehack]]
+*** [[http://aprogrammerslife.info/feed/][Programmer's Life]]
+*** [[http://www.quora.com/rss][Quora]]
+*** [[http://www.v2ex.com/index.xml][v2ex]]
+*** [[http://www.reddit.com/r/WritingPrompts/.rss][Writing Prompts: Prompts and motivation to create something out of nothing]]
+*** [[http://xkcd.com/rss.xml][xkcd]]
+*** [[http://feeds.feedburner.com/uclick/garfield][加菲猫]]
+*** [[http://hdwo.net/feed][海盗湾中文网]]
+*** [[http://www.zhihu.com/rss][知乎]]
+*** [[http://twocoldbackup.blogspot.com/feeds/posts/default][韩寒博客备份]]
