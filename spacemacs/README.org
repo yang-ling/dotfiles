@@ -1,21 +1,13 @@
 * Table of Contents                                             :toc:noexport:
  - [[#read-me][Read Me]]
-   - [[#spacemacs-file][spacemacs file]]
    - [[#private][private]]
    - [[#chinese-fonts-setup][chinese-fonts-setup]]
 
 * Read Me
-** spacemacs file
-   Link it to =~/.spacemacs=.
-   #+BEGIN_SRC bash
-   ln -s spacemacs ~/.spacemacs
-   #+END_SRC
-
 ** private
-   ~private~ directory contains private layers. Do not directly link ~private~ itself. Link layers.
-   In this case.
+   =private= directory contains private layers.
    #+BEGIN_SRC bash
-   ln -s private/my-fonts ~/.emacs.d/private/
+   ln -s private ~/.spacemacs.d
    #+END_SRC
 
 ** chinese-fonts-setup
