@@ -341,6 +341,7 @@ you should place your code here."
   (setq evil-escape-key-sequence "fd")
   (setq evil-search-wrap nil)
   (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
+  (setq elfeed-goodies/entry-pane-position 'bottom)
   ;; }}}
 
   ;; Hooks {{{
