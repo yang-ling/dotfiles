@@ -31,8 +31,7 @@
 
 (defconst my-elfeed-config-packages
   '(elfeed
-    elfeed-goodies
-    )
+    elfeed-goodies)
   "The list of Lisp packages required by the my-elfeed-config layer.
 
 Each entry is either:
@@ -73,12 +72,10 @@ Each entry is either:
   (add-hook 'elfeed-search-mode-hook 'hook-elfeed-settings)
   (with-eval-after-load "elfeed"
     (define-key elfeed-search-mode-map (kbd "G") nil)
-    (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-visit-eww)
-    (message "yangling-test: defun elfeed-config/post-init-elfeed")))
+    (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-visit-eww)))
 (defun my-elfeed-config/post-init-elfeed-goodies ()
   (with-eval-after-load "elfeed-goodies"
     (setq elfeed-goodies/entry-pane-position 'bottom)
-    (setq elfeed-goodies/log-window-position 'left)
-    (message "yangling-test: defun elfeed-config/post-init-elfeed-goodies")))
+    (setq elfeed-goodies/log-window-position 'left)))
 
 ;;; packages.el ends here
