@@ -336,7 +336,6 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; Settings {{{
   (setq browse-url-browser-function 'browse-url-chrome)
-  ;; (setq browse-url-generic-program "w3m")
   (setq evil-escape-delay 0.5)
   (setq evil-escape-key-sequence "fd")
   (setq evil-search-wrap nil)
