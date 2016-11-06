@@ -1,13 +1,28 @@
 * Blogs                                                              :elfeed:
-** Fun                                                               :funny:
-*** [[http://www.comicsyndicate.org/Feed/Dilbert][Dilbert]]
-*** [[http://www.lifehack.org/feed/][Lifehack]]
-*** [[http://aprogrammerslife.info/feed/][Programmer's Life]]
-*** [[http://www.quora.com/rss][Quora]]
-*** [[http://www.v2ex.com/index.xml][v2ex]]
-*** [[http://www.reddit.com/r/WritingPrompts/.rss][Writing Prompts: Prompts and motivation to create something out of nothing]]
-*** [[http://xkcd.com/rss.xml][xkcd]]
-*** [[http://feeds.feedburner.com/uclick/garfield][加菲猫]]
-*** [[http://hdwo.net/feed][海盗湾中文网]]
-*** [[http://www.zhihu.com/rss][知乎]]
-*** [[http://twocoldbackup.blogspot.com/feeds/posts/default][韩寒博客备份]]
+** Quick Browse                                                      :quick:
+*** [[http://www.quora.com/rss][Quora]]                                                             :quora:
+*** [[http://www.v2ex.com/index.xml][v2ex]]                                                                 :v2:
+*** [[http://www.williamlong.info/rss.xml][月光博客]]                                                 :blog:moon:tech:
+*** [[http://blog.lilydjwg.me/feed][依云]]                                                          :blog:tech:
+*** [[https://www.gitlab.com/atom.xml][Gitlab]]                                                 :blog:tech:gitlab:
+*** [[https://emacs-china.org/latest.rss][Emacs China]]                                                  :emacs:tech:
+*** [[http://www.reddit.com/r/emacs/.rss][Emacs]]                                                 :reddit:emacs:tech:
+*** [[http://onehd.herokuapp.com/][一个 韩寒]]                                                       :one:han:
+*** [[http://www.daemonology.net/hn-daily/index.rss][HackerNews]]                                                    :news:tech:
+*** [[http://www.chinagfw.org/feeds/posts/default][GFW]]                                                       :blog:gfw:tech:
+** Later Browse                                                       :slow:
+*** [[http://www.zhihu.com/rss][知乎]]                                                              :zhihu:
+*** [[http://hongzhang0823.wix.com/ielts7/feed.xml][雅思]]                                                      :english:study:
+*** [[http://feeds.feedburner.com/ruanyifeng][阮一峰]]                                                   :blog:tech:ruan:
+*** [[http://eller86.hatenablog.jp/feed][Toda]]                                                     :blog:tech:toda:
+** Lunch Time                                                    :lunchtime:
+*** [[http://www.comicsyndicate.org/Feed/Dilbert][Dilbert]]                                                     :dilbert:pic:
+*** [[http://aprogrammerslife.info/feed/][Programmer's Life]]                                          :proglife:pic:
+*** [[http://xkcd.com/rss.xml][xkcd]]                                                           :xkcd:pic:
+*** [[http://feeds.feedburner.com/uclick/garfield][加菲猫]]                                                          :cat:pic:
+*** [[http://hdwo.net/feed][海盗湾中文网]]                                                      :movie:
+*** [[http://twocoldbackup.blogspot.com/feeds/posts/default][韩寒博客备份]]                                                        :han:
+*** [[http://www.reddit.com/r/funny/.rss][Reddit Funny]]                                                     :reddit:
+** Kill Time                                                      :killtime:
+*** [[http://www.lifehack.org/feed/][Lifehack]]                                                       :lifehack:
+*** [[https://gitlab.com/RagefireChasm/sc.atom?private_token=GsTyRR2QbgbgmkMtwQeC][薄爷的项目的 Gitlab 追踪]]                                      :gitlab:boye:
