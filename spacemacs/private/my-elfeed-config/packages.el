@@ -73,7 +73,8 @@ Each entry is either:
   (with-eval-after-load "elfeed"
     (define-key elfeed-search-mode-map (kbd "G") nil)
     (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-visit-eww)
-    (run-with-timer 60 (* 20 60) 'elfeed-update)))
+    (run-with-timer 60 (* 20 60) 'elfeed-update)
+    (add-hook 'kill-emacs-hook 'elfeed-db-compact)))
 (defun my-elfeed-config/post-init-elfeed-goodies ()
   (with-eval-after-load "elfeed-goodies"
     (setq elfeed-goodies/entry-pane-position 'bottom)
