@@ -53,7 +53,7 @@ values."
      chrome
      csv
      (elfeed :variables
-             rmh-elfeed-org-files '("~/.emacs.d/private/elfeed-config/feed.org"))
+             rmh-elfeed-org-files '("~/.emacs.d/private/my-elfeed-config/feed.org"))
      emacs-lisp
      gnus
      git
@@ -61,6 +61,7 @@ values."
      html
      javascript
      markdown
+     my-elfeed-config
      my-fold
      (my-fonts :variables
                cfs-use-system-type t)
@@ -336,12 +337,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; Settings {{{
   (setq browse-url-browser-function 'browse-url-chrome)
-  (setq company-dabbrev-ignore-case t)
-  (setq company-dabbrev-code-ignore-case t)
   (setq evil-escape-delay 0.5)
   (setq evil-escape-key-sequence "fd")
   (setq evil-search-wrap nil)
-  (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
   ;; }}}
 
   ;; Hooks {{{
@@ -358,23 +356,32 @@ you should place your code here."
   ;; }}}
 
   ;; Mode {{{
-  (global-company-mode)
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
   (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
   (add-to-list 'interpreter-mode-alist '("bash" . shell-script-mode))
-  ;; shadowsocks
-  (define-minor-mode
-    shadowsocks-proxy-mode
-    :global t
-    :init-value nil
-    :lighter " SS"
-    (if shadowsocks-proxy-mode
-        (setq url-gateway-method 'socks)
-      (setq url-gateway-method 'native)))
-  (define-global-minor-mode
-    global-shadowsocks-proxy-mode shadowsocks-proxy-mode shadowsocks-proxy-mode
-    :group 'shadowsocks-proxy)
-  (global-shadowsocks-proxy-mode)
+  ;; }}}
+
+  ;; Macro {{{
+  (fset 'done
+        "\C-x#")
+  (fset 'work
+        " lw")
+  ;; Remove all trailing whitespaces and duplicated lines.
+  (fset 'clean
+        " xdw xlu")
+  ;; }}}
+
+  ;; Keybindings {{{
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
+  (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
+  (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
+  (spacemacs/declare-prefix "o" "custom")
+  (evil-leader/set-key "od" 'clean)
+  (evil-leader/set-key "oo" 'done)
+  (evil-leader/set-key "ow" 'work)
+  (evil-leader/set-key "om" 'imenu)
   ;; }}}
 
   ;; Easy Templates {{{
@@ -404,36 +411,14 @@ you should place your code here."
   (add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?"))
   ;; }}}
 
-  ;; Macro {{{
-  (fset 'done
-        "\C-x#")
-  (fset 'work
-        " lw")
-  ;; Remove all trailing whitespaces and duplicated lines.
-  (fset 'clean
-        " xdw xlu")
-  ;; }}}
-
-  ;; Keybindings {{{
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
-  (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
-  (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
-  (spacemacs/declare-prefix "o" "custom")
-  (evil-leader/set-key "od" 'clean)
-  (evil-leader/set-key "oo" 'done)
-  (evil-leader/set-key "ow" 'work)
-  (evil-leader/set-key "om" 'imenu)
-  (spacemacs|add-toggle toggle-shadowsocks-proxy-mode
-    :status shadowsocks-proxy-mode
-    :on (global-shadowsocks-proxy-mode)
-    :off (global-shadowsocks-proxy-mode -1)
-    :documentation "Toggle shadowsocks proxy mode."
-    :evil-leader "op")
+  ;; company settings {{{
+  (setq company-dabbrev-ignore-case t)
+  (setq company-dabbrev-code-ignore-case t)
+  (global-company-mode)
   ;; }}}
 
   ;; epa settings for asc file {{{
+  (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
   (epa-file-name-regexp-update)
   ;; Minor mode for ASCII-armored gpg-encrypted files
   (define-minor-mode auto-encryption-armored-mode
@@ -447,6 +432,27 @@ you should place your code here."
     (if (symbol-value auto-encryption-armored-mode)
         (set (make-local-variable 'epa-armor) t)
       (kill-local-variable 'epa-armor)))
+  ;; }}}
+
+  ;; shadowsocks {{{
+  (define-minor-mode
+    shadowsocks-proxy-mode
+    :global t
+    :init-value nil
+    :lighter " SS"
+    (if shadowsocks-proxy-mode
+        (setq url-gateway-method 'socks)
+      (setq url-gateway-method 'native)))
+  (define-global-minor-mode
+    global-shadowsocks-proxy-mode shadowsocks-proxy-mode shadowsocks-proxy-mode
+    :group 'shadowsocks-proxy)
+  (global-shadowsocks-proxy-mode)
+  (spacemacs|add-toggle toggle-shadowsocks-proxy-mode
+    :status shadowsocks-proxy-mode
+    :on (global-shadowsocks-proxy-mode)
+    :off (global-shadowsocks-proxy-mode -1)
+    :documentation "Toggle shadowsocks proxy mode."
+    :evil-leader "op")
   ;; }}}
   )
 ;; }}}
