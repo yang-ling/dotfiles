@@ -353,6 +353,7 @@ you should place your code here."
                                         ("^[ \t]*>[ \t]*>.*$"
                                          (0 'info-quoted-name))))))
   (add-hook 'dos-mode-hook 'smartparens-mode)
+  (add-hook 'message-mode-hook 'smartparens-mode)
   ;; }}}
 
   ;; Mode {{{
