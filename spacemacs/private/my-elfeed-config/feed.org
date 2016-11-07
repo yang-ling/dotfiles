@@ -20,8 +20,8 @@
 *** [[http://aprogrammerslife.info/feed/][Programmer's Life]]                                       :proglife:pic:pl:
 *** [[http://xkcd.com/rss.xml][xkcd]]                                                           :xkcd:pic:
 *** [[http://feeds.feedburner.com/uclick/garfield][加菲猫]]                                                          :cat:pic:
-*** [[http://hdwo.net/feed][海盗湾中文网]]                                                      :movie:
-*** [[http://twocoldbackup.blogspot.com/feeds/posts/default][韩寒博客备份]]                                                        :han:
+*** [[http://hdwo.net/feed][海盗湾中文网]]                                                   :movie:hd:
+*** [[http://twocoldbackup.blogspot.com/feeds/posts/default][韩寒博客备份]]                                                   :han:blog:
 *** [[http://www.reddit.com/r/funny/.rss][Reddit Funny]]                                                  :reddit:rf:
 ** Kill Time                                                      :killtime:
 *** [[http://www.lifehack.org/feed/][Lifehack]]                                                    :lifehack:lh:
