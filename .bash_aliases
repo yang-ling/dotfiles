@@ -210,9 +210,10 @@ alias a2t="aria2c -u40k"
 alias a2proxy='aria2c -j5 -x5 -m5 -k1M -s5 --all-proxy=http://localhost:8123'
 
 # pacnew and pacsave file
-#alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)"'
 alias pacnewnohome='sudo find / -path /home/yangling -prune -o -regextype posix-extended -regex ".+\.pac(new|save|orig)" -print'
+# Update Mirrors
+alias updmr=reflector --sort score --verbose -c CN -f 5 -l 5 --save mirrorlist
 # Grep
 alias grp='grep -rniI --color --exclude-dir=.bzr --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=build --exclude-dir=dist --exclude-dir=target '
 alias findsource='find . -type d \( -path "**/*/target" -o -path "**/*/.git" -o -path "**/*/.svn" -o -path "**/*/build" \) -prune -o -type f '
