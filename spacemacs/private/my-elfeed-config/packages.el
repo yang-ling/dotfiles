@@ -60,19 +60,19 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun my-elfeed-config/post-init-elfeed ()
-  (defun elfeed-show-visit-eww ()
-    "Visit the current entry in your browser using `eww-browse-url'."
+  (defun elfeed-show-visit-w3m ()
+    "Visit the current entry in your browser using `w3m-browse-url'."
     (interactive)
     (let ((link (elfeed-entry-link elfeed-show-entry)))
       (when link
         (message "Sent to browser: %s" link)
-        (eww-browse-url link))))
+        (w3m-browse-url link))))
   (defun hook-elfeed-settings ()
     (setq elfeed-show-refresh-function 'elfeed-show-refresh--mail-style))
   (add-hook 'elfeed-search-mode-hook 'hook-elfeed-settings)
   (with-eval-after-load "elfeed"
     (define-key elfeed-search-mode-map (kbd "G") nil)
-    (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-visit-eww)
+    (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-visit-w3m)
     (evil-define-key 'evilified elfeed-show-mode-map "w" 'elfeed-show-next)
     (evil-define-key 'evilified elfeed-show-mode-map "r" 'elfeed-show-next)
     (run-with-timer 60 (* 20 60) 'elfeed-update)
