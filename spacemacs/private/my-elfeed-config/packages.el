@@ -73,8 +73,8 @@ Each entry is either:
   (with-eval-after-load "elfeed"
     (define-key elfeed-search-mode-map (kbd "G") nil)
     (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-visit-w3m)
-    (evil-define-key 'evilified elfeed-show-mode-map "w" 'elfeed-show-next)
-    (evil-define-key 'evilified elfeed-show-mode-map "r" 'elfeed-show-next)
+    (evil-define-key 'evilified elfeed-show-mode-map "m" 'elfeed-show-next)
+    (evil-define-key 'evilified elfeed-show-mode-map "i" 'elfeed-show-prev)
     (run-with-timer 60 (* 20 60) 'elfeed-update)
     (add-hook 'kill-emacs-hook 'elfeed-db-compact)))
 (defun my-elfeed-config/post-init-elfeed-goodies ()
