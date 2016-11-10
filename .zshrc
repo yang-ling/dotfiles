@@ -52,7 +52,6 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/plugins/
 # node: node-doc <api-name> will open api document by browser
 plugins=(colorize command-not-found common-aliases encode64 extract gem git git-extras git-prompt golang gradle history history-substring-search iwhois mvn meteor node npm python rsync sudo systemadmin systemd tmux tmuxinator aws)
 
-
 zstyle ':completion::complete:*' cache-path $HOME/.oh-my-zsh/cache/
 
 compctl -g "*.pdf *(-/)" printpdf
@@ -143,6 +142,21 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuch-config
+
+# percol zsh history
+function exists { which $1 &> /dev/null }
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
 
 # === Work Config ===
 [[ -s "$HOME/Work/work-config.sh" ]] && source "$HOME/Work/work-config.sh"
