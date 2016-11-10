@@ -7,6 +7,7 @@
 *** [[https://www.gitlab.com/atom.xml][Gitlab]]                                              :blog:tech:gitlab:gl:
 *** [[https://emacs-china.org/latest.rss][Emacs China]]                                               :emacs:tech:ec:
 *** [[http://www.reddit.com/r/emacs/.rss][Emacs]]                                                 :reddit:emacs:tech:
+*** [[http://planet.emacsen.org/atom.xml][Planet Emacsen]]                                            :emacs:pe:tech:
 *** [[http://www.daemonology.net/hn-daily/index.rss][HackerNews]]                                                 :news:tech:hn:
 *** [[http://www.chinagfw.org/feeds/posts/default][GFW]]                                                       :blog:gfw:tech:
 ** Later Browse                                                       :slow:
