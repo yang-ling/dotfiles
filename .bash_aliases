@@ -53,6 +53,25 @@ function toc()
     md-toc-filter $1 > /tmp/tocmd && mv -f /tmp/tocmd $1
 }
 
+function ppgrep() {
+    if [[ $1 == "" ]]; then
+        PERCOL=percol
+    else
+        PERCOL="percol --query $1"
+    fi
+    ps aux | eval $PERCOL | awk '{ print $2 }'
+}
+
+function ppkill() {
+    if [[ $1 =~ "^-" ]]; then
+        QUERY=""            # options only
+    else
+        QUERY=$1            # with a query
+        [[ $# > 0 ]] && shift
+    fi
+    ppgrep $QUERY | xargs kill $*
+}
+
 alias mypwd='pwd | xclip -i -selection c'
 alias cdp='cd `xclip -o`'
 
