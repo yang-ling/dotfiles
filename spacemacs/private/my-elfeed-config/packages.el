@@ -67,11 +67,17 @@ Each entry is either:
       (when link
         (message "Sent to browser: %s" link)
         (w3m-browse-url link))))
+  (defun elfeed-mark-all-as-read ()
+    "Mark all as read"
+    (interactive)
+    (mark-whole-buffer)
+    (elfeed-search-untag-all-unread))
   (defun hook-elfeed-settings ()
     (setq elfeed-show-refresh-function 'elfeed-show-refresh--mail-style))
   (add-hook 'elfeed-search-mode-hook 'hook-elfeed-settings)
   (with-eval-after-load "elfeed"
     (define-key elfeed-search-mode-map (kbd "G") nil)
+    (define-key elfeed-search-mode-map (kbd "R") 'elfeed-mark-all-as-read)
     (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-visit-w3m)
     (evil-define-key 'evilified elfeed-show-mode-map "m" 'elfeed-show-next)
     (evil-define-key 'evilified elfeed-show-mode-map "i" 'elfeed-show-prev)
