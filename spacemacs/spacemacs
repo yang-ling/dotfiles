@@ -437,6 +437,18 @@ you should place your code here."
         (set (make-local-variable 'epa-armor) t)
       (kill-local-variable 'epa-armor)))
   ;; }}}
+
+  ;; Gnus {{{
+  ;; Get email, and store in nnml
+  (setq gnus-secondary-select-methods
+        '(
+          (nnimap "gmail"
+                  (nnimap-address
+                   "imap.gmail.com")
+                  (nnimap-server-port "imaps")
+                  (nnimap-stream ssl))
+          ))
+  ;; }}}
   )
 ;; }}}
 (custom-set-variables
