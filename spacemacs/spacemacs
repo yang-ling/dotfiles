@@ -388,7 +388,8 @@ you should place your code here."
   (evil-leader/set-key "ow" 'work)
   (evil-leader/set-key "om" 'imenu)
   (evil-leader/set-key "oy" 'youdao-dictionary-search-at-point+)
-  (evil-leader/set-key "ot" 'org-toggle-link-display)
+  (evil-leader/set-key "os" 'youdao-dictionary-play-voice-at-point)
+  (evil-leader/set-key "ol" 'org-toggle-link-display)
   ;; }}}
 
   ;; Easy Templates {{{
