@@ -386,6 +386,7 @@ you should place your code here."
   (evil-leader/set-key "oo" 'done)
   (evil-leader/set-key "ow" 'work)
   (evil-leader/set-key "om" 'imenu)
+  (evil-leader/set-key "oy" 'youdao-dictionary-search-at-point+)
   ;; }}}
 
   ;; Easy Templates {{{
