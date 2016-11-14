@@ -354,6 +354,7 @@ you should place your code here."
   ;; Default
   (prefer-coding-system 'utf-8)
   ;; }}}
+
   ;; Hooks {{{
   (add-hook 'message-mode-hook
             (lambda ()
@@ -462,6 +463,11 @@ you should place your code here."
   (setq gnus-save-newsrc-file nil
         gnus-read-newsrc-file nil
         gnus-always-read-dribble-file t)
+  (defun set-gnus-keys ()
+    (evil-make-overriding-map gnus-group-mode-map)
+    (evil-make-overriding-map gnus-summary-mode-map)
+    (evil-make-overriding-map gnus-article-mode-map))
+  (add-hook 'gnus-setup-news-hook 'set-gnus-keys)
   ;; }}}
   )
 ;; }}}
