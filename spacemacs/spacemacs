@@ -346,6 +346,14 @@ you should place your code here."
         evil-search-wrap nil)
   ;; }}}
 
+  ;; Encodings {{{
+  ;; Chinese
+  (prefer-coding-system 'cp936)
+  ;; Japanese
+  (prefer-coding-system 'cp932)
+  ;; Default
+  (prefer-coding-system 'utf-8)
+  ;; }}}
   ;; Hooks {{{
   (add-hook 'message-mode-hook
             (lambda ()
