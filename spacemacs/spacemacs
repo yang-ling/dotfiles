@@ -466,7 +466,9 @@ you should place your code here."
   (defun set-gnus-keys ()
     (evil-make-overriding-map gnus-group-mode-map)
     (evil-make-overriding-map gnus-summary-mode-map)
-    (evil-make-overriding-map gnus-article-mode-map))
+    (evil-make-overriding-map gnus-article-mode-map)
+    (gnus-define-keys gnus-summary-mode-map
+      "u" gnus-summary-put-mark-as-unread))
   (add-hook 'gnus-setup-news-hook 'set-gnus-keys)
   ;; }}}
   )
