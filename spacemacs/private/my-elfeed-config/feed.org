@@ -11,6 +11,7 @@
 *** [[http://blog.binchen.org/rss.xml][Chen's blog]]                                        :blog:emacs:chen:tech:
 *** [[http://www.daemonology.net/hn-daily/index.rss][HackerNews]]                                                 :news:tech:hn:
 *** [[http://www.chinagfw.org/feeds/posts/default][GFW]]                                                       :blog:gfw:tech:
+*** [[http://lwn.net/headlines/rss][LWN]]                                                       :tech:lwn:news:
 ** Later Browse                                                       :slow:
 *** [[http://www.zhihu.com/rss][知乎]]                                                           :zhihu:zh:
 *** [[http://hongzhang0823.wix.com/ielts7/feed.xml][雅思]]                                                      :english:study:
