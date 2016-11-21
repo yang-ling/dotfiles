@@ -346,6 +346,17 @@ you should place your code here."
         evil-escape-delay 0.5
         evil-escape-key-sequence "fd"
         evil-search-wrap nil)
+
+  (defun set-highlight-currentline ()
+    (if (display-graphic-p)
+        (progn
+          ;; if graphic
+          (spacemacs/toggle-highlight-current-line-globally-on))
+      ;; else
+      (spacemacs/toggle-highlight-current-line-globally-off)))
+  (set-highlight-currentline)
+
+  (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
   ;; }}}
 
   ;; Encodings {{{
@@ -369,10 +380,12 @@ you should place your code here."
                                          (0 'info-quoted-name))))))
   (add-hook 'dos-mode-hook 'smartparens-mode)
   (add-hook 'message-mode-hook 'smartparens-mode)
+  (add-hook 'server-switch-hook 'set-highlight-currentline)
   ;; }}}
 
   ;; Mode {{{
   (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
+  (add-to-list 'auto-mode-alist '("\\.install\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
   (add-to-list 'interpreter-mode-alist '("bash" . shell-script-mode))
   ;; }}}
@@ -385,6 +398,10 @@ you should place your code here."
   ;; Remove all trailing whitespaces and duplicated lines.
   (fset 'clean
         " xdw xlu")
+  (defun close-server ()
+    (interactive)
+    (spacemacs/toggle-highlight-current-line-globally-on)
+    (execute-kbd-macro 'done))
   ;; }}}
 
   ;; Keybindings {{{
@@ -397,7 +414,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
   (spacemacs/declare-prefix "o" "custom")
   (evil-leader/set-key "od" 'clean)
-  (evil-leader/set-key "oo" 'done)
+  (evil-leader/set-key "oo" 'close-server)
   (evil-leader/set-key "ow" 'work)
   (evil-leader/set-key "om" 'imenu)
   (evil-leader/set-key "oy" 'youdao-dictionary-search-at-point+)
