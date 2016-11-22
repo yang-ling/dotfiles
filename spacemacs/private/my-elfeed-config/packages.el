@@ -72,17 +72,32 @@ Each entry is either:
     (interactive)
     (mark-whole-buffer)
     (elfeed-search-untag-all-unread))
+  (defun elfeed-toggle-star ()
+    "Toggle star"
+    (interactive)
+    (elfeed-search-toggle-all 'starred))
+
+  ;; face for starred articles
+  (defface elfeed-search-starred-title-face
+    '((t :foreground "#f77"))
+    "Marks a starred Elfeed entry.")
+
   (defun hook-elfeed-settings ()
     (setq elfeed-show-refresh-function 'elfeed-show-refresh--mail-style))
   (add-hook 'elfeed-search-mode-hook 'hook-elfeed-settings)
   (with-eval-after-load "elfeed"
     (define-key elfeed-search-mode-map (kbd "G") nil)
     (define-key elfeed-search-mode-map (kbd "R") 'elfeed-mark-all-as-read)
+    (define-key elfeed-search-mode-map (kbd "*") 'elfeed-toggle-star)
     (define-key elfeed-show-mode-map (kbd "B") 'elfeed-show-visit-w3m)
     (evil-define-key 'evilified elfeed-show-mode-map "m" 'elfeed-show-next)
     (evil-define-key 'evilified elfeed-show-mode-map "i" 'elfeed-show-prev)
+
     (run-with-timer 60 (* 20 60) 'elfeed-update)
-    (add-hook 'kill-emacs-hook 'elfeed-db-compact)))
+
+    (add-hook 'kill-emacs-hook 'elfeed-db-compact)
+
+    (push '(starred elfeed-search-starred-title-face) elfeed-search-face-alist)))
 (defun my-elfeed-config/post-init-elfeed-goodies ()
   (with-eval-after-load "elfeed-goodies"
     (setq elfeed-goodies/entry-pane-position 'bottom)
