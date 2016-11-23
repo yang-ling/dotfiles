@@ -4,7 +4,7 @@
 *** [[http://www.v2ex.com/index.xml][v2ex]]                                                                 :v2:
 *** [[http://www.williamlong.info/rss.xml][月光博客]]                                                 :blog:moon:tech:
 *** [[http://blog.lilydjwg.me/feed][依云]]                                                       :blog:tech:yi:
-*** [[https://www.gitlab.com/atom.xml][Gitlab]]                                              :blog:tech:gitlab:gl:
+*** [[https://about.gitlab.com/atom.xml][Gitlab]]                                              :blog:tech:gitlab:gl:
 *** [[https://emacs-china.org/latest.rss][Emacs China]]                                               :emacs:tech:ec:
 *** [[http://www.reddit.com/r/emacs/.rss][Emacs]]                                                 :reddit:emacs:tech:
 *** [[http://planet.emacsen.org/atom.xml][Planet Emacsen]]                                            :emacs:pe:tech:
