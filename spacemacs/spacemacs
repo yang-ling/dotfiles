@@ -490,8 +490,8 @@ you should place your code here."
     (evil-make-overriding-map gnus-group-mode-map)
     (evil-make-overriding-map gnus-summary-mode-map)
     (evil-make-overriding-map gnus-article-mode-map)
-    (gnus-define-keys gnus-summary-mode-map
-      "u" gnus-summary-put-mark-as-unread)
+    (gnus-define-keys gnus-summary-mode-map "u" gnus-summary-put-mark-as-unread)
+    (gnus-define-keys gnus-article-mode-map "b" gnus-article-browse-html-article)
     gnus-keep-backlog 20)
   (add-hook 'gnus-setup-news-hook 'set-gnus-keys)
   ;; }}}
