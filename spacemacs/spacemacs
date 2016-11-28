@@ -66,6 +66,7 @@ values."
      (my-fonts :variables
                cfs-use-system-type t)
      my-image
+     my-mail
      my-misc
      my-network
      pandoc
