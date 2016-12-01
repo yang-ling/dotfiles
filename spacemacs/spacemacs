@@ -348,14 +348,14 @@ you should place your code here."
         evil-escape-key-sequence "fd"
         evil-search-wrap nil)
 
-  (defun set-highlight-currentline ()
-    (if (display-graphic-p)
-        (progn
-          ;; if graphic
-          (spacemacs/toggle-highlight-current-line-globally-on))
-      ;; else
-      (spacemacs/toggle-highlight-current-line-globally-off)))
-  (set-highlight-currentline)
+  ;; (defun set-highlight-currentline ()
+  ;;   (if (display-graphic-p)
+  ;;       (progn
+  ;;         ;; if graphic
+  ;;         (spacemacs/toggle-highlight-current-line-globally-on))
+  ;;     ;; else
+  ;;     (spacemacs/toggle-highlight-current-line-globally-off)))
+  ;; (set-highlight-currentline)
 
   (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
   ;; }}}
@@ -381,7 +381,7 @@ you should place your code here."
                                          (0 'info-quoted-name))))))
   (add-hook 'dos-mode-hook 'smartparens-mode)
   (add-hook 'message-mode-hook 'smartparens-mode)
-  (add-hook 'server-switch-hook 'set-highlight-currentline)
+  ;; (add-hook 'server-switch-hook 'set-highlight-currentline)
   ;; }}}
 
   ;; Mode {{{
@@ -415,7 +415,8 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
   (spacemacs/declare-prefix "o" "custom")
   (evil-leader/set-key "od" 'clean)
-  (evil-leader/set-key "oo" 'close-server)
+  ;; (evil-leader/set-key "oo" 'close-server)
+  (evil-leader/set-key "oo" 'done)
   (evil-leader/set-key "ow" 'work)
   (evil-leader/set-key "om" 'imenu)
   (evil-leader/set-key "oy" 'youdao-dictionary-search-at-point+)
@@ -495,6 +496,7 @@ you should place your code here."
     (gnus-define-keys gnus-article-mode-map "b" gnus-article-browse-html-article)
     gnus-keep-backlog 20)
   (add-hook 'gnus-setup-news-hook 'set-gnus-keys)
+
   ;; }}}
   )
 ;; }}}
