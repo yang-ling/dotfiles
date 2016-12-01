@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst my-misc-packages
-  '(vlf)
+  '(vlf
+    editorconfig)
   "The list of Lisp packages required by the my-misc layer.
 
 Each entry is either:
@@ -60,5 +61,7 @@ Each entry is either:
 
 (defun my-misc/init-vlf ()
   (use-package vlf))
+(defun my-misc/init-editorconfig ()
+  (use-package editorconfig))
 
 ;;; packages.el ends here
