@@ -389,6 +389,7 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.install\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
   (add-to-list 'interpreter-mode-alist '("bash" . shell-script-mode))
+
   ;; }}}
 
   ;; Macro {{{

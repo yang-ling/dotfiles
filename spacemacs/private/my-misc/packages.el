@@ -62,6 +62,9 @@ Each entry is either:
 (defun my-misc/init-vlf ()
   (use-package vlf))
 (defun my-misc/init-editorconfig ()
-  (use-package editorconfig))
+  (use-package editorconfig
+    :ensure t
+    :config
+    (editorconfig-mode 1)))
 
 ;;; packages.el ends here
