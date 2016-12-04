@@ -381,6 +381,7 @@ you should place your code here."
                                          (0 'info-quoted-name))))))
   (add-hook 'dos-mode-hook 'smartparens-mode)
   (add-hook 'message-mode-hook 'smartparens-mode)
+  (add-hook 'editorconfig-conf-mode-hook 'smartparens-mode)
   ;; (add-hook 'server-switch-hook 'set-highlight-currentline)
   ;; }}}
 
@@ -395,8 +396,6 @@ you should place your code here."
   ;; Macro {{{
   (fset 'done
         "\C-x#")
-  (fset 'work
-        " lw")
   ;; Remove all trailing whitespaces and duplicated lines.
   (fset 'clean
         " xdw xlu")
@@ -415,14 +414,14 @@ you should place your code here."
   (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
   (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
   (spacemacs/declare-prefix "o" "custom")
-  (evil-leader/set-key "od" 'clean)
+  (spacemacs/declare-prefix "mo" "major custom")
   ;; (evil-leader/set-key "oo" 'close-server)
-  (evil-leader/set-key "oo" 'done)
-  (evil-leader/set-key "ow" 'work)
-  (evil-leader/set-key "om" 'imenu)
-  (evil-leader/set-key "oy" 'youdao-dictionary-search-at-point+)
-  (evil-leader/set-key "os" 'youdao-dictionary-play-voice-at-point)
-  (evil-leader/set-key "ol" 'org-toggle-link-display)
+  (spacemacs/set-leader-keys "oo" 'done
+    "od" 'clean
+    "om" 'imenu
+    "oy" 'youdao-dictionary-search-at-point+
+    "os" 'youdao-dictionary-play-voice-at-point
+    "ol" 'org-toggle-link-display)
   ;; }}}
 
   ;; Easy Templates {{{
