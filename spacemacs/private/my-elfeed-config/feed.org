@@ -19,7 +19,7 @@
 *** [[http://eller86.hatenablog.jp/feed][Toda]]                                                     :blog:tech:toda:
 ** Lunch Time                                                    :lunchtime:
 *** [[http://onehd.herokuapp.com/][一个 韩寒]]                                                       :one:han:
-*** [[http://www.comicsyndicate.org/Feed/Dilbert][Dilbert]]                                                  :dilbert:pic:di:
+*** [[http://comicfeeds.chrisbenard.net/view/dilbert/default][Dilbert]]                                                  :dilbert:pic:di:
 *** [[http://aprogrammerslife.info/feed/][Programmer's Life]]                                       :proglife:pic:pl:
 *** [[http://xkcd.com/rss.xml][xkcd]]                                                           :xkcd:pic:
 *** [[http://feeds.feedburner.com/uclick/garfield][加菲猫]]                                                          :cat:pic:
