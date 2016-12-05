@@ -357,7 +357,9 @@ you should place your code here."
   ;;     (spacemacs/toggle-highlight-current-line-globally-off)))
   ;; (set-highlight-currentline)
 
-  (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
+  (with-eval-after-load "tramp"
+    (setenv "SHELL" "/bin/bash")
+    (setenv "ESHELL" "/bin/bash"))
   ;; }}}
 
   ;; Encodings {{{
