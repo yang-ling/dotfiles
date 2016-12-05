@@ -31,7 +31,8 @@
 
 (defconst my-misc-packages
   '(vlf
-    editorconfig)
+     editorconfig
+     logview)
   "The list of Lisp packages required by the my-misc layer.
 
 Each entry is either:
@@ -66,5 +67,7 @@ Each entry is either:
     :ensure t
     :config
     (editorconfig-mode 1)))
+(defun my-misc/init-logview ()
+  (use-package logview))
 
 ;;; packages.el ends here
