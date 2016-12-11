@@ -2,6 +2,8 @@
   always_split_with_profile = True
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
   inactive_color_offset = 0.96
+  title_font = DejaVu Sans Mono for Powerline 11
+  title_use_system_font = False
 [keybindings]
   layout_launcher = <Primary><Alt>l
 [layouts]
@@ -18,8 +20,7 @@
   [[default]]
     background_image = None
     font = DejaVu Sans Mono for Powerline 12
-    use_system_font = False
   [[yangling]]
     background_image = None
-    font = DejaVu Sans Mono for Powerline 11
+    font = DejaVu Sans Mono for Powerline 13
     use_system_font = False
