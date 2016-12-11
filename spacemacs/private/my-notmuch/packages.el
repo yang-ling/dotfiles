@@ -29,8 +29,7 @@
 ;;; Code:
 
 (defconst my-notmuch-packages
-  '(notmuch
-     helm-notmuch)
+  '(notmuch)
   "The list of Lisp packages required by the my-notmuch layer.
 
 Each entry is either:
@@ -59,7 +58,4 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 (defun my-notmuch/init-notmuch ()
   (use-package notmuch))
-(defun my-notmuch/init-helm-notmuch ()
-  (use-package helm-notmuch))
-
 ;;; packages.el ends here
