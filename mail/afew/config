@@ -1,0 +1,9 @@
+# -*- mode: conf-unix; -*-
+
+[SpamFilter]
+spam_tag = spam
+[KillThreadsFilter]
+[ListMailsFilter]
+[ArchiveSentMailsFilter]
+sent_tag = sent
+[InboxFilter]
