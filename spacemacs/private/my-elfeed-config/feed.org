@@ -26,6 +26,7 @@
 *** [[http://hdwo.net/feed][海盗湾中文网]]                                                   :movie:hd:
 *** [[http://twocoldbackup.blogspot.com/feeds/posts/default][韩寒博客备份]]                                                   :han:blog:
 *** [[http://www.reddit.com/r/funny/.rss][Reddit Funny]]                                                  :reddit:rf:
+*** [[http://www.feeddiy.com/rss/AJ3uQr][煎蛋妹子图]]                                                  :pic:girl:mz:
 ** Kill Time                                                      :killtime:
 *** [[http://www.lifehack.org/feed/][Lifehack]]                                                    :lifehack:lh:
 *** [[https://gitlab.com/RagefireChasm/sc.atom?private_token=GsTyRR2QbgbgmkMtwQeC][薄爷的项目的 Gitlab 追踪]]                                      :gitlab:boye:
