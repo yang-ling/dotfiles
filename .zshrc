@@ -50,7 +50,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Usage
 # node: node-doc <api-name> will open api document by browser
-plugins=(colorize command-not-found common-aliases encode64 extract gem git git-extras git-prompt golang gradle history history-substring-search iwhois mvn meteor node npm python rsync sudo systemadmin systemd tmux tmuxinator aws)
+plugins=(colorize command-not-found common-aliases encode64 extract gem git git-extras git-prompt golang gradle history history-substring-search iwhois mvn node npm python rsync sudo systemadmin systemd tmux tmuxinator aws)
 
 zstyle ':completion::complete:*' cache-path $HOME/.oh-my-zsh/cache/
 
@@ -142,6 +142,7 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuch-config
+export MAILDIR=~/Mails
 
 # percol zsh history
 function exists { which $1 &> /dev/null }
