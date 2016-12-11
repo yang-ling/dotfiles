@@ -553,7 +553,7 @@ you should place your code here."
   ;; }}}
 
   ;; notmuch {{{
-  (add-to-list 'notmuch-saved-searches '(:name "hacker-rank" :query "tag:hacker-rank" :key "hr"))
+  (add-to-list 'notmuch-saved-searches '(:name "my-unread" :query "tag:unread and not tag:less-interested" :key "m"))
   ;; }}}
   )
 ;; }}}

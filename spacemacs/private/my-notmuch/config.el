@@ -24,6 +24,3 @@
         (widget-forward 1))
       (if (eq (widget-type (widget-at)) 'editable-field)
         (beginning-of-line)))))
-
-(with-eval-after-load "notmuch"
-  (run-with-timer 60 (* 60) 'notmuch-refresh-this-buffer))
