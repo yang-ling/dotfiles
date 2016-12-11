@@ -1,3 +1,4 @@
+#  -*- mode: conf-unix; -*-
 # .notmuch-config - Configuration file for the notmuch mail system
 #
 # For more information about notmuch, see http://notmuchmail.org
@@ -31,9 +32,9 @@ path=/home/yangling/Mails
 #
 
 [user]
-name=Yang Ling
+name=YANG Ling
 primary_email=yangling1984@gmail.com
-other_email=yanglingit@163.com;yuloo911@163.com;
+other_email=yanglingit@163.com;yuloo911@163.com;yanglingit@outlook.com
 
 # Configuration for "notmuch new"
 #
@@ -51,7 +52,7 @@ other_email=yanglingit@163.com;yuloo911@163.com;
 #
 
 [new]
-tags=unread;inbox;
+tags=unread;inbox;new;
 ignore=
 
 # Search configuration
