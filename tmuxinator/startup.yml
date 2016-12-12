@@ -20,13 +20,13 @@ tmux_command: byobu
 
 windows:
   - sogou-and-mpd:
-    layout: even-horizontal
-    panes:
-      - left:
-        - sleep 30
-        - /usr/bin/sogou-autostart
-      - right:
-        - /usr/bin/mpd --no-daemon
+      layout: even-horizontal
+      panes:
+        - left:
+          - sleep 30
+          - /usr/bin/sogou-autostart
+        - right:
+          - /usr/bin/mpd --no-daemon
   - status:
     - glances
   - wallpaper:
