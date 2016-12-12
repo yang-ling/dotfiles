@@ -349,9 +349,10 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; Settings {{{
   (setq browse-url-browser-function 'browse-url-chrome
-        evil-escape-delay 0.5
-        evil-escape-key-sequence "fd"
-        evil-search-wrap nil)
+    evil-escape-delay 0.5
+    evil-escape-key-sequence "fd"
+    evil-search-wrap nil
+    org-html-validation-link nil)
 
   ;; (defun set-highlight-currentline ()
   ;;   (if (display-graphic-p)
