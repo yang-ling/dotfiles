@@ -77,8 +77,6 @@ alias cdp='cd `xclip -o`'
 
 alias aes256='gpg -c -v --cipher-algo AES256'
 
-alias xo='xdg-open'
-
 alias tjoinp='tmux join-pane -h -s :. -t :-1'
 alias msn='tmuxinator start normal'
 alias mss='tmuxinator start startup'
