@@ -429,6 +429,8 @@ you should place your code here."
   ;; (evil-leader/set-key "oo" 'close-server)
   (spacemacs/set-leader-keys "oo" 'done
     "od" 'clean
+    "oj" 'justify-current-line
+    "oJ" 'just-one-space
     "om" 'imenu
     "oy" 'youdao-dictionary-search-at-point+
     "os" 'youdao-dictionary-play-voice-at-point
