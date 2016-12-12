@@ -19,21 +19,26 @@ root: ~/
 tmux_command: byobu
 
 windows:
-  #- Sync-Mails:
-      #layout: even-horizontal
-      #panes:
-        #- left:
-          #- /usr/local/bin/sync-mails.sh 1m 9999
-        #- right:
-          #- cd ~/.sync-mail-log/
-          #- sleep 5
-          #- tail -f $(ls -t | head -1)
-  - sogou:
-    - sleep 30
-    - /usr/bin/sogou-autostart
+  - sogou-and-mpd:
+    layout: even-horizontal
+    panes:
+      - left:
+        - sleep 30
+        - /usr/bin/sogou-autostart
+      - right:
+        - /usr/bin/mpd --no-daemon
   - status:
     - glances
   - wallpaper:
     - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
   - Emacs:
     - export LC_CTYPE=zh_CN.UTF-8
+  #- Sync-Mails:
+    #layout: even-horizontal
+    #panes:
+      #- left:
+        #- /usr/local/bin/sync-mails.sh 1m 9999
+      #- right:
+        #- cd ~/.sync-mail-log/
+        #- sleep 5
+        #- tail -f $(ls -t | head -1)
