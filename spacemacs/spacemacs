@@ -56,7 +56,7 @@ values."
          rmh-elfeed-org-files '("~/.emacs.d/private/my-elfeed-config/feed.org"))
        emacs-lisp
        git
-       go
+       (go :variables go-tab-width 4)
        helm
        html
        javascript
