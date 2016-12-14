@@ -14,10 +14,7 @@
         t))
 (defun my-copy-file-path (choice)
   "Copy the current buffer's file path or dired path to `kill-ring'.
-Result is full path.
-If `universal-argument' is called first, copy only the dir path.
-URL `http://ergoemacs.org/emacs/emacs_copy_file_path.html'
-Version 2016-07-17"
+Result is full path. "
   (interactive "c(f)ull file path or (d)irectory path or just file (n)ame:")
   (let ((-fpath
           (if (equal major-mode 'dired-mode)
