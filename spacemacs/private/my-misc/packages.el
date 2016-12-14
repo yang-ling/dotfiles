@@ -16,7 +16,6 @@
 ;;
 ;;   SPC h SPC layers RET
 ;;
-;;
 ;; Briefly, each package to be installed or configured by this layer should be
 ;; added to `my-misc-packages'. Then, for each package PACKAGE:
 ;;
@@ -33,6 +32,7 @@
   '(vlf
      editorconfig
      logview)
+
   "The list of Lisp packages required by the my-misc layer.
 
 Each entry is either:
