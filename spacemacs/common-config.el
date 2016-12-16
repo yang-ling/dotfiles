@@ -39,6 +39,9 @@
 (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
 (add-to-list 'auto-mode-alist '("\\.install\\'" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
+(add-to-list 'auto-mode-alist '("\\.timer$" . conf-unix-mode))
+(add-to-list 'auto-mode-alist '("\\.service$" . conf-unix-mode))
+
 (add-to-list 'interpreter-mode-alist '("bash" . shell-script-mode))
 ;; }}}
 ;; company settings {{{
