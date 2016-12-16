@@ -30,9 +30,8 @@
 
 (defconst my-misc-packages
   '(vlf
-     editorconfig
-       logview
-       srefactor)
+    editorconfig
+    logview)
 
   "The list of Lisp packages required by the my-misc layer.
 
@@ -70,7 +69,5 @@ Each entry is either:
     (editorconfig-mode 1)))
 (defun my-misc/init-logview ()
   (use-package logview))
-(defun my-misc/init-srefactor ()
-    (use-package srefactor))
 
 ;;; packages.el ends here

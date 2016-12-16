@@ -66,7 +66,6 @@ values."
      (my-fonts :variables
                cfs-use-system-type t)
      my-image
-     my-misc
      my-network
      my-notmuch
      pandoc
@@ -79,11 +78,12 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     shell-scripts
      spell-checking
      syntax-checking
-     version-control
      windows-scripts
      yaml
+     my-misc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -93,7 +93,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(chinese-pyim chinese-wbim pangu-spacing)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -348,220 +348,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;; Settings {{{
-  (setq browse-url-browser-function 'browse-url-chrome
-        evil-escape-delay 0.5
-        evil-escape-key-sequence "fd"
-        evil-search-wrap nil)
-
-  ;; (defun set-highlight-currentline ()
-  ;;   (if (display-graphic-p)
-  ;;       (progn
-  ;;         ;; if graphic
-  ;;         (spacemacs/toggle-highlight-current-line-globally-on))
-  ;;     ;; else
-  ;;     (spacemacs/toggle-highlight-current-line-globally-off)))
-  ;; (set-highlight-currentline)
-
-  (with-eval-after-load "tramp"
-    (setenv "SHELL" "/bin/bash")
-    (setenv "ESHELL" "/bin/bash"))
-  (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
-  (spacemacs/toggle-visual-line-navigation-on)
-  (global-visual-line-mode)
-  ;; }}}
-
-  ;; Encodings {{{
-  ;; Chinese
-  (prefer-coding-system 'cp936)
-  ;; Japanese
-  (prefer-coding-system 'cp932)
-  ;; Default
-  (prefer-coding-system 'utf-8)
-  ;; }}}
-
-  ;; Hooks {{{
-  (add-hook 'message-mode-hook
-            (lambda ()
-              (font-lock-add-keywords nil
-                                      '(("^[ \t]*>[ \t]*>[ \t]*>[ \t]*>.*$"
-                                         (0 'markdown-blockquote-face))
-                                        ("^[ \t]*>[ \t]*>[ \t]*>.*$"
-                                         (0 'info-double-quoted-name))
-                                        ("^[ \t]*>[ \t]*>.*$"
-                                         (0 'info-quoted-name))))))
-  (add-hook 'dos-mode-hook 'smartparens-mode)
-  (add-hook 'message-mode-hook 'smartparens-mode)
-  (add-hook 'editorconfig-conf-mode-hook 'smartparens-mode)
-  (add-hook 'conf-mode-hook 'smartparens-mode)
-  (add-hook 'emacs-lisp-mode-hook '(editorconfig-mode nil))
-  ;; (add-hook 'server-switch-hook 'set-highlight-currentline)
-  ;; }}}
-
-  ;; Mode {{{
-  (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
-  (add-to-list 'auto-mode-alist '("\\.install\\'" . shell-script-mode))
-  (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
-  (add-to-list 'interpreter-mode-alist '("bash" . shell-script-mode))
-
-  ;; }}}
-
-  ;; Macro {{{
-  (fset 'done
-        "\C-x#")
-  ;; Remove all trailing whitespaces and duplicated lines.
-  (fset 'clean
-        " xdw xlu")
-  (defun close-server ()
-    (interactive)
-    (spacemacs/toggle-highlight-current-line-globally-on)
-    (execute-kbd-macro 'done))
-  ;; }}}
-
-  ;; Keybindings {{{
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
-  (define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
-  (define-key evil-normal-state-map (kbd "0") 'evil-beginning-of-visual-line)
-  (define-key evil-visual-state-map (kbd "Q") 'fill-paragraph)
-  (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
-  (spacemacs/declare-prefix "o" "custom")
-  (spacemacs/declare-prefix "mo" "major custom")
-  ;; (evil-leader/set-key "oo" 'close-server)
-  (spacemacs/set-leader-keys "oo" 'done
-    "ob" 'bookmark-jump
-    "oB" 'bookmark-set
-    "oc" 'my-copy-file-path
-    "od" 'clean
-    "oJ" 'justify-current-line
-    "oj" 'just-one-space
-    "om" 'imenu
-    "oy" 'youdao-dictionary-search-at-point+
-    "os" 'youdao-dictionary-play-voice-at-point
-    "ol" 'org-toggle-link-display)
-  ;; }}}
-
-  ;; Easy Templates {{{
-  ;; http://orgmode.org/manual/Easy-Templates.html
-  ;; s	#+BEGIN_SRC ... #+END_SRC
-  ;; e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
-  ;; q	#+BEGIN_QUOTE ... #+END_QUOTE
-  ;; v	#+BEGIN_VERSE ... #+END_VERSE
-  ;; c	#+BEGIN_CENTER ... #+END_CENTER
-  ;; l	#+BEGIN_LaTeX ... #+END_LaTeX
-  ;; L	#+LaTeX:
-  ;; h	#+BEGIN_HTML ... #+END_HTML
-  ;; H	#+HTML:
-  ;; a	#+BEGIN_ASCII ... #+END_ASCII
-  ;; A	#+ASCII:
-  ;; i	#+INDEX: line
-  ;; I	#+INCLUDE: line
-  ;;
-  ;; When Emacs first visits an Org file, the global state is set to OVERVIEW, i.e., only the
-  ;; top level headlines are visible . This can be configured through the variable org-startup-
-  ;; folded, or on a per-file basis by adding one of the following lines anywhere in the buffer:
-  ;; #+STARTUP: overview
-  ;; #+STARTUP: content
-  ;; #+STARTUP: showall
-  ;; #+STARTUP: showeverything
-  (add-to-list 'org-structure-template-alist '("n" "#+NAME: ?"))
-  (add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?"))
-  ;; }}}
-
-  ;; company settings {{{
-  (setq company-dabbrev-ignore-case t)
-  (setq company-dabbrev-code-ignore-case t)
-  (global-company-mode)
-  ;; }}}
-
-  ;; epa settings for asc file {{{
-  (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
-  (epa-file-name-regexp-update)
-  ;; Minor mode for ASCII-armored gpg-encrypted files
-  (define-minor-mode auto-encryption-armored-mode
-    "Save files in encrypted, ASCII-armored format"
-    ;; The initial value.
-    nil
-    ;; The indicator for the mode line.
-    " Encrypted,Armored"
-    ;; The minor mode bindings.
-    nil
-    (if (symbol-value auto-encryption-armored-mode)
-        (set (make-local-variable 'epa-armor) t)
-      (kill-local-variable 'epa-armor)))
-  ;; }}}
-
-  ;; Gnus {{{
-  ;; Get email, and store in nnml
-  ;; (setq gnus-secondary-select-methods
-  ;;       '((nnimap "gmail"
-  ;;                 (nnimap-address "imap.gmail.com")
-  ;;                 (nnimap-server-port "imaps")
-  ;;                 (nnimap-stream ssl))
-  ;;         (nnimap "outlook"
-  ;;                 (nnimap-address "imap-mail.outlook.com")
-  ;;                 (nnimap-server-port "imaps")
-  ;;                 (nnimap-stream ssl))))
-  ;; (setq gnus-save-newsrc-file nil
-  ;;       gnus-read-newsrc-file nil
-  ;;       gnus-always-read-dribble-file t)
-  ;; (defun set-gnus-keys ()
-  ;;   (evil-make-overriding-map gnus-group-mode-map)
-  ;;   (evil-make-overriding-map gnus-summary-mode-map)
-  ;;   (evil-make-overriding-map gnus-article-mode-map)
-  ;;   (gnus-define-keys gnus-summary-mode-map "u" gnus-summary-put-mark-as-unread)
-  ;;   (gnus-define-keys gnus-article-mode-map "b" gnus-article-browse-html-article)
-  ;;   gnus-keep-backlog 20)
-  ;; (add-hook 'gnus-setup-news-hook 'set-gnus-keys)
-
-  ;; }}}
-
-  ;; mu4e {{{
-  ;;; Set up some common mu4e variables
-  ;; (setq mu4e-maildir "~/Mails"
-  ;;   mu4e-get-mail-command "true"
-  ;;   mu4e-update-interval 60
-  ;;   mu4e-compose-signature-auto-include nil
-  ;;   mu4e-view-show-images t
-  ;;   mu4e-view-show-addresses t
-  ;;   mu4e-enable-notifications t
-  ;;   mu4e-enable-mode-line t
-  ;;   mu4e-msg2pdf "/usr/bin/msg2pdf")
-
-  ;; (with-eval-after-load 'mu4e-alert
-  ;;   ;; Enable Desktop notifications
-  ;;   (mu4e-alert-set-default-style 'notifications)) ; For linux
-  ;; (add-hook 'mu4e-view-mode-hook
-  ;;   (lambda()
-  ;;     ;; try to emulate some of the eww key-bindings
-  ;;     (local-set-key (kbd "<tab>") 'shr-next-link)
-  ;;     (local-set-key (kbd "<backtab>") 'shr-previous-link)))
-
-  ;; (setq mu4e-account-alist
-  ;;   '(("gmail"
-  ;;       ;; Under each account, set the account-specific variables you want.
-  ;;       (mu4e-sent-messages-behavior delete)
-  ;;       (mu4e-sent-folder "")
-  ;;       (mu4e-drafts-folder "")
-  ;;       (mu4e-trash-folder "")
-  ;;       (mu4e-refile-folder "")
-  ;;       (user-mail-address "")
-  ;;       (user-full-name ""))
-  ;;      ("163"
-  ;;        (mu4e-sent-messages-behavior sent)
-  ;;        (mu4e-sent-folder "")
-  ;;        (mu4e-drafts-folder "")
-  ;;        (mu4e-trash-folder "")
-  ;;        (mu4e-refile-folder "")
-  ;;        (user-mail-address "")
-  ;;        (user-full-name ""))))
-  ;; (mu4e/mail-account-reset)
-  ;; }}}
-
-  ;; notmuch {{{
-  (add-to-list 'notmuch-saved-searches '(:name "my-unread" :query "tag:unread and tag:interested" :key "m"))
-  ;; }}}
+  (load-if-exists "~/.config/spacemacs/common-config.el")
   )
 ;; }}}
 (defun dotspacemacs/emacs-custom-settings ()
@@ -576,7 +363,7 @@ This function is called at the very end of Spacemacs initialization."
    ;; If there is more than one, they won't work right.
    '(package-selected-packages
      (quote
-      (srefactor youdao-dictionary yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify w3m volatile-highlights vlf vi-tilde-fringe uuidgen use-package toc-org tagedit spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode powershell pkgbuild-mode pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el paradox pangu-spacing pandoc-mode ox-twbs ox-pandoc ox-gfm origami orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file notmuch neotree mwim multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum logview livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc info+ indent-guide image+ ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio go-guru go-eldoc gnuplot gmail-message-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md folding flyspell-correct-helm flycheck-pos-tip flx-ido find-by-pinyin-dired fill-column-indicator fcitx fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-vimish-fold evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav elfeed-web elfeed-org elfeed-goodies editorconfig edit-server dumb-jump drupal-mode diff-hl define-word cython-mode csv-mode company-web company-tern company-statistics company-quickhelp company-go company-anaconda column-enforce-mode coffee-mode clean-aindent-mode chinese-pyim chinese-fonts-setup auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-pinyin ace-link ace-jump-helm-line ac-ispell)))
+      (origami youdao-dictionary yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify w3m volatile-highlights vlf vi-tilde-fringe uuidgen use-package toc-org tagedit spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode powershell pkgbuild-mode pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el paradox pangu-spacing pandoc-mode ox-twbs ox-pandoc ox-gfm orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file notmuch neotree mwim multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum logview livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc insert-shebang info+ indent-guide image+ ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio go-guru go-eldoc gnuplot gmail-message-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md folding flyspell-correct-helm flycheck-pos-tip flx-ido fish-mode find-by-pinyin-dired fill-column-indicator fcitx fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-vimish-fold evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav elfeed-web elfeed-org elfeed-goodies editorconfig edit-server dumb-jump drupal-mode define-word cython-mode csv-mode company-web company-tern company-statistics company-shell company-quickhelp company-go company-anaconda column-enforce-mode coffee-mode clean-aindent-mode chinese-pyim chinese-fonts-setup auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-pinyin ace-link ace-jump-helm-line ac-ispell)))
    '(safe-local-variable-values (quote ((origami-fold-style . triple-braces)))))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.

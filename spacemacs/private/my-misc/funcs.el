@@ -1,3 +1,12 @@
+;; -*- mode: emacs-lisp; origami-fold-style: triple-braces; -*-
+;; Macro {{{
+(fset 'done
+      "\C-x#")
+;; Remove all trailing whitespaces and duplicated lines.
+(fset 'clean
+      " xdw xlu")
+;; }}}
+
 (defun create-temp-file ()
     "Create a temp file"
     (interactive)
@@ -34,3 +43,11 @@ Result is full path. "
                                   (message "File name copied: 「%s」" (file-name-nondirectory -fpath))
                                   (file-name-nondirectory -fpath)))
         (t (error "Invalid input"))))))
+
+(defun load-if-exists (f)
+  (let ((filename (expand-file-name f)))
+    (if (file-readable-p filename)
+        (progn
+          (message (concat "Load file " filename))
+          (load-file filename))
+      (message (concat "No file found: " filename)))))
