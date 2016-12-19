@@ -51,3 +51,10 @@ Result is full path. "
           (message (concat "Load file " filename))
           (load-file filename))
       (message (concat "No file found: " filename)))))
+
+(defun my-kill-dired-buffers ()
+  (interactive)
+  (mapc (lambda (buffer)
+          (when (eq 'dired-mode (buffer-local-value 'major-mode buffer))
+            (kill-buffer buffer)))
+        (buffer-list)))

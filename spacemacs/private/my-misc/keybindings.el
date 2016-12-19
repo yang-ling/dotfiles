@@ -18,6 +18,7 @@
   "oB" 'bookmark-set
   "oc" 'my-copy-file-path
   "od" 'clean
+  "ok" 'my-kill-dired-buffers
   "oJ" 'justify-current-line
   "oj" 'just-one-space
   "om" 'imenu
