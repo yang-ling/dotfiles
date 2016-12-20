@@ -247,6 +247,7 @@ alias scu-list-timers="/usr/bin/systemctl --user list-timers"
 alias scu-status="/usr/bin/systemctl --user status"
 alias scu-list-unit-files="/usr/bin/systemctl --user list-unit-files"
 alias scu-failed="/usr/bin/systemctl --user --failed"
+alias scu-daemon-reload="/usr/bin/systemctl --user daemon-reload"
 
 # Show journalctl errors
 alias jerr="journalctl -p 0..3 -xen"
