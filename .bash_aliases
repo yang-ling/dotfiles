@@ -239,6 +239,15 @@ alias sysstart="sudo /usr/bin/systemctl start"
 alias sysstop="sudo /usr/bin/systemctl stop"
 alias sysds="sudo /usr/bin/systemctl disable"
 
+alias scu-enable="/usr/bin/systemctl --user enable"
+alias scu-disable="/usr/bin/systemctl --user disable"
+alias scu-start="/usr/bin/systemctl --user start"
+alias scu-stop="/usr/bin/systemctl --user stop"
+alias scu-list-timers="/usr/bin/systemctl --user list-timers"
+alias scu-status="/usr/bin/systemctl --user status"
+alias scu-list-unit-files="/usr/bin/systemctl --user list-unit-files"
+alias scu-failed="/usr/bin/systemctl --user --failed"
+
 # Show journalctl errors
 alias jerr="journalctl -p 0..3 -xen"
 alias jxe="journalctl -xe"
