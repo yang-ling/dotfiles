@@ -4,7 +4,8 @@
       evil-escape-delay 0.5
       evil-escape-key-sequence "fd"
       evil-search-wrap nil
-      scroll-margin 5)
+      scroll-margin 5
+      org-html-validation-link nil)
 
 (with-eval-after-load "tramp"
   (setenv "SHELL" "/bin/bash")
