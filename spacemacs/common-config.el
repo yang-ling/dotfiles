@@ -78,6 +78,7 @@
 ;; }}}
 ;; notmuch {{{
 (add-to-list 'notmuch-saved-searches '(:name "my-unread" :query "tag:unread and tag:interested" :key "m"))
+(setq notmuch-archive-tags '("-inbox" "+archive" "-unread"))
 ;; }}}
 ;; fcitx {{{
 ;; Make sure the following comes before `(fcitx-aggressive-setup)'
