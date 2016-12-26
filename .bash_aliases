@@ -248,6 +248,7 @@ alias scu-status="/usr/bin/systemctl --user status"
 alias scu-list-unit-files="/usr/bin/systemctl --user list-unit-files"
 alias scu-failed="/usr/bin/systemctl --user --failed"
 alias scu-daemon-reload="/usr/bin/systemctl --user daemon-reload"
+alias scu-cat="/usr/bin/systemctl --user cat"
 
 # Show journalctl errors
 alias jerr="journalctl -p 0..3 -xen"
