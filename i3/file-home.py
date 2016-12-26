@@ -9,7 +9,7 @@ status = Status(standalone=True)
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-    format="%a %F %R",)
+    format="%a %F %T",)
 
 # The battery monitor has many formatting options, see README for details
 
