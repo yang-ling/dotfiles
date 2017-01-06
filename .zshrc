@@ -83,6 +83,8 @@ man() {
 _SHOW_FORTUNE=0
 [[ -n "$PS1" ]] && [[ "$TERM" == "xterm" ]] && { _SHOW_FORTUNE=1; }
 [[ -n "$PS1" ]] && [[ "$TERM" == "screen" ]] && { _SHOW_FORTUNE=1; }
+[[ -n "$PS1" ]] && [[ "$TERM" == "screen-256color" ]] && { _SHOW_FORTUNE=1; }
+[[ -n "$PS1" ]] && [[ "$TERM" == "xterm-256color" ]] && { _SHOW_FORTUNE=1; }
 #_SHOW_DOGE=`echo $RANDOM % 2 | bc`
 # Don't want doge now.
 _SHOW_DOGE=0
