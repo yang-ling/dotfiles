@@ -14,7 +14,7 @@
 (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
 
 (spacemacs/set-leader-keys "oo" 'done
-  "ob" 'bookmark-jump
+  "ob" 'helm-bookmark-rename
   "oB" 'bookmark-set
   "oc" 'my-copy-file-path
   "od" 'clean
