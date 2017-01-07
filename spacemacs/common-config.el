@@ -102,3 +102,11 @@
       (set (make-local-variable 'epa-armor) t)
     (kill-local-variable 'epa-armor)))
 ;; }}}
+
+;; org mode setting {{{
+(setq org-todo-keywords
+      '((sequence "TODO(t!)" "ONGOING(o!)" "|" "DONE(d!)" "ABORT(a@/!)")))
+(setq org-todo-keyword-faces
+      '(("ONGOING" .   (:foreground "LightGreen" :weight bold))
+        ("ABORT" .     (:background "gray" :foreground "black"))))
+;; }}}
