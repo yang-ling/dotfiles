@@ -2,8 +2,11 @@
 (spacemacs/declare-prefix "mo" "major custom")
 
 (spacemacs/set-leader-keys-for-major-mode 'nxml-mode "ox" 'mu-xml-format)
-(spacemacs/set-leader-keys-for-major-mode 'org-mode "oo" 'outline-show-all
-  "oO" 'outline-hide-other)
+(spacemacs/set-leader-keys-for-major-mode 'org-mode
+  "oo" 'outline-show-all
+  "oO" 'outline-hide-other
+  "oh" 'org-toggle-heading
+  "oH" 'outline-hide-body)
 
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
