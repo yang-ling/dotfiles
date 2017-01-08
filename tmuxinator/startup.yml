@@ -32,7 +32,12 @@ windows:
   - wallpaper:
     - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
   - Emacs:
-    - export LC_CTYPE=zh_CN.UTF-8
+      layout: even-horizontal
+      panes:
+        - left:
+          - export LC_CTYPE=zh_CN.UTF-8
+        - right:
+          - export LC_CTYPE=zh_CN.UTF-8
   #- Sync-Mails:
     #layout: even-horizontal
     #panes:
