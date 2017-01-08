@@ -105,8 +105,10 @@
 
 ;; org mode setting {{{
 (setq org-todo-keywords
-      '((sequence "TODO(t!)" "ONGOING(o!)" "|" "DONE(d!)" "ABORT(a@/!)")))
+      '((sequence "TODO(t!)" "NEXT(n!)" "INACTIVE(i!)" "|" "DONE(d!)" "ABORT(a@/!)")))
 (setq org-todo-keyword-faces
-      '(("ONGOING" .   (:foreground "LightGreen" :weight bold))
-        ("ABORT" .     (:background "gray" :foreground "black"))))
+      '(("NEXT"     . (:foreground "LightGreen" :weight bold))
+        ("INACTIVE" . (:foreground "gray"))
+        ("ABORT"    . (:background "gray" :foreground "black"))))
+(setq org-agenda-files '("~/Dropbox/Documents/Important/org/"))
 ;; }}}
