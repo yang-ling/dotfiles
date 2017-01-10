@@ -28,7 +28,6 @@
 *** [[http://www.reddit.com/r/funny/.rss][Reddit Funny]]                                                  :reddit:rf:
 *** [[http://www.feeddiy.com/rss/AJ3uQr][煎蛋妹子图]]                                                  :pic:girl:mz:jiandan:
 *** [[http://pocoo.tumblr.com/rss][tumblr 妹子图]] :pic:girl:mz:tumblr:wakong:
-*** [[http://girlimg-student.tumblr.com/rss][Girl Image Student]] :pic:girl:mz:tumblr:gis:
 *** [[http://enmury.tumblr.com/rss][Imagine a man staring at a screen That’s you]] :pic:girl:mz:tumblr:iam:
 ** Kill Time                                                      :killtime:
 *** [[http://www.lifehack.org/feed/][Lifehack]]                                                    :lifehack:lh:
