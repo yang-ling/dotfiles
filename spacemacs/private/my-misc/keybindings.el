@@ -6,7 +6,10 @@
   "oo" 'outline-show-all
   "oO" 'outline-hide-other
   "oh" 'org-toggle-heading
-  "oH" 'outline-hide-body)
+  "oH" 'outline-hide-body
+  "ol" 'org-toggle-link-display
+  "on" 'org-next-link
+  "oN" 'org-previous-link)
 
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -26,5 +29,4 @@
   "oj" 'just-one-space
   "om" 'imenu
   "oy" 'youdao-dictionary-search-at-point+
-  "os" 'youdao-dictionary-play-voice-at-point
-  "ol" 'org-toggle-link-display)
+  "os" 'youdao-dictionary-play-voice-at-point)
