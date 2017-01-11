@@ -5,8 +5,7 @@
 (spacemacs/set-leader-keys-for-major-mode 'org-mode
   "oo" 'outline-show-all
   "oO" 'outline-hide-other
-  "oh" 'org-toggle-heading
-  "oH" 'outline-hide-body
+  "oh" 'outline-hide-body
   "ol" 'org-toggle-link-display
   "on" 'org-next-link
   "oN" 'org-previous-link)
