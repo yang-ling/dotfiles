@@ -111,4 +111,5 @@
         ("INACTIVE" . (:foreground "gray"))
         ("ABORT"    . (:background "gray" :foreground "black"))))
 (setq org-agenda-files '("~/Dropbox/Documents/Important/org/"))
+(setq org-time-stamp-formats '("<%Y-%m-%d %a>" . "<%Y-%m-%d %a %H:%M %z>") )
 ;; }}}
