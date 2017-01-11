@@ -112,4 +112,5 @@
         ("ABORT"    . (:background "gray" :foreground "black"))))
 (setq org-agenda-files '("~/Dropbox/Documents/Important/org/"))
 (setq org-time-stamp-formats '("<%Y-%m-%d %a>" . "<%Y-%m-%d %a %H:%M %z>") )
+(setq org-columns-default-format "%25ITEM %TODO %3PRIORITY %10CLOCKSUM %16TIMESTAMP_IA %TAGS")
 ;; }}}
