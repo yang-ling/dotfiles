@@ -118,15 +118,13 @@
 ;; Define the custum capture templates
 (setq org-capture-templates
       '(("t" "todo" entry (file org-default-notes-file)
-         "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+         "* TODO [#B] %?\nDEADLINE: %t\n%U\n" :clock-in t :clock-resume t :jump-to-captured t)
         ("d" "Diary" entry (file+datetree "diary.org")
          "* %?\n%U\n" :clock-in t :clock-resume t)
         ("i" "Idea" entry (file "notes.org")
-         "* %? :idea:\n%U\n%a\n" :clock-in t :clock-resume t)
-        ("n" "Next Task" entry (file+headline org-default-notes-file "Work")
-         "** NEXT %? \nDEADLINE: %t" :clock-in t :clock-resume t :jump-to-captured)))
-(setq org-refile-targets '((nil :maxlevel . 3)
-                           (org-agenda-files :maxlevel . 3)))
+         "* %? :idea:\n%U\n" :clock-in t :clock-resume t :jump-to-captured t)))
+(setq org-refile-targets '((nil :maxlevel . 9)
+                           (org-agenda-files :maxlevel . 9)))
 (setq org-export-coding-system 'utf-8)
 ;; (setq org-clock-in-switch-to-state "NEXT")
 ;; }}}
