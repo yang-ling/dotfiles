@@ -105,9 +105,10 @@
 
 ;; org mode setting {{{
 (setq org-todo-keywords
-      '((sequence "TODO(t!)" "NEXT(n!)" "INACTIVE(i!)" "|" "DONE(d!)" "ABORT(a@/!)")))
+      '((sequence "TODO(t!)" "WAITING(w!)" "NEXT(n!)" "INACTIVE(i!)" "|" "DONE(d!)" "ABORT(a@/!)")))
 (setq org-todo-keyword-faces
       '(("NEXT"     . (:foreground "LightGreen" :weight bold))
+        ("WAITING" . (:foreground "DeepSkyBlue" :weight bold))
         ("INACTIVE" . (:foreground "gray"))
         ("ABORT"    . (:background "gray" :foreground "black"))))
 (setq org-directory "~/Dropbox/Documents/Important/org")
