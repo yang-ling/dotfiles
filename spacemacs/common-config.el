@@ -127,5 +127,6 @@
 (setq org-refile-targets '((nil :maxlevel . 9)
                            (org-agenda-files :maxlevel . 9)))
 (setq org-export-coding-system 'utf-8)
+(setq org-stuck-projects '("+LEVEL=2/-DONE" ("TODO" "NEXT" "WAITING") nil ""))
 ;; (setq org-clock-in-switch-to-state "NEXT")
 ;; }}}
