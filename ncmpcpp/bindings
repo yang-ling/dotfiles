@@ -539,3 +539,6 @@ def_key "d"
 
 def_key "d"
   delete_stored_playlist
+
+def_key "left"
+  volume_down
