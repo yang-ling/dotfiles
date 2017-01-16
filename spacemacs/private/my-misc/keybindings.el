@@ -3,7 +3,8 @@
 
 (spacemacs/set-leader-keys-for-major-mode 'nxml-mode "ox" 'mu-xml-format)
 (spacemacs/set-leader-keys-for-major-mode 'org-mode
-  "oc" 'org-columns
+  "oC" 'org-columns
+  "oc" 'org-clone-subtree-with-time-shift
   "oo" 'outline-show-all
   "oO" 'outline-hide-other
   "oh" 'outline-hide-body
