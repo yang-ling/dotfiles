@@ -753,6 +753,7 @@ cnoremap w!! w !sudo tee % >/dev/null<CR>
 "}}}
 "Easy copy/paste from system clipboard"{{{
 vmap <Leader>y "+y
+nnoremap <Leader>yh <ESC>:%y+<CR>
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
