@@ -95,7 +95,7 @@ Each entry is either:
 
     (run-with-timer 60 (* 20 60) 'elfeed-update)
 
-    (add-hook 'kill-emacs-hook 'elfeed-db-compact)
+    ;; (add-hook 'kill-emacs-hook 'elfeed-db-compact)
 
     (push '(starred elfeed-search-starred-title-face) elfeed-search-face-alist)))
 (defun my-elfeed-config/post-init-elfeed-goodies ()
