@@ -4,14 +4,14 @@
 	branch = auto
 	ui = auto
 [core]
-	editor = emacs
+	editor = vim
 	excludesfile = /home/yangling/.gitignore_global
 	autocrlf = input
 	quotepath = false
 [difftool "ediff"]
 	cmd = emacs --eval \"(ediff \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 [diff]
-	tool = ediff
+	tool = gvimdiff
 [gui]
 	encoding = utf-8
 [svn]
@@ -31,6 +31,6 @@
 [mergetool "emerge"]
 	cmd = emacs --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
 [merge]
-	tool = emerge
+	tool = gvimdiff
 [push]
 	default = simple
