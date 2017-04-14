@@ -11,7 +11,7 @@
 [difftool "ediff"]
 	cmd = emacs --eval \"(ediff \\\"$LOCAL\\\" \\\"$REMOTE\\\")\"
 [diff]
-	tool = gvimdiff
+	tool = vimdiff
 [gui]
 	encoding = utf-8
 [svn]
@@ -31,6 +31,6 @@
 [mergetool "emerge"]
 	cmd = emacs --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
 [merge]
-	tool = gvimdiff
+	tool = vimdiff
 [push]
 	default = simple
