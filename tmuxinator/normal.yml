@@ -22,8 +22,8 @@ windows:
   - Main:
     - compton --config ~/.config/compton.conf -b
     - ranger
-  #- RSS:
-    #- export TERM=screen-256color
+  - RSS:
+    - export TERM=screen-256color
   #- Music:
     #- mocp -S
     #- mocp -c
