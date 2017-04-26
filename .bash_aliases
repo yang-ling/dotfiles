@@ -280,3 +280,6 @@ alias uul="udevil umount -l"
 
 # Emacs
 alias es="/usr/bin/emacsclient -c"
+
+# Shitpost in Chinese
+alias sp="/usr/local/bin/shitpost --font 'FZHei-B01'"
