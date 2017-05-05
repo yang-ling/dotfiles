@@ -77,8 +77,9 @@
 (add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?"))
 ;; }}}
 ;; notmuch {{{
+(add-to-list 'notmuch-saved-searches '(:name "read-it-later" :query "tag:read-it-later" :key "r"))
 (add-to-list 'notmuch-saved-searches '(:name "my-unread" :query "tag:unread and tag:interested" :key "m"))
-(setq notmuch-archive-tags '("-inbox" "+archive" "-unread"))
+(setq notmuch-archive-tags '("-inbox" "+archive" "-unread" "-read-it-later"))
 ;; }}}
 ;; fcitx {{{
 ;; Make sure the following comes before `(fcitx-aggressive-setup)'
