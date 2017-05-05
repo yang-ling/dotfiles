@@ -1,5 +1,5 @@
-http://www.javaeye.com/rss/news tech
-#http://www.reddit.com/r/archlinux/.rss tech
+#http://www.javaeye.com/rss/news tech
+http://www.reddit.com/r/archlinux/.rss tech
 http://feed.williamlong.info/ tech blog
 http://blog.lilydjwg.me/feed tech blog
 http://eller86.hatenablog.jp/feed tech blog
@@ -7,20 +7,20 @@ http://feeds.feedburner.com/ruanyifeng tech blog
 https://imququ.com/rss.html tech blog
 #https://faq.i3wm.org/feeds/rss/ tech i3wm
 
-#http://www.reddit.com/r/vim/.rss tech vim
+http://www.reddit.com/r/vim/.rss tech vim
 http://feeds.feedburner.com/usevim tech vim
 
 https://gitlab.com/RagefireChasm/sc.atom?private_token=GsTyRR2QbgbgmkMtwQeC tech project
 
 #http://emacsredux.com/atom.xml tech emacs
 #http://endlessparentheses.com/atom.xml tech emacs
-http://www.reddit.com/r/emacs/.rss tech emacs
-http://planet.emacsen.org/atom.xml tech emacs
+#http://www.reddit.com/r/emacs/.rss tech emacs
+#http://planet.emacsen.org/atom.xml tech emacs
 #http://feeds.feedburner.com/sachac tech emacs
 #http://feeds.feedburner.com/XahsEmacsBlog tech emacs
-https://emacs-china.org/latest.rss tech emacs
+#https://emacs-china.org/latest.rss tech emacs
 
-#http://www.archlinux.org/feeds/news/ tech news
+http://www.archlinux.org/feeds/news/ tech news
 https://www.gitlab.com/atom.xml tech news
 #http://feeds.feedburner.com/ContinuousBlog?format=xml tech news
 #http://feeds.feedburner.com/JenkinsPluginReleases?format=xml tech news
