@@ -121,6 +121,8 @@
 (setq org-capture-templates
       '(("t" "todo" entry (file org-default-notes-file)
          "* TODO [#B] %?\nDEADLINE: %t\n%U\n" :clock-in t :clock-resume t :jump-to-captured t)
+        ("r" "Read It Later" entry (file org-default-notes-file)
+         (file "~/Dropbox/Documents/Important/org/template/template-read-it-later.txt") :clock-in t :clock-resume t :jump-to-captured t)
         ("d" "Diary" entry (file+datetree "diary.org")
          "* %?\n%U\n" :clock-in t :clock-resume t)
         ("i" "Idea" entry (file "notes.org")
