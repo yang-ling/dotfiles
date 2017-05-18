@@ -19,6 +19,8 @@ root: ~/
 tmux_command: byobu
 
 windows:
+  - Weechat:
+    - weechat
   - sogou-and-mpd:
       layout: even-horizontal
       panes:
@@ -35,7 +37,7 @@ windows:
         - left:
           - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
         - right:
-            - /usr/bin/alsamixer
+          - /usr/bin/alsamixer
   - Emacs:
       layout: even-horizontal
       panes:
