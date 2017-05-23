@@ -283,3 +283,5 @@ alias es="/usr/bin/emacsclient -c"
 
 # Shitpost in Chinese
 alias sp="/usr/local/bin/shitpost --font 'FZHei-B01'"
+# Weather in Shanghai
+alias weather="curl wttr.in/nanyang && sleep 10 && curl wttr.in/Shanghai"
