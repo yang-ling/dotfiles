@@ -73,8 +73,9 @@
 ;; #+STARTUP: content
 ;; #+STARTUP: showall
 ;; #+STARTUP: showeverything
-(add-to-list 'org-structure-template-alist '("n" "#+NAME: ?"))
-(add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?"))
+(with-eval-after-load "org"
+  (add-to-list 'org-structure-template-alist '("n" "#+NAME: ?"))
+  (add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?")))
 ;; }}}
 ;; notmuch {{{
 (add-to-list 'notmuch-saved-searches '(:name "read-it-later" :query "tag:read-it-later" :key "r"))
