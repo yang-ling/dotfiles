@@ -106,6 +106,8 @@
 ;; }}}
 
 ;; org mode setting {{{
+(with-eval-after-load "org"
+  (setq org-time-stamp-formats '("<%Y-%m-%d %a>" . "<%Y-%m-%d %a %H:%M %z>")))
 (setq org-todo-keywords
       '((sequence "TODO(t!)" "WAITING(w!)" "NEXT(n!)" "INACTIVE(i!)" "|" "DONE(d!)" "ABORT(a@/!)")))
 (setq org-todo-keyword-faces
@@ -114,15 +116,13 @@
         ("INACTIVE" . (:foreground "gray"))
         ("ABORT"    . (:background "gray" :foreground "black"))))
 (setq org-directory "~/Dropbox/Documents/Important/org")
-(setq org-default-notes-file "~/Dropbox/Documents/Important/org/todo.org")
 (setq org-agenda-files '("~/Dropbox/Documents/Important/org/"))
-(setq org-time-stamp-formats '("<%Y-%m-%d %a>" . "<%Y-%m-%d %a %H:%M %z>") )
 (setq org-columns-default-format "%25ITEM %TODO %3PRIORITY %10CLOCKSUM %22TIMESTAMP_IA %TAGS")
 ;; Define the custum capture templates
 (setq org-capture-templates
-      '(("t" "todo" entry (file org-default-notes-file)
+      '(("t" "todo" entry (file "todo.org")
          "* TODO [#B] %?\nDEADLINE: %t\n%U\n" :clock-in t :clock-resume t :jump-to-captured t)
-        ("r" "Read It Later" entry (file org-default-notes-file)
+        ("r" "Read It Later" entry (file "todo.org")
          (file "~/Dropbox/Documents/Important/org/template/template-read-it-later.txt") :clock-in t :clock-resume t :jump-to-captured t)
         ("d" "Diary" entry (file+datetree "diary.org")
          "* %?\n%U\n" :clock-in t :clock-resume t)
