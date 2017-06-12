@@ -81,6 +81,7 @@
 (add-to-list 'notmuch-saved-searches '(:name "read-it-later" :query "tag:read-it-later" :key "r"))
 (add-to-list 'notmuch-saved-searches '(:name "my-unread" :query "tag:unread and tag:interested" :key "m"))
 (setq notmuch-archive-tags '("-inbox" "+archive" "-unread" "-read-it-later"))
+(setq notmuch-print-mechanism 'notmuch-print-muttprint)
 ;; }}}
 ;; fcitx {{{
 ;; Make sure the following comes before `(fcitx-aggressive-setup)'
