@@ -1,11 +1,11 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for yangling on Fri Jun 16 16:35:24 2017.
+# Written by xscreensaver-demo 5.36 for yangling on Fri Jun 16 21:01:34 2017.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:10:00
-cycle:		0:10:00
-lock:		False
-lockTimeout:	0:00:00
+timeout:	0:04:00
+cycle:		0:04:00
+lock:		True
+lockTimeout:	0:04:00
 passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
