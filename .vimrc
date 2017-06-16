@@ -140,6 +140,8 @@ Plug 'gabesoft/vim-ags'
 Plug 'unblevable/quick-scope'
 " Python
 Plug 'davidhalter/jedi-vim'
+
+Plug 'mhinz/vim-hugefile'
 "}}}
 
 call plug#end()
