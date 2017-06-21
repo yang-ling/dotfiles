@@ -80,6 +80,8 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'fatih/vim-go'
 " csv
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+" i3 config
+Plug 'PotatoesMaster/i3-vim-syntax'
 "}}}
 Plug 'mbbill/VimExplorer'
 Plug 'Konfekt/FastFold'

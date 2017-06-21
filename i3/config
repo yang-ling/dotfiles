@@ -155,7 +155,7 @@ exec --no-startup-id /usr/bin/xscreensaver -no-splash
 #A workaround is start compton after byobu, that is put the compton execution
 #into a tmuxinator config
 #exec --no-startup-id compton --config ~/.config/compton.conf -b
-#exec --no-startup-id xautolock -time 4 -locker "env XSECURELOCK_SAVER=saver_xscreensaver xsecurelock"
+exec --no-startup-id xautolock -time 4 -locker "xscreensaver-command -lock"
 exec --no-startup-id /usr/bin/volumeicon
 exec --no-startup-id /usr/bin/chinese-calendar-autostart
 
@@ -320,3 +320,4 @@ bar {
         urgent_workspace   #2f343a #900000 #ffffff
     }
 }
+# vim:filetype=i3
