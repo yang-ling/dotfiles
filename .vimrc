@@ -109,7 +109,7 @@ Plug 'jamessan/vim-gnupg'
 " g++ -o tellenc tellenc.cpp
 " Then copy tellenc to /usr/bin/
 Plug 'mbbill/fencview'
-Plug 'majutsushi/tagbar', { 'for': 'go' }
+Plug 'majutsushi/tagbar', { 'for': ['go', 'ruby', 'python', 'java', 'javascript'] }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-shell'
 " This calendar can be used to write diary
