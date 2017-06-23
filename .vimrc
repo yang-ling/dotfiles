@@ -82,6 +82,8 @@ Plug 'fatih/vim-go'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 " i3 config
 Plug 'PotatoesMaster/i3-vim-syntax'
+
+Plug 'sheerun/vim-polyglot'
 "}}}
 Plug 'mbbill/VimExplorer'
 Plug 'Konfekt/FastFold'
@@ -144,6 +146,7 @@ Plug 'unblevable/quick-scope'
 Plug 'davidhalter/jedi-vim'
 
 Plug 'mhinz/vim-hugefile'
+Plug 'tpope/tpope-vim-abolish'
 "}}}
 
 call plug#end()
