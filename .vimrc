@@ -147,6 +147,8 @@ Plug 'davidhalter/jedi-vim'
 
 Plug 'mhinz/vim-hugefile'
 Plug 'tpope/tpope-vim-abolish'
+
+Plug 'joereynolds/gtags-scope'
 "}}}
 
 call plug#end()
@@ -427,6 +429,9 @@ let g:ags_agargs = {
 " rainbow"{{{
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "}}}
+" gtags-scope{{{
+set cscopetag "search both cscopes db and the tags file
+" }}}
 "}}}
 "{{{ Basic setting
 sy on
