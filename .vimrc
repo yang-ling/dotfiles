@@ -109,7 +109,7 @@ Plug 'jamessan/vim-gnupg'
 " g++ -o tellenc tellenc.cpp
 " Then copy tellenc to /usr/bin/
 Plug 'mbbill/fencview'
-Plug 'majutsushi/tagbar', { 'for': ['go', 'ruby', 'python', 'java', 'javascript'] }
+Plug 'majutsushi/tagbar', { 'for': ['go', 'ruby', 'python', 'java', 'javascript', 'vim'] }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-shell'
 " This calendar can be used to write diary
@@ -147,8 +147,6 @@ Plug 'davidhalter/jedi-vim'
 
 Plug 'mhinz/vim-hugefile'
 Plug 'tpope/tpope-vim-abolish'
-
-Plug 'joereynolds/gtags-scope'
 "}}}
 
 call plug#end()
@@ -429,9 +427,6 @@ let g:ags_agargs = {
 " rainbow"{{{
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "}}}
-" gtags-scope{{{
-set cscopetag "search both cscopes db and the tags file
-" }}}
 "}}}
 "{{{ Basic setting
 sy on
@@ -653,11 +648,6 @@ vnoremap <Leader>dt dpkddkdd
 " Parent tags are inline
 vnoremap <Leader>dit dvatp
 "}}}
-" CommandT"{{{
-"nnoremap <Leader>ct :CommandT<CR>
-"nnoremap <Leader>cd :CommandTBuffer<CR>
-"nnoremap <Leader>cf :CommandTFlush<CR>
-"}}}
 " NerdTree mapping"{{{
 nnoremap <leader>er :NERDTreeToggle<CR>
 "}}}
@@ -759,6 +749,12 @@ else
     set listchars=eol:⇐,tab:⇒⋅ " use special character on eol and tab character
 endif
 "}}}
+" gtags-scope{{{
+set cscopetag "search both cscopes db and the tags file
+set cscopeprg=gtags-cscope
+set cscopequickfix=c-,d-,e-,f-,g0,i-,s-,t-
+let s:gtags_file_exist =0
+" }}}
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -868,6 +864,16 @@ if has("autocmd")
         "au VimLeavePre * call SaveSession()
         "au VimEnter * call LoadSession()
         "}}}
+        " gtags-scope{{{
+        au FileType java,javascript,python,ruby,go,vim
+                    \ call <SID>FindGtags(expand('<afile>')) |
+                    \ cnoremap <silent> :gt <ESC>:cstag <c-r><c-w><CR> |
+                    \ cnoremap <silent> :gc <ESC>:lcs f c <c-r><c-w><cr>:lw<cr> |
+                    \ cnoremap <silent> :gg <ESC>:lcs f g <c-r><c-w><cr>:lw<cr> |
+                    \ cnoremap <silent> :gs <ESC>:lcs f s <c-r><c-w><cr>:lw<cr>
+        au BufWritePost *.java,*.js,*.py,*.ry,*.go,*.vim,.vimrc call <SID>UpdateGtags(expand('<afile>'))
+        " }}}
+
         " When editing a file, always jump to the last known cursor position.
         " Don't do it when the position is invalid or when inside an event handler
         " (happens when dropping a file on gvim).
@@ -1156,6 +1162,39 @@ endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>rc :<C-U>RangerChooser<CR>
 "}}}
+
+" gtags-scope functions{{{
+function! s:VimEnterCallback()
+     for f in argv()
+         call <SID>FindGtags(f)
+     endfor
+endfunc
+
+function! s:FindGtags(f)
+     let dir = fnamemodify(a:f, ':p:h')
+     while 1
+         let tmp = dir . '/GTAGS'
+         if filereadable(tmp)
+             exe 'cs add ' . tmp . ' ' . dir
+             let s:gtags_file_exist = 1
+             break
+         elseif dir == '/'
+             let s:gtags_file_exist = 0
+             break
+         endif
+
+         let dir = fnamemodify(dir, ":h")
+     endwhile
+endfunc
+
+function! s:UpdateGtags(f)
+    if !s:gtags_file_exist
+        return
+    endif
+     let dir = fnamemodify(a:f, ':p:h')
+     exe 'silent !cd ' . dir . ' && global -u &> /dev/null &'
+endfunction
+" }}}
 
 "{{{ Not work
 function! Camel_Initials(camel)
