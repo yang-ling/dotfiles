@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst my-fonts-packages
-  '(chinese-fonts-setup)
+  '(cnfonts)
   "The list of Lisp packages required by the my-fonts layer.
 
 Each entry is either:
@@ -58,7 +58,7 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun my-fonts/init-chinese-fonts-setup ()
-  (use-package chinese-fonts-setup))
+(defun my-fonts/init-cnfonts ()
+  (use-package cnfonts))
 
 ;;; packages.el ends here

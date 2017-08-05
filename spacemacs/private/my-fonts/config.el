@@ -1,7 +1,7 @@
 ;; chinese-fonts-setup
-(eval-after-load 'chinese-fonts-setup
+(eval-after-load 'cnfonts
   '(progn
      ;; Put chinese-fonts-setup into startup
-     (chinese-fonts-setup-enable)
+     (cnfonts-enable)
      ;; Show Unicode icon in spacemacs mode-line correctly.
-     (cfs-set-spacemacs-fallback-fonts)))
+     (cnfonts-set-spacemacs-fallback-fonts)))
