@@ -21,7 +21,8 @@ https://gitlab.com/RagefireChasm/sc.atom?private_token=GsTyRR2QbgbgmkMtwQeC tech
 #https://emacs-china.org/latest.rss tech emacs
 
 http://www.archlinux.org/feeds/news/ tech news
-https://www.gitlab.com/atom.xml tech news
+#https://www.gitlab.com/atom.xml tech news
+https://about.gitlab.com/atom.xml tech news gitlab
 #http://feeds.feedburner.com/ContinuousBlog?format=xml tech news
 #http://feeds.feedburner.com/JenkinsPluginReleases?format=xml tech news
 http://www.chinagfw.org/feeds/posts/default tech news
@@ -38,8 +39,10 @@ http://www.commandlinefu.com/feed/tenup tech commandlinefu
 
 http://onehd.herokuapp.com/ fun
 http://www.zhihu.com/rss fun zhihu
-http://www.quora.com/rss fun quora
-http://www.comicsyndicate.org/Feed/Dilbert fun pic dilbert
+#http://www.quora.com/rss fun quora
+http://quoratopstories.tumblr.com/rss fun quora
+#http://www.comicsyndicate.org/Feed/Dilbert fun pic dilbert
+http://feed.dilbert.com/dilbert/daily_strip?format=xml fun pic dilbert
 http://elblogdejoancornella.blogspot.com/feeds/posts/default fun
 http://feeds.feedburner.com/uclick/garfield fun pic garfield
 #http://www.reddit.com/r/WritingPrompts/.rss fun wp

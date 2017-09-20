@@ -95,5 +95,4 @@ color info       color136 color0
 color background color248 color0
 color article    color250 color0
 
-macro i set browser /usr/bin/feh
 macro r set browser /usr/bin/google-chrome-stable
