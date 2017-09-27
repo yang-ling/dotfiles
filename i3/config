@@ -156,7 +156,6 @@ exec --no-startup-id /usr/bin/xscreensaver -no-splash
 #into a tmuxinator config
 #exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id xautolock -time 4 -locker "xscreensaver-command -lock"
-exec --no-startup-id /usr/bin/volumeicon
 exec --no-startup-id /usr/bin/chinese-calendar-autostart
 
 # Make the currently focused window a scratchpad
@@ -178,6 +177,12 @@ bindsym Control+$alt+l exec --no-startup-id "xscreensaver-command -lock"
 # Scratchpads
 bindsym Control+$mod+k [class="(?i)keepassx"] scratchpad show
 bindsym Control+$mod+p [class="(?i)skype" title="老婆"] scratchpad show
+
+# Media Keys
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/ponymix increase 5
+bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/ponymix decrease 5
+bindsym XF86AudioMute exec --no-startup-id /usr/bin/ponymix toggle
 
 # Window Rules
 for_window [class="(?i)Keepassx"] move scratchpad
@@ -249,7 +254,7 @@ mode "focused" {
 
 bindsym $mod+n mode "focused"
 
-set $Locker i3lock-wrapper -l && sleep 1
+set $Locker xscreensaver-command -lock && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
