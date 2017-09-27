@@ -59,7 +59,7 @@ compctl -g "*.pdf *(-/)" printpdf
 # User configuration
 #. /home/yangling/MyGitRepo/powerline/powerline/bindings/zsh/powerline.zsh
 
-export PATH=$PATH:$HOME/bin:/usr/local/bin
+export PATH=$PATH:$HOME/mybin:/usr/local/bin
 
 # Enable color on man page
 man() {
