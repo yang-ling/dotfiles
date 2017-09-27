@@ -5,6 +5,8 @@
 alias ll='ls -lh'      #long list
 alias gdt='git difftool'
 alias gsu='git submodule sync --recursive && git submodule update --init --recursive --remote'
+# gsu has been taken, so change General Screenshot Utility to Common Screenshot Utility
+alias csu='/usr/bin/gsu'
 
 # zsh is able to auto-do some kungfoo
 # depends on the SUFFIX :)
