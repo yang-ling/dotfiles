@@ -21,36 +21,22 @@ tmux_command: byobu
 windows:
   - Weechat:
     - weechat
-  - sogou-and-mpd:
-      layout: even-horizontal
+  - backend:
+      layout: tiled
       panes:
-        - left:
+        - sogo:
           - sleep 30
           - /usr/bin/sogou-autostart
-        - right:
+        - mpd:
           - /usr/bin/mpd --no-daemon
+        - wallpaper:
+          - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
   - status:
     - glances
-  - wallpaper and sound:
-      layout: even-horizontal
-      panes:
-        - left:
-          - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
-        - right:
-          - /usr/bin/alsamixer
   - Emacs:
-      layout: even-horizontal
+      layout: tiled
       panes:
         - left:
           - export LC_CTYPE=zh_CN.UTF-8
         - right:
           - export LC_CTYPE=zh_CN.UTF-8
-  #- Sync-Mails:
-    #layout: even-horizontal
-    #panes:
-      #- left:
-        #- /usr/local/bin/sync-mails.sh 1m 9999
-      #- right:
-        #- cd ~/.sync-mail-log/
-        #- sleep 5
-        #- tail -f $(ls -t | head -1)
