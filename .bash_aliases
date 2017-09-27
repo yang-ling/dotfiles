@@ -286,5 +286,5 @@ alias wttrsh="curl wttr.in/shanghai"
 
 alias e="exa -lhg"
 alias ela="exa -lhga"
-alias elt="exa -lhg -s modified -r"
+alias elt="exa -lhg -s modified"
 alias els="exa -lhg -s size"
