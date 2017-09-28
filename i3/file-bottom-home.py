@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from i3pystatus import Status
-from i3pystatus.mail import thunderbird
 
 status = Status(standalone=True)
 
