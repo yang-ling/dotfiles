@@ -43,7 +43,7 @@ nohup vrome >/dev/null 2>&1 &
 
 /usr/bin/udevil clean
 
-SINGLE_SSH_AGENT=/usr/local/bin/single-ssh-agent.sh
+SINGLE_SSH_AGENT=/usr/local/bin/single-ssh-agent
 [[ -x "$SINGLE_SSH_AGENT" ]] && { . "$SINGLE_SSH_AGENT"; }
 
 session=${1:-i3}
