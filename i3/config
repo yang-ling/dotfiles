@@ -147,7 +147,7 @@ exec --no-startup-id xset r rate 400 25
 # Startup programs
 exec --no-startup-id /usr/bin/dropbox
 exec --no-startup-id /usr/bin/fcitx-autostart
-exec --no-startup-id /usr/bin/keepassx
+exec --no-startup-id /usr/bin/keepassxc
 exec --no-startup-id /usr/bin/workrave
 exec --no-startup-id /usr/bin/check-failed-units
 exec --no-startup-id /usr/bin/xscreensaver -no-splash
