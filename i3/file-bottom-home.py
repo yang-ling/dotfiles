@@ -31,6 +31,8 @@ status.register("usb",
 status.register("mpd",
     format = "{album} - {artist} - {title} {status}",
     )
+status.register("pulseaudio",
+    )
 #client_gmail=thunderbird.Thunderbird(account="yangling1984@gmail.com")
 #client_163_1=thunderbird.Thunderbird(account="yuloo911@163.com")
 #client_163_2=thunderbird.Thunderbird(account="yanglingit@163.com")

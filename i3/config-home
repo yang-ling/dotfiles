@@ -55,6 +55,9 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+bindsym $mod+a focus left
+bindsym $mod+d focus right
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -94,7 +97,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 bindsym $mod+b focus child
@@ -131,7 +134,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 workspace_auto_back_and_forth yes
-bindsym $mod+z exec --no-startup-id /usr/local/bin/goto-urgent.sh
+bindsym $mod+z exec --no-startup-id /usr/local/bin/goto-urgent
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+x [urgent=latest] focus
 
@@ -147,12 +150,12 @@ exec --no-startup-id /usr/bin/fcitx-autostart
 exec --no-startup-id /usr/bin/keepassx
 exec --no-startup-id /usr/bin/workrave
 exec --no-startup-id /usr/bin/check-failed-units
+exec --no-startup-id /usr/bin/xscreensaver -no-splash
 #If start compton before byobu, ranger's image preview will be broken.
 #A workaround is start compton after byobu, that is put the compton execution
 #into a tmuxinator config
 #exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id xautolock -time 4 -locker "i3lock-wrapper -l"
-exec --no-startup-id /usr/bin/volumeicon
+exec --no-startup-id xautolock -time 4 -locker "xscreensaver-command -lock"
 exec --no-startup-id /usr/bin/chinese-calendar-autostart
 
 # Make the currently focused window a scratchpad
@@ -168,11 +171,18 @@ bindsym $alt+Shift+grave focus left
 
 bindsym $mod+Print exec --no-startup-id /usr/bin/spectacle
 bindsym $mod+r exec --no-startup-id /usr/local/bin/dmenu-search-engine
-bindsym Control+$alt+l exec --no-startup-id i3lock-wrapper -l
+#bindsym Control+$alt+l exec --no-startup-id "env XSECURELOCK_SAVER=saver_xscreensaver xsecurelock"
+bindsym Control+$alt+l exec --no-startup-id "xscreensaver-command -lock"
 
 # Scratchpads
 bindsym Control+$mod+k [class="(?i)keepassx"] scratchpad show
 bindsym Control+$mod+p [class="(?i)skype" title="老婆"] scratchpad show
+
+# Media Keys
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/ponymix increase 5
+bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/ponymix decrease 5
+bindsym XF86AudioMute exec --no-startup-id /usr/bin/ponymix toggle
 
 # Window Rules
 for_window [class="(?i)Keepassx"] move scratchpad
@@ -244,7 +254,7 @@ mode "focused" {
 
 bindsym $mod+n mode "focused"
 
-set $Locker i3lock-wrapper -l && sleep 1
+set $Locker xscreensaver-command -lock && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
