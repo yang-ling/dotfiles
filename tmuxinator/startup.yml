@@ -31,12 +31,9 @@ windows:
           - /usr/bin/mpd --no-daemon
         - wallpaper:
           - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
+        - org:
+          - export LC_CTYPE=zh_CN.UTF-8
+        - notmuch:
+          - export LC_CTYPE=zh_CN.UTF-8
   - status:
     - glances
-  - Emacs:
-      layout: tiled
-      panes:
-        - left:
-          - export LC_CTYPE=zh_CN.UTF-8
-        - right:
-          - export LC_CTYPE=zh_CN.UTF-8
