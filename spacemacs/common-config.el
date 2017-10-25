@@ -1,6 +1,7 @@
 ;; -*- mode: emacs-lisp; origami-fold-style: triple-braces; -*-
 ;; Settings {{{
-(setq browse-url-browser-function 'browse-url-chrome
+(setq browse-url-browser-function 'browse-url-default-browser
+      ;;browse-url-browser-function 'browse-url-chrome
       evil-escape-delay 0.5
       evil-escape-key-sequence "fd"
       evil-search-wrap nil

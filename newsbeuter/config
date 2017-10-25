@@ -1,11 +1,11 @@
 # vim: ft=conf nospell
 #browser /usr/bin/w3m
-browser /usr/bin/google-chrome-stable
+browser /usr/bin/qutebrowser
 external-url-viewer /usr/bin/urlview
 always-display-description true
 goto-next-feed no
 save-path ~/Dropbox/Downloads/rss/
-text-width 78
+text-width 97
 cache-file ~/Dropbox/Downloads/rss/config/cache.db
 max-items 500
 

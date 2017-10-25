@@ -1,9 +1,11 @@
 [global_config]
   always_split_with_profile = True
+  custom_url_handler = /usr/bin/google-chrome-stable
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
   inactive_color_offset = 0.96
   title_font = DejaVu Sans Mono for Powerline 11
   title_use_system_font = False
+  use_custom_url_handler = True
 [keybindings]
   layout_launcher = <Primary><Alt>l
 [layouts]

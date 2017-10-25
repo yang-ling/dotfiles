@@ -33,7 +33,9 @@ windows:
           - bgchd -dir /home/yangling/.wallpapers -bcknd /home/yangling/.wallpapers/feh -intv 5m -rpl
         - org:
           - export LC_CTYPE=zh_CN.UTF-8
+          - export DESKTOP_SESSION=LXDE
         - notmuch:
           - export LC_CTYPE=zh_CN.UTF-8
+          - export DESKTOP_SESSION=LXDE
   - status:
     - glances
