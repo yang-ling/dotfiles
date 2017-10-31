@@ -12,23 +12,15 @@ https://neovim.io/news.xml tech vim neovim
 
 https://gitlab.com/RagefireChasm/sc.atom?private_token=GsTyRR2QbgbgmkMtwQeC tech project
 
-#http://emacsredux.com/atom.xml tech emacs
-#http://endlessparentheses.com/atom.xml tech emacs
-#http://www.reddit.com/r/emacs/.rss tech emacs
-#http://planet.emacsen.org/atom.xml tech emacs
-#http://feeds.feedburner.com/sachac tech emacs
-#http://feeds.feedburner.com/XahsEmacsBlog tech emacs
-#https://emacs-china.org/latest.rss tech emacs
+https://www.reddit.com/r/golang/.rss tech reddit golang
+https://www.reddit.com/r/java/.rss tech reddit java
+https://www.reddit.com/r/devops/.rss tech reddit devops
+https://www.reddit.com/r/sysadmin/.rss tech reddit sysadmin
 
 http://www.archlinux.org/feeds/news/ tech news
-#https://www.gitlab.com/atom.xml tech news
 https://about.gitlab.com/atom.xml tech news gitlab
-#http://feeds.feedburner.com/ContinuousBlog?format=xml tech news
-#http://feeds.feedburner.com/JenkinsPluginReleases?format=xml tech news
 http://www.chinagfw.org/feeds/posts/default tech news
 http://www.daemonology.net/hn-daily/index.rss tech news
-#http://us.v2ex.com/feed/shadowsocks.xml tech news
-#http://www.v2ex.com/index.xml tech news
 http://vdaily.sinaapp.com/weekly.xml tech news
 http://slackhq.com/rss tech news slack
 http://feeds2.feedburner.com/programthink news
@@ -41,11 +33,9 @@ http://onehd.herokuapp.com/ fun
 http://www.zhihu.com/rss fun zhihu
 #http://www.quora.com/rss fun quora
 http://quoratopstories.tumblr.com/rss fun quora
-#http://www.comicsyndicate.org/Feed/Dilbert fun pic dilbert
 http://feed.dilbert.com/dilbert/daily_strip?format=xml fun pic dilbert
 http://elblogdejoancornella.blogspot.com/feeds/posts/default fun
 http://feeds.feedburner.com/uclick/garfield fun pic garfield
-#http://www.reddit.com/r/WritingPrompts/.rss fun wp
 http://www.reddit.com/r/funny/.rss fun reddit
 https://www.reddit.com/r/PrettyGirls/.rss reddit PrettyGirls
 https://www.reddit.com/r/AsianCuties/.rss reddit AsianCuties
