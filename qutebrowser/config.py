@@ -11,6 +11,38 @@
 # Type: Dict
 c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save', 'r': 'session-load', 'rw': 'session-load work', 'ww': 'session-save work'}
 
+# Background color of unselected even tabs.
+# Type: QtColor
+c.colors.tabs.even.bg = 'powderblue'
+
+# Foreground color of unselected even tabs.
+# Type: QtColor
+c.colors.tabs.even.fg = 'black'
+
+# Background color of unselected odd tabs.
+# Type: QtColor
+c.colors.tabs.odd.bg = 'powderblue'
+
+# Foreground color of unselected odd tabs.
+# Type: QtColor
+c.colors.tabs.odd.fg = 'black'
+
+# Background color of selected even tabs.
+# Type: QtColor
+c.colors.tabs.selected.even.bg = 'gold'
+
+# Foreground color of selected even tabs.
+# Type: QtColor
+c.colors.tabs.selected.even.fg = 'navy'
+
+# Background color of selected odd tabs.
+# Type: QtColor
+c.colors.tabs.selected.odd.bg = 'gold'
+
+# Foreground color of selected odd tabs.
+# Type: QtColor
+c.colors.tabs.selected.odd.fg = 'navy'
+
 # The directory to save downloads to. If unset, a sensible os-specific
 # default is used.
 # Type: Directory
@@ -20,6 +52,14 @@ c.downloads.location.directory = '/home/yangling/Downloads/qute_download'
 # `downloads.location.directory` will be used.
 # Type: Bool
 c.downloads.location.prompt = False
+
+# Font used in the tab bar.
+# Type: QtFont
+c.fonts.tabs = '10pt monospace'
+
+# Show a scrollbar.
+# Type: Bool
+c.scrolling.bar = False
 
 # The position of the status bar.
 # Type: VerticalPosition
@@ -78,3 +118,4 @@ c.url.start_pages = 'qute://help/index.html'
 config.bind(',f', 'spawn --userscript readability')
 config.bind(',s', 'config-write-py --force')
 config.bind(',z', 'zoom 125')
+config.bind('e', 'edit-url')
