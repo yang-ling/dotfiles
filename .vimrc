@@ -147,6 +147,8 @@ Plug 'davidhalter/jedi-vim'
 
 Plug 'mhinz/vim-hugefile'
 Plug 'tpope/tpope-vim-abolish'
+
+Plug 'jceb/vim-orgmode'
 "}}}
 
 call plug#end()
@@ -159,6 +161,7 @@ if v:progname =~? "evim"
   finish
 endif
 let mapleader=","
+let maplocalleader="-"
 
 "{{{ Bundules setting
 " neocomplete setting"{{{
