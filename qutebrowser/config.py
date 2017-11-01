@@ -57,6 +57,26 @@ c.downloads.location.prompt = False
 # Type: QtFont
 c.fonts.tabs = '10pt monospace'
 
+# Font family for fixed fonts.
+# Type: FontFamily
+c.fonts.web.family.fixed = 'monospace'
+
+# Font family for sans-serif fonts.
+# Type: FontFamily
+c.fonts.web.family.sans_serif = 'DejaVu Sans'
+
+# Font family for serif fonts.
+# Type: FontFamily
+c.fonts.web.family.serif = 'DejaVu Serif'
+
+# Font family for standard fonts.
+# Type: FontFamily
+c.fonts.web.family.standard = 'Ubuntu'
+
+# The default font size for regular text.
+# Type: Int
+c.fonts.web.size.default = 20
+
 # Show a scrollbar.
 # Type: Bool
 c.scrolling.bar = False
@@ -118,4 +138,5 @@ c.url.start_pages = 'qute://help/index.html'
 config.bind(',f', 'spawn --userscript readability')
 config.bind(',s', 'config-write-py --force')
 config.bind(',z', 'zoom 125')
+config.bind('D', 'close')
 config.bind('e', 'edit-url')
