@@ -128,7 +128,7 @@ c.url.default_page = 'qute://help/index.html'
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'gg': 'https://www.google.com/search?q={}', 'yd': 'http://dict.youdao.com/w/eng/{}', 'gt': 'https://translate.google.com/?hl=zh-CN&tab=wT#auto/zh-CN/{}', 'ci': 'http://www.iciba.com/{}'}
+c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}', 'ddg': 'https://duckduckgo.com/?q={}', 'yd': 'http://dict.youdao.com/w/eng/{}', 'gt': 'https://translate.google.com/?hl=zh-CN&tab=wT#auto/zh-CN/{}', 'ci': 'http://www.iciba.com/{}'}
 
 # The page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
