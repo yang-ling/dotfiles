@@ -226,6 +226,8 @@ alias a2t="aria2c -u40k"
 # See https://github.com/shadowsocks/shadowsocks/wiki/Convert-Shadowsocks-into-an-HTTP-proxy
 alias a2proxy='aria2c -j5 -x5 -m5 -k1M -s5 --all-proxy=http://localhost:8123'
 
+alias my-youtube-dl='/usr/bin/youtube-dl --external-downloader aria2c --external-downloader-args "-j5 -x5 -m5 -k1M -s5"'
+
 # pacnew and pacsave file
 alias pacnew='sudo find / -regextype posix-extended -regex ".+\.pac(new|save|orig)"'
 alias pacnewnohome='sudo find / -path /home/yangling -prune -o -regextype posix-extended -regex ".+\.pac(new|save|orig)" -print'
