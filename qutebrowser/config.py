@@ -136,6 +136,7 @@ c.url.start_pages = 'qute://help/index.html'
 
 # Bindings for normal mode
 config.bind(',f', 'spawn --userscript readability')
+config.bind(',g', 'spawn google-chrome-stable {url}')
 config.bind(',s', 'config-write-py --force')
 config.bind(',z', 'zoom 125')
 config.bind('D', 'close')
