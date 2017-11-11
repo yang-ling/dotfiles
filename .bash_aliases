@@ -72,6 +72,10 @@ function ppkill() {
     ppgrep $QUERY | xargs kill $*
 }
 
+function trash() {
+    mv "$1" ~/.Trash/
+}
+
 alias mypwd='pwd | xclip -i -selection c'
 alias cdp='cd `xclip -o`'
 
