@@ -76,6 +76,10 @@ function trash() {
     mv "$1" ~/.Trash/
 }
 
+function anonyrun() {
+    bash $1 && trash $1
+}
+
 alias mypwd='pwd | xclip -i -selection c'
 alias cdp='cd `xclip -o`'
 
