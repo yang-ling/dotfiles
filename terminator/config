@@ -22,6 +22,7 @@
     cursor_color = "#aaaaaa"
     font = DejaVu Sans Mono for Powerline 12
   [[yangling]]
+    background_darkness = 0.84
     cursor_color = "#aaaaaa"
     font = DejaVu Sans Mono for Powerline 13
     use_system_font = False
