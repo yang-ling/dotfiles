@@ -149,6 +149,7 @@ Plug 'mhinz/vim-hugefile'
 Plug 'tpope/tpope-vim-abolish'
 
 Plug 'jceb/vim-orgmode'
+Plug 'chikamichi/mediawiki.vim'
 "}}}
 
 call plug#end()
