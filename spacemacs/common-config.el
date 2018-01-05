@@ -1,5 +1,5 @@
-;; -*- mode: emacs-lisp; origami-fold-style: triple-braces; -*-
-;; Settings {{{
+;; -*- mode: emacs-lisp; -*-
+;; Settings
 (setq browse-url-browser-function 'browse-url-default-browser
       ;;browse-url-browser-function 'browse-url-chrome
       evil-escape-delay 0.5
@@ -14,16 +14,14 @@
 (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
 (spacemacs/toggle-visual-line-navigation-on)
 (global-visual-line-mode)
-;; }}}
-;; Encodings {{{
+;; Encodings
 ;; Chinese
 (prefer-coding-system 'cp936)
 ;; Japanese
 (prefer-coding-system 'cp932)
 ;; Default
 (prefer-coding-system 'utf-8)
-;; }}}
-;; Hooks {{{
+;; Hooks
 (add-hook 'message-mode-hook
           (lambda ()
             (font-lock-add-keywords nil
@@ -36,8 +34,7 @@
 (add-hook 'dos-mode-hook 'smartparens-mode)
 (add-hook 'message-mode-hook 'smartparens-mode)
 (add-hook 'conf-mode-hook 'smartparens-mode)
-;; }}}
-;; Mode {{{
+;; Mode
 (add-to-list 'auto-mode-alist '("\\.message\\'" . message-mode))
 (add-to-list 'auto-mode-alist '("\\.install\\'" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.asc$" . auto-encryption-armored-mode))
@@ -45,13 +42,13 @@
 (add-to-list 'auto-mode-alist '("\\.service$" . conf-unix-mode))
 
 (add-to-list 'interpreter-mode-alist '("bash" . shell-script-mode))
-;; }}}
-;; company settings {{{
+
+;; company settings
 (setq company-dabbrev-ignore-case t)
 (setq company-dabbrev-code-ignore-case t)
 (global-company-mode)
-;; }}}
-;; Easy Templates {{{
+
+;; Easy Templates
 ;; http://orgmode.org/manual/Easy-Templates.html
 ;; s	#+BEGIN_SRC ... #+END_SRC
 ;; e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
@@ -77,20 +74,122 @@
 (with-eval-after-load "org"
   (add-to-list 'org-structure-template-alist '("n" "#+NAME: ?"))
   (add-to-list 'org-structure-template-alist '("t" "#+TITLE: ?")))
-;; }}}
-;; notmuch {{{
+(with-eval-after-load "ox-latex"
+  ;; (add-to-list 'org-latex-packages-alist '("" "minted"))
+  ;; (add-to-list 'org-latex-packages-alist '("AUTO" "inputenc" t))
+
+  (add-to-list 'org-latex-classes
+               '("chinese"
+                 "\\documentclass[UTF8]{ctexart}
+        \\usepackage{amsmath,latexsym,amssymb,mathrsfs,pifont}
+        \\usepackage[T1]{fontenc}
+        \\usepackage{fixltx2e}
+        \\usepackage{graphicx}
+        \\usepackage{subfig}
+        \\usepackage{grffile}
+        \\usepackage{longtable}
+        \\usepackage{wrapfig}
+        \\usepackage{rotating}
+         \\usepackage[colorlinks=true]{hyperref}
+        \\tolerance=1000
+        [NO-DEFAULT-PACKAGES]
+        [NO-PACKAGES]"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("koma" "\\documentclass{scrartcl}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("play" "\\documentclass{play}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("plari" "\\documentclass{plari}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("rtklage" "\\documentclass{rtklage}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("screenplay" "\\documentclass{screenplay}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("slides" "\\documentclass{slides}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("stage" "\\documentclass{stage}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("org-article"
+                 "\\documentclass{org-article}
+             [NO-DEFAULT-PACKAGES]
+             [PACKAGES]
+             [EXTRA]"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+;; ;; minted
+;; (setq org-latex-listings 'minted
+;;       org-latex-packages-alist '(("" "minted"))
+;;       org-latex-minted-options '(("frame" "lines") ("linenos") ("baselinestretch" "1.2"))
+;;       org-latex-pdf-process
+;;       '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+;;         "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+;;         "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+;; listings
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("AUTO" "inputenc") ("" "minted"))
+      ;; minted options:
+      ;; breaklines: automatically wrap long lines at space.
+      ;; breakanywhere: break long lines not only at space.
+      org-latex-minted-options '(("frame" "lines") ("linenos") ("baselinestretch" "1.2") ("breaklines"))
+      org-latex-pdf-process
+      '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+;; notmuch
 (add-to-list 'notmuch-saved-searches '(:name "read-it-later" :query "tag:read-it-later" :key "r"))
 (add-to-list 'notmuch-saved-searches '(:name "my-unread" :query "tag:unread and tag:interested" :key "m"))
 (setq notmuch-archive-tags '("-inbox" "+archive" "-unread" "-read-it-later"))
 (setq notmuch-print-mechanism 'notmuch-print-muttprint)
-;; }}}
-;; fcitx {{{
+;; fcitx
 ;; Make sure the following comes before `(fcitx-aggressive-setup)'
 (fcitx-aggressive-setup)
 (fcitx-prefix-keys-add "M-m") ; M-m is common in Spacemacs
 (setq fcitx-use-dbus t) ; uncomment if you're using Linux
-;; }}}
-;; epa settings for asc file {{{
+;; epa settings for asc file
 (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
 (epa-file-name-regexp-update)
 ;; Minor mode for ASCII-armored gpg-encrypted files
@@ -105,9 +204,8 @@
   (if (symbol-value auto-encryption-armored-mode)
       (set (make-local-variable 'epa-armor) t)
     (kill-local-variable 'epa-armor)))
-;; }}}
 
-;; org mode setting {{{
+;; org mode setting
 (with-eval-after-load "org"
   (setq org-time-stamp-formats '("<%Y-%m-%d %a>" . "<%Y-%m-%d %a %H:%M %z>")))
 (setq org-todo-keywords
@@ -134,5 +232,3 @@
                            (org-agenda-files :maxlevel . 9)))
 (setq org-export-coding-system 'utf-8)
 (setq org-stuck-projects '("+LEVEL=2/-DONE" ("TODO" "NEXT" "WAITING") nil ""))
-;; (setq org-clock-in-switch-to-state "NEXT")
-;; }}}
