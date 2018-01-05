@@ -16,11 +16,16 @@ root: ~/
 # tmux_options: -f ~/.tmux.mac.conf
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# Layouts: even-horizontal
+#          even-vertical
+#          main-horizontal
+#          main-vertical
+#          tiled
 tmux_command: byobu
 
 windows:
-  - Weechat:
-    - weechat
+  #- Weechat:
+    #- weechat
   - backend:
       layout: tiled
       panes:
@@ -39,3 +44,6 @@ windows:
           - export DESKTOP_SESSION=LXDE
   - status:
     - glances
+  - hledger:
+    - cd /home/yangling/Dropbox/Work/hledger/
+    - hledger-ui -f show-me-the-money.journal
