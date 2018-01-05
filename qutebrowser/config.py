@@ -43,6 +43,11 @@ c.colors.tabs.selected.odd.bg = 'gold'
 # Type: QtColor
 c.colors.tabs.selected.odd.fg = 'navy'
 
+# Background color for webpages if unset (or empty to use the theme's
+# color)
+# Type: QtColor
+c.colors.webpage.bg = None
+
 # The directory to save downloads to. If unset, a sensible os-specific
 # default is used.
 # Type: Directory
