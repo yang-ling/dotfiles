@@ -8,8 +8,12 @@
 
 ;; Automatically check signatures
 (setq notmuch-crypto-process-mime t)
-(setq notmuch-draft-tags '("+draft" "-inbox" "-unread")
-      notmuch-archive-tags '("-inbox" "+archive"))
+
+(setq notmuch-archive-tags '("-inbox" "+archive" "-unread" "-read-it-later"))
+(setq notmuch-print-mechanism 'notmuch-print-muttprint)
+(setq notmuch-draft-tags '("+draft" "-inbox" "-unread"))
+;; (setq notmuch-draft-tags '("+draft" "-inbox" "-unread")
+;;       notmuch-archive-tags '("-inbox" "+archive"))
 
 ;; Crypto Settings
 ;; (add-hook 'message-setup-hook 'mml-secure-sign-pgpmime)

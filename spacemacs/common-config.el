@@ -180,15 +180,15 @@
         "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 ;; notmuch
-(add-to-list 'notmuch-saved-searches '(:name "read-it-later" :query "tag:read-it-later" :key "r"))
-(add-to-list 'notmuch-saved-searches '(:name "my-unread" :query "tag:unread and tag:interested" :key "m"))
-(setq notmuch-archive-tags '("-inbox" "+archive" "-unread" "-read-it-later"))
-(setq notmuch-print-mechanism 'notmuch-print-muttprint)
+(with-eval-after-load "notmuch"
+  (add-to-list 'notmuch-saved-searches '(:name "read-it-later" :query "tag:read-it-later" :key "r"))
+  (add-to-list 'notmuch-saved-searches '(:name "my-unread" :query "tag:unread and tag:interested" :key "m")))
 ;; fcitx
 ;; Make sure the following comes before `(fcitx-aggressive-setup)'
-(fcitx-aggressive-setup)
-(fcitx-prefix-keys-add "M-m") ; M-m is common in Spacemacs
-(setq fcitx-use-dbus t) ; uncomment if you're using Linux
+;; (fcitx-aggressive-setup)
+;; (fcitx-prefix-keys-add "M-m") ; M-m is common in Spacemacs
+;; (setq fcitx-use-dbus t) ; uncomment if you're using Linux
+
 ;; epa settings for asc file
 (setq epa-file-name-regexp "\\.\\(gpg\\|\\asc\\)\\(~\\|\\.~[0-9]+~\\)?\\'")
 (epa-file-name-regexp-update)
