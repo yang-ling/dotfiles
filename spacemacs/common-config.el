@@ -1,7 +1,8 @@
 ;; -*- mode: emacs-lisp; -*-
 ;; Settings
-(setq browse-url-browser-function 'browse-url-default-browser
+(setq browse-url-browser-function 'browse-url-firefox
       ;;browse-url-browser-function 'browse-url-chrome
+      ;; browse-url-browser-function 'browse-url-default-browser
       evil-escape-delay 0.5
       evil-escape-key-sequence "fd"
       evil-search-wrap nil
@@ -207,7 +208,15 @@
 
 ;; org mode setting
 (with-eval-after-load "org"
-  (setq org-time-stamp-formats '("<%Y-%m-%d %a>" . "<%Y-%m-%d %a %H:%M %z>")))
+  (setq org-time-stamp-formats '("<%Y-%m-%d %a>" . "<%Y-%m-%d %a %H:%M %z>"))
+  (add-to-list 'org-export-backends 'taskjuggler)
+  (setq org-taskjuggler-default-reports '("include \"gantt.tji\"")))
+(with-eval-after-load "ox-taskjuggler"
+  (add-to-list 'org-taskjuggler-valid-task-attributes 'priority)
+  (add-to-list 'org-taskjuggler-valid-task-attributes 'booking)
+  (add-to-list 'org-taskjuggler-valid-project-attributes 'include)
+  (add-to-list 'org-taskjuggler-valid-resource-attributes 'shifts)
+  (setq org-taskjuggler-default-global-properties "include \"global-properties.tji\""))
 (setq org-todo-keywords
       '((sequence "TODO(t!)" "WAITING(w!)" "NEXT(n!)" "INACTIVE(i!)" "|" "DONE(d!)" "ABORT(a@/!)")))
 (setq org-todo-keyword-faces
@@ -217,7 +226,8 @@
         ("ABORT"    . (:background "gray" :foreground "black"))))
 (setq org-directory "~/Dropbox/Documents/Important/org")
 (setq org-agenda-files '("~/Dropbox/Documents/Important/org/"))
-(setq org-columns-default-format "%25ITEM %TODO %3PRIORITY %10CLOCKSUM %22TIMESTAMP_IA %TAGS")
+(setq org-columns-default-format "%25ITEM %TODO %3PRIORITY %10EFFORT{:} %10CLOCKSUM %22TIMESTAMP_IA %TAGS")
+;; (setq org-columns-default-format "%25ITEM %TODO %3PRIORITY %10CLOCKSUM %22TIMESTAMP_IA %TAGS")
 ;; Define the custum capture templates
 (setq org-capture-templates
       '(("t" "todo" entry (file "todo.org")

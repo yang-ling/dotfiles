@@ -47,7 +47,8 @@ application/pdf;        pdftotext %s -; copiousoutput
 
 # HTML
 #text/html; /usr/bin/google-chrome-stable %s; nametemplate=%s.html; needsterminal
-text/html; /usr/bin/qutebrowser %s; nametemplate=%s.html; needsterminal
+#text/html; /usr/bin/qutebrowser %s; nametemplate=%s.html; needsterminal
+text/html; /usr/bin/firefox %s; nametemplate=%s.html; needsterminal
 #text/html; w3m -I %{charset} -T text/html %s; nametemplate=%s.html; copiousoutput
 text/html; w3m -dump -I $(echo %{charset} | sed s/gb2312/gbk/I) -F %s; nametemplate=%s.html; copiousoutput
 

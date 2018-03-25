@@ -10,7 +10,8 @@
   "oh" 'outline-hide-body
   "ol" 'org-toggle-link-display
   "on" 'org-next-link
-  "oN" 'org-previous-link)
+  "oN" 'org-previous-link
+  "ot" 'org-taskjuggler-export)
 
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)

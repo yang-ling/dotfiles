@@ -1,6 +1,6 @@
 # vim: ft=conf nospell
 #browser /usr/bin/w3m
-browser /usr/bin/qutebrowser
+browser /usr/bin/firefox
 external-url-viewer /usr/bin/urlview
 always-display-description true
 goto-next-feed no
