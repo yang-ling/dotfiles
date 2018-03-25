@@ -150,6 +150,7 @@ Plug 'tpope/tpope-vim-abolish'
 
 Plug 'jceb/vim-orgmode'
 Plug 'chikamichi/mediawiki.vim'
+Plug 'kalafut/vim-taskjuggler'
 "}}}
 
 call plug#end()
