@@ -29,9 +29,6 @@ windows:
   - backend:
       layout: tiled
       panes:
-        - sogo:
-          - sleep 30
-          - /usr/bin/sogou-autostart
         - mpd:
           - /usr/bin/mpd --no-daemon
         - wallpaper:
